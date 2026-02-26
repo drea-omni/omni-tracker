@@ -286,13 +286,19 @@ function OmniExplorer(){
   const[query,setQuery]         =useState("");
   const[activeTags,setActiveTags]=useState([]);
   const[view,setView]           =useState("all");
-  const[dateFrom,setDateFrom]   =useState("");
+  const twoWeeksAgo=()=>{const d=new Date();d.setDate(d.getDate()-14);return d.toISOString().slice(0,10);};
+  const[dateFrom,setDateFrom]   =useState(twoWeeksAgo);
   const[dateTo,setDateTo]       =useState("");
   const[expandedIdx,setExpanded]=useState(null);
   const[showLinked,setShowLinked]=useState(false);
-  const[videoMode,setVideoMode] =useState("modal"); // modal | inline | tab
+  const[videoMode,setVideoMode] =useState("modal");
   const[modalVideo,setModalVideo]=useState(null);
   const[modalWeek,setModalWeek] =useState("");
+  const[pageSize,setPageSize]   =useState(50);
+  const[page,setPage]           =useState(1);
+
+  // Reset to page 1 whenever filters change
+  useEffect(()=>setPage(1),[query,activeTags,dateFrom,dateTo,showLinked,view,pageSize]);
 
   const T=isDark?THEMES.dark:THEMES.light;
 
@@ -335,6 +341,17 @@ function OmniExplorer(){
   const totalVideos=demos.reduce((s,d)=>s+(d.video_count||d.videos?.length||0),0);
   const showCL=view!=="demos",showDM=view!=="changelog";
   const total=(showCL?cl.length:0)+(showDM?dm.length:0);
+
+  // Pagination — interleave cl+dm chronologically then slice
+  const allItems=useMemo(()=>{
+    const cls=showCL?cl.map(c=>({...c,_type:"cl"})):[];
+    const dms=showDM?dm.map(d=>({...d,_type:"dm"})):[];
+    return [...cls,...dms].sort((a,b)=>b.date.localeCompare(a.date));
+  },[cl,dm,showCL,showDM]);
+  const totalPages=pageSize==="all"?1:Math.ceil(allItems.length/pageSize);
+  const visibleItems=pageSize==="all"?allItems:allItems.slice((page-1)*pageSize,page*pageSize);
+  const visibleCL=visibleItems.filter(x=>x._type==="cl");
+  const visibleDM=visibleItems.filter(x=>x._type==="dm");
 
   const confStyle=c=>c==="high"?T.confHigh:c==="medium"?T.confMed:T.confLow;
   const confLabel=c=>c==="high"?"✦ confirmed":c==="medium"?"~ probable":"? possible";
@@ -418,7 +435,7 @@ function OmniExplorer(){
       </div>
 
       {/* STICKY CONTROLS */}
-      <div style={{position:"sticky",top:0,zIndex:20,background:isDark?`${T.bg}F0`:`${T.bg}F4`,backdropFilter:"blur(12px)",borderBottom:`1px solid ${T.border}`,padding:"14px 28px 12px",boxShadow:T.shadow}}>
+      <div style={{position:"sticky",top:0,zIndex:20,background:isDark?`${T.bg}F0`:"#1a2744F4",backdropFilter:"blur(12px)",borderBottom:`1px solid ${isDark?T.border:"#2a3d6688"}`,padding:"14px 28px 12px",boxShadow:T.shadow}}>
         <div style={{display:"flex",gap:8,marginBottom:10,flexWrap:"wrap",alignItems:"center"}}>
           <div style={{flex:"1 1 220px",position:"relative"}}>
             <span style={{position:"absolute",left:12,top:"50%",transform:"translateY(-50%)",color:T.textMuted,fontSize:13}}>⌕</span>
@@ -431,7 +448,7 @@ function OmniExplorer(){
           <input type="date" value={dateTo} onChange={e=>setDateTo(e.target.value)}
             style={{background:T.inputBg,border:`1px solid ${T.inputBorder}`,borderRadius:8,padding:"8px 10px",color:T.textSub,fontSize:11,fontFamily:"'DM Mono',monospace"}}/>
           {(query||activeTags.length||dateFrom||dateTo||showLinked)&&(
-            <button onClick={()=>{setQuery("");setActiveTags([]);setDateFrom("");setDateTo("");setShowLinked(false);}} className="toggle-btn"
+            <button onClick={()=>{setQuery("");setActiveTags([]);setDateFrom(twoWeeksAgo());setDateTo("");setShowLinked(false);}} className="toggle-btn"
               style={{padding:"8px 14px",background:isDark?"#FF2D6B18":"#FF2D6B12",border:`1px solid ${T.accent}44`,borderRadius:8,color:T.accent,fontSize:11,cursor:"pointer",fontFamily:"'DM Mono',monospace"}}>
               ✕ clear
             </button>
@@ -456,8 +473,23 @@ function OmniExplorer(){
             <button key={t} className="tag-pill" onClick={()=>toggleTag(t)} style={pill(activeTags.includes(t),tagColor(t))}>{t}</button>
           ))}
         </div>
-        <div style={{fontFamily:"'DM Mono',monospace",fontSize:9.5,color:T.textFaint,letterSpacing:"0.05em"}}>
-          {total===(changelog.length+demos.length)?`${total} entries total`:`${total} matching`}
+        <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:8}}>
+          <div style={{fontFamily:"'DM Mono',monospace",fontSize:9.5,color:T.textFaint,letterSpacing:"0.05em"}}>
+            {total===(changelog.length+demos.length)?`${total} entries total`:`${total} matching`}
+            {pageSize!=="all"&&total>0&&<span style={{color:T.textMuted}}> · page {page} of {totalPages}</span>}
+          </div>
+          <div style={{display:"flex",alignItems:"center",gap:6}}>
+            <span style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:T.textFaint,letterSpacing:"0.06em"}}>per page:</span>
+            {[20,50,100,"all"].map(n=>(
+              <button key={n} onClick={()=>{setPageSize(n);setPage(1);}}
+                style={{fontFamily:"'DM Mono',monospace",fontSize:9.5,padding:"3px 9px",borderRadius:6,cursor:"pointer",
+                  background:pageSize===n?T.accent+"28":"transparent",
+                  border:`1px solid ${pageSize===n?T.accent:T.border}`,
+                  color:pageSize===n?T.accent:T.textMuted,transition:"all 0.15s"}}>
+                {n}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -477,13 +509,13 @@ function OmniExplorer(){
         )}
 
         {/* CHANGELOG */}
-        {showCL&&cl.length>0&&(
+        {showCL&&visibleCL.length>0&&(
           <section style={{marginBottom:32}}>
             <div style={{display:"flex",alignItems:"center",gap:12,padding:"8px 0 12px",borderBottom:`2px solid ${T.accent}`,marginBottom:4}}>
               <span style={{fontFamily:"'DM Serif Display',serif",fontSize:18,color:T.accent,fontStyle:"italic"}}>Shipped</span>
               <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:T.textMuted,letterSpacing:"0.1em"}}>CHANGELOG · {cl.length} ENTRIES</span>
             </div>
-            {cl.map((item,i)=>{
+            {visibleCL.map((item,i)=>{
               const m=item.demoMatch,cs=m?confStyle(m.confidence):null;
               const lag=m?daysBetween(item.date,m.demo.date):null;
               const isOpen=expandedIdx===`cl-${i}`;
@@ -496,7 +528,7 @@ function OmniExplorer(){
                     </div>
                   </div>
                   <div style={{flex:1}}>
-                    <p style={{fontSize:14,lineHeight:1.6,color:T.text,marginBottom:7}}>{item.text}</p>
+                    <p style={{fontSize:14,lineHeight:1.6,color:T.text,marginBottom:7}}>🔧 {item.text}</p>
                     <div style={{display:"flex",gap:5,flexWrap:"wrap",marginBottom:m?8:0}}>
                       {item.tags?.map(t=>(
                         <span key={t} className="tag-pill" onClick={()=>toggleTag(t)}
@@ -522,28 +554,65 @@ function OmniExplorer(){
                     )}
                     {m&&isOpen&&(
                       <div style={{marginTop:10,padding:"12px 16px",background:T.bgSubtle,borderLeft:`3px solid ${T.accent}`,borderRadius:"0 8px 8px 0"}}>
-                        <div style={{fontFamily:"'DM Serif Display',serif",fontSize:13,color:T.accentText,fontStyle:"italic",marginBottom:6}}>{m.demo.title}</div>
-                        {m.demo.summary&&<p style={{fontFamily:"'DM Mono',monospace",fontSize:11,color:T.textSub,lineHeight:1.7,marginBottom:8}}>{m.demo.summary}</p>}
-                        {/* Videos in matched demo */}
-                        {m.demo.videos?.length>0&&videoMode!=="tab"&&(
-                          <InlineVideos videos={m.demo.videos} weekTitle={m.demo.title} T={T} videoMode={videoMode} onOpenModal={openModal}/>
-                        )}
-                        {m.demo.videos?.length>0&&videoMode==="tab"&&(
-                          <div style={{display:"flex",flexWrap:"wrap",gap:6,marginTop:8}}>
-                            {m.demo.videos.map((v,vi)=>(
-                              <a key={vi} href={v.youtube_url} target="_blank" rel="noopener noreferrer"
-                                style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:T.accent,textDecoration:"none",padding:"4px 10px",border:`1px solid ${T.accent}44`,borderRadius:6,background:T.accentSub}}>
-                                ▶ {v.title||`Video ${vi+1}`} ↗
-                              </a>
-                            ))}
-                          </div>
-                        )}
-                        {(!m.demo.videos||m.demo.videos.length===0)&&(
-                          <a href={m.demo.url} target="_blank" rel="noopener noreferrer"
-                            style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:T.accent,textDecoration:"none",display:"inline-flex",alignItems:"center",gap:4,padding:"4px 10px",border:`1px solid ${T.accent}44`,borderRadius:6,background:T.accentSub}}>
-                            Watch demo ↗
-                          </a>
-                        )}
+                        {/* Demo week title */}
+                        <div style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:T.textMuted,letterSpacing:"0.1em",textTransform:"uppercase",marginBottom:4}}>Demo Week</div>
+                        <div style={{fontFamily:"'DM Serif Display',serif",fontSize:13,color:T.accentText,fontStyle:"italic",marginBottom:10}}>{m.demo.title}</div>
+                        {/* Find best matching video and show its description */}
+                        {(()=>{
+                          const vids = m.demo.videos||[];
+                          // Score each video title against the changelog entry text
+                          const entryWords = item.text.toLowerCase().split(/\W+/).filter(w=>w.length>3);
+                          let bestScore=-1, bestVid=vids[0]||null;
+                          for(const v of vids){
+                            const vtWords=(v.title||"").toLowerCase().split(/\W+/).filter(w=>w.length>3);
+                            const overlap=entryWords.filter(w=>vtWords.includes(w)).length;
+                            if(overlap>bestScore){bestScore=overlap;bestVid=v;}
+                          }
+                          if(!bestVid) return(
+                            <a href={m.demo.url} target="_blank" rel="noopener noreferrer"
+                              style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:T.accent,textDecoration:"none",padding:"5px 12px",border:`1px solid ${T.accent}44`,borderRadius:6,background:T.accentSub,display:"inline-flex",alignItems:"center",gap:4}}>
+                              🎬 Watch demo ↗
+                            </a>
+                          );
+                          const specificUrl=`https://www.youtube.com/watch?v=${bestVid.youtube_id}`;
+                          return(
+                            <div>
+                              {/* Matched video title + description */}
+                              <div style={{padding:"10px 12px",background:T.bg,border:`1px solid ${T.border}`,borderRadius:8,marginBottom:10}}>
+                                <div style={{display:"flex",alignItems:"center",gap:6,marginBottom:bestVid.title?6:0}}>
+                                  <span style={{fontSize:9,color:T.accent}}>🎬</span>
+                                  <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:T.accent,fontWeight:600}}>{bestVid.title||"Demo video"}</span>
+                                </div>
+                                {/* Show demo week summary as the closest description we have */}
+                                {m.demo.summary&&(
+                                  <p style={{fontFamily:"'DM Mono',monospace",fontSize:10.5,color:T.textSub,lineHeight:1.7,margin:0}}>
+                                    {m.demo.summary}
+                                  </p>
+                                )}
+                              </div>
+                              {/* Video action buttons */}
+                              <div style={{display:"flex",flexWrap:"wrap",gap:8,alignItems:"center"}}>
+                                {videoMode==="modal"?(
+                                  <button onClick={()=>openModal(bestVid,m.demo.title)} className="toggle-btn"
+                                    style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:T.accent,padding:"5px 12px",border:`1px solid ${T.accent}44`,borderRadius:6,background:T.accentSub,cursor:"pointer"}}>
+                                    ▶ Watch: {bestVid.title||"Demo video"}
+                                  </button>
+                                ):(
+                                  <a href={specificUrl} target="_blank" rel="noopener noreferrer"
+                                    style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:T.accent,textDecoration:"none",padding:"5px 12px",border:`1px solid ${T.accent}44`,borderRadius:6,background:T.accentSub,display:"inline-flex",alignItems:"center",gap:4}}>
+                                    ▶ Watch: {bestVid.title||"Demo video"} ↗
+                                  </a>
+                                )}
+                                {vids.length>1&&(
+                                  <a href={m.demo.url} target="_blank" rel="noopener noreferrer"
+                                    style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:T.textMuted,textDecoration:"none",padding:"4px 9px",border:`1px solid ${T.border}`,borderRadius:6}}>
+                                    +{vids.length-1} more in this week ↗
+                                  </a>
+                                )}
+                              </div>
+                            </div>
+                          );
+                        })()}
                       </div>
                     )}
                   </div>
@@ -554,13 +623,13 @@ function OmniExplorer(){
         )}
 
         {/* DEMOS */}
-        {showDM&&dm.length>0&&(
+        {showDM&&visibleDM.length>0&&(
           <section>
             <div style={{display:"flex",alignItems:"center",gap:12,padding:"8px 0 12px",borderBottom:`2px solid ${T.textMuted}44`,marginBottom:4}}>
               <span style={{fontFamily:"'DM Serif Display',serif",fontSize:18,color:T.textSub,fontStyle:"italic"}}>Previewed</span>
               <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:T.textMuted,letterSpacing:"0.1em"}}>DEMOS · {dm.length} WEEKS · NOT GUARANTEED TO SHIP</span>
             </div>
-            {dm.map((demo,i)=>{
+            {visibleDM.map((demo,i)=>{
               const isOpen=expandedIdx===`dm-${i}`;
               const hasVideos=demo.videos?.length>0;
               return(
@@ -575,7 +644,7 @@ function OmniExplorer(){
                     <div style={{display:"flex",gap:10,alignItems:"flex-start",flexWrap:"wrap",marginBottom:6}}>
                       <a href={demo.url} target="_blank" rel="noopener noreferrer"
                         style={{fontFamily:"'DM Serif Display',serif",fontSize:14,color:T.gold,textDecoration:"none",fontStyle:"italic",flex:1,lineHeight:1.45}}>
-                        {demo.title} ↗
+                        🎥 {demo.title} ↗
                       </a>
                       <div style={{display:"flex",gap:5,flexShrink:0}}>
                         {hasVideos&&<span style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:T.textMuted,padding:"3px 7px",background:T.bgSubtle,borderRadius:4,border:`1px solid ${T.border}`}}>
@@ -624,6 +693,53 @@ function OmniExplorer(){
               );
             })}
           </section>
+        )}
+
+        {/* PAGINATION NAV */}
+        {pageSize!=="all"&&totalPages>1&&(
+          <div style={{display:"flex",justifyContent:"center",alignItems:"center",gap:6,padding:"28px 0 8px",flexWrap:"wrap"}}>
+            <button onClick={()=>setPage(1)} disabled={page===1}
+              style={{fontFamily:"'DM Mono',monospace",fontSize:10,padding:"5px 10px",borderRadius:6,cursor:page===1?"not-allowed":"pointer",
+                background:"transparent",border:`1px solid ${T.border}`,color:page===1?T.textFaint:T.textMuted,opacity:page===1?0.4:1}}>
+              «
+            </button>
+            <button onClick={()=>setPage(p=>Math.max(1,p-1))} disabled={page===1}
+              style={{fontFamily:"'DM Mono',monospace",fontSize:10,padding:"5px 10px",borderRadius:6,cursor:page===1?"not-allowed":"pointer",
+                background:"transparent",border:`1px solid ${T.border}`,color:page===1?T.textFaint:T.textMuted,opacity:page===1?0.4:1}}>
+              ‹ prev
+            </button>
+            {Array.from({length:totalPages},(_,i)=>i+1)
+              .filter(n=>n===1||n===totalPages||Math.abs(n-page)<=2)
+              .reduce((acc,n,idx,arr)=>{
+                if(idx>0&&n-arr[idx-1]>1) acc.push("…");
+                acc.push(n);
+                return acc;
+              },[])
+              .map((n,i)=>n==="…"?(
+                <span key={`e${i}`} style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:T.textFaint,padding:"0 4px"}}>…</span>
+              ):(
+                <button key={n} onClick={()=>setPage(n)}
+                  style={{fontFamily:"'DM Mono',monospace",fontSize:10,padding:"5px 10px",borderRadius:6,cursor:"pointer",minWidth:32,
+                    background:page===n?T.accent:"transparent",
+                    border:`1px solid ${page===n?T.accent:T.border}`,
+                    color:page===n?"#fff":T.textMuted,
+                    boxShadow:page===n?`0 0 10px ${T.accentGlow}`:"none",
+                    transition:"all 0.15s"}}>
+                  {n}
+                </button>
+              ))
+            }
+            <button onClick={()=>setPage(p=>Math.min(totalPages,p+1))} disabled={page===totalPages}
+              style={{fontFamily:"'DM Mono',monospace",fontSize:10,padding:"5px 10px",borderRadius:6,cursor:page===totalPages?"not-allowed":"pointer",
+                background:"transparent",border:`1px solid ${T.border}`,color:page===totalPages?T.textFaint:T.textMuted,opacity:page===totalPages?0.4:1}}>
+              next ›
+            </button>
+            <button onClick={()=>setPage(totalPages)} disabled={page===totalPages}
+              style={{fontFamily:"'DM Mono',monospace",fontSize:10,padding:"5px 10px",borderRadius:6,cursor:page===totalPages?"not-allowed":"pointer",
+                background:"transparent",border:`1px solid ${T.border}`,color:page===totalPages?T.textFaint:T.textMuted,opacity:page===totalPages?0.4:1}}>
+              »
+            </button>
+          </div>
         )}
 
         {total===0&&!loading&&(
