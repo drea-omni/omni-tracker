@@ -1,16 +1,15 @@
 {
   "meta": {
     "source": "https://omni.co/demos",
-    "last_scraped": "2026-02-25T00:00:00Z",
-    "scrape_notes": "Full index captured (104 weeks). Individual demo detail captured for select weeks where full content was retrievable. All other weeks have title only from index. IMPORTANT: Demos are POC/experiments - NOT guaranteed releases. Cross-reference with omni_changelog.json to determine what shipped.",
+    "last_scraped": "2026-02-26T05:37:14Z",
+    "scrape_notes": "Auto-scraped by GitHub Action. Demos are POC/experiments — NOT guaranteed releases. Cross-reference with omni_changelog.json to determine what shipped.",
     "total_weeks_indexed": 108,
-    "total_weeks_with_detail": 7,
+    "total_weeks_with_detail": 22,
     "date_range": {
       "earliest": "2024-01-20",
       "latest": "2026-02-20"
     },
-    "important_note": "Demos highlight what Omni is working on or experimenting with, but are NOT a guarantee of release. Cross-reference with omni_changelog.json to determine what actually shipped.",
-    "query_tips": "To check if a demo shipped: search omni_changelog.json for same feature keywords after the demo date. Gap between demo date and changelog date = development time. Demos with NO changelog match = not yet shipped or cancelled."
+    "important_note": "Demos highlight what Omni is working on or experimenting with, but are NOT a guarantee of release. Cross-reference with omni_changelog.json to determine what actually shipped."
   },
   "index": [
     {
@@ -859,6 +858,1568 @@
       "url": "https://omni.co/demos/20250502",
       "fully_scraped": false,
       "summary": "AI Mode launch (finishing touches, linking to workbook pages). Early Slack experience for Blobby. Training inside topic with example queries. Embed navigation custom experience and custom filters outside iframe. User-specific models / model localization work. API exposure ongoing. Branch management and modeling demos. Unnesting data complex aggregation tooling. Snowflake key-pair auth for DB connections. Custom vis library (12 visualization libraries via vibe code). Subtotal visualization polish. Spider/radar chart custom vis. Business growth visualization example."
+    },
+    {
+      "date": "2026-02-26",
+      "url": "https://omni.co/demos",
+      "fully_scraped": true,
+      "scraped_at": "2026-02-26T05:36:39Z",
+      "title": "Demos",
+      "demos": [
+        {
+          "title": "AI",
+          "description": "Ask questions, get answers you trust"
+        },
+        {
+          "title": "Case Studies",
+          "description": "How customers use Omni"
+        },
+        {
+          "title": "Demos",
+          "description": "Weekly product demo videos"
+        },
+        {
+          "title": "About",
+          "description": "Why we're building Omni"
+        },
+        {
+          "title": "Every week, our team shares what weâre working on.",
+          "description": ""
+        },
+        {
+          "title": "Note:",
+          "description": ""
+        },
+        {
+          "title": "February 20, 2026",
+          "description": "A first look at the new UX for creating data from the workbook or dashboard. Now you can build columns that allow collecting data from end users. Opens up tons of read/write use cases for specific workflows."
+        },
+        {
+          "title": "Input Columns",
+          "description": "A first look at the new UX for creating data from the workbook or dashboard. Now you can build columns that allow collecting data from end users. Opens up tons of read/write use cases for specific workflows."
+        },
+        {
+          "title": "AI Query Checking / Validation",
+          "description": "Blobby is great, but doesn't always get it right on the first try. We're building more intelligence into the AI experience by explicitly validating the results matched the user's intent correctly. More work to do here, but want to make sure Blobby can always get it right hands off."
+        },
+        {
+          "title": "Blobby Quickstart Mode",
+          "description": "The biggest blocker to more Blobby is often getting started. Here we show off building a data model and AI context from scratch entirely in the UI. More work to do here, but want to make getting started with a new data set or table completely AI-able."
+        },
+        {
+          "title": "AI Workflows Examples",
+          "description": "Workflows have been in GA for a bit, but we wanted to show off some internal use cases that are creating huge efficiencies for us. We'll get these in the docs for folks that want to crib or extend."
+        },
+        {
+          "title": "Google Calendar in Blobby",
+          "description": "More Blobby MCP - this time bringing Google calendar into the AI experience."
+        },
+        {
+          "title": "Dashboard Templates",
+          "description": "With the near term GA of containers (the new dashboard experience), we wanted to make it easy to build beautiful dashboards even with the additional belles and whistles. Templates make common dashboard patterns easier to build and control."
+        },
+        {
+          "title": "Color Palette Selector Improvements",
+          "description": "More refinement to the color picker experience."
+        },
+        {
+          "title": "Funnel Vis Launch",
+          "description": "The new funnel vis is moving to GA."
+        },
+        {
+          "title": "Pie Chart Label Config",
+          "description": "We love to see a first-week demo. Here picking up a much-requested feature for configuring pie chart labels more flexibly (like percentages alongside values)."
+        },
+        {
+          "title": "Per User Week Start and Fiscal Offset",
+          "description": "More complex embed setups often have customers with different fiscal calendars and business weeks. Now you can serve that complexity dynamically using user attributes."
+        },
+        {
+          "title": "IDE UX Improvements Search and Sidebar",
+          "description": "Bunch of tune up for the IDE experience - improved file search UX and some tune up to the sidebar search as well."
+        },
+        {
+          "title": "Using Omni's CLI to Add AI Context from External Sources",
+          "description": "An end-to-end demo of building data model + AI context via Cursor and Omni CLI. This means folks can bring help docs from external sources like Notion to instant build context into Omni."
+        },
+        {
+          "title": "Automated Github Tickets From Slack Threads",
+          "description": "Another internal productivity workflow we wanted to share. This allows us to take Slack threads with feedback or bug reports and instantly file rich Github tickets (ideally to mostly-automate resolution via Claude Code)."
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "date": "2026-02-06",
+      "url": "https://omni.co/demos/20260206",
+      "fully_scraped": true,
+      "scraped_at": "2026-02-26T05:36:41Z",
+      "title": "Demos",
+      "demos": [
+        {
+          "title": "AI",
+          "description": "Ask questions, get answers you trust"
+        },
+        {
+          "title": "Case Studies",
+          "description": "How customers use Omni"
+        },
+        {
+          "title": "Demos",
+          "description": "Weekly product demo videos"
+        },
+        {
+          "title": "About",
+          "description": "Why we're building Omni"
+        },
+        {
+          "title": "Every week, our team shares what weâre working on.",
+          "description": ""
+        },
+        {
+          "title": "Note:",
+          "description": ""
+        },
+        {
+          "title": "February 6, 2026",
+          "description": "Christmas comes once a year when the development team gets together at CKO and hacks at any and everything. Speaking personally, I (Colin) felt like I saw the future. AI integrated into every corner of the platform seamlessly - from database connections, to automated documentation, to slide decks, to spreadsheets, to dashboard building, to sending Slacks, to ETL, all the way to analyzing results with a circle of the mouse. All tied back to a core app that lets you understand and debug at every level."
+        },
+        {
+          "title": "Blobby Learns to Analyze Hand Drawn Notes",
+          "description": "All I can say is you need to watch this one if you want to see the future. We have some of the basics with a new twist, like conversations and tagging for dashboards. But we also layer in hand-drawn annotation (think Microsoft paint) combined with the magic of Blobby. Circle an outlier and ask Blobby to go figure out why. Drill with a marker. Ask a question with a picture. This is a window into the future of analytics."
+        },
+        {
+          "title": "Python in Omni Plus Blobby Learns Python",
+          "description": "The goal with Omni has always been more of everything. Python is more of something. Here we give a demo of some work on bringing data science to the app, and, of course, making sure Blobby can take advantage."
+        },
+        {
+          "title": "Model Demotion",
+          "description": "The monotonic model growth will be no more! Maybe the feature request we've talked about the most internally. Data models grow. Sometimes that is good, sometimes it was because you did a one-off thing you're never going to look at again (or maybe even look at, but don't need polluting everyone's headspace). Conrad worked on bringing all that metadata to the data model, and ultimately allow users to push data model from the shared model back into their dashboards!!"
+        },
+        {
+          "title": "Super Serious[ly Awesome] Emoji AI Feedback",
+          "description": "Feedback (and the follow up tuning) is a core part of building the AI experience. This demo reimagines the AI feedback with emojis to quickly let your developers know what is working and what isn't. And some fun baked in too."
+        },
+        {
+          "title": "Crossfiltering Beta",
+          "description": "Coming soon! We've been putting work into the cross-filter UX so you can slice and dice to hearts content with charts instead of filters. Testing internally, let us know if you want an early look."
+        },
+        {
+          "title": "Blobby Learns to Spreadsheet",
+          "description": "Step one was bringing a full dashboard into Omni. Step two is making it so AI can build those spreadsheets for you. Richard demos a few of those functions, including an instant invoice generation from a row of data, styling, or quick summary stats."
+        },
+        {
+          "title": "Blobby Learns to Build Dashboards",
+          "description": "Alisa shows off a quick tool to let Blobby bring content between environments (plus an awesome loader). Stay until the end to see Blobby building a new dashboard tile on the fly. More AI everywhere."
+        },
+        {
+          "title": "Omni Full App Inside MCP",
+          "description": "Bit of a futuristic demo. Here we load the full app into the MCP experience, including backlinks to the core app."
+        },
+        {
+          "title": "Blobby Learns to Build a DB Connection",
+          "description": "AI everywhere is the goal. Blobby takes on adding a new database connection in Omni, meaning you can set up a connection and get querying inside a minute in the AI chat."
+        },
+        {
+          "title": "Connection Setup Clean Up",
+          "description": "Bunch of fresh UX paint on the connection setup page. Better organization, more clear feedback, instant model, etc."
+        },
+        {
+          "title": "Blobby Learns to Debug Your Database Connection",
+          "description": "A little AI makes everything better. Here Blobby helps figure out why the DB connection didn't go as plans, with little helpers and a Q&A to get you unblocked quickly."
+        },
+        {
+          "title": "Embed Web Components",
+          "description": "Adding a bit more delight to the developer experience for embed builders."
+        },
+        {
+          "title": "Omni CLI + Omni 1980 UI",
+          "description": "Bunch of work on the CLI, including a nice new (?) UX."
+        },
+        {
+          "title": "Release FYI / Understand Omni Versions",
+          "description": "We ship alot of code (34 demos this week). It makes debugging which app version is live tricky for us internally. Our friendly neighborhood devops team built a full UI + Slack experience to make sure we can debug quickly."
+        },
+        {
+          "title": "Dashboard Auto Pretty Plus New Layout Controls",
+          "description": "First, we show off some new UX controls for dashboards - multi-element grabbing, keyboard controls, quick delete, etc. Then you see some new AI magic for instantly making a dashboard layout nicely. More to do here, but AI everywhere!"
+        },
+        {
+          "title": "Omni Employee Directory",
+          "description": "Sam had some fun creating a new internal tool to find Omnis."
+        },
+        {
+          "title": "Blobby Learns to Surf the Web",
+          "description": "Blobby can soon enrich results with live web queries, for deeper, multi-modal use cases (all fake names, etc)."
+        },
+        {
+          "title": "Long Running Task Notifications",
+          "description": "It's not fun to sit and stare at your monitor for long-running tasks (think queries then render or long AI sessions). Soon you'll be able to use notifications to return when the job is done."
+        },
+        {
+          "title": "letmeblobbythatforyou.com",
+          "description": "We built a quick microsite for when you need to help a friend understand their data better."
+        },
+        {
+          "title": "Blobby Suggests Dashboards Instead",
+          "description": "Blobby has been a magical unlock for avoiding dashboard bloat. Just ask. But sometimes there was already a dashboard that answers your question perfectly. Soon Blobby can redirect you to those instead of reinventing the wheel."
+        },
+        {
+          "title": "AI Explo-to-Omni Conversion Tooling",
+          "description": "The former Explo team shows off a bunch of new tooling to bring dashboards and reports from Explo instantly into Omni, of course with lots of Clauding behind the scenes."
+        },
+        {
+          "title": "Blobby Tasks",
+          "description": "Surely you've done an analysis that you had to present in slides. Soon Blobby can build your decks or docs for you. Arielle shows off a few use cases for the new AI Tasks."
+        },
+        {
+          "title": "Blobby Learns ETL",
+          "description": "If you're anything like us, on the last day of the quarter you're sitting on dashboards waiting for the new ETL to land. Soon Blobby will be able to reach into Fivetran for new data on command."
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "date": "2026-01-30",
+      "url": "https://omni.co/demos/20260130",
+      "fully_scraped": true,
+      "scraped_at": "2026-02-26T05:36:44Z",
+      "title": "Demos",
+      "demos": [
+        {
+          "title": "AI",
+          "description": "Ask questions, get answers you trust"
+        },
+        {
+          "title": "Case Studies",
+          "description": "How customers use Omni"
+        },
+        {
+          "title": "Demos",
+          "description": "Weekly product demo videos"
+        },
+        {
+          "title": "About",
+          "description": "Why we're building Omni"
+        },
+        {
+          "title": "Every week, our team shares what weâre working on.",
+          "description": ""
+        },
+        {
+          "title": "Note:",
+          "description": ""
+        },
+        {
+          "title": "January 30, 2026",
+          "description": "Huge week for AI"
+        },
+        {
+          "title": "Blobby Learns to Build Your Dashboard",
+          "description": "Blobby isn't only for querying. Now you can get some help building out your dashboards courtesy of a Blobby helper for building and arranging dashboards. Early days here, but would love thoughts on where this can help builders get more productive."
+        },
+        {
+          "title": "Huge Improvement to AI Streaming UX",
+          "description": "We made some huge improvements to the UX and clarity of the AI streaming experience to make sure it both feels amazing and clearly shows you what it's working on."
+        },
+        {
+          "title": "Claude Personal Access Token for MCP",
+          "description": "Now when you use Blobby inside Claude MCP, we can make sure authentication and the UX is personalized to each user. This also opens up the Claude marketplace for Omni and Blobby."
+        },
+        {
+          "title": "Agentic Query API",
+          "description": "Blobby is bringing the full suite of capabilities to the API. Now your API queries can progress through the same logical, multi-query experience as the UI. This will power the incoming Slackbot, or really whatever you can imagine."
+        },
+        {
+          "title": "AI Summary / Vis Dash Toggle",
+          "description": "AI summary visualizations are fabulous - summarize and synthesize for the user. But sometimes you want to be able to dig in to the actuals too. Soon you'll be able to toggle between the results and the AI summarization (or visualizations)."
+        },
+        {
+          "title": "Snowflake Cortex for AI LLM",
+          "description": "Now instead of your favorite foundation LLM, you can also swap in Snowflake Cortex."
+        },
+        {
+          "title": "Funnel Vis",
+          "description": "More work on brand new visualizations. This time a look at our work on funnels. Tell us what you want to see in here (and next)."
+        },
+        {
+          "title": "Blobby Fill Chart",
+          "description": "Blobby wanted to get in on the vis game. A first look at fill charts Omni style."
+        },
+        {
+          "title": "More Containers Improvements",
+          "description": "A grab bag of UI/UX improvements to our new dashboards. Keep the feedback coming, we're continuing to make sure the new experience is great."
+        },
+        {
+          "title": "Dashboard Tile Dragging Improvements",
+          "description": "Making sure dragging tiles around (including in and out of containers) feels great."
+        },
+        {
+          "title": "Content Validator Autocomplete Plus More UX",
+          "description": "After some feedback about making auto-complete and the content validator experience better, we spent a bit of time making sure clean up and admin feels great too."
+        },
+        {
+          "title": "Workbook Model Quick Viewer",
+          "description": "Soon you'll be able to see workbook model changes in a couple clicks."
+        },
+        {
+          "title": "Filter Push Down Plus SQL Perf Testing",
+          "description": "Some new modeling work to enable filter push down into joined views, plus a bunch of testing framework on our side to understanding ongoing model improvement work."
+        },
+        {
+          "title": "Side-by-Side Embedding and Cookie Management",
+          "description": "Much more flexibility for folks embedding side-by-side or swapping experiences for users - now you can have one user logged in to different experiences without full re-authentication."
+        },
+        {
+          "title": "Git with Branches and Extensions",
+          "description": "Bunch of work to enable great git work flows in the most complex deployments (like extension models), plus some conversation on future there."
+        },
+        {
+          "title": "Long Running Query Stability and Performance Improvements",
+          "description": "Some mostly silent work to make long running queries work better, especially with weak internet."
+        },
+        {
+          "title": "Better Connection Setup and Testing",
+          "description": "Bit of work on our admin and setup."
+        },
+        {
+          "title": "Claude Coordinator Improvements Task Building",
+          "description": "Another peek into work on our internal tooling to ship more, better, faster."
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "date": "2026-01-23",
+      "url": "https://omni.co/demos/20260123",
+      "fully_scraped": true,
+      "scraped_at": "2026-02-26T05:36:46Z",
+      "title": "Demos",
+      "demos": [
+        {
+          "title": "AI",
+          "description": "Ask questions, get answers you trust"
+        },
+        {
+          "title": "Case Studies",
+          "description": "How customers use Omni"
+        },
+        {
+          "title": "Demos",
+          "description": "Weekly product demo videos"
+        },
+        {
+          "title": "About",
+          "description": "Why we're building Omni"
+        },
+        {
+          "title": "Every week, our team shares what weâre working on.",
+          "description": ""
+        },
+        {
+          "title": "Note:",
+          "description": ""
+        },
+        {
+          "title": "January 23, 2026",
+          "description": "Now you get the full copy experience from our native data tables - highlight and copy cells trivially out of the front-end, including keyboard controls."
+        },
+        {
+          "title": "Table Cell Copying!!!",
+          "description": "Now you get the full copy experience from our native data tables - highlight and copy cells trivially out of the front-end, including keyboard controls."
+        },
+        {
+          "title": "Dashboard Filter UX Controls",
+          "description": "A first look at completely customizing the filter UX for dashboards - think buttons, selector lists, whatever you can imagine. Let us know what you'd like to see here."
+        },
+        {
+          "title": "Dashboard Tab Vanity URLs",
+          "description": "You could already permalink your dashboards with vanity URLs, now you can do the same with your tabs to make navigation feel amazing for your users."
+        },
+        {
+          "title": "Model AI Teaser",
+          "description": "Not quite a demo, but soon Blobby will be on call for helping modelers in the IDE."
+        },
+        {
+          "title": "Blobby Learns Parallelization",
+          "description": "Frequently your friendly neighborhood blob will need to run multiple queries to answer a question. Now Blobby can selectively parallelize querying to speed up the AI experience by orders of magnitude. More work to do here, but the side-by-side shows how massive the diff can be."
+        },
+        {
+          "title": "Recently Used Colors",
+          "description": "Now when you select you favorite colors for charting or conditional formatting we'll remember and let you quickly reuse them elsewhere."
+        },
+        {
+          "title": "Copying Conditional Format Rules",
+          "description": "Now you can copy conditional formatting rules in a click for easy table building."
+        },
+        {
+          "title": "Bunch of Dash Container UX",
+          "description": "A grab bag of UX improvements for layout on containers."
+        },
+        {
+          "title": "Turning Off Document Request Access",
+          "description": "A quick refinement for our new request-access workflow. Now for documents you don't want folks asking about, you can opt for a 404 page rather than the request workflow in document settings."
+        },
+        {
+          "title": "Dashboard Sharing Checks App Permissions",
+          "description": "Now when you try to share a dashboard we'll flag app permissions that mean a user cannot view the object (say no permissions to the data set requested). This makes it more clear if you need to use accessboost or talk to an admin about opening up data to others."
+        },
+        {
+          "title": "Safari Login Improvements",
+          "description": "Making it simpler to authenticate for Safari users."
+        },
+        {
+          "title": "Requery Improvements for Weeks",
+          "description": "Weeks were stubbornly avoiding the DuckDB requery cache for certain use cases that now work nicely."
+        },
+        {
+          "title": "Totals Fix with Unlimited Downloads",
+          "description": "Bunch of hidden work to improve downloads with totals."
+        },
+        {
+          "title": "Model Extension and Branches",
+          "description": "We're going deep on building out the modeling experience for model extensions (think personal, departmental mini data models) and branches."
+        },
+        {
+          "title": "Inspector Deep Link and Groups Fix",
+          "description": "A couple tune ups - first a quick link to the SQL from the dashboard (we may limit to developers), and a fix up to groups to make sure we don't error with emojis, et al."
+        },
+        {
+          "title": "Better Embed URL Builder",
+          "description": "We tuned up the auto-complete and input experience for the embed URL builder to make getting started easier."
+        },
+        {
+          "title": "More Claude Code Tooling",
+          "description": "Bit of our internal workflow for documenting code and making our team more productive using Claude Code."
+        },
+        {
+          "title": "More Work on Claude Code Workflows",
+          "description": "Another bundle of work to improve our internal developer productivity."
+        },
+        {
+          "title": "Automated Doc Building",
+          "description": "Peek behind the scenes at our workflow to make sure the amazing pace that you see from our engineering team makes it to the docs."
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "date": "2026-01-16",
+      "url": "https://omni.co/demos/20260116",
+      "fully_scraped": true,
+      "scraped_at": "2026-02-26T05:36:48Z",
+      "title": "Demos",
+      "demos": [
+        {
+          "title": "AI",
+          "description": "Ask questions, get answers you trust"
+        },
+        {
+          "title": "Case Studies",
+          "description": "How customers use Omni"
+        },
+        {
+          "title": "Demos",
+          "description": "Weekly product demo videos"
+        },
+        {
+          "title": "About",
+          "description": "Why we're building Omni"
+        },
+        {
+          "title": "Every week, our team shares what weâre working on.",
+          "description": ""
+        },
+        {
+          "title": "Note:",
+          "description": ""
+        },
+        {
+          "title": "January 16, 2026",
+          "description": "Batch of AI"
+        },
+        {
+          "title": "AI on Homepage",
+          "description": "We're making it easier to get to Blobby, plus some admin controls for folks who aren't quite ready."
+        },
+        {
+          "title": "Multi Vis AI Summary",
+          "description": "We tuned up the summary experience to even share grouplets of visualizations alongside summary text."
+        },
+        {
+          "title": "AI Model Inspector Tool",
+          "description": "More work on our Model Inspector tool for understanding the data model inside the AI experience. Plus a bonus internal demo of continuing to build out our Claude Code workflows."
+        },
+        {
+          "title": "Clearer Tool Calls for AI Deep Research",
+          "description": "We improved the UX to make tool calls (filter value checks, model calls, etc) more explicit in the UI, so users can understand everything Blobby is doing at query time."
+        },
+        {
+          "title": "Multi Model MCP Querying",
+          "description": "Now the MCP server can intelligently route queries between different models rather than locking to a single model."
+        },
+        {
+          "title": "Better Chat Debugger",
+          "description": "Bit of work to see more detail on how fields are used in the AI experience from the chat UI."
+        },
+        {
+          "title": "Sankey Launch",
+          "description": "Sankey charts are launching, now with color controls as well. Plus stick around to the end for a preview of the next set of vis work."
+        },
+        {
+          "title": "Request Dash Edit Access",
+          "description": "Building on our request access workflows - now viewers can request edit access for dashboard they want to tune as well."
+        },
+        {
+          "title": "OmniTopics",
+          "description": "A new multi-base-view topic in Omni. TJ gives a quick explainer of multi-fact entities and how you can now model them in Omni."
+        },
+        {
+          "title": "Filter Only Field Fast View Filters",
+          "description": "Now you can quickly point filter-only fields at the view itself for dynamically filtering a view with minimal modeling."
+        },
+        {
+          "title": "Oracle Connector Launch",
+          "description": "The Oracle database connector is now in preview for folks."
+        },
+        {
+          "title": "Paginated Subtotals",
+          "description": "Now you can page through infinite results inside the subtotal UX."
+        },
+        {
+          "title": "Dashboard Position / Layout Debugger",
+          "description": "We added some explicit position debugging UX with XY coordinates for precision tuning your dashboards."
+        },
+        {
+          "title": "Container Padding Controls",
+          "description": "Progress continues on new dashboards - now with more controls for layout and padding."
+        },
+        {
+          "title": "Workbook In Use Topics",
+          "description": "Inside workbooks you can now quickly see topics in use across your other tabs for faster navigation."
+        },
+        {
+          "title": "View As UX Improvements",
+          "description": "Another customer-requested-this-week improvement so that when using view-as, there is additional email metadata for differentiating between different accounts or embed users."
+        },
+        {
+          "title": "Filter by User Attribute UX Improvments",
+          "description": "Bit of quality of life work to pick from the list of user attributes rather than typing in the string exactly."
+        },
+        {
+          "title": "Recover Favorite UX",
+          "description": "More quality of life work to quickly recover accidental unfavorites."
+        },
+        {
+          "title": "Better IDE State Management",
+          "description": "Quality of life work in the IDE as well - here better state management navigating the IDE, like folding, edit/redo state, etc. Just making life more pleasant for developers."
+        },
+        {
+          "title": "AWS Token Renewal Mini App",
+          "description": "Our developers get some quality of life work as well - here a tool for renewing AWS tokens."
+        },
+        {
+          "title": "CI Error Debugging in Claude",
+          "description": "Quick demo of some improvements to our internal tooling for Claude Code to workflow CI debugging."
+        },
+        {
+          "title": "Eng Team Weekly Summary Dash",
+          "description": "Luke shows off a quick workflow we built to stay up on engineering work weekly using dashboard summary to quickly understand recently shipped code."
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "date": "2026-01-09",
+      "url": "https://omni.co/demos/20260109",
+      "fully_scraped": true,
+      "scraped_at": "2026-02-26T05:36:51Z",
+      "title": "Demos",
+      "demos": [
+        {
+          "title": "AI",
+          "description": "Ask questions, get answers you trust"
+        },
+        {
+          "title": "Case Studies",
+          "description": "How customers use Omni"
+        },
+        {
+          "title": "Demos",
+          "description": "Weekly product demo videos"
+        },
+        {
+          "title": "About",
+          "description": "Why we're building Omni"
+        },
+        {
+          "title": "Every week, our team shares what weâre working on.",
+          "description": ""
+        },
+        {
+          "title": "Note:",
+          "description": ""
+        },
+        {
+          "title": "January 9, 2026",
+          "description": "AI All over the app"
+        },
+        {
+          "title": "BYO AI LLM",
+          "description": "Soon you'll be able to officially bring your own LLMs to Omni, starting with ChatGPT and Claude alongside our native Bedrock. More models to come."
+        },
+        {
+          "title": "AI - What Did Blobby Build Debugger",
+          "description": "Now you can see exactly what Blobby did on each query - clearly showing calcs, new fields, etc without drilling to the workbook page."
+        },
+        {
+          "title": "AI KPI Vis",
+          "description": "Now Blobby can build KPI visualizations alongside the cartesian plots and pie charts available today."
+        },
+        {
+          "title": "AI Automated Model Suggestions",
+          "description": "Now Blobby will build a list of model suggestions in AI sessions as you go, so the model can be refined with improvements built through end-user sessions."
+        },
+        {
+          "title": "AI Cron Scheduling",
+          "description": "More driving smart AI enablers into every action in the app. Now you can build custom scheduler timings using LLMs to build nuanced cron schedules."
+        },
+        {
+          "title": "AI Figma Templates",
+          "description": "Some internal facing work to quickly spin up Figma mocks using the core app (plus a little AI of course)."
+        },
+        {
+          "title": "Blobby Learns To Tell You About the Data Model",
+          "description": "Blobby has a new skill - now you can ask about model concepts in the AI experience, asking about how fields are defined, what is in the model, etc."
+        },
+        {
+          "title": "Table Copying to CSV or Markdown",
+          "description": "Few new quick features for grabbing data quickly out of data tables (tables, columns, rows)."
+        },
+        {
+          "title": "Quality of Life Grab Bag",
+          "description": "A few new pieces of work to clean up the tab renaming experience and theme swapping."
+        },
+        {
+          "title": "Single Select Dates on Dashboard",
+          "description": "Some early work on tweaking the dashboard UX for filters - here limiting the date picker to just the calendar single-select."
+        },
+        {
+          "title": "Modeling Improvements",
+          "description": "Couple changes to make sure topic building with custom names works better and be able to debug dynamic connections in the inspector."
+        },
+        {
+          "title": "PROPER() Function",
+          "description": "Added a new Excel function to enable text formatting with PROPER (ie. first-letter-capitalized)"
+        },
+        {
+          "title": "Count Yes, Count No For Booleans",
+          "description": "Couple new quick-fields for boolean dimensions - Count Yes and Count No."
+        },
+        {
+          "title": "More Cross Filtering Alpha",
+          "description": "Bit more work getting cross-filtering enabled for dashboards. Some design work to do here still."
+        },
+        {
+          "title": "Mixed Series Stacking",
+          "description": "The last piece of work underpinning our new vis pipeline - now you can build mixed stacked charts, including all the familiar UX around labels, series selection, etc."
+        },
+        {
+          "title": "Container Dash Styling Work",
+          "description": "More work to make sure container styling aligns well with the current dashboard experience."
+        },
+        {
+          "title": "Unlimited Pivot Downloads and Exports",
+          "description": "Now you can kick out a billion pivoted rows if you really wanted to."
+        },
+        {
+          "title": "Export Delimiters",
+          "description": "Now you can customize you table delimiters for exporting (ie tabs, line breaks)."
+        },
+        {
+          "title": "Fantasy Football Styled Super Dash",
+          "description": "Max shows off a beautiful new styled dashboard for fantasy football analysis, using all the new bells and whistles."
+        },
+        {
+          "title": "Resize Controls For Cell Viewer",
+          "description": "Quick piece of work to allow resize on the cell viewer (UI for viewing a single cell as you navigate the table)."
+        },
+        {
+          "title": "Go To Definition From Table",
+          "description": "More quality of life work - here a quick link to the model for a given field from the table itself."
+        },
+        {
+          "title": "Dashboard Cross Model Migrator Tool",
+          "description": "A new dashboard migrator tool from our services team. This is for moving dashboards across model (ie. regional connections or staging / prod workflows)."
+        },
+        {
+          "title": "Copy Formats Excel Paintbrush",
+          "description": "Bringing one of your most requested features - now the paintbrush everyone loves in Excel is available in Omni. Copy value formats, orientation, or conditional formatting quickly across lots of columns."
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "date": "2026-01-02",
+      "url": "https://omni.co/demos/20260102",
+      "fully_scraped": true,
+      "scraped_at": "2026-02-26T05:36:54Z",
+      "title": "Demos",
+      "demos": [
+        {
+          "title": "AI",
+          "description": "Ask questions, get answers you trust"
+        },
+        {
+          "title": "Case Studies",
+          "description": "How customers use Omni"
+        },
+        {
+          "title": "Demos",
+          "description": "Weekly product demo videos"
+        },
+        {
+          "title": "About",
+          "description": "Why we're building Omni"
+        },
+        {
+          "title": "Every week, our team shares what weâre working on.",
+          "description": ""
+        },
+        {
+          "title": "Note:",
+          "description": ""
+        },
+        {
+          "title": "January 2, 2026",
+          "description": "A first look at bringing Blobby to a native Slack app."
+        },
+        {
+          "title": "Slackbot v0",
+          "description": "A first look at bringing Blobby to a native Slack app."
+        },
+        {
+          "title": "Field Picker Multi Level Nesting",
+          "description": "Now your field picker can nest as deeply as you like. For the organizers you can build custom group levels for navigating the field picker more easily."
+        },
+        {
+          "title": "Filter Suggestion Search Improvement",
+          "description": "We made filter suggestion better - prioritizing starts with, then spaces before search terms, and then any match."
+        },
+        {
+          "title": "Recent Activity Sidebar",
+          "description": "A new UX to quickly navigate to any recent analyses or dashboards. Making it easier to find everything you've just been working on or looking at."
+        },
+        {
+          "title": "SQL AI Model Suggestions",
+          "description": "A first look at some new AI powered UX to extract modelable fields from your SQL. Can get out of your way when you don't need it, but also quickly provide a workflow to make sure you aren't ever doing the same work twice."
+        },
+        {
+          "title": "Google Drive in Blobby",
+          "description": "Blobby keeps getting smarter. Now you can authenticate yourself into Google Drive and search internal documents for relevant questions inside Blobby."
+        },
+        {
+          "title": "Fixing Linked Tab Deliveries",
+          "description": "Bit of work to tune up the scheduler for linked tabs (recently released ability to duplicate-and-link tabs)."
+        },
+        {
+          "title": "Dashboard Share Emails",
+          "description": "Now users can get alerted when dashboards are shared."
+        },
+        {
+          "title": "Container Layout Alignment",
+          "description": "Work on new dashboard containers continues - bunch of work here around layout and organizing inside containers."
+        },
+        {
+          "title": "Preventing Duplicate Suggestion Queries",
+          "description": "Some work here to make sure query killing is effective with filter suggestions, which can fire off several queries as the user types."
+        },
+        {
+          "title": "Create Branch From Branch",
+          "description": "Now you can build a new branch from an existing branch to fork and test for more complex build outs."
+        },
+        {
+          "title": "Oracle Dialect Support",
+          "description": "New support for Oracle data"
+        },
+        {
+          "title": "Vis With order_by_field",
+          "description": "Now vis will properly account for order_by_fields, making sure months stay in order, tiers are respected, etc."
+        },
+        {
+          "title": "String Vis Data Labels",
+          "description": "Some improvements to make sure labels with stringified fields work properly - opening nice custom labeling patterns with IF() and TEXT()"
+        },
+        {
+          "title": "Smooth Regression Improvements",
+          "description": "Bit of work to make sure regressions label smoothly ;)"
+        },
+        {
+          "title": "Safari Vanity Embed - Skip Logo Screen",
+          "description": "When loading vanity domains in Safari you can now skip the logo spinner screen entirely."
+        },
+        {
+          "title": "Safari Embed Update to Removes Logo Spinner",
+          "description": "Subtle change to Safari embed to drop the Omni logo on cookie accept modal."
+        },
+        {
+          "title": "Faster Folder & Dashboard Loading",
+          "description": "Bit of silent work to make folder navigation and finding the dashboard you need faster."
+        },
+        {
+          "title": "Workbook PDF and PNG Export",
+          "description": "A quick add to bring the PDF and PNG export experience to workbooks from dashboards."
+        },
+        {
+          "title": "Eliminating Double Query Planning",
+          "description": "More behind the scenes perf work."
+        },
+        {
+          "title": "Troubleshooting Java Container Memory Outages",
+          "description": "Bunch of work to improve performance and app stability, and a deep dive on the investigation."
+        },
+        {
+          "title": "New Guides in Docs",
+          "description": "We're adding a new guides section to docs for deep dives into full end-to-end workflows in Omni. Plus a quick look at how we write docs internally."
+        },
+        {
+          "title": "Internal - Claude Code Tooling Improvements",
+          "description": "We continue to improve internal AI development workflows to make sure we can ship more product."
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "date": "2025-12-05",
+      "url": "https://omni.co/demos/20251205",
+      "fully_scraped": true,
+      "scraped_at": "2026-02-26T05:36:56Z",
+      "title": "Demos",
+      "demos": [
+        {
+          "title": "AI",
+          "description": "Ask questions, get answers you trust"
+        },
+        {
+          "title": "Case Studies",
+          "description": "How customers use Omni"
+        },
+        {
+          "title": "Demos",
+          "description": "Weekly product demo videos"
+        },
+        {
+          "title": "About",
+          "description": "Why we're building Omni"
+        },
+        {
+          "title": "Every week, our team shares what weâre working on.",
+          "description": ""
+        },
+        {
+          "title": "Note:",
+          "description": ""
+        },
+        {
+          "title": "December 5, 2025",
+          "description": "Dashboard tabs and containers are getting close to GA. For the cutting edge folks, we're open to turning this on (there may be bumps). But enormous amount of new dashboard functionality coming soon. Here we demo filters above and below tabs, the tab building experience, and more. Ask us if you want to get in early (it is all or nothing though, so fair warning)."
+        },
+        {
+          "title": "Tabbed Dashboards v1",
+          "description": "Dashboard tabs and containers are getting close to GA. For the cutting edge folks, we're open to turning this on (there may be bumps). But enormous amount of new dashboard functionality coming soon. Here we demo filters above and below tabs, the tab building experience, and more. Ask us if you want to get in early (it is all or nothing though, so fair warning)."
+        },
+        {
+          "title": "Per User AI Permissions",
+          "description": "Now you can granularly control who has access to Blobby. This means everyone can start testing AI as conservatively as they want. Can't emphasize enough how transformative it has been for us internally. Go try it!"
+        },
+        {
+          "title": "Claude Code Uses Omni",
+          "description": "We're playing around with workflows to automate anything you can imagine in app with AI. Here we have Claude Code change the AI icon by navigating the core UI. Lots to do here, but would love to hear about use cases folks are imagining."
+        },
+        {
+          "title": "Sharing AI Sessions",
+          "description": "We extended AI link sharing to everyone in the system with permissions. User attributes, data permissions, etc are all respected here, but now for users with similar permissions AI links can be easily passed around (safely!!)."
+        },
+        {
+          "title": "AI in Azure",
+          "description": "Blobby lives in Microsoft. Continuing the build out of Omni's multi-cloud offering, now AI is up and running."
+        },
+        {
+          "title": "Deep Research UX Improvements",
+          "description": "We're tuning up the UX for deep research to give Blobby plenty of space to explore without burying the important outcomes."
+        },
+        {
+          "title": "Ludacris Vis Launch",
+          "description": "Our huge rebuild of the vis render experience is close. We're waiting on a core Firefox bug we discovered building this, but the outcome is enormous (think 50k, 100k, 500k point visualizations) now render and resize smoothly."
+        },
+        {
+          "title": "Pie Rebuild Almost Launch",
+          "description": "We're getting close on our pie chart rebuild. Big wins with smart labeling and more features coming."
+        },
+        {
+          "title": "Stacked Measures, Simple Totals",
+          "description": "Getting close to the finale on merging stacked measures with color-by charts for config. Now simple totals are easy on stacked measure charts."
+        },
+        {
+          "title": "Level of Detail Fields with Filter Escaping",
+          "description": "Level of detail fields are a huge unlock for comparing to overall populations or sub-populations and now you can also take advantage of filter escaping or inclusion dynamically (think compare a row to the top 10 without filters, etc)."
+        },
+        {
+          "title": "Scheduler Error Debugger",
+          "description": "We're continuing to make it easier to DIY debugging scheduler hiccups like query errors or delivery blockages."
+        },
+        {
+          "title": "Clearing Single Select Filters",
+          "description": "Claude wanted to get in on the demos. Here's a bit of work to clean up clearing single-select filters."
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "date": "2025-12-01",
+      "url": "https://omni.co/demos/20251201",
+      "fully_scraped": true,
+      "scraped_at": "2026-02-26T05:36:59Z",
+      "title": "Demos",
+      "demos": [
+        {
+          "title": "AI",
+          "description": "Ask questions, get answers you trust"
+        },
+        {
+          "title": "Case Studies",
+          "description": "How customers use Omni"
+        },
+        {
+          "title": "Demos",
+          "description": "Weekly product demo videos"
+        },
+        {
+          "title": "About",
+          "description": "Why we're building Omni"
+        },
+        {
+          "title": "Every week, our team shares what weâre working on.",
+          "description": ""
+        },
+        {
+          "title": "Note:",
+          "description": ""
+        },
+        {
+          "title": "December 1, 2025",
+          "description": "AI all over the product"
+        },
+        {
+          "title": "Blobby Learns to Search Google Drive",
+          "description": "Blobby has been studying hard. Now you can connect Omni to Google Drive and search files outside Omni directly from Blobby. This lays the groundwork for bringing AI context from completely outside the system into an analysis, or even just asking quick questions from inside the AI window. Excited to see how folks use this one."
+        },
+        {
+          "title": "Blobby Smart Visualization Almost Launch",
+          "description": "Smart vis building from AI coming soon. A final demo of the query, interpret, visualize workflow for building better vis or hand tuning via AI."
+        },
+        {
+          "title": "Blobby Learns Xlookup",
+          "description": "Ever expanding Blobby's capability. Now you can chain together pairs of independent queries through lookups to bring time-series next to each other or other ad hoc use cases."
+        },
+        {
+          "title": "Blobby Learns Requery",
+          "description": "Another new skill for Blobby. Now you can requery previous queries through intermediate query views. Useful for regrouped aggregates, or other types of more complex analyses. Still some work to do on engaging when to use all these new techniques.'"
+        },
+        {
+          "title": "Claude Code Project Manager",
+          "description": "Steven shows off a new project management tool he built to manage Claude Code and keep the robots on task."
+        },
+        {
+          "title": "Model IDE Smart Autocomplete",
+          "description": "An early look at some work to layer intelligent auto-completion (think cursor) into the model development experience."
+        },
+        {
+          "title": "AI Calculation Functions",
+          "description": "This is a new idea to open up AI functions to our calculation language using the AI native functions in the data warehouse (think Snowflake Cortex or Databricks AI Functions or BigQuery AI functions). This opens up on-the-fly classification or summary, lots of great use cases, but bit more work to do to launch."
+        },
+        {
+          "title": "Vibe Coding AI Context",
+          "description": "Demo of a new technique for developing AI context and getting better results from Blobby using Cursor."
+        },
+        {
+          "title": "Dashboard Tabs v0",
+          "description": "The containers work isn't just about single-page layout, it's laying the ground work for native tabbed dashboards. Luke previews a first look at the editor experience for tabs."
+        },
+        {
+          "title": "Dashboard Container Layout Work",
+          "description": "Still chugging along on dashboard containers. Here's a first look at the new layout controls and experience for builders."
+        },
+        {
+          "title": "Export Solo Spreadsheet Tabs",
+          "description": "Now you can export individual spreadsheet tabs from the dashboard, we'll take care of the query dependencies."
+        },
+        {
+          "title": "Azure Downloads",
+          "description": "Continuing the work on lifting Omni into Azure - a quick demo of downloads in the new stack."
+        },
+        {
+          "title": "ADBC",
+          "description": "We're testing Arrow for connectivity to the data warehouse (rather than JDBC). The result is massive speed-ups over large result sets, and even some small ones over tiny datasets. Still exploring, but hopeful this can make Omni even faster for everyone."
+        },
+        {
+          "title": "All Tables in Workbooks to Get Started",
+          "description": "Before models get built, finding what you need was too hard. We're making that set-up process easier to get started with Omni."
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "date": "2025-11-21",
+      "url": "https://omni.co/demos/20251121",
+      "fully_scraped": true,
+      "scraped_at": "2026-02-26T05:37:02Z",
+      "title": "Demos",
+      "demos": [
+        {
+          "title": "AI",
+          "description": "Ask questions, get answers you trust"
+        },
+        {
+          "title": "Case Studies",
+          "description": "How customers use Omni"
+        },
+        {
+          "title": "Demos",
+          "description": "Weekly product demo videos"
+        },
+        {
+          "title": "About",
+          "description": "Why we're building Omni"
+        },
+        {
+          "title": "Every week, our team shares what weâre working on.",
+          "description": ""
+        },
+        {
+          "title": "Note:",
+          "description": ""
+        },
+        {
+          "title": "November 21, 2025",
+          "description": "Tons of AI this week"
+        },
+        {
+          "title": "Blobby Learns to Model",
+          "description": "We're teaching Blobby to model. Now you can build topics on the fly in AI, add relationships, or just generally do whatever you need from a modeling standpoint. Amazing for getting started or just supplementing the current model."
+        },
+        {
+          "title": "Blobby Learns Mustache",
+          "description": "Blobby now knows *you* - great for lots of analyses (show me my pipeline, my customers, my usage, etc). This also means you can use mustache dynamically in AI context to pass user-specific information."
+        },
+        {
+          "title": "Blobby Learns Visualization",
+          "description": "We're teaching Blobby more skills. Soon Blobby will be able to edit the fullness of the visualization spec - add labels, change axes, chart types, colors - anything you can do in the UI. Bit more to do here, but no more UI for building unless you want it."
+        },
+        {
+          "title": "Snowflake Fuzzy Search",
+          "description": "We're playing around with new techniques to improve the AI experience. Here we use Snowflake Cortex to build a fuzzy search index for easier topical lookups. This would open up more natural filtering behaviors for lots of use cases (like support tickets in the demo)."
+        },
+        {
+          "title": "Dynamic Groups",
+          "description": "Now you can create completely dynamic groups even based on associated metrics (ie. top 10 by count + other)."
+        },
+        {
+          "title": "Pull Request Required Dashboard Changes",
+          "description": "For many use cases you want complete review on dashboard changes. Now you can enforce branch-based changes through git for specific dashboards."
+        },
+        {
+          "title": "Omni in Azure",
+          "description": "Our first demo of running queries in Azure. More work to do but Omni is going multi-cloud."
+        },
+        {
+          "title": "Renderer in Azure",
+          "description": "More Azure progress, this time on the renderer."
+        },
+        {
+          "title": "More Dashboard Containers",
+          "description": "Continuing all the progress on dashboard containers, we go through an end-to-end example of a complex dashboard layout."
+        },
+        {
+          "title": "Workbook Field Building Improvements",
+          "description": "Tuning up the experience vis-a-vis workbook models and topic scoped models to give you all the control you need."
+        },
+        {
+          "title": "Model Ignore Improvements in Branches",
+          "description": "Spending a bit of time buffing out a rough edge around removing ignore in branches."
+        },
+        {
+          "title": "Solution Engineering AI",
+          "description": "A demo of some new internal tooling to help solutions engineers understand how we talk about different topics in the field."
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "date": "2025-11-14",
+      "url": "https://omni.co/demos/20251114",
+      "fully_scraped": true,
+      "scraped_at": "2026-02-26T05:37:04Z",
+      "title": "Demos",
+      "demos": [
+        {
+          "title": "AI",
+          "description": "Ask questions, get answers you trust"
+        },
+        {
+          "title": "Case Studies",
+          "description": "How customers use Omni"
+        },
+        {
+          "title": "Demos",
+          "description": "Weekly product demo videos"
+        },
+        {
+          "title": "About",
+          "description": "Why we're building Omni"
+        },
+        {
+          "title": "Every week, our team shares what weâre working on.",
+          "description": ""
+        },
+        {
+          "title": "Note:",
+          "description": ""
+        },
+        {
+          "title": "November 14, 2025",
+          "description": "Now in a couple clicks you can view a dashboard as any user in the system. Fast debugging and embed configuration. Also our first demo from the Explo team!!"
+        },
+        {
+          "title": "Dashboard View As",
+          "description": "Now in a couple clicks you can view a dashboard as any user in the system. Fast debugging and embed configuration. Also our first demo from the Explo team!!"
+        },
+        {
+          "title": "Dashboard Summary AI",
+          "description": "Continuing work on dashboard AI summarization. We overhauled the UX to enable selectively including queries and making sure we aren't running extra queries either. All in service of intelligent summaries across a bunch of different queries, even through the scheduler."
+        },
+        {
+          "title": "New Docs",
+          "description": "The docs are getting a huge overhaul in service of better search and a simpler navigation experience. We're still a few weeks out, but will include AI Q&A and a hugely improved search experience."
+        },
+        {
+          "title": "Better Query Killing",
+          "description": "We tuned up the heuristics for handling abandoned queries to make sure we keep the database load as light as possible and optimize performance."
+        },
+        {
+          "title": "In-App Chat Beta",
+          "description": "While most customers have a great experience with our live Slack chat, we are also opening up in-app chat for folks that prefer the web native experience. Want to make sure anyone who needs real time support gets it."
+        },
+        {
+          "title": "Smarter in_query",
+          "description": "We tuned up in_query to improve query optimization on non-dependent tables. Should be mostly silent but just much faster for complex dynamic queries."
+        },
+        {
+          "title": "Color Palette Builder UX",
+          "description": "We tuned up the color palette building experience for customizing the full app - now with previews and a front-end for color picking. All about making the basics delightful."
+        },
+        {
+          "title": "More Dashboard UX",
+          "description": "We're continuing the work to extend configuration in the dashboard experience."
+        },
+        {
+          "title": "dbt Branch Development in Omni",
+          "description": "Now you can coordinate work in dbt branches alongside Omni branches seamlessly."
+        },
+        {
+          "title": "Employee Info in Chat AI",
+          "description": "A quick internal demo of bring our employee data into Blobby's AI context. Incredible for quickly working with the context of the business over analytics (show me XYZ's team performance, etc)."
+        },
+        {
+          "title": "Custom Permissions Launch",
+          "description": "We rolling out the customization of fine-grained application controls for end users. Will be continuing to build out depth of control here across the app."
+        },
+        {
+          "title": "Turn Chat Session into Dash",
+          "description": "Some early working on turning AI threads into quick dashboards for sharing the analysis in different ways."
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "date": "2025-10-24",
+      "url": "https://omni.co/demos/20251024",
+      "fully_scraped": true,
+      "scraped_at": "2026-02-26T05:37:06Z",
+      "title": "Demos",
+      "demos": [
+        {
+          "title": "AI",
+          "description": "Ask questions, get answers you trust"
+        },
+        {
+          "title": "Case Studies",
+          "description": "How customers use Omni"
+        },
+        {
+          "title": "Demos",
+          "description": "Weekly product demo videos"
+        },
+        {
+          "title": "About",
+          "description": "Why we're building Omni"
+        },
+        {
+          "title": "Every week, our team shares what weâre working on.",
+          "description": ""
+        },
+        {
+          "title": "Note:",
+          "description": ""
+        },
+        {
+          "title": "October 24, 2025",
+          "description": "All sorts of dashboard work"
+        },
+        {
+          "title": "More Dashboard Containers",
+          "description": "Another preview of all the work on dashboard building with our new containers system (ie floating filters and sections)."
+        },
+        {
+          "title": "Workbook Query Linking",
+          "description": "Soon you'll be able to duplicate, but lock linkage to queries in your workbook. This allows separate visualizations of the same data, with firm linking to the source query for better reusability and management."
+        },
+        {
+          "title": "Dashboard Required Filters Preview",
+          "description": "A first look at required filters for dashboards. Still a little UX polish here, but now you can build workflow into your dashboards better."
+        },
+        {
+          "title": "More Extracts Progress",
+          "description": "A bunch of work on building and managing extracts (plus take a look at the query speed underneath)."
+        },
+        {
+          "title": "Easier Query References on Dash Markdown",
+          "description": "We made it easier to call queries for fast dynamic dashboard text building."
+        },
+        {
+          "title": "Embed User Dynamic Scheduling with User Attributes",
+          "description": "Now when scheduling to embed user emails, you can utilize send as recipient for dynamic scheduled content to your existing embed users."
+        },
+        {
+          "title": "New Embed Vanity Domain Cookie Controls",
+          "description": "Some new tools for managing authentication cookies in embed deployments with vanity domains."
+        },
+        {
+          "title": "AI File Upload v2",
+          "description": "Now your uploaded files will be retained for the full session, or even multiple files (modulo context window), for deeper, more-complex analyses."
+        },
+        {
+          "title": "AI Topic Builder v1",
+          "description": "We're coming up with easier ways to build topics using AI."
+        },
+        {
+          "title": "AI Topics Organization",
+          "description": "We tidied up topic select in chat."
+        },
+        {
+          "title": "Better Conditional Formatting Text",
+          "description": "We tuned up when to use white or black text with conditional formatting and cell highlighting to make sure the values pop."
+        },
+        {
+          "title": "Uptime Vis and Progress Vis",
+          "description": "More new markdown vis for showing charts like uptime levels or progress to goal with highlighting."
+        },
+        {
+          "title": "Cache Only Auto Run",
+          "description": "A new experience that allows being conservative with database load (ie hit the run button), but still allows for instant results from the cache. Great for cache debugging as well."
+        },
+        {
+          "title": "More Work on Scalable Vis Pipeline",
+          "description": "We're nearing the end of our project to make large visualizations more scalable and faster. The last piece was our smart label work."
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "date": "2025-10-17",
+      "url": "https://omni.co/demos/20251017",
+      "fully_scraped": true,
+      "scraped_at": "2026-02-26T05:37:09Z",
+      "title": "Demos",
+      "demos": [
+        {
+          "title": "AI",
+          "description": "Ask questions, get answers you trust"
+        },
+        {
+          "title": "Case Studies",
+          "description": "How customers use Omni"
+        },
+        {
+          "title": "Demos",
+          "description": "Weekly product demo videos"
+        },
+        {
+          "title": "About",
+          "description": "Why we're building Omni"
+        },
+        {
+          "title": "Every week, our team shares what weâre working on.",
+          "description": ""
+        },
+        {
+          "title": "Note:",
+          "description": ""
+        },
+        {
+          "title": "October 17, 2025",
+          "description": "As always a pile of new AI"
+        },
+        {
+          "title": "AI Workflows",
+          "description": "A new skills system for Blobby. Now developers can build structured workflows (think input requirements, multi-step analysis) directly into Blobby. This means your most common workflows - lookups, cohort analysis, really anything can be tightly controlled and organized for end users. Excited to see what folks build here."
+        },
+        {
+          "title": "Claude Haiku 4 5 Almost Launch",
+          "description": "A sort of demo of the new Haiku 4.5 experience - smarter, faster, cheaper - coming soon."
+        },
+        {
+          "title": "ERD Diagrams",
+          "description": "We have a beautiful new dedicated UX for understanding your join structure in the data model."
+        },
+        {
+          "title": "CSS Preview Mode",
+          "description": "We built a new experience to quickly understand the custom styling in light and dark mode to tighten up the experience quickly."
+        },
+        {
+          "title": "Filter Duplication on Dashboards",
+          "description": "More groundwork for our new dashboard experience. Now you can duplicate filters on the same field and apply differentially. This means tile-level filters will be easy and flexible."
+        },
+        {
+          "title": "Navigation Improvements",
+          "description": "Always tuning up quality of life. Here we have a pair of UX improvements to get what you want quicker and more easily, including a beautiful new tab search experience for workbooks."
+        },
+        {
+          "title": "Omni CLI Improvements",
+          "description": "We tightened up the CLI experience for syncing with main, and now have folks using our package live. Take a look!"
+        },
+        {
+          "title": "Faster Slack Scheduling",
+          "description": "Pulling metadata from the Slack API is pretty slow, so we reworked our experience to make sure that's not a blocker to building schedules."
+        },
+        {
+          "title": "Improving Developer Productivity",
+          "description": "An internal facing demo of some improvements to our developer workflows."
+        },
+        {
+          "title": "Blobby Designer Studio",
+          "description": "We built a web app so anyone can build their own Blobby. More for us than you, but have fun with it."
+        },
+        {
+          "title": "Blobby Image Repo",
+          "description": "We've gotten lots of questions about our ridiculous breadth of Blobby emojis in Slack, so landed a repo of Blobbies all kinds for the enjoyers out there."
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "date": "2025-10-10",
+      "url": "https://omni.co/demos/20251010",
+      "fully_scraped": true,
+      "scraped_at": "2026-02-26T05:37:11Z",
+      "title": "Demos",
+      "demos": [
+        {
+          "title": "AI",
+          "description": "Ask questions, get answers you trust"
+        },
+        {
+          "title": "Case Studies",
+          "description": "How customers use Omni"
+        },
+        {
+          "title": "Demos",
+          "description": "Weekly product demo videos"
+        },
+        {
+          "title": "About",
+          "description": "Why we're building Omni"
+        },
+        {
+          "title": "Every week, our team shares what weâre working on.",
+          "description": ""
+        },
+        {
+          "title": "Note:",
+          "description": ""
+        },
+        {
+          "title": "October 10, 2025",
+          "description": "A first look at in-line documentation in the IDE. No more digging for docs as you build, now you have the full model reference code base at your fingertips."
+        },
+        {
+          "title": "Docs in the IDE",
+          "description": "A first look at in-line documentation in the IDE. No more digging for docs as you build, now you have the full model reference code base at your fingertips."
+        },
+        {
+          "title": "Cube Builder + Debugger",
+          "description": "We added a UI builder for Cubes (aggregate awareness to build intermediate caching), plus layered in clear debugging for the inspector. This is all in service of faster dashboards and exploration for everyone."
+        },
+        {
+          "title": "Blobby Learns Multi Modal Inputs ie Files",
+          "description": "Blobby has a new skill - now you can bring files into your AI analyses - including CSVs, PDFs, and images. This means Blobby can be used for \"vanilla\" analyses, alongside Omni queries. Also includes some discussion of future extension points."
+        },
+        {
+          "title": "AI Summarization Row Limit Massive Increase",
+          "description": "We massively increased the data available for summarization and analysis via AI. There are still limits for enormous data sets based on Claude token input limits, but now we're using all of it."
+        },
+        {
+          "title": "Blobby Gets Even Better at Checklists",
+          "description": "Continuing to iterate on deep research mode to make Blobby more disciplined around multi-query workflows and logical chains. Here we make sure each task is being completed and checked off."
+        },
+        {
+          "title": "Dashboard AI Topic Helper",
+          "description": "We added some helper text for editors to understand the AI experience that will be available to dashboard AI users."
+        },
+        {
+          "title": "Omni External IDE Launch",
+          "description": "We're getting close to release our external IDE experience in NPM. Search for \"Omni Client YAML Local Something Something\" soon."
+        },
+        {
+          "title": "dbt Semantic Layer Metrics",
+          "description": "We're still working on bringing your dbt semantic models into Omni. We've extended model building to metrics in your dbt models, plus bit of discussion on future work."
+        },
+        {
+          "title": "LOD Field Improvements",
+          "description": "Continuing to tune up the level-of-detail metrics building experience, including some new icons to make them clearer."
+        },
+        {
+          "title": "Exporting Formatted Spreadsheets",
+          "description": "Now your spreadsheets will export in all their formatted glory for both downloads and scheduling. We'll also bring dependency data tabs to make sure everything is working nicely."
+        },
+        {
+          "title": "Dynamic Subtotals with Controls",
+          "description": "We polished up the experience with subtotaled tables and controls to allow for dynamic grouping hierarchy and layouts."
+        },
+        {
+          "title": "Table Resizing & IDE Updates",
+          "description": "Bunch of polish to the table resizing experience, and bit of work on icons in the IDE as well"
+        },
+        {
+          "title": "IDP Initiated SAML Launch",
+          "description": "We'll be opening up IDP initiated SAML next week for customers, so enjoy one final demo."
+        },
+        {
+          "title": "Omni Testing in Playwright",
+          "description": "We've improved our testing to allow for more, faster development for our team."
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "date": "2025-10-03",
+      "url": "https://omni.co/demos/20251003",
+      "fully_scraped": true,
+      "scraped_at": "2026-02-26T05:37:14Z",
+      "title": "Demos",
+      "demos": [
+        {
+          "title": "AI",
+          "description": "Ask questions, get answers you trust"
+        },
+        {
+          "title": "Case Studies",
+          "description": "How customers use Omni"
+        },
+        {
+          "title": "Demos",
+          "description": "Weekly product demo videos"
+        },
+        {
+          "title": "About",
+          "description": "Why we're building Omni"
+        },
+        {
+          "title": "Every week, our team shares what weâre working on.",
+          "description": ""
+        },
+        {
+          "title": "Note:",
+          "description": ""
+        },
+        {
+          "title": "October 3, 2025",
+          "description": "Monster week across developer experience, AI, visualization, embed, and more!"
+        },
+        {
+          "title": "Omni IDE Native in Claude Code",
+          "description": "We're working on bringing the develop experience anywhere you are. Here we show some model building in a branch using Claude Code. Soon you'll be able to develop in Omni in whatever development environment you prefer."
+        },
+        {
+          "title": "Blobby Learns Planning Checklists",
+          "description": "Now when Blobby builds query plans, you'll see a full breakdown of queries and Blobby will check-off tasks as they are completely. The goal is just better control and insight into the querying process for AI."
+        },
+        {
+          "title": "Blobby Session Sharing Improvements",
+          "description": "Now you can quickly re-run queries from AI sessions you share or return too. We also polished up the sidebar experience for finding any of your previous chats."
+        },
+        {
+          "title": "Blobby Writes a 500 Join Query",
+          "description": "We hope you never do this, but sometimes it's fun to test the bounds of the app and Blobby. Here Blobby writes a 500 join query without sweating."
+        },
+        {
+          "title": "New Dash Almost Launch",
+          "description": "We're nearing the launch of flexible dashboard filters, the first of many pieces of work to more completely customize the full dashboard experience."
+        },
+        {
+          "title": "Localization First Look",
+          "description": "First look at a fully localized Omni dashboard. More to do, but great progress."
+        },
+        {
+          "title": "SQL Preamble",
+          "description": "You can now run arbitrary command in the database prior to queries. This opens up all sorts of custom workflows including UDFs or custom user variables."
+        },
+        {
+          "title": "Fast, Performant Giant Vis",
+          "description": "We're getting close to rolling out an overhaul to our rendering experience for vis that massively improves performance on the largest queries."
+        },
+        {
+          "title": "Map Region Backgrounds",
+          "description": "We add custom background so your shapefiles can be more clear in empty zones if you'd prefer."
+        },
+        {
+          "title": "Range Bound Charts",
+          "description": "Another new custom vis, this one for representing metrics inside a target band."
+        },
+        {
+          "title": "Bullet Charts",
+          "description": "We're adding new code for a pair of bullet visualization implementations - one in Vega that we demo here and another beautiful example with markdown."
+        },
+        {
+          "title": "Custom Trendline Colors",
+          "description": "Nearing the completion of our major vis refactor, but added a bit more functionality to customize trend lines."
+        },
+        {
+          "title": "Query Performance Analytics",
+          "description": "We added a new dashboard to analytics with a full breakdown of query performance for much better understanding of end user experience and where to focus developer effort."
+        },
+        {
+          "title": "Sharing Ephemeral Spreadsheets Via URL",
+          "description": "Now when end users take advantage of dynamic spreadsheets on dashboards, they can be shared in their edited state."
+        },
+        {
+          "title": "Drill Embed Event",
+          "description": "We added a custom event for developers to capture drill events and build any customization desired."
+        },
+        {
+          "title": "More App CSS Theming",
+          "description": "Continuing the build out of custom theming across the entire app. Here we demo some custom sidebars."
+        },
+        {
+          "title": "Custom Unnested JSON Field Naming and Better Schema Refresh",
+          "description": "Pair of demos. First, some work to give more control over names for fields from nested JSON. Second, bit of tune up to the schema refresh to make it simpler."
+        },
+        {
+          "title": "Grab Gab of New Docs",
+          "description": "We landed a bunch of new docs this week on everything from mustache to email user attributes to APIs to SCIM."
+        }
+      ],
+      "summary": ""
     }
   ]
 }
