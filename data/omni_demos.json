@@ -1,0 +1,864 @@
+{
+  "meta": {
+    "source": "https://omni.co/demos",
+    "last_scraped": "2026-02-25T00:00:00Z",
+    "scrape_notes": "Full index captured (104 weeks). Individual demo detail captured for select weeks where full content was retrievable. All other weeks have title only from index. IMPORTANT: Demos are POC/experiments - NOT guaranteed releases. Cross-reference with omni_changelog.json to determine what shipped.",
+    "total_weeks_indexed": 108,
+    "total_weeks_with_detail": 7,
+    "date_range": {
+      "earliest": "2024-01-20",
+      "latest": "2026-02-20"
+    },
+    "important_note": "Demos highlight what Omni is working on or experimenting with, but are NOT a guarantee of release. Cross-reference with omni_changelog.json to determine what actually shipped.",
+    "query_tips": "To check if a demo shipped: search omni_changelog.json for same feature keywords after the demo date. Gap between demo date and changelog date = development time. Demos with NO changelog match = not yet shipped or cancelled."
+  },
+  "index": [
+    {
+      "date": "2026-02-20",
+      "week_label": "February 20, 2026",
+      "url": "https://omni.co/demos",
+      "title": "Input Columns, Blobby Learns to Validate Work, AI Quickstarts, and More"
+    },
+    {
+      "date": "2026-02-13",
+      "week_label": "February 13, 2026",
+      "url": "https://omni.co/demos/20260213",
+      "title": "Blobby Joins the Modeling Team, Omni Becomes Your MCP, AI in All Views and Fields, Visual Drilling, New Dashboard Search, and More"
+    },
+    {
+      "date": "2026-02-06",
+      "week_label": "February 6, 2026",
+      "url": "https://omni.co/demos/20260206",
+      "title": "34 Demos - A Peek into the Future of Omni (Hint, Lots of AI)"
+    },
+    {
+      "date": "2026-01-30",
+      "week_label": "January 30, 2026",
+      "url": "https://omni.co/demos/20260130",
+      "title": "Blobby Builds a Dashboard, Better AI Streaming, Funnel Vis, and Way More AI + Everything Else"
+    },
+    {
+      "date": "2026-01-23",
+      "week_label": "January 23, 2026",
+      "url": "https://omni.co/demos/20260123",
+      "title": "Selectable Table Cells, Dashboard Filter Buttons and Custom UX, Dashboard Tab Vanity URLs, and Plenty More"
+    },
+    {
+      "date": "2026-01-16",
+      "week_label": "January 16, 2026",
+      "url": "https://omni.co/demos/20260116",
+      "title": "Lots More AI (Homepage AI, Multi-Vis), Sankey Launch, Multi-Fact Topics, Paginated Subtotals and Huge Bucket of QOL Work"
+    },
+    {
+      "date": "2026-01-09",
+      "week_label": "January 9, 2026",
+      "url": "https://omni.co/demos/20260109",
+      "title": "Tons of AI (BYO LLM, Model Debugger, KPI Vis, Cron), and 23 Other Demos (Lots of Quality of Life)"
+    },
+    {
+      "date": "2026-01-02",
+      "week_label": "January 2, 2026",
+      "url": "https://omni.co/demos/20260102",
+      "title": "Slackbot v0, Field Picker Multi-Level Nesting, Tons of Perf, SQL Ai Field Suggestions, Google Drive in Blobby (25 Demos to Start 2026)"
+    },
+    {
+      "date": "2025-12-19",
+      "week_label": "December 19, 2025",
+      "url": "https://omni.co/demos/20251219",
+      "title": "BYOLLM, AI Slash Commands, SQL Totals, Duration Fields, Tabs Beta, Query Snowflake Semantic Views, and So Much More (22 Videos!)"
+    },
+    {
+      "date": "2025-12-12",
+      "week_label": "December 12, 2025",
+      "url": "https://omni.co/demos/20251212",
+      "title": "Tons of New Dashboards (Tab Designer, Request Access, Filter Layout, Zoom, Drag Rebuild), Complex Filters, Custom Emojis, and Frankly Too Much To List (22 Demos!!!)"
+    },
+    {
+      "date": "2025-12-05",
+      "week_label": "December 5, 2025",
+      "url": "https://omni.co/demos/20251205",
+      "title": "Tabbed Dash Beta, Per User AI, Lots More AI, Ridiculously Performant Giant Vis, Pie Rebuild Almost Launch, and More"
+    },
+    {
+      "date": "2025-12-01",
+      "week_label": "December 1, 2025",
+      "url": "https://omni.co/demos/20251201",
+      "title": "Blobby Learns to Search Google Drive, Tons of AI (Vis, Calcs, IDE), More Dash Containers, ADBC, and More"
+    },
+    {
+      "date": "2025-11-21",
+      "week_label": "November 21, 2025",
+      "url": "https://omni.co/demos/20251121",
+      "title": "Tons of New AI (Modeling, Visualization, User Attributes), Dynamic Top N, Pull Request Required Dashboards, Azure, and More!!"
+    },
+    {
+      "date": "2025-11-14",
+      "week_label": "November 14, 2025",
+      "url": "https://omni.co/demos/20251114",
+      "title": "Dashboard View As, Dashboard Summary AI Getting Close, New Docs, Better Query Killing and More"
+    },
+    {
+      "date": "2025-11-07",
+      "week_label": "November 7, 2025",
+      "url": "https://omni.co/demos/20251107",
+      "title": "Stacked Bar Sorting, Deep Research Launch, Topic Scoped Fields in the UI, Lots of Performance Work and More"
+    },
+    {
+      "date": "2025-10-31",
+      "week_label": "October 31, 2025",
+      "url": "https://omni.co/demos/20251031",
+      "title": "Tons of Dashboard Work (AI Summaries, Custom Errors, Localization, and More), More Cubes, and Getting Close on Custom Permissions"
+    },
+    {
+      "date": "2025-10-24",
+      "week_label": "October 24, 2025",
+      "url": "https://omni.co/demos/20251024",
+      "title": "Tons of Dashboard Work, More AI, Better Conditional Formatting, and More"
+    },
+    {
+      "date": "2025-10-17",
+      "week_label": "October 17, 2025",
+      "url": "https://omni.co/demos/20251017",
+      "title": "AI Workflows, ERD Diagrams, CSS Previews, New Filter UX, and More Blobbies Than You Can Handle"
+    },
+    {
+      "date": "2025-10-10",
+      "week_label": "October 10, 2025",
+      "url": "https://omni.co/demos/20251010",
+      "title": "Docs in the IDE, Cube Building, Lots of AI, External Model Dev Launch, dbt Metrics, Spreadsheet Export, and More"
+    },
+    {
+      "date": "2025-10-03",
+      "week_label": "October 3, 2025",
+      "url": "https://omni.co/demos/20251003",
+      "title": "External Development IDE, Lots of Blobby, Moving Dashboard Filters, Localization, SQL Preamble, and 15 (!!!) More"
+    },
+    {
+      "date": "2025-09-26",
+      "week_label": "September 26, 2025",
+      "url": "https://omni.co/demos/20250926",
+      "title": "Fast Rendering of Giant Visualizations, New Schema Model Navigation, Mapping Result GeoJSON, and More"
+    },
+    {
+      "date": "2025-09-19",
+      "week_label": "September 19, 2025",
+      "url": "https://omni.co/demos/20250919",
+      "title": "dbt Semantic Layer, MCP OAuth, Model Blame, AI Session URLs, Huge Performance Wins for Vis, and 11 More!"
+    },
+    {
+      "date": "2025-09-12",
+      "week_label": "September 12, 2025",
+      "url": "https://omni.co/demos/20250912",
+      "title": "A New User Attribute Debugger UI, MCP Oauth, Vis Reaggregation Alpha, and More"
+    },
+    {
+      "date": "2025-09-05",
+      "week_label": "September 5, 2025",
+      "url": "https://omni.co/demos/20250905",
+      "title": "Custom Permissions, YAML Editor Guest Demo, Independent Chart Stacking Controls, and More Quality of Life"
+    },
+    {
+      "date": "2025-08-29",
+      "week_label": "August 29, 2025",
+      "url": "https://omni.co/demos/20250829",
+      "title": "AI Session Saving, IDE Folders, New SQL Experience, and Lots More"
+    },
+    {
+      "date": "2025-08-22",
+      "week_label": "August 22, 2025",
+      "url": "https://omni.co/demos/20250822",
+      "title": "Dynamic Dashboard Spreadsheets, Spreadsheet Drill, Google Sheets Export, and lots of Blobby (Dashboard AI, Smart Filters, and Dash Search)"
+    },
+    {
+      "date": "2025-08-15",
+      "week_label": "August 15, 2025",
+      "url": "https://omni.co/demos/20250815",
+      "title": "Blobby Learns Filtered Measures, Bunch of API (Including A+ Docs), New SQL Mode, Databricks Metrics Views, and Tons of Quality of Life Work"
+    },
+    {
+      "date": "2025-08-08",
+      "week_label": "August 8, 2025",
+      "url": "https://omni.co/demos/20250808",
+      "title": "Blobby Builds a Dashboard, More AI Everywhere, Snowflake Semantic Layer Sync, Top N + Other, and More"
+    },
+    {
+      "date": "2025-08-01",
+      "week_label": "August 1, 2025",
+      "url": "https://omni.co/demos/20250801",
+      "title": "dbt Exposures, New Embed Demo, Guest Learning Microsite, Dashboard Summarization, and More"
+    },
+    {
+      "date": "2025-07-25",
+      "week_label": "July 25, 2025",
+      "url": "https://omni.co/demos/20250725",
+      "title": "A big pile of your most requested features this week!"
+    },
+    {
+      "date": "2025-07-18",
+      "week_label": "July 18, 2025",
+      "url": "https://omni.co/demos/20250718",
+      "title": "Agent Blobby, Dashboard AI, Embedded AI Guest Demo, Topic Builder UI, Global Cache Busting Button, Plus Lots of Vis"
+    },
+    {
+      "date": "2025-07-11",
+      "week_label": "July 11, 2025",
+      "url": "https://omni.co/demos/20250711",
+      "title": "DB OAuth Passthrough (soon), Lots of Spreadsheets, Unlimited Excel Downloads, More Better Vis, Embed Error Eventing, and More"
+    },
+    {
+      "date": "2025-07-03",
+      "week_label": "July 3, 2025",
+      "url": "https://omni.co/demos/20250703",
+      "title": "Fill Gaps in Any Date Series, More AI Auto-Modeling, More Model Permissions, and More"
+    },
+    {
+      "date": "2025-06-27",
+      "week_label": "June 27, 2025",
+      "url": "https://omni.co/demos/20250627",
+      "title": "Automated Data Modeling from AI Sessions, Instant Dashboard Filters, Unlimited Paginated Data Tables, Unfurled Tables in Schedules, and 15 More!"
+    },
+    {
+      "date": "2025-06-20",
+      "week_label": "June 20, 2025",
+      "url": "https://omni.co/demos/20250620",
+      "title": "EAV Modeling, AI with Subqueries, Paginated PDFs, Trellis Soon, MCP Soon, and Lots More"
+    },
+    {
+      "date": "2025-06-13",
+      "week_label": "June 13, 2025",
+      "url": "https://omni.co/demos/20250613",
+      "title": "Omni MCP Getting Close, AI Summary Vis, Trellis Charts, Faster Workbooks, Custom Blobby, and More"
+    },
+    {
+      "date": "2025-06-06",
+      "week_label": "June 6, 2025",
+      "url": "https://omni.co/demos/20250606",
+      "title": "Omni MCP 1.0, Spreadsheets Getting Closer to Release, New Model Debug Modes, Markdown Vis AI, and More"
+    },
+    {
+      "date": "2025-05-30",
+      "week_label": "May 30, 2025",
+      "url": "https://omni.co/demos/20250530",
+      "title": "dbt Tests in AI Context, Blobby Chrome Extension, Workbook Quick Starts, Embed Folder Naming, Performance Work, and More"
+    },
+    {
+      "date": "2025-05-23",
+      "week_label": "May 23, 2025",
+      "url": "https://omni.co/demos/20250523",
+      "title": "AI Field Creation, AI MCP v0, Streaming AI Results, Level of Detail Calculation, Lots of Dashboard Improvements, and More"
+    },
+    {
+      "date": "2025-05-16",
+      "week_label": "May 16, 2025",
+      "url": "https://omni.co/demos/20250516",
+      "title": "Embedded AI, Tiny Grid Dashboard Launch, More AI (Chart Config, Field Descriptions), Or Access Grants, Complex Date Filters, and More"
+    },
+    {
+      "date": "2025-05-09",
+      "week_label": "May 9, 2025",
+      "url": "https://omni.co/demos/20250509",
+      "title": "Blobby Mobile, An AI Demo on Our Actual Data, Front End Topic Building, API Mini Apps, Scheduler APIs, and Much More"
+    },
+    {
+      "date": "2025-05-02",
+      "week_label": "May 2, 2025",
+      "url": "https://omni.co/demos/20250502",
+      "title": "More AI (Ai Mode Launch, New Slackbot), Custom Embed Nav, More API, and Handful of New Custom Vis"
+    },
+    {
+      "date": "2025-04-25",
+      "week_label": "April 25, 2025",
+      "url": "https://omni.co/demos/20250425",
+      "title": "AI Mode + More AI, dbt Description Push Down, IDE Search, Table Styling and More"
+    },
+    {
+      "date": "2025-04-18",
+      "week_label": "April 18, 2025",
+      "url": "https://omni.co/demos/20250418",
+      "title": "Lots of Mini Apps, Better IDE Search, Multi-tab Spreadsheets, Topic and View Visual Editor, More AI and More"
+    },
+    {
+      "date": "2025-04-11",
+      "week_label": "April 11, 2025",
+      "url": "https://omni.co/demos/20250411",
+      "title": "Dynamic Model Layers, Embed Nav Builder, Better AI Retry, and More Analytics"
+    },
+    {
+      "date": "2025-04-04",
+      "week_label": "April 4, 2025",
+      "url": "https://omni.co/demos/20250404",
+      "title": "Filter on Calcs, AI Retry, AI Evals, Query View UX, Google Sheets Export, and Much More"
+    },
+    {
+      "date": "2025-03-28",
+      "week_label": "March 28, 2025",
+      "url": "https://omni.co/demos/20250328",
+      "title": "AI Progress Everywhere (Field Context, AI API, Training Docs), New DB Throttling Controls, Content in Branches, and More"
+    },
+    {
+      "date": "2025-03-21",
+      "week_label": "March 21, 2025",
+      "url": "https://omni.co/demos/20250321",
+      "title": "New Filter Controls, Dataset Builders, Lots of Custom Vis, and Plenty More"
+    },
+    {
+      "date": "2025-03-14",
+      "week_label": "March 14, 2025",
+      "url": "https://omni.co/demos/20250314",
+      "title": "Guest Vis Demo, Editing Vis from the Dashboard, CSV Upload Edit Workflows, a Slack Emoji App, and More"
+    },
+    {
+      "date": "2025-03-07",
+      "week_label": "March 7, 2025",
+      "url": "https://omni.co/demos/20250307",
+      "title": "Docs AI, Editing Visualizations Directly on the Dashboard, Unlimited Schedules and Downloads, dbt Environment Clean-up and More"
+    },
+    {
+      "date": "2025-02-28",
+      "week_label": "February 28, 2025",
+      "url": "https://omni.co/demos/20250228",
+      "title": "Lots of CSV Upload and Spreadsheets, Heatmaps, Color Promotion, and Lots More"
+    },
+    {
+      "date": "2025-02-21",
+      "week_label": "February 21, 2025",
+      "url": "https://omni.co/demos/20250221",
+      "title": "CSVs in the Data Warehouse (and Editable in a Spreadsheet!), Chart Color Promotion, and 13 More Demos"
+    },
+    {
+      "date": "2025-02-14",
+      "week_label": "February 14, 2025",
+      "url": "https://omni.co/demos/20250214",
+      "title": "CSV Upload Soft Launch, Instant Filters, More Color Work, Better Chart Labels, and More"
+    },
+    {
+      "date": "2025-02-06",
+      "week_label": "February 6, 2025",
+      "url": "https://omni.co/demos/20250206",
+      "title": "AI Filters, Dashboard Performance Reports, Clear Time Filters, Per-User Attributes Page, Our First Spreadsheet App, and More"
+    },
+    {
+      "date": "2025-01-31",
+      "week_label": "January 31, 2025",
+      "url": "https://omni.co/demos/20250131",
+      "title": "Smart Labels, Editing Vis from the Dashboard, AI Chart Building, Cache Busting API, and More"
+    },
+    {
+      "date": "2025-01-24",
+      "week_label": "January 24, 2025",
+      "url": "https://omni.co/demos/20250124",
+      "title": "CSV Upload (Preview), AI Summary Tiles, Advanced Vis UI Builder, Embed URL Sharing, and More"
+    },
+    {
+      "date": "2025-01-17",
+      "week_label": "January 17, 2025",
+      "url": "https://omni.co/demos/20250117",
+      "title": "Lots of API, Vis Series Coloring, AI Query Summary, Model Usage Analytics, and Lots of Polish and Pretty Vis"
+    },
+    {
+      "date": "2025-01-10",
+      "week_label": "January 10, 2025",
+      "url": "https://omni.co/demos/20250110",
+      "title": "Snowflake Cortex Columns, Sub-Folders (Early), Editing dbt Models, and Much More"
+    },
+    {
+      "date": "2025-01-03",
+      "week_label": "January 3, 2025",
+      "url": "https://omni.co/demos/20250103",
+      "title": "Bunch of AI Improvements, More/Better Usage Data, Concurrency Improvements, and More"
+    },
+    {
+      "date": "2024-12-20",
+      "week_label": "December 20, 2024",
+      "url": "https://omni.co/demos/20241220",
+      "title": "Controls in Tiles, Topic-less AI, and Lots of Small Wins Throughout the App"
+    },
+    {
+      "date": "2024-12-13",
+      "week_label": "December 13, 2024",
+      "url": "https://omni.co/demos/20241213",
+      "title": "Color Modeling Launch, More Excel Functions, Dynamic Column Modeling, Drafts Refinement and Lots of Polish"
+    },
+    {
+      "date": "2024-12-06",
+      "week_label": "December 6, 2024",
+      "url": "https://omni.co/demos/20241206",
+      "title": "dbt Reader, Nearly-Alpha Spreadsheets, Inline IDE Auto-Correct, and Lots More"
+    },
+    {
+      "date": "2024-12-02",
+      "week_label": "December 2, 2024",
+      "url": "https://omni.co/demos/20241202",
+      "title": "Simpler dashboard URLs, tab descriptions, calc descriptions, table and vis view, topic files, and more"
+    },
+    {
+      "date": "2024-11-22",
+      "week_label": "November 22, 2024",
+      "url": "https://omni.co/demos/20241122",
+      "title": "*Actual* Spreadsheets, Mapping Vis Colors in the Data Model, and Much More"
+    },
+    {
+      "date": "2024-11-15",
+      "week_label": "November 15, 2024",
+      "url": "https://omni.co/demos/20241115",
+      "title": "Flexible Totals (Including Dimensions and Calc), Calculations with Controls, Better SQL, and More"
+    },
+    {
+      "date": "2024-11-08",
+      "week_label": "November 8, 2024",
+      "url": "https://omni.co/demos/20241108",
+      "title": "AI Tuning, Lots of Visualization Improvements, Better Date Filtering, and Our First Customer Demo"
+    },
+    {
+      "date": "2024-11-01",
+      "week_label": "November 1, 2024",
+      "url": "https://omni.co/demos/20241101",
+      "title": "User Specific Timezones, AI Query Tuning, Versioning Dashboards, and Much More"
+    },
+    {
+      "date": "2024-10-25",
+      "week_label": "October 25, 2024",
+      "url": "https://omni.co/demos/20241025",
+      "title": "Vis Config Locking, More Smart Autocomplete, Model Speeds-Ups and Some Table Polish"
+    },
+    {
+      "date": "2024-10-18",
+      "week_label": "October 18, 2024",
+      "url": "https://omni.co/demos/20241018",
+      "title": "Smart IDE auto-complete, map regions, more dashboard CSS, embedded dashboard scheduling"
+    },
+    {
+      "date": "2024-10-11",
+      "week_label": "October 11, 2024",
+      "url": "https://omni.co/demos/20241011",
+      "title": "New model controls for timeframes and filter value labels, more visualization configuration, and a nice demo of richer dashboard styling"
+    },
+    {
+      "date": "2024-10-04",
+      "week_label": "October 4, 2024",
+      "url": "https://omni.co/demos/20241004",
+      "title": "dbt SQL mode, schema refresh via git, and new content permissions"
+    },
+    {
+      "date": "2024-09-27",
+      "week_label": "September 27, 2024",
+      "url": "https://omni.co/demos/20240927",
+      "title": "Embedded saving and sharing, map regions, period-over-period measures, Snowflake native deployment, and much more"
+    },
+    {
+      "date": "2024-09-20",
+      "week_label": "September 20, 2024",
+      "url": "https://omni.co/demos/20240920",
+      "title": "Exploding pivots, embedded dashboard sharing, global color palettes, and much more"
+    },
+    {
+      "date": "2024-09-13",
+      "week_label": "September 13, 2024",
+      "url": "https://omni.co/demos/20240913",
+      "title": "Global color palettes, cross-tab spreadsheet references and 12 (?!) more"
+    },
+    {
+      "date": "2024-09-06",
+      "week_label": "September 6, 2024",
+      "url": "https://omni.co/demos/20240906",
+      "title": "Workbook Drafts Preview, SFTP Scheduling, Embedded Content Management, and More"
+    },
+    {
+      "date": "2024-08-30",
+      "week_label": "August 30, 2024",
+      "url": "https://omni.co/demos/20240830",
+      "title": "Drill queries, dashboard links, TEXT() promotion, and more"
+    },
+    {
+      "date": "2024-08-23",
+      "week_label": "August 23, 2024",
+      "url": "https://omni.co/demos/20240823",
+      "title": "Embed dashboard linking, send to Google Sheets, calculations on SQL, and 11 more!"
+    },
+    {
+      "date": "2024-08-16",
+      "week_label": "August 16, 2024",
+      "url": "https://omni.co/demos/20240816",
+      "title": "Unlimited downloads, even more custom visualizations in markdown, better advanced visualization UX, and more"
+    },
+    {
+      "date": "2024-08-09",
+      "week_label": "August 9, 2024",
+      "url": "https://omni.co/demos/20240809",
+      "title": "Sticky visualization settings, better auto-vis, unlimited downloads, and more"
+    },
+    {
+      "date": "2024-08-02",
+      "week_label": "August 2, 2024",
+      "url": "https://omni.co/demos/20240802",
+      "title": "Dashboard themes, dashboard vanity URLs, XLOOKUP portability, in_query, single-use views in topics and much more!"
+    },
+    {
+      "date": "2024-07-26",
+      "week_label": "July 26, 2024",
+      "url": "https://omni.co/demos/20240726",
+      "title": "IDE redesigns, lots of filter work, and much more"
+    },
+    {
+      "date": "2024-07-19",
+      "week_label": "July 19, 2024",
+      "url": "https://omni.co/demos/20240719",
+      "title": "IDE error auto-fixing, refresh schema on schedule, KPI styling enhancements, improved SQL auto-complete and lots more"
+    },
+    {
+      "date": "2024-07-12",
+      "week_label": "July 12, 2024",
+      "url": "https://omni.co/demos/20240712",
+      "title": "Query API alpha, table enhancements, controls for controls and lots more!"
+    },
+    {
+      "date": "2024-07-08",
+      "week_label": "July 8, 2024",
+      "url": "https://omni.co/demos/20240708",
+      "title": "Content as code, Drill modals in workbook & dbt pushdown"
+    },
+    {
+      "date": "2024-06-28",
+      "week_label": "June 28, 2024",
+      "url": "https://omni.co/demos/20240628",
+      "title": "Alerts, Email Bursting (User Attributes in Schedules), AI Querying, & More"
+    },
+    {
+      "date": "2024-06-21",
+      "week_label": "June 21, 2024",
+      "url": "https://omni.co/demos/20240621",
+      "title": "Workbook UX (+ Tab Reordering), Vis Config Stickiness, Inline Images in Tables, & More"
+    },
+    {
+      "date": "2024-06-14",
+      "week_label": "June 14, 2024",
+      "url": "https://omni.co/demos/20240614",
+      "title": "AI Copilot + History, Environment Variables for dbt, Legend Controls & more"
+    },
+    {
+      "date": "2024-06-07",
+      "week_label": "June 7, 2024",
+      "url": "https://omni.co/demos/20240607",
+      "title": "Dynamic Tables - Links and Events, Default Row Level Access Controls, Snowflake Native App, & more"
+    },
+    {
+      "date": "2024-05-31",
+      "week_label": "May 31, 2024",
+      "url": "https://omni.co/demos/20240531",
+      "title": "Branch Mode + Git, Single-Tile Scheduling, Dynamic dbt Schema Improvements, & more"
+    },
+    {
+      "date": "2024-05-24",
+      "week_label": "May 24, 2024",
+      "url": "https://omni.co/demos/20240524",
+      "title": "Omni In-App Logging, Tab Rearranging and Styling, Single-Dashboard-Only User Permission, & more"
+    },
+    {
+      "date": "2024-05-17",
+      "week_label": "May 17, 2024",
+      "url": "https://omni.co/demos/20240517",
+      "title": "Filter by Query, Field Swappers on the Dashboard, New Permissions Reporting"
+    },
+    {
+      "date": "2024-05-10",
+      "week_label": "May 10, 2024",
+      "url": "https://omni.co/demos/20240510",
+      "title": "Table Styling, Excel Downloads With Formulas (Launched), Stickier Vis Config (Launched), & more"
+    },
+    {
+      "date": "2024-05-03",
+      "week_label": "May 3, 2024",
+      "url": "https://omni.co/demos/20240503",
+      "title": "XLOOKUP, Embedded Workbooks, Dynamic Fields / Select Fields From Filters, & more"
+    },
+    {
+      "date": "2024-04-26",
+      "week_label": "April 26, 2024",
+      "url": "https://omni.co/demos/20240426",
+      "title": "Compound Filters, Pull Requests + Model History Cleanup, Dynamic dbt Warehouses, & more"
+    },
+    {
+      "date": "2024-04-19",
+      "week_label": "April 19, 2024",
+      "url": "https://omni.co/demos/20240419",
+      "title": "Dynamic Fields (Parameters), Sudo / Permissions Testing (Launched), In-Database Aggregate Awareness, & More"
+    },
+    {
+      "date": "2024-04-12",
+      "week_label": "April 12, 2024",
+      "url": "https://omni.co/demos/20240412",
+      "title": "Incremental Model Promotion From the Workbook, Workbook Embedding, API + Schema Refresh Via API, & more"
+    },
+    {
+      "date": "2024-04-05",
+      "week_label": "April 5, 2024",
+      "url": "https://omni.co/demos/20240405",
+      "title": "Dynamic dbt Schema Swapping, 3-Argument SUMIF, Cell References in SUMIF AND COUNTIF, & more"
+    },
+    {
+      "date": "2024-03-29",
+      "week_label": "March 29, 2024",
+      "url": "https://omni.co/demos/20240329",
+      "title": "Text-to-Vis (Vega Lite GPT), Text-to-Query (GPT Workbooks), Admin User Impersonation (Sudo), & more"
+    },
+    {
+      "date": "2024-03-22",
+      "week_label": "March 22, 2024",
+      "url": "https://omni.co/demos/20240322",
+      "title": "Dashboard PDF & CSV Downloads, Embed Themes (Gradients and Custom Fonts), & more"
+    },
+    {
+      "date": "2024-03-15",
+      "week_label": "March 15, 2024",
+      "url": "https://omni.co/demos/20240315",
+      "title": "Looker migration, Tables (Row Height, Markdown), Conditional Formatting, & more"
+    },
+    {
+      "date": "2024-03-08",
+      "week_label": "March 8, 2024",
+      "url": "https://omni.co/demos/20240308",
+      "title": "ETL Freshness, Dynamic dbt schema switching, Period-Over-Period, & more"
+    },
+    {
+      "date": "2024-03-01",
+      "week_label": "March 1, 2024",
+      "url": "https://omni.co/demos/20240301",
+      "title": "SCIM user management, Design polish, Connection refresh error improvements (with dbt), Simpler permissions, & more"
+    },
+    {
+      "date": "2024-02-23",
+      "week_label": "February 23, 2024",
+      "url": "https://omni.co/demos/20240223",
+      "title": "Ridiculously fast embedded dashboards, Seamless dashboard refreshing, Bonus filter wiring & more"
+    },
+    {
+      "date": "2024-02-16",
+      "week_label": "February 16, 2024",
+      "url": "https://omni.co/demos/20240216",
+      "title": "Complete CSS control for embed dashboard styling, Git workflows in data modeling, Filtering iframes, & more"
+    },
+    {
+      "date": "2024-02-09",
+      "week_label": "February 9, 2024",
+      "url": "https://omni.co/demos/20240209",
+      "title": "Dashboard styling control designs, Content validator + Clickhouse, Spreadsheet calcs over pivots, & more"
+    },
+    {
+      "date": "2024-02-03",
+      "week_label": "February 3, 2024",
+      "url": "https://omni.co/demos/20240202",
+      "title": "Slack scheduling, usage analytics and more!"
+    },
+    {
+      "date": "2024-01-27",
+      "week_label": "January 27, 2024",
+      "url": "https://omni.co/demos/20240126",
+      "title": "Calculations date math & pivot progress, Filtered dashboard emailing, dbt, & more"
+    },
+    {
+      "date": "2024-01-20",
+      "week_label": "January 20, 2024",
+      "url": "https://omni.co/demos/20240119",
+      "title": "Field level permissions, Content validator, Access filters, Pivots & more"
+    }
+  ],
+  "weeks_detail": [
+    {
+      "date": "2026-02-13",
+      "url": "https://omni.co/demos/20260213",
+      "fully_scraped": false,
+      "summary": "Blobby Joins the Modeling Team: Blobby follows you around the IDE and can intervene to build model (in branches). Goal is extreme productivity - automating formats on 100s of fields, descriptions, SQL building. Developers can review before accepting. Omni as MCP server: folks can integrate Blobby into external MCP use cases, bringing Omni goodness to any AI workflow. AI in All Views and Fields. Visual Drilling. New Dashboard Search."
+    },
+    {
+      "date": "2025-12-19",
+      "url": "https://omni.co/demos/20251219",
+      "fully_scraped": true,
+      "demos": [
+        {
+          "title": "Blobby Learns New LLMs (BYOLLM)",
+          "description": "Open up different LLM providers: ChatGPT, Gemini, BYO. Admin controls for orgs that want it.",
+          "author": "Gustav Staprans",
+          "tags": [
+            "AI",
+            "Administration"
+          ]
+        },
+        {
+          "title": "AI Slash Commands",
+          "description": "Power users can direct Blobby explicitly to different skills: agentic querying, visualization, summarization, field building, calculation.",
+          "author": "Jamie Davidson",
+          "tags": [
+            "AI"
+          ]
+        },
+        {
+          "title": "Deep Thinking UX Improvements",
+          "description": "Streaming chat experience tuned to hide less important steps while showing full train of thought when needed.",
+          "author": "Gustav Staprans",
+          "tags": [
+            "AI"
+          ]
+        },
+        {
+          "title": "Blobby Voice App",
+          "description": "Early DIY project to open up voice with Blobby. Early days to open up imagination for what's possible.",
+          "author": "Will Savage",
+          "tags": [
+            "AI",
+            "Use Case"
+          ]
+        },
+        {
+          "title": "SQL Totals",
+          "description": "Bringing front-end totals experience to SQL queries (sum, count, average, etc down a column).",
+          "author": "Steven Talbot",
+          "tags": [
+            "SQL",
+            "Workbook"
+          ]
+        },
+        {
+          "title": "Duration Fields",
+          "description": "A couple clicks to build duration fields in the UI with model pushdown when needed.",
+          "author": "TJ Banghart",
+          "tags": [
+            "Workbook",
+            "Modeling"
+          ]
+        },
+        {
+          "title": "Range Calc Pushdown",
+          "description": "Full range calculations (SUM(B:B), AVERAGE(C:C), etc) pushed down using LOD fields. Trivial comparison fields in UI, robust data model when needed.",
+          "author": "TJ Banghart",
+          "tags": [
+            "Workbook",
+            "Calcs",
+            "Modeling"
+          ]
+        },
+        {
+          "title": "Top N Filter Escaping",
+          "description": "New toggles with Top N to ignore/include filters for comparison to population at large.",
+          "author": "TJ Banghart",
+          "tags": [
+            "Workbook",
+            "Modeling"
+          ]
+        },
+        {
+          "title": "Tabs Beta Launch",
+          "description": "End-to-end demo of new tabs (pages) experience for dashboards. Beta out now.",
+          "author": "Luke Bowerman",
+          "tags": [
+            "Dashboards"
+          ]
+        },
+        {
+          "title": "Cross-Filtering (Very Alpha)",
+          "description": "First look at cross-filterable dashboards. UX considerations around native filters vs cross-filters.",
+          "author": "Steven Talbot",
+          "tags": [
+            "Dashboards"
+          ]
+        },
+        {
+          "title": "Bulk Dashboard Filter Mapping",
+          "description": "Map a filter to 40 tiles at once. Bulk mapping experience alongside in-line UX.",
+          "author": "Alisa Tatarinova",
+          "tags": [
+            "Dashboards"
+          ]
+        },
+        {
+          "title": "Field Picker Views In Use",
+          "description": "Toggle between specific fields in use or views in use - most helpful in gigantic topics.",
+          "author": "Luke Bowerman",
+          "tags": [
+            "Workbook"
+          ]
+        },
+        {
+          "title": "Workbook Tab Organization",
+          "description": "Organize workbook tabs by type, name, etc.",
+          "author": "Luke Bowerman",
+          "tags": [
+            "Workbook"
+          ]
+        },
+        {
+          "title": "Query Snowflake Semantic Views",
+          "description": "Query Snowflake semantic views directly in Omni. Translators back and forth for native experience.",
+          "author": null,
+          "tags": [
+            "Modeling",
+            "Snowflake"
+          ]
+        },
+        {
+          "title": "Custom Blobby Builder",
+          "description": "Build your own Blobby avatar using the custom Blobby builder.",
+          "author": null,
+          "tags": [
+            "AI",
+            "UI"
+          ]
+        },
+        {
+          "title": "Sankey Charts (Early Look)",
+          "description": "Early look at Sankey charts as part of expanding native visualization options.",
+          "author": null,
+          "tags": [
+            "Visualization"
+          ]
+        },
+        {
+          "title": "Live-Updating Queries Page",
+          "description": "Queries page live-updates to actively track and manage database usage from Omni.",
+          "author": null,
+          "tags": [
+            "Administration"
+          ]
+        },
+        {
+          "title": "dbt Integration in Azure",
+          "description": "dbt integration up and running in Azure - progress getting full app available in Azure.",
+          "author": null,
+          "tags": [
+            "dbt",
+            "Azure"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2025-12-12",
+      "url": "https://omni.co/demos/20251212",
+      "fully_scraped": false,
+      "summary": "22 demos: New pie chart with percentage calculations, optional totals, better labeling. Query cancellation (select some/all running queries). Azure scheduler demo. Native field masking gestures. Snowflake Semantic Views export (push Omni model backwards into Snowflake). Warning for unsaved SQL. Comma-delimited dashboard sharing. Tag display improvements. Feature flag management UI. Dashboard zoom (% zoom for layout control). Filter position/sizing control (complete control over filter positions). Drag dashboards into folders. UX pack: measure groups unfurl on search, SQL auto-complete, code folding, markdown editor. Download APIs for app builders. Custom Blobby emojis/avatars (custom avatars in core app, groundwork for BYO emojis)."
+    },
+    {
+      "date": "2025-11-07",
+      "url": "https://omni.co/demos/20251107",
+      "fully_scraped": false,
+      "summary": "Conditional formatting text color intelligence for light/dark mode. Faster pivots over large datasets with fill. Scheduler bursting for significantly more scale in sharing. Clearer content permissions inheritance from parent folders. Easier field dragging into SQL editor. Dynamic stack ordering for stacked charts (second most requested feature). Deep research getting ready for everyone (Blobby multi-stage analysis plans). Topic-scoped fields wired to UI. Better search for massive schemas."
+    },
+    {
+      "date": "2025-10-31",
+      "url": "https://omni.co/demos/20251031",
+      "fully_scraped": false,
+      "summary": "AI layer for summarizing/analyzing results of many queries on a dashboard. Custom empty/error messages for dashboard tiles. Dashboard localization (more languages, embedded use cases). Dashboard construction overhaul QOL - managing and deleting tiles. Map dashboard filters to calculations. Dashboard fully served out of cubing layer (instant slice and dice). Handling AI summaries when feature is disabled. Custom permissions getting close - handling duplication and resolution between permission groupings. eCharts pie chart testing (replacing Vega for pies). Embed tuning: disable right-click actions, URL-encoded markdown, plus one more."
+    },
+    {
+      "date": "2025-05-23",
+      "url": "https://omni.co/demos/20250523",
+      "fully_scraped": false,
+      "summary": "AI field creation: build fields directly from AI query (on-the-fly aggregates, derivative dimensions). AI MCP v0: Blobby in Goose and generic AI functions - data accessible from any chat service. Streaming AI results: Blobby tells you what it's doing while doing it. Level of detail calculations: escape or force grouping independent of the rest of the query (dynamic percent of totals, comparison to unfiltered data). Dashboard tile sizing improvements. Force expose long filter lists beyond default single line. Aggregate directly from visualization when data isn't at right grain."
+    },
+    {
+      "date": "2025-05-02",
+      "url": "https://omni.co/demos/20250502",
+      "fully_scraped": false,
+      "summary": "AI Mode launch (finishing touches, linking to workbook pages). Early Slack experience for Blobby. Training inside topic with example queries. Embed navigation custom experience and custom filters outside iframe. User-specific models / model localization work. API exposure ongoing. Branch management and modeling demos. Unnesting data complex aggregation tooling. Snowflake key-pair auth for DB connections. Custom vis library (12 visualization libraries via vibe code). Subtotal visualization polish. Spider/radar chart custom vis. Business growth visualization example."
+    }
+  ]
+}

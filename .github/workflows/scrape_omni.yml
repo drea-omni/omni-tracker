@@ -1,0 +1,158 @@
+name: Scrape Omni Changelog & Demos
+
+on:
+  # ── Scheduled: every Tuesday at 9am UTC ──────────────────────────────────
+  # (Omni tends to publish changelogs mid-week)
+  schedule:
+    - cron: "0 9 * * 2"
+
+  # ── Manual trigger with options ──────────────────────────────────────────
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Force re-scrape all weeks (not just new ones)"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+      target:
+        description: "What to scrape"
+        required: false
+        default: "both"
+        type: choice
+        options:
+          - both
+          - changelog-only
+          - demos-only
+      dry_run:
+        description: "Dry run — check what would change without saving"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+
+# Only allow one scrape job at a time
+concurrency:
+  group: scrape-omni
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    name: Scrape Omni
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # needed to commit updated JSON files
+
+    steps:
+      # ── 1. Checkout ─────────────────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      # ── 2. Set up Python ─────────────────────────────────────────────────
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      # ── 3. Install dependencies ───────────────────────────────────────────
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4 lxml
+
+      # ── 4. Build scraper flags ────────────────────────────────────────────
+      - name: Build scraper arguments
+        id: args
+        run: |
+          ARGS=""
+
+          # Force flag
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            ARGS="$ARGS --force"
+            echo "🔥 Force mode enabled"
+          fi
+
+          # Target flag
+          TARGET="${{ github.event.inputs.target }}"
+          if [ "$TARGET" = "changelog-only" ]; then
+            ARGS="$ARGS --changelog-only"
+          elif [ "$TARGET" = "demos-only" ]; then
+            ARGS="$ARGS --demos-only"
+          fi
+
+          # Dry run flag
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            ARGS="$ARGS --dry-run"
+            echo "🔍 Dry run — no files will be committed"
+          fi
+
+          echo "args=$ARGS" >> $GITHUB_OUTPUT
+          echo "dry_run=${{ github.event.inputs.dry_run || 'false' }}" >> $GITHUB_OUTPUT
+
+      # ── 5. Run the scraper ────────────────────────────────────────────────
+      - name: Run scraper
+        run: |
+          echo "Running: python scraper/scrape_omni.py ${{ steps.args.outputs.args }}"
+          python scraper/scrape_omni.py ${{ steps.args.outputs.args }}
+
+      # ── 6. Write step summary ─────────────────────────────────────────────
+      - name: Write job summary
+        if: always()
+        run: |
+          if [ -f "data/last_scrape_report.md" ]; then
+            cat data/last_scrape_report.md >> $GITHUB_STEP_SUMMARY
+          else
+            echo "## Scrape complete" >> $GITHUB_STEP_SUMMARY
+            echo "No report file generated (dry run or error)." >> $GITHUB_STEP_SUMMARY
+          fi
+
+      # ── 7. Check for changes ──────────────────────────────────────────────
+      - name: Check for changes
+        id: changes
+        if: steps.args.outputs.dry_run != 'true'
+        run: |
+          git diff --quiet data/ && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
+
+      # ── 8. Commit and push if changed ─────────────────────────────────────
+      - name: Commit updated data
+        if: steps.changes.outputs.changed == 'true' && steps.args.outputs.dry_run != 'true'
+        run: |
+          git config user.name  "omni-scraper-bot[bot]"
+          git config user.email "omni-scraper-bot@users.noreply.github.com"
+
+          # Stage only the data files
+          git add data/omni_changelog.json data/omni_demos.json
+
+          # Optionally include the report
+          git add data/last_scrape_report.md 2>/dev/null || true
+
+          # Build a descriptive commit message
+          TIMESTAMP=$(date -u "+%Y-%m-%d %H:%M UTC")
+          TRIGGER="${{ github.event_name }}"
+          if [ "$TRIGGER" = "workflow_dispatch" ]; then
+            TRIGGER="manual run by ${{ github.actor }}"
+          fi
+
+          git commit -m "chore(data): update omni changelog + demos — $TIMESTAMP
+
+          Triggered by: $TRIGGER
+          Force mode: ${{ github.event.inputs.force || 'false' }}
+          Target: ${{ github.event.inputs.target || 'both' }}
+
+          [skip ci]"
+
+          git push
+
+      # ── 9. No-change notice ───────────────────────────────────────────────
+      - name: No changes detected
+        if: steps.changes.outputs.changed == 'false'
+        run: |
+          echo "✅ No new data found — JSON files unchanged. Nothing to commit."
+          echo "## ✅ No new data" >> $GITHUB_STEP_SUMMARY
+          echo "The scraper ran successfully but found no new entries since the last run." >> $GITHUB_STEP_SUMMARY
