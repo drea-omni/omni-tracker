@@ -1,13 +1,12 @@
 {
   "meta": {
     "source": "https://omni.co/changelog",
-    "last_scraped": "2026-02-26T05:36:36Z",
-    "scrape_notes": "Auto-scraped by GitHub Action. Some pages may not be indexable — those are noted in weeks_not_yet_scraped.",
+    "last_scraped": "2026-02-26T06:49:14Z",
     "total_weeks_indexed": 71,
     "total_weeks_fully_scraped": 71,
     "date_range": {
       "earliest_indexed": "2023-07-26",
-      "latest_scraped": "2026-02-11"
+      "latest_scraped": "2026-02-20"
     }
   },
   "index": [
@@ -325,66 +324,59 @@
   ],
   "weeks": [
     {
-      "week_start": "2026-01-04",
-      "week_label": "Week of January 4, 2026",
+      "week_start": "2026-02-17",
+      "week_label": "Current week",
       "source_url": "https://omni.co/changelog",
       "fully_scraped": true,
+      "scraped_at": "2026-02-26T06:46:53Z",
       "days": [
         {
-          "date": "2026-01-09",
+          "date": "2026-02-20",
           "items": [
-            "Added a lastLogin timestamp to the SCIM user API endpoints (GET /api/scim/v2/Users and GET /api/scim/v2/Users/:id). This enables programmatic identification of inactive users for cleanup.",
-            "Users with Editor permissions can now delete empty folders they created. Previously, only users with Manager permissions could delete folders."
+            "Added Databricks Private Link support for both Azure and AWS infrastructure. You can now create private connections to Databricks workspaces using native Private Endpoints on Azure and VPC Interface Endpoints on AWS. See the PrivateLink documentation for setup details.",
+            "Added an organization-wide MCP server setting to Settings > AI settings that controls whether users can authorize external AI tools to connect via OAuth. When disabled, new OAuth approval requests are rejected and existing MCP grants are blocked from making tool calls. This setting defaults to enabled."
           ]
         },
         {
-          "date": "2026-01-08",
+          "date": "2026-02-19",
           "items": [
-            "Added API endpoints for managing dashboard filters and controls: GET /api/v1/dashboards/:identifier/filters (retrieve filter and control configuration) and PATCH /api/v1/dashboards/:identifier/filters (update filter values, control settings, and display order).",
-            "Added a GET /api/v1/documents/:identifier endpoint that returns document configuration in a format compatible with PUT for round-trip editing. This enables programmatic retrieval and modification of dashboard settings.",
-            "Added a new 'merged' model editing mode for branch models. This allows users to edit branch models merged with the shared model, enabling the ability to unignore items from the shared model while working in a branch.",
-            "Added the ability to use links defined in the model file when using the Display as link option in tables. Note: Changing a link label in the model will break existing references."
+            "Added YAML views and copy buttons to the workbook inspector , making it easy to view and copy query and visualization configuration in the sample query YAML format. You can now toggle between JSON and YAML views in the Query structure and Visualization config sections, and use the Copy query and visualization YAML button in the inspector header to copy both configurations at once in the format needed for topic files in the model IDE.",
+            "Added a Funnel visualization type, which you can now use to visualize data flowing through sequential steps. See the visualization documentation for details on configuration and use cases.",
+            "Added the ability to select built-in color palettes (such as \"Omni Blues\", \"Omni Threes\", and \"Omni\") as default palettes in the dashboard theme editor, in addition to custom palettes. Learn more about theming in the documentation ."
           ]
         },
         {
-          "date": "2026-01-07",
+          "date": "2026-02-18",
           "items": [
-            "Added Count True and Count False quick aggregation options for boolean fields. These options count rows where the boolean field is true or false, respectively.",
-            "Added an AI-powered cron expression generator to help create custom schedules for dashboard refreshes and schema refreshes. Enter a natural language description (e.g., 'every Monday at 9am') to generate the cron expression.",
-            "Extended PUT /api/v1/documents/:identifier endpoint with filterConfig and filterOrder support for setting dashboard filter configuration via API.",
-            "Extended the Run query API to allow unlimited pivoted query results when the result format is set to CSV or XLSX.",
-            "Extended the PUT /api/v1/documents/:identifier endpoint with query presentations support. Allows updating query tabs with fields, visualization configs, chart types, and metadata."
+            "Added a new GET /api/v1/uploads endpoint that allows you to list uploaded CSVs (data input tables). You can filter by upload type, connection, model, or file name, and the endpoint supports cursor-based pagination. See the API documentation for details.",
+            "Added the ability for Blobby to search the official Omni docs. This new tool is available in the Query Helper, AI Assistant , and Dashboard Assistant."
           ]
         },
         {
-          "date": "2026-01-06",
+          "date": "2026-02-17",
           "items": [
-            "Added PUT /api/v1/documents/:identifier endpoint to programmatically update dashboard documents. Supports updating the document name, facet filters setting, and refresh interval."
-          ]
-        },
-        {
-          "date": "2026-01-05",
-          "items": [
-            "Added POST /api/v1/documents/:identifier/duplicate endpoint to programmatically duplicate published documents. Supports specifying a destination folder and visibility scope.",
-            "Added a Problems page for dbt integrations that displays validation issues and errors in your dbt models.",
-            "Added a Sum sorting option for stacked charts that sorts segments by their total value across all stacks.",
-            "Added a PATCH /api/v1/documents/{identifier}/labels endpoint for bulk adding and removing labels from a document in a single atomic operation.",
-            "Added support for the ** (recursive wildcard) pattern in the List folders API endpoint. Use GET /api/unstable/folders?path=folder/** to retrieve all nested child folders under a given path."
+            "Added Australian Dollar (AUD) currency formatting options to the dimension and measure format parameter, allowing you to display numbers with the A$ symbol in standard, accounting, and financial formats.",
+            "Added url fields to document, query, and folder API responses, giving you direct links to any piece of content in the Omni UI.",
+            "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
+            "Customers Case Studies Customer Support",
+            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
+            "Company About Blog Careers Subscribe Explo Transition Status"
           ]
         }
       ]
     },
     {
-      "week_start": "2025-11-30",
-      "week_label": "Week of November 30, 2025",
+      "week_start": "2025-12-02",
+      "week_label": "November 30, 2025 Week of November 30, 2025",
       "source_url": "https://omni.co/changelog/20251130",
       "fully_scraped": true,
+      "scraped_at": "2026-02-26T06:47:11Z",
       "days": [
         {
           "date": "2025-12-04",
           "items": [
-            "Added an endpoint for removing a document from a user's favorites (DELETE /api/v1/documents/{documentId}/favorite). Supports userId query parameter for org-scoped API keys.",
-            "Added an endpoint for renaming documents. If the optional request body clearExistingDraft parameter is true, any existing draft will also be cleared.",
+            "Added an endpoint for removing a document from a user's favorites . If using an organization-scoped API key, requests can be made on behalf of a specific by including the userId query parameter ( DELETE /api/v1/documents/{documentId}/favorite?userId={membershipId} ).",
+            "Added an endpoint for renaming documents . If the optional request body clearExistingDraft parameter is true , any existing draft will also be cleared.",
             "Added support for defining descriptions for topic groups. When the topic_group_descriptions parameter is set in a model file, group descriptions will display in the topic selector in workbooks.",
             "Added the ability to have the AI summarize a chat and automatically name it.",
             "Added two new skills to the AI Query Helper. Blobby can now search database schemas and generate Omni model extensions based on the results. Blobby will prompt for review before promoting its changes to the workbook."
@@ -393,25 +385,35 @@
         {
           "date": "2025-12-03",
           "items": [
-            "Added an endpoint for adding a document to a user's favorites (PUT /api/v1/documents/{documentId}/favorite). Supports userId query parameter for org-scoped API keys.",
-            "Improved error messages returned by the Run query API when a document is missing a dashboard.",
-            "Renamed the group_by parameter to level_of_detail."
+            "Added an endpoint for adding a document to a user's favorites . If using an organization-scoped API key, requests can be made on behalf of a specific by including the userId query parameter ( PUT /api/v1/documents/{documentId}/favorite?userId={membershipId} ).",
+            "Improved error messages returned by the Run query API when a document is missing a dashboard. Responses will now include a Document with identifier \"<identifier>\" needs a dashboard to return queries message.",
+            "Renamed the group_by parameter to level_of_detail ."
           ]
         },
         {
           "date": "2025-12-02",
           "items": [
             "Added a View All link to the Favorites page.",
-            "Added support for Snowflake and Databricks AI functions usable as table calculations: AI_SUMMARIZE(text), AI_COMPLETE(prompt), AI_EXTRACT(text, labels), AI_CLASSIFY(text, categories), AI_SENTIMENT(text). Note: These functions will only display as suggestions when workbooks are based on Snowflake or Databricks databases."
+            "Added support for a few Snowflake and Databricks AI functions, which can be used in Omni as table calculations: AI_SUMMARIZE(text) - Summarize text content AI_COMPLETE(prompt) - Generate text completions (model selected automatically) AI_EXTRACT(text, labels) - Extract structured data from text AI_CLASSIFY(text, categories) - Classify text into categories AI_SENTIMENT(text) - Analyze sentiment of text Note: These functions will only display as suggestions when workbooks are based on Snowflake or Databricks databases.",
+            "AI_SUMMARIZE(text) - Summarize text content",
+            "AI_COMPLETE(prompt) - Generate text completions (model selected automatically)",
+            "AI_EXTRACT(text, labels) - Extract structured data from text",
+            "AI_CLASSIFY(text, categories) - Classify text into categories",
+            "AI_SENTIMENT(text) - Analyze sentiment of text",
+            "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
+            "Customers Case Studies Customer Support",
+            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
+            "Company About Blog Careers Subscribe Explo Transition Status"
           ]
         }
       ]
     },
     {
-      "week_start": "2025-11-16",
-      "week_label": "Week of November 16, 2025",
+      "week_start": "2025-11-17",
+      "week_label": "November 16, 2025 Week of November 16, 2025",
       "source_url": "https://omni.co/changelog/20251116",
       "fully_scraped": true,
+      "scraped_at": "2026-02-26T06:47:15Z",
       "days": [
         {
           "date": "2025-11-21",
@@ -424,74 +426,58 @@
           "date": "2025-11-20",
           "items": [
             "Added a Base access section to the new connection setup page. This allows you to specify the base level of access for a connection during the initial setup.",
-            "Added support for restoring previous versions of documents even when the associated branch has been deleted. Note: Archived drafts can't be restored if the associated branch has been deleted.",
-            "Moved content permission settings from General > Content permissions tab to Settings > Content permissions."
+            "Moved content permission settings from General > Content permissions tab to Settings > Content permissions ."
           ]
         },
         {
           "date": "2025-11-19",
           "items": [
-            "Added a new dynamic_top_n dimension parameter that allows you to generate Top N and Bottom N-type queries based on the sort and limit of a measure.",
+            "Added a new dynamic_top_n dimension parameter that allows you to generate Top N and Bottom N -type queries based on the sort and limit of a measure.",
             "Updated the Settings navigation to be easier to navigate. Pages are now grouped by section; additionally, the Billing page has been moved to the General settings page as a new tab."
           ]
         },
         {
           "date": "2025-11-17",
           "items": [
-            "Added scope prefix labels (e.g., 'My Documents', 'Shared with me') to document titles in folder breadcrumbs, improving navigation clarity by showing users the ownership context of documents.",
-            "Added support for passing user attributes to the AI Assistant via the ai_context parameter. Additionally, Blobby can now utilize user-specific information about the user in the chat. For example, if you say 'How are my accounts?' Blobby will know to query data only for accounts assigned to you."
+            "Added scope prefix labels (e.g., \"My Documents\", \"Shared with me\") to document titles in folder breadcrumbs, improving navigation clarity by showing users the ownership context of documents. The changes support both personal and shared scope documents.",
+            "Added support for passing user attributes to the AI Assistant via the ai_context parameter. Additionally, Blobby can now utilize user-specific information about the user in the chat. For example, if you say \"How are my accounts?\" Blobby will know to query data only for accounts assigned to you.",
+            "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
+            "Customers Case Studies Customer Support",
+            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
+            "Company About Blog Careers Subscribe Explo Transition Status"
           ]
         }
       ]
     },
     {
       "week_start": "2025-10-19",
-      "week_label": "Week of October 19, 2025",
+      "week_label": "October 19, 2025 Week of October 19, 2025",
       "source_url": "https://omni.co/changelog/20251019",
       "fully_scraped": true,
+      "scraped_at": "2026-02-26T06:47:23Z",
       "days": [
-        {
-          "date": "2025-10-24",
-          "items": [
-            "Previously, the WEEKDAY calculation treated 1 as Sunday. The calculation now mirrors Excel behavior, where 1 is Monday. Note: This change does not affect existing calculations, only those created after this change."
-          ]
-        },
-        {
-          "date": "2025-10-23",
-          "items": [
-            "Updated the Edit filter panel on dashboards to include an ID field for the filter. Going forward, filter IDs should be used when referencing filters in Markdown or URLs. Note: This update is backwards compatible."
-          ]
-        },
-        {
-          "date": "2025-10-22",
-          "items": [
-            "Added support for using LogRocket to record user sessions in embedded instances. This requires the use of a vanity domain. Reach out to Omni support to have this feature enabled."
-          ]
-        },
-        {
-          "date": "2025-10-20",
-          "items": [
-            "Consolidated the Add filter, Add tile, and Add control options in draft dashboards into a single Add menu."
-          ]
-        },
         {
           "date": "2025-10-19",
           "items": [
-            "Fixed an issue in schedules with setting period over period and control values. Now, you can correctly set PoP and all control values."
+            "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
+            "Customers Case Studies Customer Support",
+            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
+            "Company About Blog Careers Subscribe Explo Transition Status"
           ]
         }
       ]
     },
     {
-      "week_start": "2025-08-31",
-      "week_label": "Week of August 31, 2025",
+      "week_start": "2025-09-03",
+      "week_label": "August 31, 2025 Week of August 31, 2025",
       "source_url": "https://omni.co/changelog/20250831",
       "fully_scraped": true,
+      "scraped_at": "2026-02-26T06:47:38Z",
       "days": [
         {
           "date": "2025-09-04",
           "items": [
-            "Added support for drilling to spreadsheet tabs. To use, right-click on a cell in a spreadsheet tab and select Drill.",
+            "Added support for drilling to spreadsheet tabs. To use, right-click on a cell in a spreadsheet tab and select Drill .",
             "Fully released dashboard AI! Users can now use AI chat to ask follow up questions about visualizations on dashboards. Reach out to Omni support to have this feature enabled."
           ]
         },
@@ -501,173 +487,178 @@
             "Added a new folder parameter to schema views, which allows you to nest schemas in folders in the model IDE.",
             "Added an option to the refresh schema dialog that allows you to skip validating views that use SELECT * statements during the refresh. This allows you to perform a quicker refresh, but note that the views in Omni will not reflect any schema changes.",
             "Added support for inferring relationships from foreign key constraints in Postgres and Snowflake database connections. This feature allows Omni to automatically detect and create model relationships based on the foreign key definitions in the underlying database schema.",
-            "Fixed an issue in the Content Validator that made content metadata visible to Queriers who didn't have access to that content. Now, Queriers will only see metadata for content they can access."
+            "Fixed an issue in the Content Validator that made content metadata visible to Queriers who didn't have access to that content. Now, Queriers will only see metadata for content they can access.",
+            "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
+            "Customers Case Studies Customer Support",
+            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
+            "Company About Blog Careers Subscribe Explo Transition Status"
           ]
         }
       ]
     },
     {
-      "week_start": "2025-07-13",
-      "week_label": "Week of July 13, 2025",
+      "week_start": "2025-07-14",
+      "week_label": "July 13, 2025 Week of July 13, 2025",
       "source_url": "https://omni.co/changelog/20250713",
       "fully_scraped": true,
+      "scraped_at": "2026-02-26T06:47:52Z",
       "days": [
         {
           "date": "2025-07-17",
           "items": [
-            "Added an API for creating document drafts (POST /api/v1/documents/:identifier/draft). Creating a draft on a branch is supported by including a branchId in the request body.",
-            "Added color and size (radius) settings to the configuration option for point map visualizations."
+            "Added an API for creating document drafts. Creating a draft on a branch is supported. Give it a try at POST /api/v1/documents/:identifier/draft . To create a draft on a branch, include a branchId with the branch's UUID in the request body.",
+            "Added color and size (radius) settings to the configuration option for point map visualizations. The Size setting controls the radius, or spread, of displayed data points. If using a heatmap, you can use the Color setting to create or select an existing continuous palette."
           ]
         },
         {
           "date": "2025-07-16",
           "items": [
             "Added an API for transferring ownership of a schedule from one organization member to another.",
-            "Trellis charts - also known as small multiples - are now generally available! Access via the Small multiples section in a chart's configuration.",
+            "Trellis charts - also known as small multiples - are now generally available! Give this new feature a try with the Small multiples section in a chart's configuration.",
             "Updated deliveries to stream attachments directly from S3 when webhooks, Slack, or SFTP is used as the destination."
           ]
         },
         {
           "date": "2025-07-14",
           "items": [
-            "Improved how the AI Assistant / chat selects topics in a session and added the ability to let the AI dynamically switch between topics. Now, if you ask the AI about the data in a model, it will tell you about the available topics. Note: This only applies to the AI Assistant, not to the in-workbook query helper."
+            "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
+            "Customers Case Studies Customer Support",
+            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
+            "Company About Blog Careers Subscribe Explo Transition Status"
           ]
         }
       ]
     },
     {
-      "week_start": "2025-07-06",
-      "week_label": "Week of July 6, 2025",
+      "week_start": "2025-07-07",
+      "week_label": "July 6, 2025 Week of July 6, 2025",
       "source_url": "https://omni.co/changelog/20250706",
       "fully_scraped": true,
+      "scraped_at": "2026-02-26T06:47:53Z",
       "days": [
-        {
-          "date": "2025-07-11",
-          "items": [
-            "Added support for duplicating dashboard themes and setting a default theme for the organization. In Settings > Themes, use the options menu next to a theme to access new options. Note: Apply default theme to all dashboards applies the selected theme to existing dashboards that don't already have an assigned theme."
-          ]
-        },
         {
           "date": "2025-07-10",
           "items": [
-            "Added the ability to sort small multiples / chart facets. Access in the Small multiples section of a chart's configuration.",
-            "Fixed an issue where {{ .value }} references in filters would only render the first value in a multi-value string. Now, all values will correctly be included.",
-            "Moved the Analyze from here button from the top-right corner of the AI Assistant page to display next to the feedback buttons at the bottom of a message."
+            "Added the ability to sort to small multiples / chart facets. Access this in the Small multiples section of a chart's configuration by clicking the configuration icon in the top-right corner of the section. Then, use the Sort field. Check out the demo here .",
+            "Fixed an issue where {{ .value }} references in filters would only render the first value in a multi-value string. Now, all values will correctly be included."
           ]
         },
         {
           "date": "2025-07-09",
           "items": [
-            "Added a new entityFolderGroupContentRole parameter for embedding to set an embed entity group's permission level on its corresponding entity folder.",
-            "Added an option to Mercator map projections that will render the map as continuous when scrolling horizontally.",
-            "Added the ability to fill in missing values for datetimes even if a filter isn't specified. Omni will use MIN and MAX values of the field in the query result set to determine bounds for the fill.",
-            "Added the ability to independently define axes for small multiples / chart facets.",
-            "Updated the dbt setup flow to no longer require configuring an environment before the repository is connected."
+            "Added a new entityFolderGroupContentRole parameter for embedding. This parameter is used to set an embed entity group's permission level on its corresponding entity folder.",
+            "Added an option to Mercator map projections that will render the map as continuous when scrolling horizontally. Check out the demo here .",
+            "Added the ability to independently define axes for small multiples / chart facets. Access this in the Small multiples section of a chart's configuration by clicking the configuration icon in the top-right corner of the section. Then in the Charts section, use Independent scales setting. Check out the demo here .",
+            "Updated the dbt setup flow to no longer require configuring an environment before the repository is connected. Now, you'll be directed to set up an environment after Omni successfully connects to the repository, making it easier to separately troubleshoot repository and environment issues. Check out the demo here ."
           ]
         },
         {
           "date": "2025-07-07",
           "items": [
-            "Added a new owners parameter to topics, which accepts a list of email addresses indicating who the owners of a given topic are. This information can be used by the Omni AI.",
-            "Added a new ai_chat_topics parameter that defines a list of topics in the model to make accessible to the AI Assistant / embedded chat. Previously, a topic needed an ai_context parameter to be visible in the Assistant's topic picker.",
-            "Updated the document and folder permission APIs to accept the mini UUID of a user group instead of the full UUID."
+            "Added a new owners parameter to topics, which accepts a list of email addresses indicating who the owners of a given topic are. This information can be used by the Omni AI to determine who is the best person to answer questions about a query or its results.",
+            "Updated the document and folder permission APIs to accept the mini UUID of a user group instead of the full UUID. This resolves the mismatch between the User group APIs which returns mini IDs and the permission APIs that expected the full UUIDs.",
+            "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
+            "Customers Case Studies Customer Support",
+            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
+            "Company About Blog Careers Subscribe Explo Transition Status"
           ]
         }
       ]
     },
     {
-      "week_start": "2025-05-25",
-      "week_label": "Week of May 25, 2025",
+      "week_start": "2025-05-27",
+      "week_label": "May 25, 2025 Week of May 25, 2025",
       "source_url": "https://omni.co/changelog/20250525",
       "fully_scraped": true,
+      "scraped_at": "2026-02-26T06:48:05Z",
       "days": [
-        {
-          "date": "2025-05-30",
-          "items": [
-            "Added support for editing topics directly in workbooks! In a draft, open a topic in the workbook and click Model > Edit topic. Note: Changes made to topics in this editor still have to be promoted from the workbook to be reflected in shared models."
-          ]
-        },
-        {
-          "date": "2025-05-29",
-          "items": [
-            "Added functionality that automatically populates a field's all_values parameter using a dbt test's accepted_values."
-          ]
-        },
-        {
-          "date": "2025-05-28",
-          "items": [
-            "Updated the location of the Aggregation options for fields when working in the Chart options sidepanel. Aggregations are now available as a shortcut on the dropdown menu for the field."
-          ]
-        },
         {
           "date": "2025-05-27",
           "items": [
-            "Added a new Collapsible filters dashboard setting (Edit > Dashboard settings) that controls the collapsing behavior of dashboard filters.",
-            "Updated the AWS Bedrock model used for query generation to Claude 4 Sonnet. Applicable only to US-based instances."
+            "Added a new Collapsible filters dashboard setting - in a draft dashboard: Edit > Dashboard settings - that controls the collapsing behavior of dashboard filters.",
+            "Updated the AWS Bedrock model used for query generation to Claude 4 Sonnet. Applicable only to US-based instances.",
+            "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
+            "Customers Case Studies Customer Support",
+            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
+            "Company About Blog Careers Subscribe Explo Transition Status"
           ]
         }
       ]
     },
     {
-      "week_start": "2025-05-11",
-      "week_label": "Week of May 11, 2025",
+      "week_start": "2025-05-12",
+      "week_label": "May 11, 2025 Week of May 11, 2025",
       "source_url": "https://omni.co/changelog/20250511",
       "fully_scraped": true,
+      "scraped_at": "2026-02-26T06:48:09Z",
       "days": [
-        {
-          "date": "2025-05-16",
-          "items": [
-            "The majority of APIs are now v1! The /unstable routes will continue to work for the time being, but migration to v1 is recommended for new development."
-          ]
-        },
         {
           "date": "2025-05-15",
           "items": [
             "Added a hide-header search parameter which will hide the header when present on an embedded dashboard URL.",
-            "Moved the AI admin settings from Settings > General to its own page, Settings > AI."
+            "Moved the AI admin settings from Settings > General to its own page, Settings > AI ."
           ]
         },
         {
           "date": "2025-05-14",
           "items": [
-            "Added an API for removing recipients from a scheduled email task.",
-            "Added an API for retrieving a list of validation issues for a model.",
-            "Added support for embedding the AI query helper (Blobby chat) into embedded applications."
+            "Added an API for removing recipients from a scheduled email task .",
+            "Added an API for retrieving a list of validation issues for a model .",
+            "Added support for embedding the AI query helper (Blobby chat) into embedded applications. Check out the step-by-step guide to get started!"
           ]
         },
         {
           "date": "2025-05-13",
           "items": [
-            "Added APIs for pausing, resuming, and adding recipients to schedules.",
-            "Added an API for retrieving a list of schedules. This endpoint supports filtering, sorting, and pagination.",
+            "Added APIs for pausing , resuming , and adding recipients to schedules.",
+            "Added an API for retrieving a list of schedules . This endpoint supports filtering, sorting, and pagination.",
             "Updated the reset cache policy API to allow empty request bodies and to return timestamps in responses."
           ]
         },
         {
           "date": "2025-05-12",
           "items": [
-            "Added an ai_context property to database views."
+            "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
+            "Customers Case Studies Customer Support",
+            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
+            "Company About Blog Careers Subscribe Explo Transition Status"
           ]
         }
       ]
     },
     {
-      "week_start": "2025-04-06",
-      "week_label": "Week of April 6, 2025",
+      "week_start": "2025-04-07",
+      "week_label": "April 6, 2025 Week of April 6, 2025",
       "source_url": "https://omni.co/changelog/20250406",
       "fully_scraped": true,
+      "scraped_at": "2026-02-26T06:48:19Z",
       "days": [
         {
           "date": "2025-04-11",
           "items": [
-            "Split the AI summary settings into two to allow for more granular control: Allow data summarization (allows Blobby to summarize trends) and AI summary visualization (enables the AI summary visualization type).",
-            "Added support for editing query views in the UI.",
+            "Added an API that supports programmatically adding recipients to an existing scheduled email task . The endpoint accepts a comma-separated list of membership IDs and adds those users as recipients to the scheduled task's email destination.",
+            "Split the AI summary settings into two to allow for more granular control of AI summary features: Allow data summarization , which allows Blobby to summarize trends, and AI summary visualization , which enables the AI summary visualization type."
+          ]
+        },
+        {
+          "date": "2025-04-10",
+          "items": [
+            "Added support for editing query views in the UI .",
             "Added support for filtering to calculated fields.",
-            "Updated the AWS PrivateLink guide to clarify the types of VPCs Omni supports.",
-            "Added an API for listing database connections.",
-            "Cleaned up the sidebar in the docs to focus more on 'jobs to be done'.",
-            "Moved the API docs into a top-level section of the docs.",
-            "Renamed the Jobs page to Running queries to make it clearer what the page contains."
+            "Updated the AWS PrivateLink guide to clarify the types of VPCs Omni supports: only normal endpoints, not Redshift-managed."
+          ]
+        },
+        {
+          "date": "2025-04-07",
+          "items": [
+            "Cleaned up the sidebar in the docs to focus more on \"jobs to be done\" and less on product features. This change also removes some old categories and consolidates a few others.",
+            "Moved the API docs into a top-level section of the docs, now accessible in the top navigation as API .",
+            "Renamed the Jobs page to Running queries to make it clearer what the page contains.",
+            "Updated the code for some Markdown examples to correctly render when exported to PDF or PNG.",
+            "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
+            "Customers Case Studies Customer Support",
+            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
+            "Company About Blog Careers Subscribe Explo Transition Status"
           ]
         }
       ]
@@ -677,7 +668,7 @@
       "week_label": "January 16, 2025 dbt IDE updates, AI enhancements, UI-based SQL joins, measure color modeling, model development settings, new usage topic and organization settings",
       "source_url": "https://omni.co/changelog/20250116",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:35:48Z",
+      "scraped_at": "2026-02-26T06:48:25Z",
       "days": [
         {
           "date": "2025-01-16",
@@ -700,7 +691,7 @@
       "week_label": "October 29, 2024 Deliveries available in embed, new document settings, and more modeling enhancements",
       "source_url": "https://omni.co/changelog/20241029",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:35:56Z",
+      "scraped_at": "2026-02-26T06:48:34Z",
       "days": [
         {
           "date": "2024-10-29",
@@ -718,7 +709,7 @@
       "week_label": "February 8, 2026 Week of February 8, 2026",
       "source_url": "https://omni.co/changelog/20260208",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:34:35Z",
+      "scraped_at": "2026-02-26T06:46:55Z",
       "days": [
         {
           "date": "2026-02-11",
@@ -747,7 +738,7 @@
       "week_label": "January 25, 2026 Week of January 25, 2026",
       "source_url": "https://omni.co/changelog/20260125",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:34:37Z",
+      "scraped_at": "2026-02-26T06:46:57Z",
       "days": [
         {
           "date": "2026-01-29",
@@ -789,7 +780,7 @@
       "week_label": "January 18, 2026 Week of January 18, 2026",
       "source_url": "https://omni.co/changelog/20260118",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:34:39Z",
+      "scraped_at": "2026-02-26T06:46:59Z",
       "days": [
         {
           "date": "2026-01-21",
@@ -819,7 +810,7 @@
       "week_label": "January 5, 2026 Week of January 4, 2026",
       "source_url": "https://omni.co/changelog/20260104",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:34:41Z",
+      "scraped_at": "2026-02-26T06:47:01Z",
       "days": [
         {
           "date": "2026-01-09",
@@ -876,7 +867,7 @@
       "week_label": "December 28, 2025 Week of December 28, 2025",
       "source_url": "https://omni.co/changelog/20251228",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:34:44Z",
+      "scraped_at": "2026-02-26T06:47:03Z",
       "days": [
         {
           "date": "2025-12-29",
@@ -895,7 +886,7 @@
       "week_label": "December 21, 2025 Week of December 21, 2025",
       "source_url": "https://omni.co/changelog/20251221",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:34:46Z",
+      "scraped_at": "2026-02-26T06:47:05Z",
       "days": [
         {
           "date": "2025-12-23",
@@ -913,7 +904,7 @@
       "week_label": "December 14, 2025 Week of December 14, 2025",
       "source_url": "https://omni.co/changelog/20251214",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:34:48Z",
+      "scraped_at": "2026-02-26T06:47:07Z",
       "days": [
         {
           "date": "2025-12-18",
@@ -954,7 +945,7 @@
       "week_label": "December 7, 2025 Week of December 7, 2025",
       "source_url": "https://omni.co/changelog/20251207",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:34:50Z",
+      "scraped_at": "2026-02-26T06:47:09Z",
       "days": [
         {
           "date": "2025-12-11",
@@ -999,7 +990,7 @@
       "week_label": "November 23, 2025 Week of November 23, 2025",
       "source_url": "https://omni.co/changelog/20251123",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:34:52Z",
+      "scraped_at": "2026-02-26T06:47:13Z",
       "days": [
         {
           "date": "2025-11-25",
@@ -1017,7 +1008,7 @@
       "week_label": "November 9, 2025 Week of November 9, 2025",
       "source_url": "https://omni.co/changelog/20251109",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:34:54Z",
+      "scraped_at": "2026-02-26T06:47:17Z",
       "days": [
         {
           "date": "2025-11-12",
@@ -1045,7 +1036,7 @@
       "week_label": "November 2, 2025 Week of November 2, 2025",
       "source_url": "https://omni.co/changelog/20251102",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:34:56Z",
+      "scraped_at": "2026-02-26T06:47:19Z",
       "days": [
         {
           "date": "2025-11-05",
@@ -1072,7 +1063,7 @@
       "week_label": "October 26, 2025 Week of October 26, 2025",
       "source_url": "https://omni.co/changelog/20251026",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:34:58Z",
+      "scraped_at": "2026-02-26T06:47:21Z",
       "days": [
         {
           "date": "2025-10-30",
@@ -1107,7 +1098,7 @@
       "week_label": "October 12, 2025 Week of October 12, 2025",
       "source_url": "https://omni.co/changelog/20251012",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:35:00Z",
+      "scraped_at": "2026-02-26T06:47:25Z",
       "days": [
         {
           "date": "2025-10-17",
@@ -1162,7 +1153,7 @@
       "week_label": "October 5, 2025 Week of October 5, 2025",
       "source_url": "https://omni.co/changelog/20251005",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:35:02Z",
+      "scraped_at": "2026-02-26T06:47:27Z",
       "days": [
         {
           "date": "2025-10-09",
@@ -1187,7 +1178,7 @@
       "week_label": "September 28, 2025 Week of September 28, 2025",
       "source_url": "https://omni.co/changelog/20250928",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:35:04Z",
+      "scraped_at": "2026-02-26T06:47:30Z",
       "days": [
         {
           "date": "2025-10-01",
@@ -1215,7 +1206,7 @@
       "week_label": "September 21, 2025 Week of September 21, 2025",
       "source_url": "https://omni.co/changelog/20250921",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:35:06Z",
+      "scraped_at": "2026-02-26T06:47:32Z",
       "days": [
         {
           "date": "2025-09-22",
@@ -1235,7 +1226,7 @@
       "week_label": "September 14, 2025 Week of September 14, 2025",
       "source_url": "https://omni.co/changelog/20250914",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:35:08Z",
+      "scraped_at": "2026-02-26T06:47:34Z",
       "days": [
         {
           "date": "2025-09-19",
@@ -1276,7 +1267,7 @@
       "week_label": "September 7, 2025 Week of September 7, 2025",
       "source_url": "https://omni.co/changelog/20250907",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:35:10Z",
+      "scraped_at": "2026-02-26T06:47:36Z",
       "days": [
         {
           "date": "2025-09-11",
@@ -1317,7 +1308,7 @@
       "week_label": "August 24, 2025 Week of August 24, 2025",
       "source_url": "https://omni.co/changelog/20250824",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:35:12Z",
+      "scraped_at": "2026-02-26T06:47:40Z",
       "days": [
         {
           "date": "2025-08-29",
@@ -1342,7 +1333,7 @@
       "week_label": "August 17, 2025 Week of August 17, 2025",
       "source_url": "https://omni.co/changelog/20250817",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:35:14Z",
+      "scraped_at": "2026-02-26T06:47:42Z",
       "days": [
         {
           "date": "2025-08-21",
@@ -1390,7 +1381,7 @@
       "week_label": "August 10, 2025 Week of August 10, 2025",
       "source_url": "https://omni.co/changelog/20250810",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:35:16Z",
+      "scraped_at": "2026-02-26T06:47:44Z",
       "days": [
         {
           "date": "2025-08-13",
@@ -1411,7 +1402,7 @@
       "week_label": "August 3, 2025 Week of August 3, 2025",
       "source_url": "https://omni.co/changelog/20250803",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:35:18Z",
+      "scraped_at": "2026-02-26T06:47:46Z",
       "days": [
         {
           "date": "2025-08-07",
@@ -1448,7 +1439,7 @@
       "week_label": "July 27, 2025 Week of July 27, 2025",
       "source_url": "https://omni.co/changelog/20250727",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:35:20Z",
+      "scraped_at": "2026-02-26T06:47:48Z",
       "days": [
         {
           "date": "2025-07-29",
@@ -1476,7 +1467,7 @@
       "week_label": "July 20, 2025 Week of July 20, 2025",
       "source_url": "https://omni.co/changelog/20250720",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:35:22Z",
+      "scraped_at": "2026-02-26T06:47:50Z",
       "days": [
         {
           "date": "2025-07-25",
@@ -1508,7 +1499,7 @@
       "week_label": "June 29, 2025 Week of June 29, 2025",
       "source_url": "https://omni.co/changelog/20250629",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:35:24Z",
+      "scraped_at": "2026-02-26T06:47:55Z",
       "days": [
         {
           "date": "2025-06-30",
@@ -1526,7 +1517,7 @@
       "week_label": "June 22, 2025 Week of June 22, 2025",
       "source_url": "https://omni.co/changelog/20250622",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:35:26Z",
+      "scraped_at": "2026-02-26T06:47:57Z",
       "days": [
         {
           "date": "2025-06-27",
@@ -1572,7 +1563,7 @@
       "week_label": "June 15, 2025 Week of June 15, 2025",
       "source_url": "https://omni.co/changelog/20250615",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:35:27Z",
+      "scraped_at": "2026-02-26T06:47:59Z",
       "days": [
         {
           "date": "2025-06-18",
@@ -1592,7 +1583,7 @@
       "week_label": "June 8, 2025 Week of June 8, 2025",
       "source_url": "https://omni.co/changelog/20250608",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:35:29Z",
+      "scraped_at": "2026-02-26T06:48:01Z",
       "days": [
         {
           "date": "2025-06-11",
@@ -1620,7 +1611,7 @@
       "week_label": "June 1, 2025 Week of June 1, 2025",
       "source_url": "https://omni.co/changelog/20250601",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:35:31Z",
+      "scraped_at": "2026-02-26T06:48:03Z",
       "days": [
         {
           "date": "2025-06-03",
@@ -1645,7 +1636,7 @@
       "week_label": "May 18, 2025 Week of May 18, 2025",
       "source_url": "https://omni.co/changelog/20250518",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:35:34Z",
+      "scraped_at": "2026-02-26T06:48:07Z",
       "days": [
         {
           "date": "2025-05-19",
@@ -1666,7 +1657,7 @@
       "week_label": "May 4, 2025 Week of May 4, 2025",
       "source_url": "https://omni.co/changelog/20250504",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:35:36Z",
+      "scraped_at": "2026-02-26T06:48:11Z",
       "days": [
         {
           "date": "2025-05-05",
@@ -1686,7 +1677,7 @@
       "week_label": "April 27, 2025 Week of April 27, 2025",
       "source_url": "https://omni.co/changelog/20250427",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:35:38Z",
+      "scraped_at": "2026-02-26T06:48:13Z",
       "days": [
         {
           "date": "2025-05-02",
@@ -1730,7 +1721,7 @@
       "week_label": "April 21, 2025 Week of April 20, 2025",
       "source_url": "https://omni.co/changelog/20250420",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:35:40Z",
+      "scraped_at": "2026-02-26T06:48:15Z",
       "days": [
         {
           "date": "2025-04-25",
@@ -1764,7 +1755,7 @@
       "week_label": "April 13, 2025 Week of April 13, 2025",
       "source_url": "https://omni.co/changelog/20250413",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:35:42Z",
+      "scraped_at": "2026-02-26T06:48:17Z",
       "days": [
         {
           "date": "2025-04-18",
@@ -1822,7 +1813,7 @@
       "week_label": "March 31, 2025 Data inputs now available! New workbook and dbt enhancements, color modeling updates, StarRocks, M2M auth for Databricks, and tons of new APIs,",
       "source_url": "https://omni.co/changelog/20250331",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:35:44Z",
+      "scraped_at": "2026-02-26T06:48:21Z",
       "days": [
         {
           "date": "2025-03-31",
@@ -1857,7 +1848,7 @@
       "week_label": "February 19, 2025 CSV uploads, nested folders, AI summaries and filters, model performance improvements, smarter data labels, and as always, so much more",
       "source_url": "https://omni.co/changelog/20250219",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:35:46Z",
+      "scraped_at": "2026-02-26T06:48:23Z",
       "days": [
         {
           "date": "2025-02-19",
@@ -1893,7 +1884,7 @@
       "week_label": "December 19, 2024 dbt IDE in beta, dedicated topic files, colors for dimensions, custom Analytics reports, and lots more new features",
       "source_url": "https://omni.co/changelog/20241219",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:35:50Z",
+      "scraped_at": "2026-02-26T06:48:27Z",
       "days": [
         {
           "date": "2024-12-19",
@@ -1918,7 +1909,7 @@
       "week_label": "December 5, 2024 Custom column totals, dynamic database connections, SQL result interactivity, and other enhancements",
       "source_url": "https://omni.co/changelog/20241205",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:35:52Z",
+      "scraped_at": "2026-02-26T06:48:29Z",
       "days": [
         {
           "date": "2024-12-05",
@@ -1941,7 +1932,7 @@
       "week_label": "November 14, 2024 Smarter AI, New Editing Workflow, SQL Enhancements and More",
       "source_url": "https://omni.co/changelog/20241411",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:35:54Z",
+      "scraped_at": "2026-02-26T06:48:32Z",
       "days": [
         {
           "date": "2024-11-14",
@@ -1959,7 +1950,7 @@
       "week_label": "October 3, 2024 Embed Application Mode, Global Color Palettes, Cross-tab Cell References, New delivery options, and more!",
       "source_url": "https://omni.co/changelog/20241003",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:35:58Z",
+      "scraped_at": "2026-02-26T06:48:36Z",
       "days": [
         {
           "date": "2024-10-03",
@@ -1977,7 +1968,7 @@
       "week_label": "September 12, 2024 September 12, 2024 - Dashboard Themes, more download improvements, and making models more dynamic",
       "source_url": "https://omni.co/changelog/20240912",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:36:00Z",
+      "scraped_at": "2026-02-26T06:48:38Z",
       "days": [
         {
           "date": "2024-09-12",
@@ -1998,7 +1989,7 @@
       "week_label": "August 14, 2024 August 14, 2024 - Improved workbook ergonomics, more dashboard configurations, and a whole lot of magical modeling",
       "source_url": "https://omni.co/changelog/20240814",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:36:02Z",
+      "scraped_at": "2026-02-26T06:48:40Z",
       "days": [
         {
           "date": "2024-08-14",
@@ -2016,7 +2007,7 @@
       "week_label": "July 2, 2024 AI Query Experience, Alerts, Bursting, Controls, Content Search, and Embeddable Workbooks",
       "source_url": "https://omni.co/changelog/20240702",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:36:04Z",
+      "scraped_at": "2026-02-26T06:48:42Z",
       "days": [
         {
           "date": "2024-07-02",
@@ -2036,7 +2027,7 @@
       "week_label": "June 12, 2024 Embed Events, Dynamic Columns & Tables, Branch Mode & Git Integration (GA), Single-tile Scheduling and more!",
       "source_url": "https://omni.co/changelog/20240612",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:36:06Z",
+      "scraped_at": "2026-02-26T06:48:44Z",
       "days": [
         {
           "date": "2024-06-12",
@@ -2060,7 +2051,7 @@
       "week_label": "May 14, 2024 XLOOKUP (beta), Filter Updates, Dimensional Drilling, Excel Downloads, and more!",
       "source_url": "https://omni.co/changelog/20240514",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:36:08Z",
+      "scraped_at": "2026-02-26T06:48:46Z",
       "days": [
         {
           "date": "2024-05-14",
@@ -2083,7 +2074,7 @@
       "week_label": "April 19, 2024 New Table Features, Omni-98 Theme, Incremental Promotions, Impersonate User Mode, New Custom Visualizations and more!",
       "source_url": "https://omni.co/changelog/20240419",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:36:10Z",
+      "scraped_at": "2026-02-26T06:48:48Z",
       "days": [
         {
           "date": "2024-04-19",
@@ -2105,7 +2096,7 @@
       "week_label": "March 28, 2024 Modeling Branch Mode, Embed Updates, dbt Schema Switching, Download Dashboards, and Workbook Updates",
       "source_url": "https://omni.co/changelog/20240328",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:36:12Z",
+      "scraped_at": "2026-02-26T06:48:50Z",
       "days": [
         {
           "date": "2024-03-28",
@@ -2123,7 +2114,7 @@
       "week_label": "March 13, 2024 Promote Calcs to Model, Content Validator, SCIM User Management, and Other Improvements",
       "source_url": "https://omni.co/changelog/20240313",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:36:14Z",
+      "scraped_at": "2026-02-26T06:48:52Z",
       "days": [
         {
           "date": "2024-03-13",
@@ -2150,7 +2141,7 @@
       "week_label": "February 20, 2024 Data Delivery Workflows, Dashboard Auto-refresh, and Analytics for Admins",
       "source_url": "https://omni.co/changelog/20240220",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:36:16Z",
+      "scraped_at": "2026-02-26T06:48:54Z",
       "days": [
         {
           "date": "2024-02-20",
@@ -2168,7 +2159,7 @@
       "week_label": "January 26, 2024 Calculations, Cache Controls, and more Administration",
       "source_url": "https://omni.co/changelog/20240126",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:36:18Z",
+      "scraped_at": "2026-02-26T06:48:56Z",
       "days": [
         {
           "date": "2024-01-26",
@@ -2186,7 +2177,7 @@
       "week_label": "January 8, 2024 Excel-style calculations, Topic Permissions, Dashboard Goodies, Databricks connector and more!",
       "source_url": "https://omni.co/changelog/20240108",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:36:20Z",
+      "scraped_at": "2026-02-26T06:48:58Z",
       "days": [
         {
           "date": "2024-01-08",
@@ -2204,7 +2195,7 @@
       "week_label": "December 1, 2023 dbt Integration, Transposed Tables, and Dynamic Schemas",
       "source_url": "https://omni.co/changelog/20231201",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:36:22Z",
+      "scraped_at": "2026-02-26T06:49:00Z",
       "days": [
         {
           "date": "2023-12-01",
@@ -2222,7 +2213,7 @@
       "week_label": "November 3, 2023 SSO Embedding, Timezones, and more!",
       "source_url": "https://omni.co/changelog/20231103",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:36:24Z",
+      "scraped_at": "2026-02-26T06:49:02Z",
       "days": [
         {
           "date": "2023-11-03",
@@ -2240,7 +2231,7 @@
       "week_label": "October 13, 2023 Maps, Topic Organization, Schedule Options, and lots o' vis and model improvements",
       "source_url": "https://omni.co/changelog/20231013",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:36:26Z",
+      "scraped_at": "2026-02-26T06:49:04Z",
       "days": [
         {
           "date": "2023-10-13",
@@ -2262,7 +2253,7 @@
       "week_label": "September 22, 2023 SQL Super Powers, Embeddable Dashboards, Move-able Queries, and More",
       "source_url": "https://omni.co/changelog/20230922",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:36:28Z",
+      "scraped_at": "2026-02-26T06:49:06Z",
       "days": [
         {
           "date": "2023-09-22",
@@ -2281,7 +2272,7 @@
       "week_label": "August 31, 2023 KPI visualizations, row-level permissions, and SQL Server support",
       "source_url": "https://omni.co/changelog/20230831",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:36:30Z",
+      "scraped_at": "2026-02-26T06:49:08Z",
       "days": [
         {
           "date": "2023-08-31",
@@ -2299,7 +2290,7 @@
       "week_label": "August 24, 2023 Drag and drop vis editor, left click actions, and field aliases",
       "source_url": "https://omni.co/changelog/20230824",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:36:32Z",
+      "scraped_at": "2026-02-26T06:49:10Z",
       "days": [
         {
           "date": "2023-08-24",
@@ -2322,7 +2313,7 @@
       "week_label": "August 4, 2023 Viewer role, filter mapping, iframe in markdown, and visualization improvements",
       "source_url": "https://omni.co/changelog/20240804",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:36:34Z",
+      "scraped_at": "2026-02-26T06:49:12Z",
       "days": [
         {
           "date": "2023-08-04",
@@ -2347,7 +2338,7 @@
       "week_label": "July 26, 2023 Scheduled dashboards, text tiles, Markdown, and more",
       "source_url": "https://omni.co/changelog/20230726",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T05:36:36Z",
+      "scraped_at": "2026-02-26T06:49:14Z",
       "days": [
         {
           "date": "2023-07-26",
