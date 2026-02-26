@@ -403,7 +403,7 @@ function OmniExplorer(){
             <span style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:"#FFFFFF44",letterSpacing:"0.06em",textTransform:"uppercase"}}>Videos:</span>
             {["modal","inline","tab"].map(m=>(
               <button key={m} onClick={()=>setVideoMode(m)} className="toggle-btn"
-                style={{...vmBtn(videoMode===m),color:videoMode===m?"#FF2D6B":"#FFFFFF66",border:`1px solid ${videoMode===m?"#FF2D6B":"#FFFFFF22}`}}>
+                style={{...vmBtn(videoMode===m),color:videoMode===m?"#FF2D6B":"#FFFFFF66",border:"1px solid "+(videoMode===m?"#FF2D6B":"#FFFFFF22")}}>
                 {m==="modal"?"⬜ modal":m==="inline"?"⬇ inline":"↗ new tab"}
               </button>
             ))}
