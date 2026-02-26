@@ -271,7 +271,7 @@ function VideoModal({video,weekTitle,onClose,T}){
         </div>
         <div style={{position:"relative",paddingBottom:"56.25%",height:0,overflow:"hidden"}}>
           <iframe
-            src={`${video.embed_url}?autoplay=1&rel=0`}
+            src={`https://www.youtube.com/embed/${video.youtube_id}?autoplay=1&rel=0`}
             title={video.title||"Demo video"}
             allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture"
             allowFullScreen
@@ -668,91 +668,68 @@ function OmniExplorer(){
                     )}
                     {m&&isOpen&&(
                       <div style={{marginTop:10,padding:"12px 16px",background:T.bgSubtle,borderLeft:`3px solid ${T.accent}`,borderRadius:"0 8px 8px 0"}}>
-                        {/* Demo Week label */}
-                        <div style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:T.textMuted,letterSpacing:"0.1em",textTransform:"uppercase",marginBottom:6}}>Demo Week</div>
-                        {(()=>{
-                          const vids=m.demo.videos||[];
-                          const entryWords=item.text.toLowerCase().split(/\W+/).filter(w=>w.length>3);
-                          let bestScore=-1,bestVid=vids[0]||null;
-                          for(const v of vids){
-                            const vtWords=(v.title||"").toLowerCase().split(/\W+/).filter(w=>w.length>3);
-                            const overlap=entryWords.filter(w=>vtWords.includes(w)).length;
-                            if(overlap>bestScore){bestScore=overlap;bestVid=v;}
-                          }
-                          const specificUrl=bestVid?`https://www.youtube.com/watch?v=${bestVid.youtube_id}`:m.demo.url;
-                          const vidObj=bestVid||{youtube_url:m.demo.url,title:m.demo.title};
-                          const clId=`cl-vid-${i}`;
-                          return(
-                            <div style={{display:"flex",gap:10,alignItems:"flex-start"}}>
-                              {/* Thumbnail column */}
-                              {bestVid?.thumbnail&&(
-                                <div style={{flexShrink:0,width:88,borderRadius:6,overflow:"hidden",border:`1px solid ${T.border}`,cursor:"pointer",position:"relative"}}
-                                  onClick={()=>videoMode==="modal"?openModal(bestVid,m.demo.title):window.open(specificUrl,"_blank")}>
-                                  <img src={bestVid.thumbnail} alt={bestVid.title||"video"}
-                                    style={{width:"100%",display:"block",objectFit:"cover"}}
-                                    onError={e=>e.target.style.display="none"}/>
-                                  <div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",background:"rgba(0,0,0,0.25)"}}>
-                                    <div style={{width:22,height:22,borderRadius:"50%",background:"rgba(255,45,107,0.85)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:9,color:"#fff"}}>▶</div>
-                                  </div>
-                                </div>
-                              )}
-                              {/* Content column */}
-                              <div style={{flex:1,minWidth:0}}>
-                                {/* Title row + buttons */}
-                                <div style={{display:"flex",gap:8,alignItems:"flex-start",flexWrap:"wrap",marginBottom:4}}>
-                                  <span style={{fontSize:13,color:T.gold,flex:1,lineHeight:1.4,fontFamily:"'Inter',sans-serif",fontWeight:500,fontStyle:"italic"}}>
-                                    {bestVid?.title||m.demo.title}
-                                  </span>
-                                  <div style={{display:"flex",gap:5,flexShrink:0}}>
-                                    {videoMode==="modal"?(
-                                      <button onClick={()=>openModal(bestVid||vidObj,m.demo.title)} className="toggle-btn"
-                                        style={{fontFamily:"'DM Mono',monospace",fontSize:9,padding:"3px 9px",background:T.accentSub,border:`1px solid ${T.accent}44`,borderRadius:4,color:T.accent,cursor:"pointer"}}>
-                                        ▶ watch
-                                      </button>
-                                    ):(
-                                      <a href={specificUrl} target="_blank" rel="noopener noreferrer"
-                                        style={{fontFamily:"'DM Mono',monospace",fontSize:9,padding:"3px 9px",background:T.accentSub,border:`1px solid ${T.accent}44`,borderRadius:4,color:T.accent,textDecoration:"none"}}>
-                                        ▶ watch ↗
-                                      </a>
-                                    )}
-                                    <button onClick={()=>openPlaylist(bestVid||vidObj,m.demo.title)}
-                                      className="toggle-btn" title="Save to playlist"
-                                      style={{fontFamily:"'DM Mono',monospace",fontSize:9,padding:"3px 9px",background:"transparent",border:`1px solid ${T.border}`,borderRadius:4,color:T.textMuted,cursor:"pointer"}}>
-                                      ＋ playlist
+                        <div style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:T.textMuted,letterSpacing:"0.1em",textTransform:"uppercase",marginBottom:6}}>First Demoed</div>
+                        <div style={{display:"flex",gap:10,alignItems:"flex-start"}}>
+                          {/* Thumbnail */}
+                          {m.demo.thumbnail&&(
+                            <div style={{flexShrink:0,width:88,borderRadius:6,overflow:"hidden",border:`1px solid ${T.border}`,cursor:"pointer",position:"relative"}}
+                              onClick={()=>videoMode==="modal"?openModal(m.demo,m.demo.weekTitle):window.open(m.demo.youtube_url,"_blank")}>
+                              <img src={m.demo.thumbnail} alt={m.demo.title||"video"}
+                                style={{width:"100%",display:"block",objectFit:"cover"}}
+                                onError={e=>e.target.style.display="none"}/>
+                              <div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",background:"rgba(0,0,0,0.25)"}}>
+                                <div style={{width:22,height:22,borderRadius:"50%",background:"rgba(255,45,107,0.85)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:9,color:"#fff"}}>▶</div>
+                              </div>
+                            </div>
+                          )}
+                          {/* Content */}
+                          <div style={{flex:1,minWidth:0}}>
+                            {/* Title + buttons */}
+                            <div style={{display:"flex",gap:8,alignItems:"flex-start",flexWrap:"wrap",marginBottom:4}}>
+                              <span style={{fontSize:13,color:T.gold,flex:1,lineHeight:1.4,fontFamily:"'Inter',sans-serif",fontWeight:500,fontStyle:"italic"}}>
+                                {m.demo.title}
+                              </span>
+                              <div style={{display:"flex",gap:5,flexShrink:0}}>
+                                {m.demo.youtube_id&&(
+                                  videoMode==="modal"?(
+                                    <button onClick={()=>openModal(m.demo,m.demo.weekTitle)} className="toggle-btn"
+                                      style={{fontFamily:"'DM Mono',monospace",fontSize:9,padding:"3px 9px",background:T.accentSub,border:`1px solid ${T.accent}44`,borderRadius:4,color:T.accent,cursor:"pointer"}}>
+                                      ▶ watch
                                     </button>
-                                    <button onClick={()=>copyLink((bestVid||vidObj).youtube_url,clId)}
-                                      className="toggle-btn" title="Copy YouTube link"
-                                      style={{fontFamily:"'DM Mono',monospace",fontSize:9,padding:"3px 9px",background:copiedId===clId?T.accentSub:"transparent",border:`1px solid ${copiedId===clId?T.accent:T.border}`,borderRadius:4,color:copiedId===clId?T.accent:T.textMuted,cursor:"pointer",transition:"all 0.2s"}}>
-                                      {copiedId===clId?"✓ copied":"🔗 link"}
-                                    </button>
-                                  </div>
-                                </div>
-                                {/* Summary / description */}
-                                {m.demo.summary&&(
-                                  <p style={{fontFamily:"'DM Mono',monospace",fontSize:10.5,color:T.textSub,lineHeight:1.65,margin:"0 0 5px"}}>
-                                    {m.demo.summary}
-                                  </p>
+                                  ):(
+                                    <a href={m.demo.youtube_url} target="_blank" rel="noopener noreferrer"
+                                      style={{fontFamily:"'DM Mono',monospace",fontSize:9,padding:"3px 9px",background:T.accentSub,border:`1px solid ${T.accent}44`,borderRadius:4,color:T.accent,textDecoration:"none"}}>
+                                      ▶ watch ↗
+                                    </a>
+                                  )
                                 )}
-                                {/* Demo tags */}
-                                <div style={{display:"flex",gap:5,flexWrap:"wrap",marginTop:2}}>
-                                  {m.demo.tags?.map(t=>(
-                                    <span key={t} className="tag-pill" onClick={()=>toggleTag(t)}
-                                      style={{fontFamily:"'DM Mono',monospace",fontSize:9,padding:"2px 7px",borderRadius:20,background:tagColor(t)+T.tagOpacity,border:`1px solid ${tagColor(t)}${T.tagBorder}`,color:tagColor(t)}}>
-                                      {t}
-                                    </span>
-                                  ))}
-                                </div>
-                                {/* More videos link */}
-                                {vids.length>1&&(
-                                  <a href={m.demo.url} target="_blank" rel="noopener noreferrer"
-                                    style={{display:"inline-block",marginTop:6,fontFamily:"'DM Mono',monospace",fontSize:9,color:T.textMuted,textDecoration:"none",padding:"3px 8px",border:`1px solid ${T.border}`,borderRadius:4}}>
-                                    +{vids.length-1} more in this week ↗
-                                  </a>
+                                {m.demo.youtube_url&&(
+                                  <button onClick={()=>copyLink(m.demo.youtube_url,`cl-${i}`)}
+                                    className="toggle-btn" title="Copy YouTube link"
+                                    style={{fontFamily:"'DM Mono',monospace",fontSize:9,padding:"3px 9px",background:copiedId===`cl-${i}`?T.accentSub:"transparent",border:`1px solid ${copiedId===`cl-${i}`?T.accent:T.border}`,borderRadius:4,color:copiedId===`cl-${i}`?T.accent:T.textMuted,cursor:"pointer",transition:"all 0.2s"}}>
+                                    {copiedId===`cl-${i}`?"✓ copied":"🔗 link"}
+                                  </button>
                                 )}
                               </div>
                             </div>
-                          );
-                        })()}
+                            {/* Description + author */}
+                            {m.demo.description&&(
+                              <p style={{fontFamily:"'DM Mono',monospace",fontSize:10.5,color:T.textSub,lineHeight:1.65,margin:"0 0 5px"}}>
+                                {m.demo.description}
+                                {m.demo.author&&<span style={{fontSize:9,color:T.textFaint,marginLeft:8}}>— {m.demo.author}</span>}
+                              </p>
+                            )}
+                            {/* Tags */}
+                            <div style={{display:"flex",gap:5,flexWrap:"wrap",marginTop:2}}>
+                              {m.demo.tags?.map(t=>(
+                                <span key={t} className="tag-pill" onClick={()=>toggleTag(t)}
+                                  style={{fontFamily:"'DM Mono',monospace",fontSize:9,padding:"2px 7px",borderRadius:20,background:tagColor(t)+T.tagOpacity,border:`1px solid ${tagColor(t)}${T.tagBorder}`,color:tagColor(t)}}>
+                                  {t}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     )}
                   </div>
