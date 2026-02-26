@@ -524,46 +524,26 @@ function OmniExplorer(){
                       <div style={{marginTop:10,padding:"12px 16px",background:T.bgSubtle,borderLeft:`3px solid ${T.accent}`,borderRadius:"0 8px 8px 0"}}>
                         <div style={{fontFamily:"'DM Serif Display',serif",fontSize:13,color:T.accentText,fontStyle:"italic",marginBottom:6}}>{m.demo.title}</div>
                         {m.demo.summary&&<p style={{fontFamily:"'DM Mono',monospace",fontSize:11,color:T.textSub,lineHeight:1.7,marginBottom:8}}>{m.demo.summary}</p>}
-                        {/* Find best matching video by title similarity */}
-                        {(()=>{
-                          const vids = m.demo.videos||[];
-                          if(!vids.length) return(
-                            <a href={m.demo.url} target="_blank" rel="noopener noreferrer"
-                              style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:T.accent,textDecoration:"none",padding:"5px 12px",border:`1px solid ${T.accent}44`,borderRadius:6,background:T.accentSub,display:"inline-flex",alignItems:"center",gap:4}}>
-                              🎬 Watch demo ↗
-                            </a>
-                          );
-                          // Score each video title against the changelog entry text
-                          const entryWords = item.text.toLowerCase().split(/\W+/).filter(w=>w.length>3);
-                          let bestScore=0, bestVid=vids[0];
-                          for(const v of vids){
-                            const vtWords=(v.title||"").toLowerCase().split(/\W+/).filter(w=>w.length>3);
-                            const overlap=entryWords.filter(w=>vtWords.includes(w)).length;
-                            if(overlap>bestScore){bestScore=overlap;bestVid=v;}
-                          }
-                          const specificUrl=`https://www.youtube.com/watch?v=${bestVid.youtube_id}`;
-                          return(
-                            <div style={{display:"flex",flexWrap:"wrap",gap:8,marginTop:4,alignItems:"center"}}>
-                              {videoMode==="modal"?(
-                                <button onClick={()=>openModal(bestVid,m.demo.title)} className="toggle-btn"
-                                  style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:T.accent,padding:"5px 12px",border:`1px solid ${T.accent}44`,borderRadius:6,background:T.accentSub,cursor:"pointer"}}>
-                                  🎬 {bestVid.title||"Watch demo"} ▶
-                                </button>
-                              ):(
-                                <a href={specificUrl} target="_blank" rel="noopener noreferrer"
-                                  style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:T.accent,textDecoration:"none",padding:"5px 12px",border:`1px solid ${T.accent}44`,borderRadius:6,background:T.accentSub,display:"inline-flex",alignItems:"center",gap:4}}>
-                                  🎬 {bestVid.title||"Watch demo"} ↗
-                                </a>
-                              )}
-                              {vids.length>1&&(
-                                <a href={m.demo.url} target="_blank" rel="noopener noreferrer"
-                                  style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:T.textMuted,textDecoration:"none",padding:"4px 9px",border:`1px solid ${T.border}`,borderRadius:6}}>
-                                  +{vids.length-1} more videos ↗
-                                </a>
-                              )}
-                            </div>
-                          );
-                        })()}
+                        {/* Videos in matched demo */}
+                        {m.demo.videos?.length>0&&videoMode!=="tab"&&(
+                          <InlineVideos videos={m.demo.videos} weekTitle={m.demo.title} T={T} videoMode={videoMode} onOpenModal={openModal}/>
+                        )}
+                        {m.demo.videos?.length>0&&videoMode==="tab"&&(
+                          <div style={{display:"flex",flexWrap:"wrap",gap:6,marginTop:8}}>
+                            {m.demo.videos.map((v,vi)=>(
+                              <a key={vi} href={v.youtube_url} target="_blank" rel="noopener noreferrer"
+                                style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:T.accent,textDecoration:"none",padding:"4px 10px",border:`1px solid ${T.accent}44`,borderRadius:6,background:T.accentSub}}>
+                                ▶ {v.title||`Video ${vi+1}`} ↗
+                              </a>
+                            ))}
+                          </div>
+                        )}
+                        {(!m.demo.videos||m.demo.videos.length===0)&&(
+                          <a href={m.demo.url} target="_blank" rel="noopener noreferrer"
+                            style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:T.accent,textDecoration:"none",display:"inline-flex",alignItems:"center",gap:4,padding:"4px 10px",border:`1px solid ${T.accent}44`,borderRadius:6,background:T.accentSub}}>
+                            Watch demo ↗
+                          </a>
+                        )}
                       </div>
                     )}
                   </div>
