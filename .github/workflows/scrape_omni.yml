@@ -4,8 +4,8 @@ on:
   schedule:
     - cron: "0 19 * * 1"   # Monday 11am PST — Playwright (YouTube)
     - cron: "0 2 * * 2"    # Monday 6pm PST (2am UTC Tue) — Playwright (YouTube)
-    - cron: "0 19 * * 2-7" # Tue–Sun 11am PST — no Playwright (fast)
-    - cron: "0 2 * * 3-1"  # Tue–Sun 6pm PST (2am UTC next day) — no Playwright (fast)
+    - cron: "0 19 * * 2,3,4,5,6,0" # Tue–Sun 11am PST — no Playwright (fast)
+    - cron: "0 2 * * 3,4,5,6,0,1"  # Tue–Sun 6pm PST (2am UTC next day) — no Playwright (fast)
   workflow_dispatch:
     inputs:
       force:
@@ -96,8 +96,8 @@ jobs:
   scrape-fast:
     if: |
       github.event_name == 'schedule' && (
-        github.event.schedule == '0 19 * * 2-7' ||
-        github.event.schedule == '0 2 * * 3-1'
+        github.event.schedule == '0 19 * * 2,3,4,5,6,0' ||
+        github.event.schedule == '0 2 * * 3,4,5,6,0,1'
       )
     runs-on: ubuntu-latest
     permissions:
