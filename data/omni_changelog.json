@@ -1,7 +1,7 @@
 {
   "meta": {
     "source": "https://omni.co/changelog",
-    "last_scraped": "2026-02-26T06:49:14Z",
+    "last_scraped": "2026-02-26T07:29:00Z",
     "total_weeks_indexed": 71,
     "total_weeks_fully_scraped": 71,
     "date_range": {
@@ -328,7 +328,7 @@
       "week_label": "Current week",
       "source_url": "https://omni.co/changelog",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:46:53Z",
+      "scraped_at": "2026-02-26T07:26:43Z",
       "days": [
         {
           "date": "2026-02-20",
@@ -370,7 +370,7 @@
       "week_label": "November 30, 2025 Week of November 30, 2025",
       "source_url": "https://omni.co/changelog/20251130",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:47:11Z",
+      "scraped_at": "2026-02-26T07:27:02Z",
       "days": [
         {
           "date": "2025-12-04",
@@ -413,7 +413,7 @@
       "week_label": "November 16, 2025 Week of November 16, 2025",
       "source_url": "https://omni.co/changelog/20251116",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:47:15Z",
+      "scraped_at": "2026-02-26T07:27:06Z",
       "days": [
         {
           "date": "2025-11-21",
@@ -454,7 +454,7 @@
       "week_label": "October 19, 2025 Week of October 19, 2025",
       "source_url": "https://omni.co/changelog/20251019",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:47:23Z",
+      "scraped_at": "2026-02-26T07:27:14Z",
       "days": [
         {
           "date": "2025-10-19",
@@ -472,7 +472,7 @@
       "week_label": "August 31, 2025 Week of August 31, 2025",
       "source_url": "https://omni.co/changelog/20250831",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:47:38Z",
+      "scraped_at": "2026-02-26T07:27:28Z",
       "days": [
         {
           "date": "2025-09-04",
@@ -501,7 +501,7 @@
       "week_label": "July 13, 2025 Week of July 13, 2025",
       "source_url": "https://omni.co/changelog/20250713",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:47:52Z",
+      "scraped_at": "2026-02-26T07:27:41Z",
       "days": [
         {
           "date": "2025-07-17",
@@ -534,7 +534,7 @@
       "week_label": "July 6, 2025 Week of July 6, 2025",
       "source_url": "https://omni.co/changelog/20250706",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:47:53Z",
+      "scraped_at": "2026-02-26T07:27:43Z",
       "days": [
         {
           "date": "2025-07-10",
@@ -570,7 +570,7 @@
       "week_label": "May 25, 2025 Week of May 25, 2025",
       "source_url": "https://omni.co/changelog/20250525",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:48:05Z",
+      "scraped_at": "2026-02-26T07:27:55Z",
       "days": [
         {
           "date": "2025-05-27",
@@ -590,7 +590,7 @@
       "week_label": "May 11, 2025 Week of May 11, 2025",
       "source_url": "https://omni.co/changelog/20250511",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:48:09Z",
+      "scraped_at": "2026-02-26T07:27:59Z",
       "days": [
         {
           "date": "2025-05-15",
@@ -631,7 +631,7 @@
       "week_label": "April 6, 2025 Week of April 6, 2025",
       "source_url": "https://omni.co/changelog/20250406",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:48:19Z",
+      "scraped_at": "2026-02-26T07:28:08Z",
       "days": [
         {
           "date": "2025-04-11",
@@ -668,7 +668,7 @@
       "week_label": "January 16, 2025 dbt IDE updates, AI enhancements, UI-based SQL joins, measure color modeling, model development settings, new usage topic and organization settings",
       "source_url": "https://omni.co/changelog/20250116",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:48:25Z",
+      "scraped_at": "2026-02-26T07:28:14Z",
       "days": [
         {
           "date": "2025-01-16",
@@ -691,7 +691,7 @@
       "week_label": "October 29, 2024 Deliveries available in embed, new document settings, and more modeling enhancements",
       "source_url": "https://omni.co/changelog/20241029",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:48:34Z",
+      "scraped_at": "2026-02-26T07:28:21Z",
       "days": [
         {
           "date": "2024-10-29",
@@ -709,7 +709,7 @@
       "week_label": "February 8, 2026 Week of February 8, 2026",
       "source_url": "https://omni.co/changelog/20260208",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:46:55Z",
+      "scraped_at": "2026-02-26T07:26:45Z",
       "days": [
         {
           "date": "2026-02-11",
@@ -738,7 +738,7 @@
       "week_label": "January 25, 2026 Week of January 25, 2026",
       "source_url": "https://omni.co/changelog/20260125",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:46:57Z",
+      "scraped_at": "2026-02-26T07:26:48Z",
       "days": [
         {
           "date": "2026-01-29",
@@ -780,7 +780,7 @@
       "week_label": "January 18, 2026 Week of January 18, 2026",
       "source_url": "https://omni.co/changelog/20260118",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:46:59Z",
+      "scraped_at": "2026-02-26T07:26:50Z",
       "days": [
         {
           "date": "2026-01-21",
@@ -810,7 +810,7 @@
       "week_label": "January 5, 2026 Week of January 4, 2026",
       "source_url": "https://omni.co/changelog/20260104",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:47:01Z",
+      "scraped_at": "2026-02-26T07:26:52Z",
       "days": [
         {
           "date": "2026-01-09",
@@ -867,7 +867,7 @@
       "week_label": "December 28, 2025 Week of December 28, 2025",
       "source_url": "https://omni.co/changelog/20251228",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:47:03Z",
+      "scraped_at": "2026-02-26T07:26:54Z",
       "days": [
         {
           "date": "2025-12-29",
@@ -886,7 +886,7 @@
       "week_label": "December 21, 2025 Week of December 21, 2025",
       "source_url": "https://omni.co/changelog/20251221",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:47:05Z",
+      "scraped_at": "2026-02-26T07:26:56Z",
       "days": [
         {
           "date": "2025-12-23",
@@ -904,7 +904,7 @@
       "week_label": "December 14, 2025 Week of December 14, 2025",
       "source_url": "https://omni.co/changelog/20251214",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:47:07Z",
+      "scraped_at": "2026-02-26T07:26:58Z",
       "days": [
         {
           "date": "2025-12-18",
@@ -945,7 +945,7 @@
       "week_label": "December 7, 2025 Week of December 7, 2025",
       "source_url": "https://omni.co/changelog/20251207",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:47:09Z",
+      "scraped_at": "2026-02-26T07:27:00Z",
       "days": [
         {
           "date": "2025-12-11",
@@ -990,7 +990,7 @@
       "week_label": "November 23, 2025 Week of November 23, 2025",
       "source_url": "https://omni.co/changelog/20251123",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:47:13Z",
+      "scraped_at": "2026-02-26T07:27:04Z",
       "days": [
         {
           "date": "2025-11-25",
@@ -1008,7 +1008,7 @@
       "week_label": "November 9, 2025 Week of November 9, 2025",
       "source_url": "https://omni.co/changelog/20251109",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:47:17Z",
+      "scraped_at": "2026-02-26T07:27:08Z",
       "days": [
         {
           "date": "2025-11-12",
@@ -1036,7 +1036,7 @@
       "week_label": "November 2, 2025 Week of November 2, 2025",
       "source_url": "https://omni.co/changelog/20251102",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:47:19Z",
+      "scraped_at": "2026-02-26T07:27:10Z",
       "days": [
         {
           "date": "2025-11-05",
@@ -1063,7 +1063,7 @@
       "week_label": "October 26, 2025 Week of October 26, 2025",
       "source_url": "https://omni.co/changelog/20251026",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:47:21Z",
+      "scraped_at": "2026-02-26T07:27:12Z",
       "days": [
         {
           "date": "2025-10-30",
@@ -1098,7 +1098,7 @@
       "week_label": "October 12, 2025 Week of October 12, 2025",
       "source_url": "https://omni.co/changelog/20251012",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:47:25Z",
+      "scraped_at": "2026-02-26T07:27:16Z",
       "days": [
         {
           "date": "2025-10-17",
@@ -1153,7 +1153,7 @@
       "week_label": "October 5, 2025 Week of October 5, 2025",
       "source_url": "https://omni.co/changelog/20251005",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:47:27Z",
+      "scraped_at": "2026-02-26T07:27:18Z",
       "days": [
         {
           "date": "2025-10-09",
@@ -1178,7 +1178,7 @@
       "week_label": "September 28, 2025 Week of September 28, 2025",
       "source_url": "https://omni.co/changelog/20250928",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:47:30Z",
+      "scraped_at": "2026-02-26T07:27:20Z",
       "days": [
         {
           "date": "2025-10-01",
@@ -1206,7 +1206,7 @@
       "week_label": "September 21, 2025 Week of September 21, 2025",
       "source_url": "https://omni.co/changelog/20250921",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:47:32Z",
+      "scraped_at": "2026-02-26T07:27:22Z",
       "days": [
         {
           "date": "2025-09-22",
@@ -1226,7 +1226,7 @@
       "week_label": "September 14, 2025 Week of September 14, 2025",
       "source_url": "https://omni.co/changelog/20250914",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:47:34Z",
+      "scraped_at": "2026-02-26T07:27:24Z",
       "days": [
         {
           "date": "2025-09-19",
@@ -1267,7 +1267,7 @@
       "week_label": "September 7, 2025 Week of September 7, 2025",
       "source_url": "https://omni.co/changelog/20250907",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:47:36Z",
+      "scraped_at": "2026-02-26T07:27:26Z",
       "days": [
         {
           "date": "2025-09-11",
@@ -1308,7 +1308,7 @@
       "week_label": "August 24, 2025 Week of August 24, 2025",
       "source_url": "https://omni.co/changelog/20250824",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:47:40Z",
+      "scraped_at": "2026-02-26T07:27:30Z",
       "days": [
         {
           "date": "2025-08-29",
@@ -1333,7 +1333,7 @@
       "week_label": "August 17, 2025 Week of August 17, 2025",
       "source_url": "https://omni.co/changelog/20250817",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:47:42Z",
+      "scraped_at": "2026-02-26T07:27:32Z",
       "days": [
         {
           "date": "2025-08-21",
@@ -1381,7 +1381,7 @@
       "week_label": "August 10, 2025 Week of August 10, 2025",
       "source_url": "https://omni.co/changelog/20250810",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:47:44Z",
+      "scraped_at": "2026-02-26T07:27:34Z",
       "days": [
         {
           "date": "2025-08-13",
@@ -1402,7 +1402,7 @@
       "week_label": "August 3, 2025 Week of August 3, 2025",
       "source_url": "https://omni.co/changelog/20250803",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:47:46Z",
+      "scraped_at": "2026-02-26T07:27:36Z",
       "days": [
         {
           "date": "2025-08-07",
@@ -1439,7 +1439,7 @@
       "week_label": "July 27, 2025 Week of July 27, 2025",
       "source_url": "https://omni.co/changelog/20250727",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:47:48Z",
+      "scraped_at": "2026-02-26T07:27:38Z",
       "days": [
         {
           "date": "2025-07-29",
@@ -1467,7 +1467,7 @@
       "week_label": "July 20, 2025 Week of July 20, 2025",
       "source_url": "https://omni.co/changelog/20250720",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:47:50Z",
+      "scraped_at": "2026-02-26T07:27:40Z",
       "days": [
         {
           "date": "2025-07-25",
@@ -1499,7 +1499,7 @@
       "week_label": "June 29, 2025 Week of June 29, 2025",
       "source_url": "https://omni.co/changelog/20250629",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:47:55Z",
+      "scraped_at": "2026-02-26T07:27:45Z",
       "days": [
         {
           "date": "2025-06-30",
@@ -1517,7 +1517,7 @@
       "week_label": "June 22, 2025 Week of June 22, 2025",
       "source_url": "https://omni.co/changelog/20250622",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:47:57Z",
+      "scraped_at": "2026-02-26T07:27:47Z",
       "days": [
         {
           "date": "2025-06-27",
@@ -1563,7 +1563,7 @@
       "week_label": "June 15, 2025 Week of June 15, 2025",
       "source_url": "https://omni.co/changelog/20250615",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:47:59Z",
+      "scraped_at": "2026-02-26T07:27:49Z",
       "days": [
         {
           "date": "2025-06-18",
@@ -1583,7 +1583,7 @@
       "week_label": "June 8, 2025 Week of June 8, 2025",
       "source_url": "https://omni.co/changelog/20250608",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:48:01Z",
+      "scraped_at": "2026-02-26T07:27:51Z",
       "days": [
         {
           "date": "2025-06-11",
@@ -1611,7 +1611,7 @@
       "week_label": "June 1, 2025 Week of June 1, 2025",
       "source_url": "https://omni.co/changelog/20250601",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:48:03Z",
+      "scraped_at": "2026-02-26T07:27:53Z",
       "days": [
         {
           "date": "2025-06-03",
@@ -1636,7 +1636,7 @@
       "week_label": "May 18, 2025 Week of May 18, 2025",
       "source_url": "https://omni.co/changelog/20250518",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:48:07Z",
+      "scraped_at": "2026-02-26T07:27:57Z",
       "days": [
         {
           "date": "2025-05-19",
@@ -1657,7 +1657,7 @@
       "week_label": "May 4, 2025 Week of May 4, 2025",
       "source_url": "https://omni.co/changelog/20250504",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:48:11Z",
+      "scraped_at": "2026-02-26T07:28:00Z",
       "days": [
         {
           "date": "2025-05-05",
@@ -1677,7 +1677,7 @@
       "week_label": "April 27, 2025 Week of April 27, 2025",
       "source_url": "https://omni.co/changelog/20250427",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:48:13Z",
+      "scraped_at": "2026-02-26T07:28:02Z",
       "days": [
         {
           "date": "2025-05-02",
@@ -1721,7 +1721,7 @@
       "week_label": "April 21, 2025 Week of April 20, 2025",
       "source_url": "https://omni.co/changelog/20250420",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:48:15Z",
+      "scraped_at": "2026-02-26T07:28:04Z",
       "days": [
         {
           "date": "2025-04-25",
@@ -1755,7 +1755,7 @@
       "week_label": "April 13, 2025 Week of April 13, 2025",
       "source_url": "https://omni.co/changelog/20250413",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:48:17Z",
+      "scraped_at": "2026-02-26T07:28:06Z",
       "days": [
         {
           "date": "2025-04-18",
@@ -1813,7 +1813,7 @@
       "week_label": "March 31, 2025 Data inputs now available! New workbook and dbt enhancements, color modeling updates, StarRocks, M2M auth for Databricks, and tons of new APIs,",
       "source_url": "https://omni.co/changelog/20250331",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:48:21Z",
+      "scraped_at": "2026-02-26T07:28:10Z",
       "days": [
         {
           "date": "2025-03-31",
@@ -1848,7 +1848,7 @@
       "week_label": "February 19, 2025 CSV uploads, nested folders, AI summaries and filters, model performance improvements, smarter data labels, and as always, so much more",
       "source_url": "https://omni.co/changelog/20250219",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:48:23Z",
+      "scraped_at": "2026-02-26T07:28:12Z",
       "days": [
         {
           "date": "2025-02-19",
@@ -1884,7 +1884,7 @@
       "week_label": "December 19, 2024 dbt IDE in beta, dedicated topic files, colors for dimensions, custom Analytics reports, and lots more new features",
       "source_url": "https://omni.co/changelog/20241219",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:48:27Z",
+      "scraped_at": "2026-02-26T07:28:16Z",
       "days": [
         {
           "date": "2024-12-19",
@@ -1909,7 +1909,7 @@
       "week_label": "December 5, 2024 Custom column totals, dynamic database connections, SQL result interactivity, and other enhancements",
       "source_url": "https://omni.co/changelog/20241205",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:48:29Z",
+      "scraped_at": "2026-02-26T07:28:18Z",
       "days": [
         {
           "date": "2024-12-05",
@@ -1932,7 +1932,7 @@
       "week_label": "November 14, 2024 Smarter AI, New Editing Workflow, SQL Enhancements and More",
       "source_url": "https://omni.co/changelog/20241411",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:48:32Z",
+      "scraped_at": "2026-02-26T07:28:19Z",
       "days": [
         {
           "date": "2024-11-14",
@@ -1950,7 +1950,7 @@
       "week_label": "October 3, 2024 Embed Application Mode, Global Color Palettes, Cross-tab Cell References, New delivery options, and more!",
       "source_url": "https://omni.co/changelog/20241003",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:48:36Z",
+      "scraped_at": "2026-02-26T07:28:23Z",
       "days": [
         {
           "date": "2024-10-03",
@@ -1968,7 +1968,7 @@
       "week_label": "September 12, 2024 September 12, 2024 - Dashboard Themes, more download improvements, and making models more dynamic",
       "source_url": "https://omni.co/changelog/20240912",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:48:38Z",
+      "scraped_at": "2026-02-26T07:28:25Z",
       "days": [
         {
           "date": "2024-09-12",
@@ -1989,7 +1989,7 @@
       "week_label": "August 14, 2024 August 14, 2024 - Improved workbook ergonomics, more dashboard configurations, and a whole lot of magical modeling",
       "source_url": "https://omni.co/changelog/20240814",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:48:40Z",
+      "scraped_at": "2026-02-26T07:28:27Z",
       "days": [
         {
           "date": "2024-08-14",
@@ -2007,7 +2007,7 @@
       "week_label": "July 2, 2024 AI Query Experience, Alerts, Bursting, Controls, Content Search, and Embeddable Workbooks",
       "source_url": "https://omni.co/changelog/20240702",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:48:42Z",
+      "scraped_at": "2026-02-26T07:28:29Z",
       "days": [
         {
           "date": "2024-07-02",
@@ -2027,7 +2027,7 @@
       "week_label": "June 12, 2024 Embed Events, Dynamic Columns & Tables, Branch Mode & Git Integration (GA), Single-tile Scheduling and more!",
       "source_url": "https://omni.co/changelog/20240612",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:48:44Z",
+      "scraped_at": "2026-02-26T07:28:31Z",
       "days": [
         {
           "date": "2024-06-12",
@@ -2051,7 +2051,7 @@
       "week_label": "May 14, 2024 XLOOKUP (beta), Filter Updates, Dimensional Drilling, Excel Downloads, and more!",
       "source_url": "https://omni.co/changelog/20240514",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:48:46Z",
+      "scraped_at": "2026-02-26T07:28:33Z",
       "days": [
         {
           "date": "2024-05-14",
@@ -2074,7 +2074,7 @@
       "week_label": "April 19, 2024 New Table Features, Omni-98 Theme, Incremental Promotions, Impersonate User Mode, New Custom Visualizations and more!",
       "source_url": "https://omni.co/changelog/20240419",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:48:48Z",
+      "scraped_at": "2026-02-26T07:28:35Z",
       "days": [
         {
           "date": "2024-04-19",
@@ -2096,7 +2096,7 @@
       "week_label": "March 28, 2024 Modeling Branch Mode, Embed Updates, dbt Schema Switching, Download Dashboards, and Workbook Updates",
       "source_url": "https://omni.co/changelog/20240328",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:48:50Z",
+      "scraped_at": "2026-02-26T07:28:37Z",
       "days": [
         {
           "date": "2024-03-28",
@@ -2114,7 +2114,7 @@
       "week_label": "March 13, 2024 Promote Calcs to Model, Content Validator, SCIM User Management, and Other Improvements",
       "source_url": "https://omni.co/changelog/20240313",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:48:52Z",
+      "scraped_at": "2026-02-26T07:28:39Z",
       "days": [
         {
           "date": "2024-03-13",
@@ -2141,7 +2141,7 @@
       "week_label": "February 20, 2024 Data Delivery Workflows, Dashboard Auto-refresh, and Analytics for Admins",
       "source_url": "https://omni.co/changelog/20240220",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:48:54Z",
+      "scraped_at": "2026-02-26T07:28:40Z",
       "days": [
         {
           "date": "2024-02-20",
@@ -2159,7 +2159,7 @@
       "week_label": "January 26, 2024 Calculations, Cache Controls, and more Administration",
       "source_url": "https://omni.co/changelog/20240126",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:48:56Z",
+      "scraped_at": "2026-02-26T07:28:42Z",
       "days": [
         {
           "date": "2024-01-26",
@@ -2177,7 +2177,7 @@
       "week_label": "January 8, 2024 Excel-style calculations, Topic Permissions, Dashboard Goodies, Databricks connector and more!",
       "source_url": "https://omni.co/changelog/20240108",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:48:58Z",
+      "scraped_at": "2026-02-26T07:28:44Z",
       "days": [
         {
           "date": "2024-01-08",
@@ -2195,7 +2195,7 @@
       "week_label": "December 1, 2023 dbt Integration, Transposed Tables, and Dynamic Schemas",
       "source_url": "https://omni.co/changelog/20231201",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:49:00Z",
+      "scraped_at": "2026-02-26T07:28:46Z",
       "days": [
         {
           "date": "2023-12-01",
@@ -2213,7 +2213,7 @@
       "week_label": "November 3, 2023 SSO Embedding, Timezones, and more!",
       "source_url": "https://omni.co/changelog/20231103",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:49:02Z",
+      "scraped_at": "2026-02-26T07:28:48Z",
       "days": [
         {
           "date": "2023-11-03",
@@ -2231,7 +2231,7 @@
       "week_label": "October 13, 2023 Maps, Topic Organization, Schedule Options, and lots o' vis and model improvements",
       "source_url": "https://omni.co/changelog/20231013",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:49:04Z",
+      "scraped_at": "2026-02-26T07:28:50Z",
       "days": [
         {
           "date": "2023-10-13",
@@ -2253,7 +2253,7 @@
       "week_label": "September 22, 2023 SQL Super Powers, Embeddable Dashboards, Move-able Queries, and More",
       "source_url": "https://omni.co/changelog/20230922",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:49:06Z",
+      "scraped_at": "2026-02-26T07:28:52Z",
       "days": [
         {
           "date": "2023-09-22",
@@ -2272,7 +2272,7 @@
       "week_label": "August 31, 2023 KPI visualizations, row-level permissions, and SQL Server support",
       "source_url": "https://omni.co/changelog/20230831",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:49:08Z",
+      "scraped_at": "2026-02-26T07:28:53Z",
       "days": [
         {
           "date": "2023-08-31",
@@ -2290,7 +2290,7 @@
       "week_label": "August 24, 2023 Drag and drop vis editor, left click actions, and field aliases",
       "source_url": "https://omni.co/changelog/20230824",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:49:10Z",
+      "scraped_at": "2026-02-26T07:28:55Z",
       "days": [
         {
           "date": "2023-08-24",
@@ -2313,7 +2313,7 @@
       "week_label": "August 4, 2023 Viewer role, filter mapping, iframe in markdown, and visualization improvements",
       "source_url": "https://omni.co/changelog/20240804",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:49:12Z",
+      "scraped_at": "2026-02-26T07:28:57Z",
       "days": [
         {
           "date": "2023-08-04",
@@ -2338,7 +2338,7 @@
       "week_label": "July 26, 2023 Scheduled dashboards, text tiles, Markdown, and more",
       "source_url": "https://omni.co/changelog/20230726",
       "fully_scraped": true,
-      "scraped_at": "2026-02-26T06:49:14Z",
+      "scraped_at": "2026-02-26T07:29:00Z",
       "days": [
         {
           "date": "2023-07-26",
