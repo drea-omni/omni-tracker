@@ -1,16 +1,23 @@
 #!/usr/bin/env python3
 """
-Omni Changelog & Demos Scraper — with Playwright for YouTube URLs
-==================================================================
+Omni Changelog & Demos Scraper — with Playwright for full demo detail
+======================================================================
 Scrapes https://omni.co/changelog and https://omni.co/demos
 Uses requests+BeautifulSoup for changelog (fast, no JS needed)
-Uses Playwright for demos (needed to extract YouTube embed URLs)
+Uses Playwright for demos (needed to extract YouTube embed URLs + demo detail)
+
+Each demo entry now captures:
+  - youtube_id, youtube_url, embed_url, thumbnail
+  - title       (from iframe title or heading)
+  - description (the blurb below the video)
+  - author      (presenter name)
+  - tag         (category label, e.g. "Visualization", "AI")
 
 Usage:
     python scrape_omni.py
-    python scrape_omni.py --force          # re-scrape all weeks
-    python scrape_omni.py --dry-run        # print changes, don't write
-    python scrape_omni.py --no-playwright  # skip YouTube extraction (faster)
+    python scrape_omni.py --force        # re-scrape all weeks
+    python scrape_omni.py --dry-run      # print changes, don't write
+    python scrape_omni.py --no-playwright # skip YouTube extraction (faster)
 """
 
 import argparse
@@ -25,7 +32,7 @@ from pathlib import Path
 import requests
 from bs4 import BeautifulSoup
 
-DATA_DIR       = Path(__file__).parent.parent / "data"
+DATA_DIR = Path(__file__).parent.parent / "data"
 CHANGELOG_FILE = DATA_DIR / "omni_changelog.json"
 DEMOS_FILE     = DATA_DIR / "omni_demos.json"
 
@@ -34,14 +41,16 @@ BASE_DEMOS     = "https://omni.co/demos"
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (compatible; OmniChangelogBot/1.0)",
-    "Accept": "text/html,application/xhtml+xml",
+    "Accept":     "text/html,application/xhtml+xml",
 }
+
 REQUEST_DELAY   = 1.5
 REQUEST_TIMEOUT = 20
-PLAYWRIGHT_WAIT = 3000  # ms to wait after page load for iframes to inject
+PLAYWRIGHT_WAIT = 3500   # ms — enough for iframes + lazy content
 
 
-# ── Helpers ────────────────────────────────────────────────────────────────────
+# ── Helpers ───────────────────────────────────────────────────────────────────
+
 def now_iso():
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
@@ -68,7 +77,7 @@ def save_json(path, data, dry_run=False):
         return
     with open(path, "w") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
-    print(f"  ✓  Saved {path} ({path.stat().st_size/1024:.1f} KB)")
+    print(f"  ✓ Saved {path} ({path.stat().st_size/1024:.1f} KB)")
 
 def fetch_html(url, retries=3):
     for attempt in range(retries):
@@ -78,87 +87,163 @@ def fetch_html(url, retries=3):
             time.sleep(REQUEST_DELAY)
             return BeautifulSoup(resp.text, "html.parser")
         except requests.RequestException as e:
-            print(f"  ⚠  Attempt {attempt+1}/{retries} failed: {e}")
+            print(f"  ⚠ Attempt {attempt+1}/{retries} failed: {e}")
             if attempt < retries - 1:
                 time.sleep(REQUEST_DELAY * 2)
     return None
 
 
-# ── Playwright: YouTube extraction ────────────────────────────────────────────
-async def extract_youtube_ids(url, pw):
-    """Load a demos page with Playwright and extract all YouTube video IDs."""
+# ── Playwright: full demo detail extraction ───────────────────────────────────
+
+async def extract_demo_details(url, pw):
+    """
+    Load a demos page with Playwright and extract full per-demo detail:
+      title, description, author, tag, youtube_id + derived URLs.
+
+    DOM structure on omni.co/demos/* :
+      div.stack.demo
+        figure.video  →  iframe[src*=youtube]   (youtube_id, iframe title)
+        hgroup.stack  →  h3                      (display title)
+        div.editorial-copy  →  p                (description blurb)
+        p.meta
+          span.stack.author  →  span (name text, skip img)
+          span (bullet "•")
+          span  (tag label)
+    """
     browser = await pw.chromium.launch(headless=True)
     try:
         page = await browser.new_page()
         await page.goto(url, wait_until="domcontentloaded", timeout=30000)
         await page.wait_for_timeout(PLAYWRIGHT_WAIT)
 
-        # Scroll to trigger any lazy-loaded iframes
+        # Scroll to trigger lazy iframes
         await page.evaluate("window.scrollTo(0, document.body.scrollHeight / 2)")
-        await page.wait_for_timeout(800)
+        await page.wait_for_timeout(600)
         await page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
-        await page.wait_for_timeout(800)
+        await page.wait_for_timeout(600)
 
-        content = await page.content()
+        # Extract all week-level summary bullets (top of page before first video)
+        summary_bullets = await page.evaluate("""() => {
+            const bullets = [];
+            // The intro section uses a <ul> or bare <li>s before the demo entries
+            const lists = document.querySelectorAll('ul li, ol li');
+            for (const li of lists) {
+                const text = li.innerText?.trim();
+                if (text && text.length > 20 && text.length < 600) {
+                    // Only grab bullets that are NOT inside a .demo div
+                    if (!li.closest('.demo')) bullets.push(text);
+                }
+            }
+            return bullets;
+        }""")
 
-        # Extract title+id pairs directly from iframe attributes
-        # iframe.title = demo title exactly, iframe.src contains youtube ID
-        iframes = await page.query_selector_all("iframe[src*='youtube']")
-        videos = []
-        seen = set()
-        for frame in iframes:
-            src   = await frame.get_attribute("src") or ""
-            title = await frame.get_attribute("title") or ""
-            m = re.search(r'youtube\.com/embed/([a-zA-Z0-9_-]{11})', src)
-            if m and m.group(1) not in seen:
-                seen.add(m.group(1))
-                videos.append({"youtube_id": m.group(1), "title": title})
+        # Extract per-demo detail
+        demos = await page.evaluate("""() => {
+            const results = [];
+            const demoEls = document.querySelectorAll('div.stack.demo');
 
-        # Return as parallel lists for backwards compat
-        return [v["youtube_id"] for v in videos], [v["title"] for v in videos]
+            for (const demo of demoEls) {
+                // YouTube ID from iframe src
+                const iframe = demo.querySelector('iframe[src*="youtube"]');
+                let youtube_id = null;
+                if (iframe) {
+                    const m = (iframe.src || '').match(/youtube\\.com\\/embed\\/([a-zA-Z0-9_-]{11})/);
+                    if (m) youtube_id = m[1];
+                }
+
+                // Title: prefer h3 text, fall back to iframe title attr
+                const h3 = demo.querySelector('h3');
+                const title = (h3?.innerText || iframe?.title || '').trim();
+
+                // Description: first <p> inside .editorial-copy
+                const descEl = demo.querySelector('.editorial-copy p');
+                const description = descEl?.innerText?.trim() || '';
+
+                // Author: text content of span.author (contains an img + text span)
+                // We want just the name text, not the img alt
+                const authorSpan = demo.querySelector('span.author');
+                let author = '';
+                if (authorSpan) {
+                    // Walk child nodes, grab text nodes only (skip img)
+                    for (const node of authorSpan.childNodes) {
+                        if (node.nodeType === 3) { // TEXT_NODE
+                            const t = node.textContent.trim();
+                            if (t) author += t;
+                        } else if (node.tagName === 'SPAN') {
+                            const t = node.innerText?.trim();
+                            if (t) author += t;
+                        }
+                    }
+                    author = author.trim();
+                }
+
+                // Tag: last <span> in p.meta (after the bullet •)
+                const metaSpans = Array.from(demo.querySelectorAll('p.meta span'));
+                // Filter out the bullet and author spans
+                const tagSpan = metaSpans.filter(s =>
+                    !s.classList.contains('author') &&
+                    s.innerText?.trim() !== '•' &&
+                    s.innerText?.trim().length > 0
+                ).pop();
+                const tag = tagSpan?.innerText?.trim() || '';
+
+                if (youtube_id || title) {
+                    results.push({ youtube_id, title, description, author, tag });
+                }
+            }
+            return results;
+        }""")
+
+        return demos, summary_bullets
 
     except Exception as e:
-        print(f"  ⚠  Playwright error for {url}: {e}")
+        print(f"  ⚠ Playwright error for {url}: {e}")
         return [], []
     finally:
         await browser.close()
 
 
-# ── Demos scraping ─────────────────────────────────────────────────────────────
+# ── Demos scraping ────────────────────────────────────────────────────────────
+
 async def scrape_demos_with_playwright(existing, force=False):
     print("\n🎬 Scraping demos with Playwright...")
-
     try:
         from playwright.async_api import async_playwright
     except ImportError:
-        print("  ⚠  Playwright not installed — falling back to requests-only")
+        print("  ⚠ Playwright not installed — falling back to requests-only")
         return scrape_demos_requests_only(existing, force)
 
     soup = fetch_html(BASE_DEMOS)
     if not soup:
-        print("  ✗  Could not fetch demos index")
+        print("  ✗ Could not fetch demos index")
         return existing
 
-    # Build week list from index
-    all_weeks = [{"date": now_iso()[:10], "week_label": "Current week", "url": BASE_DEMOS}]
+    # ── Build week list from index ──
+    all_weeks = [{
+        "date": now_iso()[:10],
+        "week_label": "Current week",
+        "url": BASE_DEMOS,
+    }]
     seen_urls = {BASE_DEMOS}
+
     for a in soup.find_all("a", href=True):
         href = a["href"]
         if href.startswith("/"):
             href = "https://omni.co" + href
         if re.search(r"/demos/\d{8}", href) and href not in seen_urls:
             all_weeks.append({
-                "date":       url_to_date(href) or "",
+                "date": url_to_date(href) or "",
                 "week_label": clean_text(a),
-                "url":        href,
+                "url": href,
             })
             seen_urls.add(href)
 
     print(f"  Found {len(all_weeks)} weeks in index")
 
-    # Merge index
+    # ── Merge index ──
     updated_index = list(existing.get("index", []))
     indexed_urls  = {e["url"] for e in updated_index}
+
     for week in all_weeks:
         if week["url"] not in indexed_urls:
             updated_index.append({
@@ -169,12 +254,12 @@ async def scrape_demos_with_playwright(existing, force=False):
             })
             indexed_urls.add(week["url"])
 
-    # Which weeks need scraping?
+    # ── Which weeks need scraping? ──
     existing_details = {w["url"]: w for w in existing.get("weeks_detail", [])}
     already_scraped  = set(existing_details.keys()) if not force else set()
-    to_scrape        = [w for w in all_weeks[:30] if w["url"] not in already_scraped]
-    print(f"  {len(to_scrape)} weeks to scrape")
+    to_scrape        = [w for w in all_weeks if w["url"] not in already_scraped]
 
+    print(f"  {len(to_scrape)} weeks to scrape")
     updated_details = dict(existing_details)
 
     async with async_playwright() as pw:
@@ -182,45 +267,65 @@ async def scrape_demos_with_playwright(existing, force=False):
             url = week["url"]
             print(f"  🎬 {week['week_label']} ({url})")
 
-            yt_ids, yt_titles = await extract_youtube_ids(url, pw)
-            print(f"     ✓  {len(yt_ids)} videos found")
+            demos, summary_bullets = await extract_demo_details(url, pw)
+            print(f"     ✓ {len(demos)} demos found")
 
-            # Get text summary via requests
+            # Build video list with full metadata
+            videos = []
+            for d in demos:
+                vid = {
+                    "youtube_id":  d["youtube_id"],
+                    "youtube_url": f"https://www.youtube.com/watch?v={d['youtube_id']}" if d["youtube_id"] else "",
+                    "embed_url":   f"https://www.youtube.com/embed/{d['youtube_id']}"   if d["youtube_id"] else "",
+                    "thumbnail":   f"https://img.youtube.com/vi/{d['youtube_id']}/mqdefault.jpg" if d["youtube_id"] else "",
+                    "title":       d["title"],
+                    "description": d["description"],
+                    "author":      d["author"],
+                    "tag":         d["tag"],
+                }
+                videos.append(vid)
+
+            # Page-level title from requests (more reliable than Playwright h1)
             week_soup = fetch_html(url)
-            title, summary = "", ""
+            page_title = ""
             if week_soup:
                 title_el = week_soup.find("h1") or week_soup.find("h2")
-                title    = clean_text(title_el) if title_el else ""
-                paras    = [clean_text(p) for p in week_soup.find_all("p")[:6]
-                            if len(clean_text(p)) > 40]
-                summary  = " ".join(paras[:3])[:800]
-
-            videos = [
-                {
-                    "youtube_id":  vid_id,
-                    "youtube_url": f"https://www.youtube.com/watch?v={vid_id}",
-                    "embed_url":   f"https://www.youtube.com/embed/{vid_id}",
-                    "title":       yt_titles[i] if i < len(yt_titles) else "",
-                    "thumbnail":   f"https://img.youtube.com/vi/{vid_id}/mqdefault.jpg",
-                }
-                for i, vid_id in enumerate(yt_ids)
-            ]
+                page_title = clean_text(title_el) if title_el else ""
 
             updated_details[url] = {
                 "date":          week["date"],
                 "url":           url,
                 "fully_scraped": True,
                 "scraped_at":    now_iso(),
-                "title":         title,
-                "summary":       summary,
+                "title":         page_title,
+                "summary_bullets": summary_bullets,
                 "video_count":   len(videos),
                 "videos":        videos,
             }
 
-            # Backfill title into index
+            # Backfill title + author list into index entry
+            all_authors = sorted(set(v["author"] for v in videos if v["author"]))
+            all_tags    = sorted(set(v["tag"]    for v in videos if v["tag"]))
             for entry in updated_index:
-                if entry["url"] == url and title and not entry.get("title"):
-                    entry["title"] = title
+                if entry["url"] == url:
+                    if page_title and not entry.get("title"):
+                        entry["title"] = page_title
+                    entry["authors"] = all_authors
+                    entry["tags"]    = all_tags
+                    break
+
+    # ── Rebuild index author/tag lists for previously scraped weeks ──
+    for detail in updated_details.values():
+        videos = detail.get("videos", [])
+        if not videos:
+            continue
+        all_authors = sorted(set(v["author"] for v in videos if v.get("author")))
+        all_tags    = sorted(set(v["tag"]    for v in videos if v.get("tag")))
+        for entry in updated_index:
+            if entry["url"] == detail["url"]:
+                entry.setdefault("authors", all_authors)
+                entry.setdefault("tags",    all_tags)
+                break
 
     total_videos = sum(len(d.get("videos", [])) for d in updated_details.values())
     print(f"\n  Done — {total_videos} total videos indexed")
@@ -230,7 +335,7 @@ async def scrape_demos_with_playwright(existing, force=False):
             "source":                  BASE_DEMOS,
             "last_scraped":            now_iso(),
             "scrape_method":           "playwright+requests",
-            "scrape_notes":            "Playwright extracts individual YouTube URLs per demo entry.",
+            "scrape_notes":            "Playwright extracts YouTube URLs, titles, descriptions, authors, and tags per demo entry.",
             "total_weeks_indexed":     len(updated_index),
             "total_weeks_with_detail": len(updated_details),
             "total_videos_indexed":    total_videos,
@@ -247,13 +352,13 @@ async def scrape_demos_with_playwright(existing, force=False):
 
 def scrape_demos_requests_only(existing, force=False):
     """Fallback: scrape demos index without Playwright (no YouTube URLs)."""
-    print("\n🎬 Scraping demos (requests-only)...")
+    print("\n🎬 Scraping demos (requests-only fallback)...")
     soup = fetch_html(BASE_DEMOS)
     if not soup:
         return existing
 
-    updated_index  = list(existing.get("index", []))
-    indexed_urls   = {e["url"] for e in updated_index}
+    updated_index = list(existing.get("index", []))
+    indexed_urls  = {e["url"] for e in updated_index}
 
     for a in soup.find_all("a", href=True):
         href = a["href"]
@@ -266,6 +371,8 @@ def scrape_demos_requests_only(existing, force=False):
                 "week_label": label,
                 "url":        href,
                 "title":      label,
+                "authors":    [],
+                "tags":       [],
             })
             indexed_urls.add(href)
 
@@ -276,16 +383,17 @@ def scrape_demos_requests_only(existing, force=False):
     }
 
 
-# ── Changelog scraping ─────────────────────────────────────────────────────────
+# ── Changelog scraping ────────────────────────────────────────────────────────
+
 def scrape_changelog(existing, force=False):
     print("\n📋 Scraping changelog...")
-
     soup = fetch_html(BASE_CHANGELOG)
     if not soup:
         return existing
 
     all_weeks = [{"week_label": "Current week", "url": BASE_CHANGELOG}]
-    seen = {BASE_CHANGELOG}
+    seen      = {BASE_CHANGELOG}
+
     for a in soup.find_all("a", href=True):
         href = a["href"]
         if href.startswith("/"):
@@ -300,10 +408,14 @@ def scrape_changelog(existing, force=False):
         {w["source_url"] for w in existing.get("weeks", []) if w.get("fully_scraped")}
         if not force else set()
     )
-    updated_weeks = {w["source_url"]: w for w in existing.get("weeks", []) if "source_url" in w}
+    updated_weeks = {
+        w["source_url"]: w
+        for w in existing.get("weeks", [])
+        if "source_url" in w
+    }
+
     updated_index = list(existing.get("index", []))
     indexed_urls  = {e["url"] for e in updated_index}
-
     for week in all_weeks:
         if week["url"] not in indexed_urls:
             updated_index.append(week)
@@ -311,9 +423,10 @@ def scrape_changelog(existing, force=False):
 
     date_pat = re.compile(
         r"(January|February|March|April|May|June|July|August|"
-        r"September|October|November|December)\s+\d{1,2},?\s+\d{4}", re.I)
+        r"September|October|November|December)\s+\d{1,2},?\s+\d{4}",
+        re.I,
+    )
 
-    new_scraped = 0
     for week in all_weeks:
         url = week["url"]
         if url in already_scraped:
@@ -358,31 +471,38 @@ def scrape_changelog(existing, force=False):
             "scraped_at":    now_iso(),
             "days":          days,
         }
-        new_scraped += 1
-        print(f"    ✓  {len(days)} days, {sum(len(d['items']) for d in days)} items")
+        print(f"     ✓ {len(days)} days, {sum(len(d['items']) for d in days)} items")
 
-    all_dates = [d["date"] for w in updated_weeks.values()
-                 for d in w.get("days", []) if d.get("date")]
+    all_dates = [
+        d["date"]
+        for w in updated_weeks.values()
+        for d in w.get("days", [])
+        if d.get("date")
+    ]
     return {
         "meta": {
-            "source":                    BASE_CHANGELOG,
-            "last_scraped":              now_iso(),
-            "total_weeks_indexed":       len(updated_index),
-            "total_weeks_fully_scraped": len([w for w in updated_weeks.values() if w.get("fully_scraped")]),
+            "source":                  BASE_CHANGELOG,
+            "last_scraped":            now_iso(),
+            "total_weeks_indexed":     len(updated_index),
+            "total_weeks_fully_scraped": len(
+                [w for w in updated_weeks.values() if w.get("fully_scraped")]
+            ),
             "date_range": {
                 "earliest_indexed": min(all_dates) if all_dates else "",
                 "latest_scraped":   max(all_dates) if all_dates else "",
             },
         },
-        "index":                 updated_index,
-        "weeks":                 list(updated_weeks.values()),
+        "index":              updated_index,
+        "weeks":              list(updated_weeks.values()),
         "weeks_not_yet_scraped": [],
     }
 
 
-# ── Diff report ────────────────────────────────────────────────────────────────
+# ── Diff report ───────────────────────────────────────────────────────────────
+
 def report_diff(old_cl, new_cl, old_dm, new_dm):
     lines = ["## 🔄 Omni Scraper Update Report", f"*{now_iso()}*", ""]
+
     old_items = {
         item[:80]
         for w in old_cl.get("weeks", [])
@@ -414,24 +534,35 @@ def report_diff(old_cl, new_cl, old_dm, new_dm):
         lines.append("### 🎬 Demos — No new weeks")
     lines.append("")
 
+    # Author diversity stats
+    all_authors = sorted(set(
+        v["author"]
+        for w in new_dm.get("weeks_detail", [])
+        for v in w.get("videos", [])
+        if v.get("author")
+    ))
+
     total_vids = sum(len(d.get("videos", [])) for d in new_dm.get("weeks_detail", []))
     lines += [
         "### 📊 Totals",
         f"- Changelog entries: {sum(len(d.get('items',[])) for w in new_cl.get('weeks',[]) for d in w.get('days',[]))}",
         f"- Demo weeks indexed: {len(new_dm.get('index', []))}",
         f"- YouTube videos indexed: {total_vids}",
+        f"- Unique demo authors: {len(all_authors)}",
+        f"- Authors: {', '.join(all_authors[:20])}{'...' if len(all_authors) > 20 else ''}",
     ]
     return "\n".join(lines)
 
 
-# ── Main ───────────────────────────────────────────────────────────────────────
+# ── Main ──────────────────────────────────────────────────────────────────────
+
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--force",          action="store_true")
-    parser.add_argument("--dry-run",        action="store_true")
+    parser.add_argument("--force",          action="store_true", help="Re-scrape all weeks")
+    parser.add_argument("--dry-run",        action="store_true", help="Print changes, don't write")
     parser.add_argument("--changelog-only", action="store_true")
     parser.add_argument("--demos-only",     action="store_true")
-    parser.add_argument("--no-playwright",  action="store_true")
+    parser.add_argument("--no-playwright",  action="store_true", help="Skip YouTube extraction")
     args = parser.parse_args()
 
     old_cl = load_json(CHANGELOG_FILE)
@@ -459,6 +590,7 @@ def main():
         print(f"✓ Report → {report_path}")
 
     print("\n✅ Done!")
+
 
 if __name__ == "__main__":
     sys.exit(main())
