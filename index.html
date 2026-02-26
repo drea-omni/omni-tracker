@@ -200,15 +200,40 @@ function buildChangelog(clData,demosList){
 function buildDemos(dmData){
   const detailMap={};
   for(const d of dmData.weeks_detail||[]) detailMap[d.url]=d;
-  return (dmData.index||[]).map(e=>({
-    date:e.date||"",
-    title:e.title||e.week_label||"",
-    url:e.url||"",
-    tags:inferTags(e.title||""),
-    summary:(detailMap[e.url]||{}).summary||"",
-    videos:(detailMap[e.url]||{}).videos||[],
-    video_count:(detailMap[e.url]||{}).video_count||0,
-  })).sort((a,b)=>b.date.localeCompare(a.date));
+  const entries=[];
+  for(const e of (dmData.index||[])){
+    const detail=detailMap[e.url]||{};
+    const videos=detail.videos||[];
+    if(videos.length>0){
+      // One entry per video
+      for(const v of videos){
+        entries.push({
+          date:e.date||"",
+          title:v.title||e.title||e.week_label||"",
+          weekTitle:e.title||e.week_label||"",
+          url:e.url||"",
+          youtube_id:v.youtube_id||"",
+          youtube_url:v.youtube_url||"",
+          embed_url:v.embed_url||"",
+          thumbnail:v.thumbnail||"",
+          tags:inferTags((v.title||"")+" "+(e.title||"")),
+          summary:detail.summary||"",
+        });
+      }
+    } else {
+      // No videos scraped yet — one entry per week
+      entries.push({
+        date:e.date||"",
+        title:e.title||e.week_label||"",
+        weekTitle:e.title||e.week_label||"",
+        url:e.url||"",
+        youtube_id:"",youtube_url:"",embed_url:"",thumbnail:"",
+        tags:inferTags(e.title||""),
+        summary:detail.summary||"",
+      });
+    }
+  }
+  return entries.sort((a,b)=>b.date.localeCompare(a.date));
 }
 
 // ── YouTube Modal ─────────────────────────────────────────────────────────────
@@ -520,15 +545,17 @@ function OmniExplorer(){
               const lag=m?daysBetween(item.date,m.demo.date):null;
               const isOpen=expandedIdx===`cl-${i}`;
               return(
-                <div key={i} className="entry" style={{display:"flex",gap:16,padding:"14px 0",borderBottom:`1px solid ${T.border}`,animationDelay:`${Math.min(i*0.04,0.5)}s`}}>
-                  <div style={{minWidth:80,paddingTop:2}}>
+                <div key={i} className="entry" style={{display:"flex",gap:0,padding:"14px 0",borderBottom:`1px solid ${T.border}`,animationDelay:`${Math.min(i*0.04,0.5)}s`}}>
+                  {/* Emoji column */}
+                  <div style={{minWidth:28,paddingTop:2,fontSize:13}}>🔧</div>
+                  <div style={{minWidth:76,paddingTop:2}}>
                     <div style={{fontFamily:"'DM Mono',monospace",fontSize:10.5,color:T.textMuted,lineHeight:1.3}}>
                       <div>{fmt(item.date).split(",")[0]}</div>
                       <div style={{color:T.textFaint}}>{fmt(item.date).split(",")[1]}</div>
                     </div>
                   </div>
                   <div style={{flex:1}}>
-                    <p style={{fontSize:14,lineHeight:1.6,color:T.text,marginBottom:7}}>🔧 {item.text}</p>
+                    <p style={{fontSize:14,lineHeight:1.6,color:T.text,marginBottom:7}}>{item.text}</p>
                     <div style={{display:"flex",gap:5,flexWrap:"wrap",marginBottom:m?8:0}}>
                       {item.tags?.map(t=>(
                         <span key={t} className="tag-pill" onClick={()=>toggleTag(t)}
@@ -631,60 +658,58 @@ function OmniExplorer(){
             </div>
             {visibleDM.map((demo,i)=>{
               const isOpen=expandedIdx===`dm-${i}`;
-              const hasVideos=demo.videos?.length>0;
               return(
-                <div key={i} className="entry" style={{display:"flex",gap:16,padding:"12px 0",borderBottom:`1px solid ${T.border}`,animationDelay:`${Math.min(i*0.04,0.5)}s`}}>
-                  <div style={{minWidth:80,paddingTop:2}}>
+                <div key={i} className="entry" style={{display:"flex",gap:0,padding:"11px 0",borderBottom:`1px solid ${T.border}`,animationDelay:`${Math.min(i*0.04,0.5)}s`}}>
+                  {/* Emoji column */}
+                  <div style={{minWidth:28,paddingTop:2,fontSize:13}}>🎥</div>
+                  {/* Date column */}
+                  <div style={{minWidth:76,paddingTop:2}}>
                     <div style={{fontFamily:"'DM Mono',monospace",fontSize:10.5,color:T.textMuted,lineHeight:1.3}}>
                       <div>{demo.date?fmt(demo.date).split(",")[0]:""}</div>
                       <div style={{color:T.textFaint}}>{demo.date?fmt(demo.date).split(",")[1]:""}</div>
                     </div>
                   </div>
+                  {/* Content */}
                   <div style={{flex:1}}>
-                    <div style={{display:"flex",gap:10,alignItems:"flex-start",flexWrap:"wrap",marginBottom:6}}>
-                      <a href={demo.url} target="_blank" rel="noopener noreferrer"
-                        style={{fontFamily:"'Inter',sans-serif",fontSize:14,color:T.gold,textDecoration:"none",fontStyle:"italic",flex:1,lineHeight:1.45}}>
-                        🎥 {demo.title} ↗
-                      </a>
+                    <div style={{display:"flex",gap:10,alignItems:"flex-start",flexWrap:"wrap",marginBottom:4}}>
+                      <span style={{fontSize:14,color:T.gold,flex:1,lineHeight:1.45,fontFamily:"'Inter',sans-serif",fontWeight:500}}>
+                        {demo.title||demo.weekTitle}
+                      </span>
                       <div style={{display:"flex",gap:5,flexShrink:0}}>
-                        {hasVideos&&<span style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:T.textMuted,padding:"3px 7px",background:T.bgSubtle,borderRadius:4,border:`1px solid ${T.border}`}}>
-                          ▶ {demo.videos.length} video{demo.videos.length!==1?"s":""}
-                        </span>}
-                        {(demo.summary||hasVideos)&&(
+                        {demo.youtube_id&&(
+                          videoMode==="modal"?(
+                            <button onClick={()=>openModal({youtube_id:demo.youtube_id,youtube_url:demo.youtube_url,embed_url:demo.embed_url,title:demo.title,thumbnail:demo.thumbnail},demo.weekTitle)}
+                              className="toggle-btn"
+                              style={{fontFamily:"'DM Mono',monospace",fontSize:9,padding:"3px 9px",background:T.accentSub,border:`1px solid ${T.accent}44`,borderRadius:4,color:T.accent,cursor:"pointer"}}>
+                              ▶ watch
+                            </button>
+                          ):(
+                            <a href={demo.youtube_url} target="_blank" rel="noopener noreferrer"
+                              style={{fontFamily:"'DM Mono',monospace",fontSize:9,padding:"3px 9px",background:T.accentSub,border:`1px solid ${T.accent}44`,borderRadius:4,color:T.accent,textDecoration:"none"}}>
+                              ▶ watch ↗
+                            </a>
+                          )
+                        )}
+                        {!demo.youtube_id&&(
+                          <a href={demo.url} target="_blank" rel="noopener noreferrer"
+                            style={{fontFamily:"'DM Mono',monospace",fontSize:9,padding:"3px 9px",background:T.bgSubtle,border:`1px solid ${T.border}`,borderRadius:4,color:T.textMuted,textDecoration:"none"}}>
+                            demo week ↗
+                          </a>
+                        )}
+                        {demo.summary&&(
                           <button className="toggle-btn" onClick={()=>setExpanded(isOpen?null:`dm-${i}`)}
                             style={{fontFamily:"'DM Mono',monospace",fontSize:9,padding:"3px 9px",background:"transparent",border:`1px solid ${T.border}`,borderRadius:4,color:T.textMuted,cursor:"pointer",whiteSpace:"nowrap"}}>
-                            {isOpen?"▲ hide":"▼ expand"}
+                            {isOpen?"▲ hide":"▼ more"}
                           </button>
                         )}
                       </div>
                     </div>
-                    {isOpen&&(
-                      <div style={{marginBottom:8}}>
-                        {demo.summary&&(
-                          <div style={{padding:"10px 14px",background:T.bgSubtle,borderLeft:`3px solid ${T.textMuted}44`,borderRadius:"0 8px 8px 0",fontFamily:"'DM Mono',monospace",fontSize:11,color:T.textSub,lineHeight:1.7,marginBottom:hasVideos?10:0}}>
-                            {demo.summary}
-                          </div>
-                        )}
-                        {hasVideos&&(
-                          <div style={{display:"flex",flexWrap:"wrap",gap:6,marginTop:8}}>
-                            {demo.videos.map((v,vi)=>(
-                              videoMode==="modal"?(
-                                <button key={vi} onClick={()=>openModal(v,demo.title)} className="toggle-btn"
-                                  style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:T.accent,padding:"4px 10px",border:`1px solid ${T.accent}44`,borderRadius:6,background:T.accentSub,cursor:"pointer"}}>
-                                  ▶ {v.title||`Video ${vi+1}`}
-                                </button>
-                              ):(
-                                <a key={vi} href={v.youtube_url} target="_blank" rel="noopener noreferrer"
-                                  style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:T.accent,textDecoration:"none",padding:"4px 10px",border:`1px solid ${T.accent}44`,borderRadius:6,background:T.accentSub,display:"inline-flex",alignItems:"center",gap:4}}>
-                                  ▶ {v.title||`Video ${vi+1}`} ↗
-                                </a>
-                              )
-                            ))}
-                          </div>
-                        )}
+                    {isOpen&&demo.summary&&(
+                      <div style={{padding:"8px 12px",background:T.bgSubtle,borderLeft:`3px solid ${T.textMuted}44`,borderRadius:"0 6px 6px 0",fontFamily:"'DM Mono',monospace",fontSize:11,color:T.textSub,lineHeight:1.7,marginBottom:6}}>
+                        {demo.summary}
                       </div>
                     )}
-                    <div style={{display:"flex",gap:5,flexWrap:"wrap"}}>
+                    <div style={{display:"flex",gap:5,flexWrap:"wrap",marginTop:2}}>
                       {demo.tags?.map(t=>(
                         <span key={t} className="tag-pill" onClick={()=>toggleTag(t)}
                           style={{fontFamily:"'DM Mono',monospace",fontSize:9,padding:"2px 7px",borderRadius:20,background:tagColor(t)+T.tagOpacity,border:`1px solid ${tagColor(t)}${T.tagBorder}`,color:tagColor(t)}}>
