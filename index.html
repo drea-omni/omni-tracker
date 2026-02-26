@@ -9,7 +9,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
     *{box-sizing:border-box;margin:0;padding:0;}
     body{background:#0A090E;}
@@ -225,7 +225,7 @@ function VideoModal({video,weekTitle,onClose,T}){
           style={{background:T.bgSubtle,color:T.textMuted}}>✕</button>
         <div style={{padding:"20px 20px 8px",paddingRight:48}}>
           {weekTitle&&<div style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:T.textMuted,letterSpacing:"0.08em",marginBottom:4,textTransform:"uppercase"}}>{weekTitle}</div>}
-          {video.title&&<div style={{fontFamily:"'DM Serif Display',serif",fontSize:16,color:T.text,fontStyle:"italic",lineHeight:1.4}}>{video.title}</div>}
+          {video.title&&<div style={{fontFamily:"'Inter',sans-serif",fontSize:16,color:T.text,fontStyle:"italic",lineHeight:1.4}}>{video.title}</div>}
         </div>
         <div style={{position:"relative",paddingBottom:"56.25%",height:0,overflow:"hidden"}}>
           <iframe
@@ -378,7 +378,7 @@ function OmniExplorer(){
 
   if(error) return(
     <div style={{minHeight:"100vh",background:T.bg,display:"flex",alignItems:"center",justifyContent:"center",flexDirection:"column",gap:12,padding:40}}>
-      <div style={{fontFamily:"'DM Serif Display',serif",fontSize:24,color:T.accent,fontStyle:"italic"}}>Something went wrong</div>
+      <div style={{fontFamily:"'Inter',sans-serif",fontSize:24,color:T.accent,fontStyle:"italic"}}>Something went wrong</div>
       <div style={{fontFamily:"'DM Mono',monospace",fontSize:12,color:T.textMuted}}>{error}</div>
       <div style={{fontFamily:"'DM Mono',monospace",fontSize:11,color:T.textFaint,textAlign:"center",maxWidth:400}}>
         Check that GitHub Pages is enabled and data files are accessible at:<br/>
@@ -388,7 +388,7 @@ function OmniExplorer(){
   );
 
   return(
-    <div style={{fontFamily:"'DM Sans',sans-serif",background:T.bg,minHeight:"100vh",color:T.text,transition:"background 0.3s,color 0.3s"}}>
+    <div style={{fontFamily:"sans-serif",background:T.bg,minHeight:"100vh",color:T.text,transition:"background 0.3s,color 0.3s"}}>
       <style>{`::-webkit-scrollbar-thumb{background:${T.accent}44;border-radius:3px;}`}</style>
 
       {/* MODAL */}
@@ -406,7 +406,7 @@ function OmniExplorer(){
             <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.3em",color:"#FF2D6B",textTransform:"uppercase",marginBottom:8,opacity:0.95}}>
               Omni Analytics · Release Intelligence
             </div>
-            <h1 style={{fontFamily:"'DM Serif Display',serif",fontSize:"clamp(26px,3.5vw,44px)",color:"#FFFFFF",fontStyle:"italic",letterSpacing:"-0.02em",lineHeight:1.1,marginBottom:6,textShadow:"0 2px 20px rgba(0,0,0,0.8),0 0 40px #FF2D6B44"}}>
+            <h1 style={{fontFamily:"'Inter',sans-serif",fontSize:"clamp(26px,3.5vw,44px)",color:"#FFFFFF",fontStyle:"italic",letterSpacing:"-0.02em",lineHeight:1.1,marginBottom:6,textShadow:"0 2px 20px rgba(0,0,0,0.8),0 0 40px #FF2D6B44"}}>
               Changelog & Demos
             </h1>
             <p style={{fontFamily:"'DM Mono',monospace",fontSize:11,color:"#FFFFFFaa",letterSpacing:"0.06em"}}>
@@ -415,13 +415,13 @@ function OmniExplorer(){
             </p>
           </div>
         </div>
-        <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"10px 28px",borderTop:"1px solid #FF2D6B18",flexWrap:"wrap",gap:8}}>
+        <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"10px 28px",borderTop:"1px solid #FF2D6B18",flexWrap:"wrap",gap:8,background:isDark?"transparent":"#374151"}}>
           <div style={{display:"flex",gap:6,alignItems:"center"}}>
-            <span style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:"#FFFFFF44",letterSpacing:"0.06em",textTransform:"uppercase"}}>Videos:</span>
-            {["modal","inline","tab"].map(m=>(
+            <span style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:"#FFFFFF66",letterSpacing:"0.06em",textTransform:"uppercase"}}>Videos:</span>
+            {["modal","tab"].map(m=>(
               <button key={m} onClick={()=>setVideoMode(m)} className="toggle-btn"
-                style={{...vmBtn(videoMode===m),color:videoMode===m?"#FF2D6B":"#FFFFFF66",border:"1px solid "+(videoMode===m?"#FF2D6B":"#FFFFFF22")}}>
-                {m==="modal"?"⬜ modal":m==="inline"?"⬇ inline":"↗ new tab"}
+                style={{...vmBtn(videoMode===m),color:videoMode===m?"#FF2D6B":"#FFFFFF88",border:"1px solid "+(videoMode===m?"#FF2D6B":"#FFFFFF33")}}>
+                {m==="modal"?"⬜ modal":"↗ new tab"}
               </button>
             ))}
           </div>
@@ -440,7 +440,7 @@ function OmniExplorer(){
           <div style={{flex:"1 1 220px",position:"relative"}}>
             <span style={{position:"absolute",left:12,top:"50%",transform:"translateY(-50%)",color:T.textMuted,fontSize:13}}>⌕</span>
             <input placeholder="Search features, APIs, demos…" value={query} onChange={e=>setQuery(e.target.value)}
-              style={{width:"100%",paddingLeft:32,paddingRight:12,paddingTop:9,paddingBottom:9,background:T.inputBg,border:`1.5px solid ${query?T.accent:T.inputBorder}`,borderRadius:10,color:T.text,fontSize:13.5,fontFamily:"'DM Sans',sans-serif",outline:"none",boxShadow:query?`0 0 0 3px ${T.accentGlow}`:"none",transition:"all 0.2s"}}/>
+              style={{width:"100%",paddingLeft:32,paddingRight:12,paddingTop:9,paddingBottom:9,background:T.inputBg,border:`1.5px solid ${query?T.accent:T.inputBorder}`,borderRadius:10,color:T.text,fontSize:13.5,fontFamily:"sans-serif",outline:"none",boxShadow:query?`0 0 0 3px ${T.accentGlow}`:"none",transition:"all 0.2s"}}/>
           </div>
           <input type="date" value={dateFrom} onChange={e=>setDateFrom(e.target.value)}
             style={{background:T.inputBg,border:`1px solid ${T.inputBorder}`,borderRadius:8,padding:"8px 10px",color:T.textSub,fontSize:11,fontFamily:"'DM Mono',monospace"}}/>
@@ -512,7 +512,7 @@ function OmniExplorer(){
         {showCL&&visibleCL.length>0&&(
           <section style={{marginBottom:32}}>
             <div style={{display:"flex",alignItems:"center",gap:12,padding:"8px 0 12px",borderBottom:`2px solid ${T.accent}`,marginBottom:4}}>
-              <span style={{fontFamily:"'DM Serif Display',serif",fontSize:18,color:T.accent,fontStyle:"italic"}}>Shipped</span>
+              <span style={{fontFamily:"'Inter',sans-serif",fontSize:18,color:T.accent,fontStyle:"italic"}}>Shipped</span>
               <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:T.textMuted,letterSpacing:"0.1em"}}>CHANGELOG · {cl.length} ENTRIES</span>
             </div>
             {visibleCL.map((item,i)=>{
@@ -556,7 +556,7 @@ function OmniExplorer(){
                       <div style={{marginTop:10,padding:"12px 16px",background:T.bgSubtle,borderLeft:`3px solid ${T.accent}`,borderRadius:"0 8px 8px 0"}}>
                         {/* Demo week title */}
                         <div style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:T.textMuted,letterSpacing:"0.1em",textTransform:"uppercase",marginBottom:4}}>Demo Week</div>
-                        <div style={{fontFamily:"'DM Serif Display',serif",fontSize:13,color:T.accentText,fontStyle:"italic",marginBottom:10}}>{m.demo.title}</div>
+                        <div style={{fontFamily:"'Inter',sans-serif",fontSize:13,color:T.accentText,fontStyle:"italic",marginBottom:10}}>{m.demo.title}</div>
                         {/* Find best matching video and show its description */}
                         {(()=>{
                           const vids = m.demo.videos||[];
@@ -626,7 +626,7 @@ function OmniExplorer(){
         {showDM&&visibleDM.length>0&&(
           <section>
             <div style={{display:"flex",alignItems:"center",gap:12,padding:"8px 0 12px",borderBottom:`2px solid ${T.textMuted}44`,marginBottom:4}}>
-              <span style={{fontFamily:"'DM Serif Display',serif",fontSize:18,color:T.textSub,fontStyle:"italic"}}>Previewed</span>
+              <span style={{fontFamily:"'Inter',sans-serif",fontSize:18,color:T.textSub,fontStyle:"italic"}}>Previewed</span>
               <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:T.textMuted,letterSpacing:"0.1em"}}>DEMOS · {dm.length} WEEKS · NOT GUARANTEED TO SHIP</span>
             </div>
             {visibleDM.map((demo,i)=>{
@@ -643,7 +643,7 @@ function OmniExplorer(){
                   <div style={{flex:1}}>
                     <div style={{display:"flex",gap:10,alignItems:"flex-start",flexWrap:"wrap",marginBottom:6}}>
                       <a href={demo.url} target="_blank" rel="noopener noreferrer"
-                        style={{fontFamily:"'DM Serif Display',serif",fontSize:14,color:T.gold,textDecoration:"none",fontStyle:"italic",flex:1,lineHeight:1.45}}>
+                        style={{fontFamily:"'Inter',sans-serif",fontSize:14,color:T.gold,textDecoration:"none",fontStyle:"italic",flex:1,lineHeight:1.45}}>
                         🎥 {demo.title} ↗
                       </a>
                       <div style={{display:"flex",gap:5,flexShrink:0}}>
@@ -665,16 +665,20 @@ function OmniExplorer(){
                             {demo.summary}
                           </div>
                         )}
-                        {hasVideos&&videoMode!=="tab"&&(
-                          <InlineVideos videos={demo.videos} weekTitle={demo.title} T={T} videoMode={videoMode} onOpenModal={openModal}/>
-                        )}
-                        {hasVideos&&videoMode==="tab"&&(
+                        {hasVideos&&(
                           <div style={{display:"flex",flexWrap:"wrap",gap:6,marginTop:8}}>
                             {demo.videos.map((v,vi)=>(
-                              <a key={vi} href={v.youtube_url} target="_blank" rel="noopener noreferrer"
-                                style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:T.accent,textDecoration:"none",padding:"4px 10px",border:`1px solid ${T.accent}44`,borderRadius:6,background:T.accentSub}}>
-                                ▶ {v.title||`Video ${vi+1}`} ↗
-                              </a>
+                              videoMode==="modal"?(
+                                <button key={vi} onClick={()=>openModal(v,demo.title)} className="toggle-btn"
+                                  style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:T.accent,padding:"4px 10px",border:`1px solid ${T.accent}44`,borderRadius:6,background:T.accentSub,cursor:"pointer"}}>
+                                  ▶ {v.title||`Video ${vi+1}`}
+                                </button>
+                              ):(
+                                <a key={vi} href={v.youtube_url} target="_blank" rel="noopener noreferrer"
+                                  style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:T.accent,textDecoration:"none",padding:"4px 10px",border:`1px solid ${T.accent}44`,borderRadius:6,background:T.accentSub,display:"inline-flex",alignItems:"center",gap:4}}>
+                                  ▶ {v.title||`Video ${vi+1}`} ↗
+                                </a>
+                              )
                             ))}
                           </div>
                         )}
@@ -743,7 +747,7 @@ function OmniExplorer(){
         )}
 
         {total===0&&!loading&&(
-          <div style={{textAlign:"center",padding:"80px 0",fontFamily:"'DM Serif Display',serif",fontSize:18,color:T.textFaint,fontStyle:"italic"}}>
+          <div style={{textAlign:"center",padding:"80px 0",fontFamily:"'Inter',sans-serif",fontSize:18,color:T.textFaint,fontStyle:"italic"}}>
             No results found — try a different search
           </div>
         )}
