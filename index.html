@@ -204,15 +204,12 @@ function buildDemos(dmData){
   for(const e of (dmData.index||[])){
     const detail=detailMap[e.url]||{};
     const videos=detail.videos||[];
+    const demosArr=detail.demos||[];
     const weekSummary=detail.summary||"";
-    const bulletPoints=detail.summary_bullets||[];
 
     if(videos.length>0){
       for(const v of videos){
-        const author=v.author||"";
-        const description=v.description||weekSummary;
-        const vtag=v.tag||"";
-        const tagBase=inferTags((v.title||"")+" "+(e.title||"")+" "+vtag);
+        const curated=demosArr.find(d=>d.title&&v.title&&d.title.toLowerCase().includes(v.title.toLowerCase().slice(0,20)));
         entries.push({
           date:e.date||"",
           title:v.title||e.title||e.week_label||"",
@@ -222,8 +219,22 @@ function buildDemos(dmData){
           youtube_url:v.youtube_url||"",
           embed_url:v.embed_url||"",
           thumbnail:v.thumbnail||"",
-          description,author,tag:vtag,tags:tagBase,
-          weekVideos:videos,bulletPoints,
+          description:v.description||(curated&&curated.description)||weekSummary,
+          author:curated?.author||"",
+          tags:inferTags((v.title||"")+" "+(e.title||"")),
+        });
+      }
+    } else if(demosArr.length>0){
+      for(const d of demosArr){
+        entries.push({
+          date:e.date||"",
+          title:d.title||"",
+          weekTitle:e.title||e.week_label||"",
+          url:e.url||"",
+          youtube_id:"",youtube_url:"",embed_url:"",thumbnail:"",
+          description:d.description||weekSummary,
+          author:d.author||"",
+          tags:d.tags||inferTags(d.title||""),
         });
       }
     } else {
@@ -233,9 +244,9 @@ function buildDemos(dmData){
         weekTitle:e.title||e.week_label||"",
         url:e.url||"",
         youtube_id:"",youtube_url:"",embed_url:"",thumbnail:"",
-        description:weekSummary,author:"",tag:"",
+        description:weekSummary,
+        author:"",
         tags:inferTags(e.title||""),
-        weekVideos:[],bulletPoints,
       });
     }
   }
@@ -271,6 +282,41 @@ function VideoModal({video,weekTitle,onClose,T}){
           <a href={video.youtube_url} target="_blank" rel="noopener noreferrer"
             style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:T.accent,textDecoration:"none",padding:"5px 12px",border:`1px solid ${T.accent}44`,borderRadius:6,background:T.accentSub}}>
             Open in YouTube ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── Playlist Modal ────────────────────────────────────────────────────────────
+function PlaylistModal({video,weekTitle,onClose,T}){
+  useEffect(()=>{
+    const handler=e=>{if(e.key==="Escape") onClose();};
+    window.addEventListener("keydown",handler);
+    return()=>window.removeEventListener("keydown",handler);
+  },[onClose]);
+  return(
+    <div className="modal-backdrop" onClick={e=>{if(e.target===e.currentTarget) onClose();}}>
+      <div style={{background:T.modalBg,border:`1px solid ${T.modalBorder}`,borderRadius:14,width:"min(420px,92vw)",overflow:"hidden",position:"relative",boxShadow:"0 24px 64px rgba(0,0,0,0.6)"}}>
+        <button className="modal-close" onClick={onClose} style={{background:T.bgSubtle,color:T.textMuted}}>✕</button>
+        {/* Thumbnail */}
+        {video.thumbnail&&(
+          <div style={{position:"relative",paddingBottom:"42%",background:"#000",overflow:"hidden"}}>
+            <img src={video.thumbnail} alt={video.title||"video"}
+              style={{position:"absolute",top:0,left:0,width:"100%",height:"100%",objectFit:"cover",opacity:0.7}}/>
+            <div style={{position:"absolute",inset:0,background:"linear-gradient(0deg,rgba(0,0,0,0.7) 0%,transparent 60%)"}}/>
+          </div>
+        )}
+        <div style={{padding:"16px 20px 20px"}}>
+          {weekTitle&&<div style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:T.textMuted,letterSpacing:"0.1em",textTransform:"uppercase",marginBottom:4}}>{weekTitle}</div>}
+          {video.title&&<div style={{fontFamily:"'Inter',sans-serif",fontSize:15,color:T.text,fontStyle:"italic",lineHeight:1.4,marginBottom:14}}>{video.title}</div>}
+          <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:T.textFaint,marginBottom:14,lineHeight:1.6}}>
+            Open this video on YouTube to save it to any of your playlists, add to Watch Later, or share.
+          </div>
+          <a href={video.youtube_url} target="_blank" rel="noopener noreferrer"
+            style={{display:"flex",alignItems:"center",justifyContent:"center",gap:8,padding:"10px 20px",background:"#FF2D6B",borderRadius:8,color:"#fff",textDecoration:"none",fontFamily:"'DM Mono',monospace",fontSize:11,letterSpacing:"0.06em",fontWeight:600}}>
+            ▶ Open on YouTube ↗
           </a>
         </div>
       </div>
@@ -317,6 +363,7 @@ function OmniExplorer(){
     try{localStorage.setItem("omni-theme",next?"dark":"light");}catch(e){}
     return next;
   });
+  const[showHeader,setShowHeader]=useState(true);
   const[changelog,setChangelog] =useState([]);
   const[demos,setDemos]         =useState([]);
   const[loading,setLoading]     =useState(true);
@@ -324,21 +371,23 @@ function OmniExplorer(){
   const[lastScraped,setLastScraped]=useState("");
   const[query,setQuery]         =useState("");
   const[activeTags,setActiveTags]=useState([]);
-  const[activeAuthors,setActiveAuthors]=useState([]);
   const[view,setView]           =useState("all");
-  const twoWeeksAgo=()=>{const d=new Date();d.setDate(d.getDate()-14);return d.toISOString().slice(0,10);};
-  const[dateFrom,setDateFrom]   =useState(twoWeeksAgo);
+  const daysAgo=n=>{const d=new Date();d.setDate(d.getDate()-n);return d.toISOString().slice(0,10);};
+  const[dateFrom,setDateFrom]   =useState("");
   const[dateTo,setDateTo]       =useState("");
+  const[quickDate,setQuickDate] =useState("");
   const[expandedIdx,setExpanded]=useState(null);
   const[showLinked,setShowLinked]=useState(false);
   const[videoMode,setVideoMode] =useState("modal");
   const[modalVideo,setModalVideo]=useState(null);
   const[modalWeek,setModalWeek] =useState("");
+  const[playlistModal,setPlaylistModal]=useState(null);
+  const[copiedId,setCopiedId]   =useState(null);
   const[pageSize,setPageSize]   =useState(50);
   const[page,setPage]           =useState(1);
 
   // Reset to page 1 whenever filters change
-  useEffect(()=>setPage(1),[query,activeTags,activeAuthors,dateFrom,dateTo,showLinked,view,pageSize]);
+  useEffect(()=>setPage(1),[query,activeTags,dateFrom,dateTo,showLinked,view,pageSize]);
 
   const T=isDark?THEMES.dark:THEMES.light;
 
@@ -361,9 +410,15 @@ function OmniExplorer(){
   },[]);
 
   const toggleTag=t=>setActiveTags(p=>p.includes(t)?p.filter(x=>x!==t):[...p,t]);
-  const toggleAuthor=a=>setActiveAuthors(p=>p.includes(a)?p.filter(x=>x!==a):[...p,a]);
   const openModal=useCallback((video,weekTitle)=>{setModalVideo(video);setModalWeek(weekTitle);},[]);
   const closeModal=useCallback(()=>setModalVideo(null),[]);
+  const openPlaylist=useCallback((video,weekTitle)=>{setPlaylistModal({video,weekTitle});},[]);
+  const copyLink=useCallback((url,id)=>{
+    navigator.clipboard.writeText(url).then(()=>{
+      setCopiedId(id);
+      setTimeout(()=>setCopiedId(null),2000);
+    }).catch(()=>{});
+  },[]);
 
   const pass=(item,isCL)=>{
     const txt=isCL?item.text:(item.title+" "+(item.summary||""));
@@ -372,14 +427,12 @@ function OmniExplorer(){
     if(dateFrom&&item.date<dateFrom) return false;
     if(dateTo&&item.date>dateTo) return false;
     if(showLinked&&isCL&&!item.demoMatch) return false;
-    if(activeAuthors.length&&!isCL&&!activeAuthors.includes(item.author)) return false;
     return true;
   };
 
   const cl=useMemo(()=>changelog.filter(c=>pass(c,true)),[changelog,query,activeTags,dateFrom,dateTo,showLinked]);
-  const dm=useMemo(()=>demos.filter(d=>pass(d,false)),[demos,query,activeTags,activeAuthors,dateFrom,dateTo]);
+  const dm=useMemo(()=>demos.filter(d=>pass(d,false)),[demos,query,activeTags,dateFrom,dateTo]);
   const ALL_TAGS=useMemo(()=>[...new Set([...changelog.flatMap(c=>c.tags),...demos.flatMap(d=>d.tags)])].sort(),[changelog,demos]);
-  const ALL_AUTHORS=useMemo(()=>[...new Set(demos.map(d=>d.author).filter(Boolean))].sort(),[demos]);
   const linked=changelog.filter(c=>c.demoMatch).length;
   const totalVideos=demos.reduce((s,d)=>s+(d.video_count||d.videos?.length||0),0);
   const showCL=view!=="demos",showDM=view!=="changelog";
@@ -436,29 +489,31 @@ function OmniExplorer(){
 
       {/* MODAL */}
       {modalVideo&&<VideoModal video={modalVideo} weekTitle={modalWeek} onClose={closeModal} T={T}/>}
+      {playlistModal&&<PlaylistModal video={playlistModal.video} weekTitle={playlistModal.weekTitle} onClose={()=>setPlaylistModal(null)} T={T}/>}
 
       {/* HEADER */}
       <div style={{background:"#0A090E",borderBottom:`1px solid #FF2D6B22`,position:"relative",overflow:"hidden"}}>
-        <div style={{width:"100%",height:220,position:"relative",overflow:"hidden"}}>
-          <img
-            src={`data:image/png;base64,${isDark?DARK_HDR:LIGHT_HDR}`}
-            alt="Demos x Changelog Explorer"
-            style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:"center",display:"block",transition:"opacity 0.4s"}}/>
-          <div style={{position:"absolute",inset:0,background:"linear-gradient(90deg,rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.15) 60%,rgba(0,0,0,0.4) 100%)"}}/>
-          <div style={{position:"absolute",inset:0,display:"flex",flexDirection:"column",justifyContent:"center",padding:"0 36px"}}>
-            <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.3em",color:"#FF2D6B",textTransform:"uppercase",marginBottom:8,opacity:0.95}}>
-              Omni Analytics · Release Intelligence
+        {showHeader&&(
+          <div style={{width:"100%",height:220,position:"relative",overflow:"hidden"}}>
+            <img
+              src={`data:image/png;base64,${isDark?DARK_HDR:LIGHT_HDR}`}
+              alt="Demos x Changelog Explorer"
+              style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:"center",display:"block",transition:"opacity 0.4s"}}/>
+            <div style={{position:"absolute",inset:0,background:"linear-gradient(90deg,rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.15) 60%,rgba(0,0,0,0.4) 100%)"}}/>
+            <div style={{position:"absolute",inset:0,display:"flex",flexDirection:"column",justifyContent:"center",padding:"0 36px"}}>
+              <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.3em",color:"#FF2D6B",textTransform:"uppercase",marginBottom:8,opacity:0.95}}>
+                Omni Analytics · Release Intelligence
+              </div>
+              <h1 style={{fontFamily:"'Inter',sans-serif",fontSize:"clamp(26px,3.5vw,44px)",color:"#FFFFFF",fontStyle:"italic",letterSpacing:"-0.02em",lineHeight:1.1,marginBottom:6,textShadow:"0 2px 20px rgba(0,0,0,0.8),0 0 40px #FF2D6B44"}}>
+                Changelog & Demos
+              </h1>
+              <p style={{fontFamily:"'DM Mono',monospace",fontSize:11,color:"#FFFFFFaa",letterSpacing:"0.06em"}}>
+                {changelog.length} shipped · {demos.length} demoed · <span style={{color:"#FF2D6B"}}>{linked} connections traced</span>
+                {totalVideos>0&&<span style={{color:"#FFFFFFaa"}}> · {totalVideos} videos indexed</span>}
+              </p>
             </div>
-            <h1 style={{fontFamily:"'Inter',sans-serif",fontSize:"clamp(26px,3.5vw,44px)",color:"#FFFFFF",fontStyle:"italic",letterSpacing:"-0.02em",lineHeight:1.1,marginBottom:6,textShadow:"0 2px 20px rgba(0,0,0,0.8),0 0 40px #FF2D6B44"}}>
-              Changelog & Demos
-            </h1>
-            <p style={{fontFamily:"'DM Mono',monospace",fontSize:11,color:"#FFFFFFaa",letterSpacing:"0.06em"}}>
-              {changelog.length} shipped · {demos.length} demoed · <span style={{color:"#FF2D6B"}}>{linked} connections traced</span>
-              {totalVideos>0&&<span style={{color:"#FFFFFFaa"}}> · {totalVideos} videos indexed</span>}
-              {ALL_AUTHORS.length>0&&<span style={{color:"#A78BFA99"}}> · {ALL_AUTHORS.length} presenters</span>}
-            </p>
           </div>
-        </div>
+        )}
         <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"10px 28px",borderTop:"1px solid #FF2D6B18",flexWrap:"wrap",gap:8,background:isDark?"transparent":"#374151"}}>
           <div style={{display:"flex",gap:6,alignItems:"center"}}>
             <span style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:"#FFFFFF66",letterSpacing:"0.06em",textTransform:"uppercase"}}>Videos:</span>
@@ -471,6 +526,9 @@ function OmniExplorer(){
           </div>
           <div style={{display:"flex",alignItems:"center",gap:10}}>
             {lastScraped&&<div style={{fontFamily:"'DM Mono',monospace",fontSize:9.5,color:"#FFFFFF33",letterSpacing:"0.04em"}}>scraped {lastScraped}</div>}
+            <button onClick={()=>setShowHeader(h=>!h)} style={{display:"flex",alignItems:"center",gap:6,padding:"5px 13px",borderRadius:20,background:"#FFFFFF12",border:"1px solid #FFFFFF22",color:"#FFFFFF88",cursor:"pointer",fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.05em"}}>
+              {showHeader?"⊟ hide banner":"⊞ show banner"}
+            </button>
             <button onClick={toggleTheme} style={{display:"flex",alignItems:"center",gap:6,padding:"5px 13px",borderRadius:20,background:"#FFFFFF12",border:"1px solid #FFFFFF22",color:"#FFFFFF88",cursor:"pointer",fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.05em"}}>
               {isDark?"☀ light":"◑ dark"}
             </button>
@@ -486,13 +544,23 @@ function OmniExplorer(){
             <input placeholder="Search features, APIs, demos…" value={query} onChange={e=>setQuery(e.target.value)}
               style={{width:"100%",paddingLeft:32,paddingRight:12,paddingTop:9,paddingBottom:9,background:T.inputBg,border:`1.5px solid ${query?T.accent:T.inputBorder}`,borderRadius:10,color:T.text,fontSize:13.5,fontFamily:"sans-serif",outline:"none",boxShadow:query?`0 0 0 3px ${T.accentGlow}`:"none",transition:"all 0.2s"}}/>
           </div>
-          <input type="date" value={dateFrom} onChange={e=>setDateFrom(e.target.value)}
+          <input type="date" value={dateFrom} onChange={e=>{setDateFrom(e.target.value);setQuickDate("");}}
             style={{background:T.inputBg,border:`1px solid ${T.inputBorder}`,borderRadius:8,padding:"8px 10px",color:T.textSub,fontSize:11,fontFamily:"'DM Mono',monospace"}}/>
           <span style={{color:T.textFaint,fontSize:10}}>→</span>
-          <input type="date" value={dateTo} onChange={e=>setDateTo(e.target.value)}
+          <input type="date" value={dateTo} onChange={e=>{setDateTo(e.target.value);setQuickDate("");}}
             style={{background:T.inputBg,border:`1px solid ${T.inputBorder}`,borderRadius:8,padding:"8px 10px",color:T.textSub,fontSize:11,fontFamily:"'DM Mono',monospace"}}/>
-          {(query||activeTags.length||dateFrom||dateTo||showLinked)&&(
-            <button onClick={()=>{setQuery("");setActiveTags([]);setActiveAuthors([]);setDateFrom(twoWeeksAgo());setDateTo("");setShowLinked(false);}} className="toggle-btn"
+          <div style={{display:"flex",gap:4}}>
+            {[{label:"7d",days:7},{label:"2w",days:14},{label:"1mo",days:30}].map(({label,days})=>(
+              <button key={label} onClick={()=>{const from=daysAgo(days);setDateFrom(from);setDateTo("");setQuickDate(label);}} className="toggle-btn"
+                style={{fontFamily:"'DM Mono',monospace",fontSize:9.5,padding:"5px 9px",borderRadius:6,cursor:"pointer",
+                  background:quickDate===label?T.accent+"28":"transparent",
+                  border:`1px solid ${quickDate===label?T.accent:T.border}`,
+                  color:quickDate===label?T.accent:T.textMuted,transition:"all 0.15s"}}>
+                {label}
+              </button>
+            ))}
+          </div>          {(query||activeTags.length||dateFrom||dateTo||showLinked)&&(
+            <button onClick={()=>{setQuery("");setActiveTags([]);setDateFrom("");setDateTo("");setQuickDate("");setShowLinked(false);}} className="toggle-btn"
               style={{padding:"8px 14px",background:isDark?"#FF2D6B18":"#FF2D6B12",border:`1px solid ${T.accent}44`,borderRadius:8,color:T.accent,fontSize:11,cursor:"pointer",fontFamily:"'DM Mono',monospace"}}>
               ✕ clear
             </button>
@@ -517,24 +585,6 @@ function OmniExplorer(){
             <button key={t} className="tag-pill" onClick={()=>toggleTag(t)} style={pill(activeTags.includes(t),tagColor(t))}>{t}</button>
           ))}
         </div>
-        {ALL_AUTHORS.length>0&&(showDM||view==="demos")&&(
-          <div style={{display:"flex",gap:5,flexWrap:"wrap",marginBottom:8,alignItems:"center"}}>
-            <span style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:T.textFaint,letterSpacing:"0.08em",textTransform:"uppercase",marginRight:2}}>by:</span>
-            {ALL_AUTHORS.map(a=>{
-              const active=activeAuthors.includes(a);
-              return(
-                <button key={a} className="tag-pill" onClick={()=>toggleAuthor(a)}
-                  style={{padding:"3px 10px",borderRadius:20,fontSize:10,fontFamily:"'DM Mono',monospace",
-                    cursor:"pointer",letterSpacing:"0.04em",
-                    border:`1px solid ${active?"#A78BFA":T.pillBorder}`,
-                    background:active?"#A78BFA28":T.pillBg,
-                    color:active?"#A78BFA":T.textMuted,transition:"all 0.15s"}}>
-                  {a}
-                </button>
-              );
-            })}
-          </div>
-        )}
         <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:8}}>
           <div style={{fontFamily:"'DM Mono',monospace",fontSize:9.5,color:T.textFaint,letterSpacing:"0.05em"}}>
             {total===(changelog.length+demos.length)?`${total} entries total`:`${total} matching`}
@@ -618,58 +668,84 @@ function OmniExplorer(){
                     )}
                     {m&&isOpen&&(
                       <div style={{marginTop:10,padding:"12px 16px",background:T.bgSubtle,borderLeft:`3px solid ${T.accent}`,borderRadius:"0 8px 8px 0"}}>
-                        {/* Demo week title */}
-                        <div style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:T.textMuted,letterSpacing:"0.1em",textTransform:"uppercase",marginBottom:4}}>Demo Week</div>
-                        <div style={{fontFamily:"'Inter',sans-serif",fontSize:13,color:T.accentText,fontStyle:"italic",marginBottom:10}}>{m.demo.title}</div>
-                        {/* Find best matching video and show its description */}
+                        {/* Demo Week label */}
+                        <div style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:T.textMuted,letterSpacing:"0.1em",textTransform:"uppercase",marginBottom:6}}>Demo Week</div>
                         {(()=>{
-                          const vids = m.demo.videos||[];
-                          // Score each video title against the changelog entry text
-                          const entryWords = item.text.toLowerCase().split(/\W+/).filter(w=>w.length>3);
-                          let bestScore=-1, bestVid=vids[0]||null;
+                          const vids=m.demo.videos||[];
+                          const entryWords=item.text.toLowerCase().split(/\W+/).filter(w=>w.length>3);
+                          let bestScore=-1,bestVid=vids[0]||null;
                           for(const v of vids){
                             const vtWords=(v.title||"").toLowerCase().split(/\W+/).filter(w=>w.length>3);
                             const overlap=entryWords.filter(w=>vtWords.includes(w)).length;
                             if(overlap>bestScore){bestScore=overlap;bestVid=v;}
                           }
-                          if(!bestVid) return(
-                            <a href={m.demo.url} target="_blank" rel="noopener noreferrer"
-                              style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:T.accent,textDecoration:"none",padding:"5px 12px",border:`1px solid ${T.accent}44`,borderRadius:6,background:T.accentSub,display:"inline-flex",alignItems:"center",gap:4}}>
-                              🎬 Watch demo ↗
-                            </a>
-                          );
-                          const specificUrl=`https://www.youtube.com/watch?v=${bestVid.youtube_id}`;
+                          const specificUrl=bestVid?`https://www.youtube.com/watch?v=${bestVid.youtube_id}`:m.demo.url;
+                          const vidObj=bestVid||{youtube_url:m.demo.url,title:m.demo.title};
+                          const clId=`cl-vid-${i}`;
                           return(
-                            <div>
-                              {/* Matched video title + description */}
-                              <div style={{padding:"10px 12px",background:T.bg,border:`1px solid ${T.border}`,borderRadius:8,marginBottom:10}}>
-                                <div style={{display:"flex",alignItems:"center",gap:6,marginBottom:bestVid.title?6:0}}>
-                                  <span style={{fontSize:9,color:T.accent}}>🎬</span>
-                                  <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:T.accent,fontWeight:600}}>{bestVid.title||"Demo video"}</span>
+                            <div style={{display:"flex",gap:10,alignItems:"flex-start"}}>
+                              {/* Thumbnail column */}
+                              {bestVid?.thumbnail&&(
+                                <div style={{flexShrink:0,width:88,borderRadius:6,overflow:"hidden",border:`1px solid ${T.border}`,cursor:"pointer",position:"relative"}}
+                                  onClick={()=>videoMode==="modal"?openModal(bestVid,m.demo.title):window.open(specificUrl,"_blank")}>
+                                  <img src={bestVid.thumbnail} alt={bestVid.title||"video"}
+                                    style={{width:"100%",display:"block",objectFit:"cover"}}
+                                    onError={e=>e.target.style.display="none"}/>
+                                  <div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",background:"rgba(0,0,0,0.25)"}}>
+                                    <div style={{width:22,height:22,borderRadius:"50%",background:"rgba(255,45,107,0.85)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:9,color:"#fff"}}>▶</div>
+                                  </div>
                                 </div>
-                                {/* Show demo week summary as the closest description we have */}
+                              )}
+                              {/* Content column */}
+                              <div style={{flex:1,minWidth:0}}>
+                                {/* Title row + buttons */}
+                                <div style={{display:"flex",gap:8,alignItems:"flex-start",flexWrap:"wrap",marginBottom:4}}>
+                                  <span style={{fontSize:13,color:T.gold,flex:1,lineHeight:1.4,fontFamily:"'Inter',sans-serif",fontWeight:500,fontStyle:"italic"}}>
+                                    {bestVid?.title||m.demo.title}
+                                  </span>
+                                  <div style={{display:"flex",gap:5,flexShrink:0}}>
+                                    {videoMode==="modal"?(
+                                      <button onClick={()=>openModal(bestVid||vidObj,m.demo.title)} className="toggle-btn"
+                                        style={{fontFamily:"'DM Mono',monospace",fontSize:9,padding:"3px 9px",background:T.accentSub,border:`1px solid ${T.accent}44`,borderRadius:4,color:T.accent,cursor:"pointer"}}>
+                                        ▶ watch
+                                      </button>
+                                    ):(
+                                      <a href={specificUrl} target="_blank" rel="noopener noreferrer"
+                                        style={{fontFamily:"'DM Mono',monospace",fontSize:9,padding:"3px 9px",background:T.accentSub,border:`1px solid ${T.accent}44`,borderRadius:4,color:T.accent,textDecoration:"none"}}>
+                                        ▶ watch ↗
+                                      </a>
+                                    )}
+                                    <button onClick={()=>openPlaylist(bestVid||vidObj,m.demo.title)}
+                                      className="toggle-btn" title="Save to playlist"
+                                      style={{fontFamily:"'DM Mono',monospace",fontSize:9,padding:"3px 9px",background:"transparent",border:`1px solid ${T.border}`,borderRadius:4,color:T.textMuted,cursor:"pointer"}}>
+                                      ＋ playlist
+                                    </button>
+                                    <button onClick={()=>copyLink((bestVid||vidObj).youtube_url,clId)}
+                                      className="toggle-btn" title="Copy YouTube link"
+                                      style={{fontFamily:"'DM Mono',monospace",fontSize:9,padding:"3px 9px",background:copiedId===clId?T.accentSub:"transparent",border:`1px solid ${copiedId===clId?T.accent:T.border}`,borderRadius:4,color:copiedId===clId?T.accent:T.textMuted,cursor:"pointer",transition:"all 0.2s"}}>
+                                      {copiedId===clId?"✓ copied":"🔗 link"}
+                                    </button>
+                                  </div>
+                                </div>
+                                {/* Summary / description */}
                                 {m.demo.summary&&(
-                                  <p style={{fontFamily:"'DM Mono',monospace",fontSize:10.5,color:T.textSub,lineHeight:1.7,margin:0}}>
+                                  <p style={{fontFamily:"'DM Mono',monospace",fontSize:10.5,color:T.textSub,lineHeight:1.65,margin:"0 0 5px"}}>
                                     {m.demo.summary}
                                   </p>
                                 )}
-                              </div>
-                              {/* Video action buttons */}
-                              <div style={{display:"flex",flexWrap:"wrap",gap:8,alignItems:"center"}}>
-                                {videoMode==="modal"?(
-                                  <button onClick={()=>openModal(bestVid,m.demo.title)} className="toggle-btn"
-                                    style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:T.accent,padding:"5px 12px",border:`1px solid ${T.accent}44`,borderRadius:6,background:T.accentSub,cursor:"pointer"}}>
-                                    ▶ Watch: {bestVid.title||"Demo video"}
-                                  </button>
-                                ):(
-                                  <a href={specificUrl} target="_blank" rel="noopener noreferrer"
-                                    style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:T.accent,textDecoration:"none",padding:"5px 12px",border:`1px solid ${T.accent}44`,borderRadius:6,background:T.accentSub,display:"inline-flex",alignItems:"center",gap:4}}>
-                                    ▶ Watch: {bestVid.title||"Demo video"} ↗
-                                  </a>
-                                )}
+                                {/* Demo tags */}
+                                <div style={{display:"flex",gap:5,flexWrap:"wrap",marginTop:2}}>
+                                  {m.demo.tags?.map(t=>(
+                                    <span key={t} className="tag-pill" onClick={()=>toggleTag(t)}
+                                      style={{fontFamily:"'DM Mono',monospace",fontSize:9,padding:"2px 7px",borderRadius:20,background:tagColor(t)+T.tagOpacity,border:`1px solid ${tagColor(t)}${T.tagBorder}`,color:tagColor(t)}}>
+                                      {t}
+                                    </span>
+                                  ))}
+                                </div>
+                                {/* More videos link */}
                                 {vids.length>1&&(
                                   <a href={m.demo.url} target="_blank" rel="noopener noreferrer"
-                                    style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:T.textMuted,textDecoration:"none",padding:"4px 9px",border:`1px solid ${T.border}`,borderRadius:6}}>
+                                    style={{display:"inline-block",marginTop:6,fontFamily:"'DM Mono',monospace",fontSize:9,color:T.textMuted,textDecoration:"none",padding:"3px 8px",border:`1px solid ${T.border}`,borderRadius:4}}>
                                     +{vids.length-1} more in this week ↗
                                   </a>
                                 )}
@@ -727,6 +803,18 @@ function OmniExplorer(){
                             </a>
                           )
                         )}
+                        {demo.youtube_url&&(<>
+                          <button onClick={()=>openPlaylist({youtube_id:demo.youtube_id,youtube_url:demo.youtube_url,embed_url:demo.embed_url,title:demo.title,thumbnail:demo.thumbnail},demo.weekTitle)}
+                            className="toggle-btn" title="Save to playlist"
+                            style={{fontFamily:"'DM Mono',monospace",fontSize:9,padding:"3px 9px",background:"transparent",border:`1px solid ${T.border}`,borderRadius:4,color:T.textMuted,cursor:"pointer"}}>
+                            ＋ playlist
+                          </button>
+                          <button onClick={()=>copyLink(demo.youtube_url,`dm-${i}`)}
+                            className="toggle-btn" title="Copy YouTube link"
+                            style={{fontFamily:"'DM Mono',monospace",fontSize:9,padding:"3px 9px",background:copiedId===`dm-${i}`?T.accentSub:"transparent",border:`1px solid ${copiedId===`dm-${i}`?T.accent:T.border}`,borderRadius:4,color:copiedId===`dm-${i}`?T.accent:T.textMuted,cursor:"pointer",transition:"all 0.2s"}}>
+                            {copiedId===`dm-${i}`?"✓ copied":"🔗 link"}
+                          </button>
+                        </>)}
                         {!demo.youtube_id&&(
                           <a href={demo.url} target="_blank" rel="noopener noreferrer"
                             style={{fontFamily:"'DM Mono',monospace",fontSize:9,padding:"3px 9px",background:T.bgSubtle,border:`1px solid ${T.border}`,borderRadius:4,color:T.textMuted,textDecoration:"none"}}>
@@ -735,15 +823,10 @@ function OmniExplorer(){
                         )}
                       </div>
                     </div>
-                    {demo.author&&(
-                      <div style={{fontFamily:"'DM Mono',monospace",fontSize:9.5,color:"#A78BFA",letterSpacing:"0.04em",marginBottom:3,display:"flex",alignItems:"center",gap:4}}>
-                        <span style={{color:T.textFaint}}>▸</span>{demo.author}
-                        {demo.tag&&<span style={{color:T.textFaint,marginLeft:4,padding:"1px 6px",border:`1px solid ${T.border}`,borderRadius:10,fontSize:8.5}}>{demo.tag}</span>}
-                      </div>
-                    )}
                     {demo.description&&(
                       <p style={{fontFamily:"'DM Mono',monospace",fontSize:11,color:T.textSub,lineHeight:1.65,margin:"2px 0 5px"}}>
                         {demo.description}
+                        {demo.author&&<span style={{fontSize:9,color:T.textFaint,marginLeft:8}}>— {demo.author}</span>}
                       </p>
                     )}
                     <div style={{display:"flex",gap:5,flexWrap:"wrap",marginTop:2}}>
