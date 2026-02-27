@@ -1,1 +1,22 @@
-{}
+{
+  "2026-02-18-5": {
+    "attached": {
+      "date": "2025-03-14",
+      "title": "CSV Upload Security",
+      "weekTitle": "Guest Vis Demo, Editing Vis from the Dashboard, CSV Upload Edit Workflows, a Slack Emoji App, and More",
+      "url": "https://omni.co/demos/20250314",
+      "youtube_id": "pdhXMQlRZis",
+      "youtube_url": "https://www.youtube.com/watch?v=pdhXMQlRZis",
+      "embed_url": "https://www.youtube.com/embed/pdhXMQlRZis",
+      "thumbnail": "https://img.youtube.com/vi/pdhXMQlRZis/mqdefault.jpg",
+      "description": "A quick demo explaining our CSV upload security model - where developers can move CSVs across workbooks, but they are default locked into the security of the given workbook.",
+      "author": "Steven Talbot",
+      "tags": [
+        "Dashboards",
+        "Visualization",
+        "Export"
+      ]
+    },
+    "confidence": "manual"
+  }
+}
