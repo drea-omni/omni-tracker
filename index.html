@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -352,6 +353,155 @@ function InlineVideos({videos,weekTitle,T,videoMode,onOpenModal}){
   );
 }
 
+// ── Admin Edit Modal ──────────────────────────────────────────────────────────
+function AdminEditModal({entry,entryId,demos,onClose,onDetach,onAttach,T}){
+  const[selectedDemo,setSelectedDemo]=useState(null);
+  const[searchTerm,setSearchTerm]=useState("");
+  
+  const filteredDemos=demos.filter(d=>
+    d.title?.toLowerCase().includes(searchTerm.toLowerCase())||
+    d.weekTitle?.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  return(
+    <div className="modal-backdrop" onClick={e=>{if(e.target===e.currentTarget)onClose();}}>
+      <div style={{background:T.modalBg,border:`1px solid ${T.modalBorder}`,borderRadius:14,width:"min(680px,92vw)",maxHeight:"80vh",overflow:"hidden",position:"relative"}}>
+        <button className="modal-close" onClick={onClose} style={{background:T.bgSubtle,color:T.textMuted}}>✕</button>
+        
+        <div style={{padding:"20px 24px",borderBottom:`1px solid ${T.border}`}}>
+          <div style={{fontFamily:"'DM Mono',monospace",fontSize:11,color:T.accent,letterSpacing:"0.1em",marginBottom:8}}>ADMIN: EDIT MATCH</div>
+          <div style={{fontFamily:"'Inter',sans-serif",fontSize:14,color:T.text,lineHeight:1.5}}>{entry.text}</div>
+          <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:T.textMuted,marginTop:4}}>{entry.date}</div>
+        </div>
+
+        <div style={{padding:"16px 24px",maxHeight:"50vh",overflowY:"auto"}}>
+          <div style={{marginBottom:16}}>
+            <input 
+              placeholder="Search demos by title..." 
+              value={searchTerm} 
+              onChange={e=>setSearchTerm(e.target.value)}
+              style={{width:"100%",padding:"8px 12px",background:T.inputBg,border:`1px solid ${T.inputBorder}`,borderRadius:8,color:T.text,fontSize:12,fontFamily:"'DM Mono',monospace"}}
+            />
+          </div>
+
+          <div style={{display:"grid",gap:8}}>
+            {filteredDemos.map((d,i)=>{
+              const isSelected=selectedDemo?.youtube_id===d.youtube_id;
+              return(
+                <div key={i} onClick={()=>setSelectedDemo(d)}
+                  style={{padding:"10px 12px",background:isSelected?T.accent+"18":T.bgSubtle,border:`1px solid ${isSelected?T.accent:T.border}`,borderRadius:8,cursor:"pointer",transition:"all 0.15s"}}>
+                  <div style={{display:"flex",gap:10,alignItems:"center"}}>
+                    {d.thumbnail&&(
+                      <img src={d.thumbnail} alt="" style={{width:60,height:34,objectFit:"cover",borderRadius:4,flexShrink:0}}/>
+                    )}
+                    <div style={{flex:1,minWidth:0}}>
+                      <div style={{fontFamily:"'Inter',sans-serif",fontSize:12,color:isSelected?T.accent:T.text,fontWeight:isSelected?600:400,marginBottom:2}}>{d.title||d.weekTitle}</div>
+                      <div style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:T.textMuted}}>{d.date} {d.author&&`• ${d.author}`}</div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        <div style={{padding:"16px 24px",borderTop:`1px solid ${T.border}`,display:"flex",gap:10,justifyContent:"flex-end"}}>
+          <button onClick={()=>{onDetach(entryId);onClose();}}
+            style={{padding:"8px 16px",background:"transparent",border:`1px solid ${T.border}`,borderRadius:8,color:T.textMuted,fontFamily:"'DM Mono',monospace",fontSize:11,cursor:"pointer"}}>
+            🔓 Detach Current
+          </button>
+          <button onClick={()=>{if(selectedDemo){onAttach(entryId,selectedDemo);onClose();}}}
+            disabled={!selectedDemo}
+            style={{padding:"8px 16px",background:selectedDemo?T.accent:"transparent",border:`1px solid ${selectedDemo?T.accent:T.border}`,borderRadius:8,color:selectedDemo?"#fff":T.textMuted,fontFamily:"'DM Mono',monospace",fontSize:11,cursor:selectedDemo?"pointer":"not-allowed",opacity:selectedDemo?1:0.5}}>
+            🔗 Attach Selected
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── Admin Panel ───────────────────────────────────────────────────────────────
+function AdminPanel({isOpen,onClose,overrides,changelog,demos,onRemoveOverride,onClearAll,onEditEntry,T}){
+  if(!isOpen)return null;
+
+  const overrideEntries=Object.entries(overrides).map(([id,override])=>{
+    const[date,idx]=id.split("-");
+    const entry=changelog.find((c,i)=>c.date===date&&i===parseInt(idx));
+    return{id,override,entry};
+  }).filter(x=>x.entry);
+
+  const detachedCount=overrideEntries.filter(x=>x.override.detached).length;
+  const attachedCount=overrideEntries.filter(x=>x.override.attached).length;
+
+  return(
+    <div style={{position:"fixed",top:0,right:isOpen?0:-380,width:360,height:"100vh",background:T.bg,borderLeft:`2px solid ${T.accent}`,boxShadow:"-4px 0 24px rgba(0,0,0,0.3)",zIndex:999,transition:"right 0.3s ease",display:"flex",flexDirection:"column"}}>
+      {/* Header */}
+      <div style={{padding:"20px 20px 16px",borderBottom:`1px solid ${T.border}`,background:T.bgSubtle}}>
+        <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:12}}>
+          <div style={{fontFamily:"'DM Mono',monospace",fontSize:13,color:T.accent,letterSpacing:"0.1em",fontWeight:600}}>🔐 ADMIN PANEL</div>
+          <button onClick={onClose} style={{background:"transparent",border:"none",color:T.textMuted,fontSize:18,cursor:"pointer",padding:4}}>✕</button>
+        </div>
+        <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:T.textMuted,lineHeight:1.6}}>
+          <div>📊 {overrideEntries.length} override{overrideEntries.length!==1?"s":""} active</div>
+          <div style={{color:T.textFaint}}>• {detachedCount} detached</div>
+          <div style={{color:T.textFaint}}>• {attachedCount} manually attached</div>
+        </div>
+      </div>
+
+      {/* Quick Actions */}
+      <div style={{padding:"12px 20px",borderBottom:`1px solid ${T.border}`,background:T.bgSubtle}}>
+        <div style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:T.textMuted,letterSpacing:"0.08em",marginBottom:8,textTransform:"uppercase"}}>Quick Actions</div>
+        <button onClick={onClearAll}
+          style={{width:"100%",padding:"8px 12px",background:"transparent",border:`1px solid ${T.accent}44`,borderRadius:8,color:T.accent,fontFamily:"'DM Mono',monospace",fontSize:10,cursor:"pointer",transition:"all 0.15s"}}>
+          🗑️ Clear All Overrides
+        </button>
+      </div>
+
+      {/* Override List */}
+      <div style={{flex:1,overflowY:"auto",padding:"12px 20px"}}>
+        <div style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:T.textMuted,letterSpacing:"0.08em",marginBottom:10,textTransform:"uppercase"}}>Override List</div>
+        {overrideEntries.length===0?(
+          <div style={{textAlign:"center",padding:"40px 20px",fontFamily:"'DM Mono',monospace",fontSize:11,color:T.textFaint,fontStyle:"italic"}}>
+            No overrides yet
+          </div>
+        ):(
+          <div style={{display:"grid",gap:10}}>
+            {overrideEntries.map(({id,override,entry})=>(
+              <div key={id} style={{padding:"10px 12px",background:T.bgSubtle,border:`1px solid ${T.border}`,borderRadius:8}}>
+                <div style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:T.textMuted,marginBottom:4}}>{entry.date}</div>
+                <div style={{fontFamily:"'Inter',sans-serif",fontSize:11,color:T.text,lineHeight:1.4,marginBottom:6,display:"-webkit-box",WebkitLineClamp:2,WebkitBoxOrient:"vertical",overflow:"hidden"}}>
+                  {entry.text}
+                </div>
+                <div style={{display:"flex",alignItems:"center",gap:6,marginBottom:8}}>
+                  <span style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:override.detached?T.orange:T.accent,background:override.detached?T.orangeBg:T.accentSub,padding:"2px 8px",borderRadius:12}}>
+                    {override.detached?"🔓 DETACHED":"🔗 ATTACHED"}
+                  </span>
+                  {override.attached&&(
+                    <span style={{fontFamily:"'DM Mono',monospace",fontSize:8,color:T.textFaint,flex:1,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>
+                      to: {override.attached.title||override.attached.weekTitle}
+                    </span>
+                  )}
+                </div>
+                <div style={{display:"flex",gap:6}}>
+                  <button onClick={()=>onEditEntry(entry,id)}
+                    style={{flex:1,padding:"4px 8px",background:"transparent",border:`1px solid ${T.border}`,borderRadius:6,color:T.textMuted,fontFamily:"'DM Mono',monospace",fontSize:9,cursor:"pointer"}}>
+                    Edit
+                  </button>
+                  <button onClick={()=>onRemoveOverride(id)}
+                    style={{flex:1,padding:"4px 8px",background:"transparent",border:`1px solid ${T.border}`,borderRadius:6,color:T.textMuted,fontFamily:"'DM Mono',monospace",fontSize:9,cursor:"pointer"}}>
+                    Remove
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 // ── Main App ──────────────────────────────────────────────────────────────────
 function OmniExplorer(){
   const[isDark,setIsDark]       =useState(()=>{
@@ -387,6 +537,48 @@ function OmniExplorer(){
   const[page,setPage]           =useState(1);
   const[activeAuthor,setActiveAuthor]=useState(null);
   const[authorOpen,setAuthorOpen]=useState(false);
+  
+  // Admin mode
+  const[adminMode,setAdminMode]=useState(false);
+  const[adminAuthed,setAdminAuthed]=useState(()=>{
+    try{return localStorage.getItem("omni-admin-authed")==="true";}catch(e){return false;}
+  });
+  const[adminPanelOpen,setAdminPanelOpen]=useState(false);
+  const[overrides,setOverrides]=useState(()=>{
+    try{
+      const stored=localStorage.getItem("omni-admin-overrides");
+      return stored?JSON.parse(stored):{};
+    }catch(e){return {};}
+  });
+  const[editingEntry,setEditingEntry]=useState(null);
+
+  // Check for ?admin=true in URL
+  useEffect(()=>{
+    const params=new URLSearchParams(window.location.search);
+    if(params.get("admin")==="true"){
+      setAdminMode(true);
+      if(!adminAuthed){
+        const pass=prompt("Enter admin passcode:");
+        if(pass==="omni2026"){
+          setAdminAuthed(true);
+          try{localStorage.setItem("omni-admin-authed","true");}catch(e){}
+          setAdminPanelOpen(true);
+        }else{
+          alert("Incorrect passcode");
+          setAdminMode(false);
+        }
+      }else{
+        setAdminPanelOpen(true);
+      }
+    }
+  },[adminAuthed]);
+
+  // Save overrides to localStorage whenever they change
+  useEffect(()=>{
+    try{
+      localStorage.setItem("omni-admin-overrides",JSON.stringify(overrides));
+    }catch(e){}
+  },[overrides]);
 
   // Reset to page 1 whenever filters change
   useEffect(()=>setPage(1),[query,activeTags,activeAuthor,dateFrom,dateTo,showLinked,view,pageSize]);
@@ -422,6 +614,37 @@ function OmniExplorer(){
     }).catch(()=>{});
   },[]);
 
+  // Admin functions
+  const detachDemo=(clEntryId)=>{
+    setOverrides(prev=>({...prev,[clEntryId]:{detached:true}}));
+  };
+  const attachDemo=(clEntryId,demo)=>{
+    setOverrides(prev=>({...prev,[clEntryId]:{attached:demo,confidence:"manual"}}));
+  };
+  const removeOverride=(clEntryId)=>{
+    setOverrides(prev=>{
+      const next={...prev};
+      delete next[clEntryId];
+      return next;
+    });
+  };
+  const clearAllOverrides=()=>{
+    if(confirm("Clear ALL admin overrides? This cannot be undone.")){
+      setOverrides({});
+    }
+  };
+  const getEntryId=(item,idx)=>`${item.date}-${idx}`;
+  const applyOverrides=(item,idx)=>{
+    const id=getEntryId(item,idx);
+    if(overrides[id]?.detached){
+      return {...item,demoMatch:null,_overridden:true,_overrideType:"detached"};
+    }
+    if(overrides[id]?.attached){
+      return {...item,demoMatch:{demo:overrides[id].attached,confidence:overrides[id].confidence},_overridden:true,_overrideType:"attached"};
+    }
+    return item;
+  };
+
   const pass=(item,isCL)=>{
     const txt=isCL?item.text:(item.title+" "+(item.summary||""));
     if(query&&!txt.toLowerCase().includes(query.toLowerCase())) return false;
@@ -433,7 +656,10 @@ function OmniExplorer(){
     return true;
   };
 
-  const cl=useMemo(()=>changelog.filter(c=>pass(c,true)),[changelog,query,activeTags,activeAuthor,dateFrom,dateTo,showLinked]);
+  const cl=useMemo(()=>{
+    const withOverrides=changelog.map((c,i)=>applyOverrides(c,i));
+    return withOverrides.filter(c=>pass(c,true));
+  },[changelog,query,activeTags,activeAuthor,dateFrom,dateTo,showLinked,overrides]);
   const dm=useMemo(()=>demos.filter(d=>pass(d,false)),[demos,query,activeTags,activeAuthor,dateFrom,dateTo]);
   const ALL_TAGS=useMemo(()=>[...new Set([...changelog.flatMap(c=>c.tags),...demos.flatMap(d=>d.tags)])].sort(),[changelog,demos]);
   const ALL_AUTHORS=useMemo(()=>{
@@ -495,6 +721,32 @@ function OmniExplorer(){
     <div style={{fontFamily:"sans-serif",background:T.bg,minHeight:"100vh",color:T.text,transition:"background 0.3s,color 0.3s"}}>
       <style>{`::-webkit-scrollbar-thumb{background:${T.accent}44;border-radius:3px;}`}</style>
 
+      {/* ADMIN COMPONENTS */}
+      {adminMode&&editingEntry&&(
+        <AdminEditModal 
+          entry={editingEntry.entry}
+          entryId={editingEntry.id}
+          demos={demos}
+          onClose={()=>setEditingEntry(null)}
+          onDetach={detachDemo}
+          onAttach={attachDemo}
+          T={T}
+        />
+      )}
+      {adminMode&&(
+        <AdminPanel
+          isOpen={adminPanelOpen}
+          onClose={()=>setAdminPanelOpen(false)}
+          overrides={overrides}
+          changelog={changelog}
+          demos={demos}
+          onRemoveOverride={removeOverride}
+          onClearAll={clearAllOverrides}
+          onEditEntry={(entry,id)=>setEditingEntry({entry,id})}
+          T={T}
+        />
+      )}
+
       {/* MODAL */}
       {modalVideo&&<VideoModal video={modalVideo} weekTitle={modalWeek} onClose={closeModal} T={T}/>}
       {playlistModal&&<PlaylistModal video={playlistModal.video} weekTitle={playlistModal.weekTitle} onClose={()=>setPlaylistModal(null)} T={T}/>}
@@ -534,6 +786,11 @@ function OmniExplorer(){
           </div>
           <div style={{display:"flex",alignItems:"center",gap:10}}>
             {lastScraped&&<div style={{fontFamily:"'DM Mono',monospace",fontSize:9.5,color:"#FFFFFF33",letterSpacing:"0.04em"}}>scraped {lastScraped}</div>}
+            {adminMode&&(
+              <button onClick={()=>setAdminPanelOpen(p=>!p)} style={{display:"flex",alignItems:"center",gap:6,padding:"5px 13px",borderRadius:20,background:adminPanelOpen?"#FF2D6B22":"#FFFFFF12",border:`1px solid ${adminPanelOpen?"#FF2D6B":"#FFFFFF22"}`,color:adminPanelOpen?"#FF2D6B":"#FFFFFF88",cursor:"pointer",fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.05em"}}>
+                🔐 admin {adminPanelOpen?"(open)":""}
+              </button>
+            )}
             <button onClick={()=>setShowHeader(h=>!h)} style={{display:"flex",alignItems:"center",gap:6,padding:"5px 13px",borderRadius:20,background:"#FFFFFF12",border:"1px solid #FFFFFF22",color:"#FFFFFF88",cursor:"pointer",fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.05em"}}>
               {showHeader?"⊟ hide banner":"⊞ show banner"}
             </button>
@@ -714,7 +971,22 @@ function OmniExplorer(){
                     </div>
                   </div>
                   <div style={{flex:1}}>
-                    <p style={{fontSize:14,lineHeight:1.6,color:T.text,marginBottom:7}}>{item.text}</p>
+                    <div style={{display:"flex",alignItems:"flex-start",gap:8,marginBottom:7}}>
+                      <p style={{fontSize:14,lineHeight:1.6,color:T.text,flex:1}}>{item.text}</p>
+                      {adminMode&&(
+                        <button onClick={()=>setEditingEntry({entry:item,id:getEntryId(item,i)})}
+                          style={{flexShrink:0,padding:"3px 8px",background:T.accentSub,border:`1px solid ${T.accent}44`,borderRadius:6,color:T.accent,fontFamily:"'DM Mono',monospace",fontSize:9,cursor:"pointer"}}>
+                          🔧 edit
+                        </button>
+                      )}
+                    </div>
+                    {item._overridden&&(
+                      <div style={{display:"inline-flex",alignItems:"center",gap:5,padding:"3px 10px",background:item._overrideType==="detached"?T.orangeBg:T.accentSub,border:`1px solid ${item._overrideType==="detached"?T.orange+"44":T.accent+"44"}`,borderRadius:12,marginBottom:7}}>
+                        <span style={{fontFamily:"'DM Mono',monospace",fontSize:8,color:item._overrideType==="detached"?T.orange:T.accent,letterSpacing:"0.08em",fontWeight:600}}>
+                          {item._overrideType==="detached"?"🔓 ADMIN DETACHED":"🔗 ADMIN ATTACHED"}
+                        </span>
+                      </div>
+                    )}
                     <div style={{display:"flex",gap:5,flexWrap:"wrap",marginBottom:m?8:0}}>
                       {item.tags?.map(t=>(
                         <span key={t} className="tag-pill" onClick={()=>toggleTag(t)}
