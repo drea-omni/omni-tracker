@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Omni Changelog & Demos Explorer</title>
+  <title>Omni Changelog Explorer</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js"></script>
@@ -559,6 +559,7 @@ function OmniExplorer(){
   const[page,setPage]           =useState(1);
   const[activeAuthor,setActiveAuthor]=useState(null);
   const[authorOpen,setAuthorOpen]=useState(false);
+  const[sortOrder,setSortOrder]=useState("desc"); // desc = newest first, asc = oldest first
   
   // Admin mode
   const[adminMode,setAdminMode]=useState(false);
@@ -673,13 +674,14 @@ function OmniExplorer(){
   const applyOverrides=(item,idx)=>{
     const id=getEntryId(item,idx);
     const override=overrides[id];
+    const baseItem={...item,_originalIdx:idx}; // Store original index
     if(override?.detached){
-      return {...item,demoMatch:null,_overridden:true,_overrideType:"detached",_isGitOverride:!!gitOverrides[id]};
+      return {...baseItem,demoMatch:null,_overridden:true,_overrideType:"detached",_isGitOverride:!!gitOverrides[id]};
     }
     if(override?.attached){
-      return {...item,demoMatch:{demo:override.attached,confidence:override.confidence},_overridden:true,_overrideType:"attached",_isGitOverride:!!gitOverrides[id]};
+      return {...baseItem,demoMatch:{demo:override.attached,confidence:override.confidence},_overridden:true,_overrideType:"attached",_isGitOverride:!!gitOverrides[id]};
     }
-    return item;
+    return baseItem;
   };
 
   const pass=(item,isCL)=>{
@@ -713,8 +715,10 @@ function OmniExplorer(){
   const allItems=useMemo(()=>{
     const cls=showCL?cl.map(c=>({...c,_type:"cl"})):[];
     const dms=showDM?dm.map(d=>({...d,_type:"dm"})):[];
-    return [...cls,...dms].sort((a,b)=>b.date.localeCompare(a.date));
-  },[cl,dm,showCL,showDM]);
+    return [...cls,...dms].sort((a,b)=>
+      sortOrder==="desc"?b.date.localeCompare(a.date):a.date.localeCompare(b.date)
+    );
+  },[cl,dm,showCL,showDM,sortOrder]);
   const totalPages=pageSize==="all"?1:Math.ceil(allItems.length/pageSize);
   const visibleItems=pageSize==="all"?allItems:allItems.slice((page-1)*pageSize,page*pageSize);
   const visibleCL=visibleItems.filter(x=>x._type==="cl");
@@ -805,7 +809,7 @@ function OmniExplorer(){
                 Omni Analytics · Release Intelligence
               </div>
               <h1 style={{fontFamily:"'Inter',sans-serif",fontSize:"clamp(26px,3.5vw,44px)",color:"#FFFFFF",fontStyle:"italic",letterSpacing:"-0.02em",lineHeight:1.1,marginBottom:6,textShadow:"0 2px 20px rgba(0,0,0,0.8),0 0 40px #FF2D6B44"}}>
-                Changelog & Demos
+                Changelog Explorer
               </h1>
               <p style={{fontFamily:"'DM Mono',monospace",fontSize:11,color:"#FFFFFFaa",letterSpacing:"0.06em"}}>
                 {changelog.length} shipped · {demos.length} demoed · <span style={{color:"#FF2D6B"}}>{linked} connections traced</span>
@@ -904,6 +908,11 @@ function OmniExplorer(){
               🚀✨ Demos Released ({linked})
             </button>
           )}
+          <div style={{width:1,height:18,background:T.border,margin:"0 4px"}}/>
+          <button onClick={()=>setSortOrder(s=>s==="desc"?"asc":"desc")} className="toggle-btn"
+            style={{padding:"5px 14px",borderRadius:20,fontSize:10,fontFamily:"'DM Mono',monospace",cursor:"pointer",background:"transparent",border:`1px solid ${T.border}`,color:T.textMuted,display:"flex",alignItems:"center",gap:6}}>
+            {sortOrder==="desc"?"↓ Newest First":"↑ Oldest First"}
+          </button>
         </div>
         <div style={{display:"flex",gap:5,flexWrap:"wrap",marginBottom:8}}>
           {ALL_TAGS.map(t=>(
@@ -1023,7 +1032,7 @@ function OmniExplorer(){
                     <div style={{display:"flex",alignItems:"flex-start",gap:8,marginBottom:7}}>
                       <p style={{fontSize:14,lineHeight:1.6,color:T.text,flex:1}}>{item.text}</p>
                       {adminMode&&(
-                        <button onClick={()=>setEditingEntry({entry:item,id:getEntryId(item,i)})}
+                        <button onClick={()=>setEditingEntry({entry:item,id:getEntryId(item,item._originalIdx)})}
                           style={{flexShrink:0,padding:"3px 8px",background:T.accentSub,border:`1px solid ${T.accent}44`,borderRadius:6,color:T.accent,fontFamily:"'DM Mono',monospace",fontSize:9,cursor:"pointer"}}>
                           🔧 edit
                         </button>
