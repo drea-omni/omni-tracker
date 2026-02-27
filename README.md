@@ -2,7 +2,7 @@
 
 **A powerful, interactive changelog and demo tracker** that automatically connects product releases with their first demonstrations, helping teams understand feature velocity and release patterns.
 
-🔗 **Live Demo:** [Your GitHub Pages URL]
+🔗 **Live Demo:** [[https://drea-omni.github.io/omni-tracker/]
 
 ---
 
