@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Demo × Changelog Explorer</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔍</text></svg>">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{background:#0A090E; transition: background 0.3s; color: #EDE8E0;}
+    ::-webkit-scrollbar{width:6px;}
+    ::-webkit-scrollbar-track{background:transparent;}
+    #root{min-height:100vh;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+    @keyframes pulseGlow{0%,100%{box-shadow:0 0 0 0 #FF2D6B00;}50%{box-shadow:0 0 12px 2px #FF2D6B44;}}
+    @keyframes spin{to{transform:rotate(360deg);}}
+    @keyframes modalIn{from{opacity:0;transform:scale(0.94);}to{opacity:1;transform:scale(1);}}
+    .entry{animation:fadeUp 0.35s ease both;}
+    .accent-glow{animation:pulseGlow 3s ease-in-out infinite;}
+    .tag-pill,.toggle-btn,.vid-card{transition:all 0.15s ease;cursor:pointer;}
+    .tag-pill:hover,.toggle-btn:hover{transform:translateY(-1px);}
+    .vid-card:hover{transform:translateY(-2px);}
+    #loading{position:fixed;inset:0;background:#0A090E;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;z-index:999;transition:opacity 0.4s;}
+    #loading.fade{opacity:0;pointer-events:none;}
+    .spinner{width:36px;height:36px;border-radius:50%;border:3px solid #FF2D6B22;border-top-color:#FF2D6B;animation:spin 0.8s linear infinite;}
+    .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:1000;display:flex;align-items:center;justify-content:center;padding:20px;}
+    .modal-inner{animation:modalIn 0.2s ease;width:100%;max-width:860px;border-radius:14px;overflow:hidden;position:relative;}
+    .modal-close{position:absolute;top:12px;right:12px;z-index:10;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px;border:none;}
+    
+    /* Admin Styles */
+    .admin-panel { background: #FF2D6B15; border: 1px dashed #FF2D6B; padding: 15px; border-radius: 10px; margin-bottom: 20px; font-family: 'DM Mono', monospace; font-size: 12px; }
+    .unlink-badge { background: #FF2D6B; color: white; padding: 2px 6px; border-radius: 4px; font-size: 9px; margin-left: 8px; cursor: pointer; }
+    
+    /* Light Mode Date Link */
+    .date-link { text-decoration: none; color: inherit; transition: color 0.2s; }
+    .date-link:hover { color: #FF2D6B; }
+  </style>
+</head>
+<body>
+  <div id="loading">
+    <div class="spinner"></div>
+    <div style="font-family:'DM Mono',monospace;font-size:11px;color:#FF2D6B;letter-spacing:0.2em;">INITIALIZING EXPLORER…</div>
+  </div>
+  <div id="root"></div>
+
+<script type="text/babel">
+const { useState, useMemo, useEffect, useCallback } = React;
+
+const DARK_HDR = "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";
+
+const ENTRY_TYPES = {
+  RELEASED: "released",
+  DEMOED: "demoed"
+};
+
+const APP_TITLE = "Demo × Changelog Explorer";
+
+function OmniExplorer(){
+  const[isDark,setIsDark] = useState(true);
+  const T = isDark ? THEMES.dark : THEMES.light;
+  
+  const[changelog,setChangelog] = useState([]);
+  const[demos,setDemos]         = useState([]);
+  const[loading,setLoading]     = useState(true);
+  const[query,setQuery]         = useState("");
+  const[activeTags,setActiveTags]= useState([]);
+  const[view,setView]           = useState("all");
+  const[modalVideo,setModalVideo]= useState(null);
+  const[modalWeek,setModalWeek] = useState("");
+  const[expandedIdx,setExpanded]= useState(null);
+  
+  // Admin logic
+  const params = new URLSearchParams(window.location.search);
+  const isAdminRequest = params.get('admin') === 'true';
+  const[isAdmin, setIsAdmin] = useState(false);
+  const[passcode, setPasscode] = useState("");
+  const[unlinks, setUnlinks] = useState([]); // Array of demo titles to ignore
+  
+  // Real secret logic
+  const SECRET_PASS = "omni2026"; 
+
+  useEffect(() => {
+    // Load overrides if they exist
+    fetch('overrides.json')
+      .then(r => r.ok ? r.json() : { unlinks: [] })
+      .then(data => setUnlinks(data.unlinks || []))
+      .catch(() => {});
+
+    Promise.all([
+      fetch(CHANGELOG_URL).then(r => r.json()),
+      fetch(DEMOS_URL).then(r => r.json()),
+    ]).then(([clData, dmData]) => {
+      const dmList = buildDemos(dmData);
+      setDemos(dmList);
+      setChangelog(buildChangelog(clData, dmList));
+      setLoading(false);
+      document.getElementById("loading").classList.add("fade");
+    });
+  }, []);
+
+  const handleAdminAuth = () => {
+    if (passcode === SECRET_PASS) setIsAdmin(true);
+    else alert("Invalid credentials.");
+  };
+
+  const toggleUnlink = (demoTitle) => {
+    setUnlinks(prev => prev.includes(demoTitle) 
+      ? prev.filter(t => t !== demoTitle) 
+      : [...prev, demoTitle]
+    );
+  };
+
+  // Interleaving logic
+  const allItems = useMemo(() => {
+    const cls = changelog.map(c => ({ ...c, _type: ENTRY_TYPES.RELEASED }));
+    const dms = demos.map(d => ({ ...d, _type: ENTRY_TYPES.DEMOED }));
+    
+    return [...cls, ...dms]
+      .filter(item => {
+        // Apply unlink override logic
+        if (item._type === ENTRY_TYPES.RELEASED && item.demoMatch) {
+            if (unlinks.includes(item.demoMatch.demo.title)) {
+                return { ...item, demoMatch: null };
+            }
+        }
+        return true;
+      })
+      .sort((a, b) => {
+        const dateDiff = b.date.localeCompare(a.date);
+        if (dateDiff !== 0) return dateDiff;
+        // Same date? Demoed (🎬) first, then Released (🚀)
+        return a._type === ENTRY_TYPES.DEMOED ? -1 : 1;
+      });
+  }, [changelog, demos, unlinks]);
+
+  const filteredItems = useMemo(() => {
+    return allItems.filter(item => {
+      const txt = (item.text || item.title || "").toLowerCase();
+      const matchQuery = !query || txt.includes(query.toLowerCase());
+      const matchTags = !activeTags.length || activeTags.some(t => item.tags?.includes(t));
+      const matchView = view === "all" || (view === "changelog" && item._type === ENTRY_TYPES.RELEASED) || (view === "demos" && item._type === ENTRY_TYPES.DEMOED);
+      return matchQuery && matchTags && matchView;
+    });
+  }, [allItems, query, activeTags, view]);
+
+  if (isAdminRequest && !isAdmin) {
+    return (
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', height:'100vh', background:T.bg, color:T.text}}>
+        <h2 style={{marginBottom:20}}>Admin Access Required</h2>
+        <input type="password" placeholder="Passcode" value={passcode} onChange={e=>setPasscode(e.target.value)} 
+               style={{padding:10, borderRadius:8, border:`1px solid ${T.border}`, background:T.inputBg, color:T.text}} />
+        <button onClick={handleAdminAuth} style={{marginTop:10, padding:'8px 20px', background:T.accent, border:'none', color:'white', borderRadius:8, cursor:'pointer'}}>Login</button>
+      </div>
+    );
+  }
+
+  return (
+    <div style={{fontFamily:"sans-serif", background:T.bg, minHeight:"100vh", color:T.text, transition:"background 0.3s"}}>
+      
+      {/* HEADER */}
+      <div style={{background:"#0A090E", borderBottom:`1px solid #FF2D6B22`, position:"relative"}}>
+        <div style={{width:"100%", height:180, position:"relative", overflow:"hidden"}}>
+          <img src={`data:image/png;base64,${DARK_HDR}`} style={{width:"100%", height:"100%", objectFit:"cover", opacity:0.6}}/>
+          <div style={{position:"absolute", inset:0, display:"flex", flexDirection:"column", justifyContent:"center", padding:"0 36px"}}>
+            <h1 style={{fontSize:38, color:"#fff", fontStyle:"italic"}}>{APP_TITLE}</h1>
+            <p style={{fontFamily:"'DM Mono'", fontSize:12, color:"#ffffff88"}}>Tracing the evolution of the BI platform</p>
+          </div>
+        </div>
+      </div>
+
+      <div style={{padding:"20px 28px", maxWidth:1000, margin:"0 auto"}}>
+        
+        {isAdmin && (
+            <div className="admin-panel">
+                <strong>ADMIN OVERRIDE TOOL</strong><br/>
+                Toggle "Unlink" on items below to remove automated traced connections.
+                <button onClick={() => {
+                    const blob = JSON.stringify({ unlinks }, null, 2);
+                    navigator.clipboard.writeText(blob);
+                    alert("Override JSON copied to clipboard! Paste into your overrides.json file.");
+                }} style={{marginLeft:20, padding:'4px 10px', background:T.accent, border:'none', color:'white', cursor:'pointer'}}>Copy Override JSON</button>
+            </div>
+        )}
+
+        {/* CONTROLS */}
+        <div style={{display:"flex", gap:10, marginBottom:20, flexWrap:"wrap"}}>
+          <input placeholder="Search intelligence..." value={query} onChange={e=>setQuery(e.target.value)}
+            style={{flex:1, padding:10, borderRadius:8, border:`1px solid ${T.border}`, background:T.inputBg, color:T.text}} />
+          
+          <div style={{display:"flex", gap:5}}>
+            {["all", "changelog", "demos"].map(v => (
+              <button key={v} onClick={()=>setView(v)} className="toggle-btn"
+                style={{
+                    padding:"8px 16px", borderRadius:20, fontSize:11, fontFamily:"'DM Mono'",
+                    background: view===v ? T.accent : T.bgSubtle,
+                    color: view===v ? "#fff" : T.textSub,
+                    border: "none"
+                }}>
+                {v === "all" ? "All Timeline" : v === "changelog" ? "Released 🚀" : "Demoed 🎬"}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* FEED */}
+        <div style={{display:"flex", flexDirection:"column", gap:12}}>
+          {filteredItems.map((item, idx) => {
+            const isReleased = item._type === ENTRY_TYPES.RELEASED;
+            const m = !unlinks.includes(item.demoMatch?.demo?.title) ? item.demoMatch : null;
+            
+            return (
+              <div key={idx} className="entry" style={{
+                  padding:16, background:T.bgCard, borderRadius:12, border:`1px solid ${T.border}`,
+                  borderLeft: `4px solid ${isReleased ? T.accent : T.gold}`
+              }}>
+                <div style={{display:"flex", justifyContent:"space-between", marginBottom:8}}>
+                  <div style={{fontFamily:"'DM Mono'", fontSize:11, color:T.textFaint}}>
+                    {isReleased ? (
+                        <a href={item.weekUrl} target="_blank" className="date-link">
+                            🚀 Released on {item.date} ↗
+                        </a>
+                    ) : (
+                        <span style={{color:T.gold}}>🎬 Demoed on {item.date}</span>
+                    )}
+                  </div>
+                  {isAdmin && !isReleased && (
+                      <span className="unlink-badge" onClick={() => toggleUnlink(item.title)}>
+                          {unlinks.includes(item.title) ? "RELINK" : "UNLINK"}
+                      </span>
+                  )}
+                </div>
+                
+                <h3 style={{fontSize:15, fontWeight:500, lineHeight:1.5}}>
+                    {isReleased ? item.text : item.title}
+                </h3>
+
+                {m && (
+                    <div style={{marginTop:12, padding:12, background:T.bgSubtle, borderRadius:8, fontSize:13, border:`1px solid ${T.borderStrong}`}}>
+                        <div style={{color:T.gold, fontSize:10, textTransform:'uppercase', marginBottom:4}}>Traced Connection Found</div>
+                        <div style={{display:'flex', gap:10, alignItems:'center'}}>
+                            <div style={{width:60, height:34, background:'#000', borderRadius:4, flexShrink:0, overflow:'hidden'}}>
+                                <img src={m.demo.thumbnail} style={{width:'100%', height:'100%', objectFit:'cover'}} />
+                            </div>
+                            <div style={{flex:1}}>
+                                <strong>Demos Released 🚀✨</strong><br/>
+                                <span style={{fontSize:11, opacity:0.7}}>{m.demo.title}</span>
+                            </div>
+                            <button onClick={() => window.open(m.demo.youtube_url, '_blank')} 
+                                    style={{padding:'4px 10px', fontSize:10, borderRadius:4, border:'none', background:T.accent, color:'white', cursor:'pointer'}}>
+                                WATCH
+                            </button>
+                        </div>
+                    </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* FOOTER */}
+      <div style={{padding:40, textAlign:'center', opacity:0.3, fontSize:10, fontFamily:'DM Mono'}}>
+        Demo × Changelog Explorer · v2.0 · 2026-02-26
+      </div>
+
+    </div>
+  );
+}
+
+// ── UTILITIES (Simplified for one-file delivery) ─────────────────────────
+function buildChangelog(clData, demosList){
+  const entries=[];
+  for(const week of clData.weeks||[]){
+    for(const day of week.days||[]){
+      for(const item of day.items||[]){
+        entries.push({
+            date:day.date,
+            text:item,
+            weekUrl: week.source_url, // Added for linking
+            tags:inferTags(item),
+            demoMatch:findDemoMatch(item,day.date,demosList)
+        });
+      }
+    }
+  }
+  return entries;
+}
+
+function buildDemos(dmData){
+  const entries=[];
+  for(const e of (dmData.index||[])){
+    entries.push({
+      date:e.date||"",
+      title:e.title||"",
+      youtube_url:e.url||"",
+      thumbnail:`https://img.youtube.com/vi/${e.url?.split('=')[1]}/mqdefault.jpg`,
+      tags:inferTags(e.title||""),
+    });
+  }
+  return entries;
+}
+
+function findDemoMatch(text,date,demos){
+  const ckw=text.toLowerCase().split(/\s+/);
+  let best=0,bestDemo=null;
+  for(const demo of demos){
+    const dkw=(demo.title).toLowerCase().split(/\s+/);
+    const overlap=ckw.filter(w=>w.length>4 && dkw.includes(w)).length;
+    if(overlap > best){best=overlap;bestDemo=demo;}
+  }
+  return best > 2 ? {demo:bestDemo, confidence:"high"} : null;
+}
+
+function inferTags(t){return t.includes("AI")?["AI"]:["Feature"];}
+
+const THEMES = {
+  dark:{ bg:"#0A090E", bgCard:"#141218", border:"#1E1C28", text:"#EDE8E0", textSub:"#8A8498", textFaint:"#4A4458", accent:"#FF2D6B", gold:"#C4903A", inputBg:"#0F0E14", bgSubtle:"#1A1820", borderStrong:"#2A2838" },
+  light:{ bg:"#F4F3F0", bgCard:"#FFFFFF", border:"#E5E2DA", text:"#1A1714", textSub:"#6B6560", textFaint:"#A09890", accent:"#FF2D6B", gold:"#8B6914", inputBg:"#FFFFFF", bgSubtle:"#E8E5E0", borderStrong:"#D0CBC0" }
+};
+
+ReactDOM.createRoot(document.getElementById("root")).render(<OmniExplorer/>);
+</script>
+</body>
+</html>
