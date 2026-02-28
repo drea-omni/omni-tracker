@@ -1,7 +1,7 @@
 {
   "meta": {
     "source": "https://omni.co/demos",
-    "last_scraped": "2026-02-28T03:59:15Z",
+    "last_scraped": "2026-02-28T19:13:27Z",
     "scrape_method": "playwright+requests",
     "scrape_notes": "Playwright extracts YouTube URLs, titles, descriptions, authors, and tags per demo entry.",
     "total_weeks_indexed": 108,
@@ -2860,6 +2860,14 @@
       "week_label": "January 20, 2024",
       "url": "https://omni.co/demos/20240119",
       "title": "Field level permissions, Content validator, Access filters, Pivots & more"
+    },
+    {
+      "date": "2026-02-20",
+      "week_label": "February 20, 2026 Input Columns, Blobby Learns to Validate Work, AI Quickstarts, and More",
+      "url": "https://omni.co/demos/20260220",
+      "title": "February 20, 2026 Input Columns, Blobby Learns to Validate Work, AI Quickstarts, and More",
+      "authors": [],
+      "tags": []
     }
   ],
   "weeks_detail": [
