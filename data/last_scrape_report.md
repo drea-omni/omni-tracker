@@ -1,10 +1,9 @@
 ## 🔄 Omni Scraper Update Report
-*2026-02-28T19:13:27Z*
+*2026-03-01T04:26:50Z*
 
 ### 📋 Changelog — No new entries
 
-### 🎬 New Demo Weeks (1)
-- `2026-02-20` [February 20, 2026 Input Columns, Blobby Learns to Validate Work, AI Quickstarts, and More](https://omni.co/demos/20260220)
+### 🎬 Demos — No new weeks
 
 ### 📊 Totals
 - Changelog entries: 676
