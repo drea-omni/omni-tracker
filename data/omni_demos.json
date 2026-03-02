@@ -1,12 +1,12 @@
 {
   "meta": {
     "source": "https://omni.co/demos",
-    "last_scraped": "2026-03-02T04:19:59Z",
+    "last_scraped": "2026-03-02T19:39:49Z",
     "scrape_method": "playwright+requests",
     "scrape_notes": "Playwright extracts YouTube URLs, titles, descriptions, authors, and tags per demo entry.",
-    "total_weeks_indexed": 108,
-    "total_weeks_with_detail": 100,
-    "total_videos_indexed": 1148,
+    "total_weeks_indexed": 109,
+    "total_weeks_with_detail": 101,
+    "total_videos_indexed": 1161,
     "date_range": {
       "earliest": "2024-01-20",
       "latest": "2026-02-20"
@@ -2866,8 +2866,33 @@
       "week_label": "February 20, 2026 Input Columns, Blobby Learns to Validate Work, AI Quickstarts, and More",
       "url": "https://omni.co/demos/20260220",
       "title": "February 20, 2026 Input Columns, Blobby Learns to Validate Work, AI Quickstarts, and More",
-      "authors": [],
-      "tags": []
+      "authors": [
+        "Conrad Slimmer",
+        "Dan Mosora",
+        "Gustav Staprans",
+        "Jade Khiev",
+        "James Ostergaard",
+        "Kylee Schroth",
+        "Luke Bowerman",
+        "Mike Torosian",
+        "Richard Czechowski",
+        "Rob Miller",
+        "Steven Talbot"
+      ],
+      "tags": [
+        "Ai",
+        "Ai, Mcp, Google Calendar",
+        "Ai, Use Cases",
+        "Ai, Workbook",
+        "Dashboards",
+        "Embed, Modeling",
+        "Internal, Use Cases, Ai",
+        "Modeling, Ux",
+        "Modeling, Workflows, Cli, Ai",
+        "Visualization",
+        "Workbook, Dashboards",
+        "Workbook, Visualization"
+      ]
     }
   ],
   "weeks_detail": [
@@ -16923,6 +16948,165 @@
           "description": "More work on organizing dashboards and workbooks, here bringing the tag system to folders.",
           "author": "Luke Bowerman",
           "tag": "Content Discovery"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-20",
+      "url": "https://omni.co/demos/20260220",
+      "fully_scraped": true,
+      "scraped_at": "2026-03-02T19:39:49Z",
+      "title": "Demos",
+      "summary_bullets": [
+        "A first look at the new UX for creating data from the workbook or dashboard. Now you can build columns that allow collecting data from end users. Opens up tons of read/write use cases for specific workflows.",
+        "Blobby is great, but doesn't always get it right on the first try. We're building more intelligence into the AI experience by explicitly validating the results matched the user's intent correctly. More work to do here, but want to make sure Blobby can always get it right hands off.",
+        "The biggest blocker to more Blobby is often getting started. Here we show off building a data model and AI context from scratch entirely in the UI. More work to do here, but want to make getting started with a new data set or table completely AI-able.",
+        "Workflows have been in GA for a bit, but we wanted to show off some internal use cases that are creating huge efficiencies for us. We'll get these in the docs for folks that want to crib or extend.",
+        "More Blobby MCP - this time bringing Google calendar into the AI experience.",
+        "With the near term GA of containers (the new dashboard experience), we wanted to make it easy to build beautiful dashboards even with the additional belles and whistles. Templates make common dashboard patterns easier to build and control.",
+        "More refinement to the color picker experience.",
+        "The new funnel vis is moving to GA.",
+        "We love to see a first-week demo. Here picking up a much-requested feature for configuring pie chart labels more flexibly (like percentages alongside values).",
+        "More complex embed setups often have customers with different fiscal calendars and business weeks. Now you can serve that complexity dynamically using user attributes.",
+        "Bunch of tune up for the IDE experience - improved file search UX and some tune up to the sidebar search as well.",
+        "An end-to-end demo of building data model + AI context via Cursor and Omni CLI. This means folks can bring help docs from external sources like Notion to instant build context into Omni.",
+        "Another internal productivity workflow we wanted to share. This allows us to take Slack threads with feedback or bug reports and instantly file rich Github tickets (ideally to mostly-automate resolution via Claude Code).",
+        "Product\nAI\nBusiness Intelligence\nEmbedded Analytics\nIntegrations\nCapabilities",
+        "Customers\nCase Studies\nCustomer Support",
+        "Resources\nLearn\nPartners\nDemos\nChangelog\nCompare Omni\nSecurity",
+        "Company\nAbout\nBlog\nCareers\nSubscribe\nExplo Transition\nStatus"
+      ],
+      "video_count": 13,
+      "videos": [
+        {
+          "youtube_id": "6lTRCBsx0LY",
+          "youtube_url": "https://www.youtube.com/watch?v=6lTRCBsx0LY",
+          "embed_url": "https://www.youtube.com/embed/6lTRCBsx0LY",
+          "thumbnail": "https://img.youtube.com/vi/6lTRCBsx0LY/mqdefault.jpg",
+          "title": "Input Columns",
+          "description": "A first look at the new UX for creating data from the workbook or dashboard. Now you can build columns that allow collecting data from end users. Opens up tons of read/write use cases for specific workflows.",
+          "author": "Richard Czechowski",
+          "tag": "Workbook, Dashboards"
+        },
+        {
+          "youtube_id": "RhqLlC6mbAk",
+          "youtube_url": "https://www.youtube.com/watch?v=RhqLlC6mbAk",
+          "embed_url": "https://www.youtube.com/embed/RhqLlC6mbAk",
+          "thumbnail": "https://img.youtube.com/vi/RhqLlC6mbAk/mqdefault.jpg",
+          "title": "AI Query Checking / Validation",
+          "description": "Blobby is great, but doesn't always get it right on the first try. We're building more intelligence into the AI experience by explicitly validating the results matched the user's intent correctly. More work to do here, but want to make sure Blobby can always get it right hands off.",
+          "author": "Steven Talbot",
+          "tag": "Ai"
+        },
+        {
+          "youtube_id": "p0Xym9oXnpU",
+          "youtube_url": "https://www.youtube.com/watch?v=p0Xym9oXnpU",
+          "embed_url": "https://www.youtube.com/embed/p0Xym9oXnpU",
+          "thumbnail": "https://img.youtube.com/vi/p0Xym9oXnpU/mqdefault.jpg",
+          "title": "Blobby Quickstart Mode",
+          "description": "The biggest blocker to more Blobby is often getting started. Here we show off building a data model and AI context from scratch entirely in the UI. More work to do here, but want to make getting started with a new data set or table completely AI-able.",
+          "author": "Gustav Staprans",
+          "tag": "Ai, Workbook"
+        },
+        {
+          "youtube_id": "UBSRhg3clCE",
+          "youtube_url": "https://www.youtube.com/watch?v=UBSRhg3clCE",
+          "embed_url": "https://www.youtube.com/embed/UBSRhg3clCE",
+          "thumbnail": "https://img.youtube.com/vi/UBSRhg3clCE/mqdefault.jpg",
+          "title": "AI Workflows Examples",
+          "description": "Workflows have been in GA for a bit, but we wanted to show off some internal use cases that are creating huge efficiencies for us. We'll get these in the docs for folks that want to crib or extend.",
+          "author": "James Ostergaard",
+          "tag": "Ai, Use Cases"
+        },
+        {
+          "youtube_id": "pGTUNGbVss4",
+          "youtube_url": "https://www.youtube.com/watch?v=pGTUNGbVss4",
+          "embed_url": "https://www.youtube.com/embed/pGTUNGbVss4",
+          "thumbnail": "https://img.youtube.com/vi/pGTUNGbVss4/mqdefault.jpg",
+          "title": "Google Calendar in Blobby",
+          "description": "More Blobby MCP - this time bringing Google calendar into the AI experience.",
+          "author": "Gustav Staprans",
+          "tag": "Ai, Mcp, Google Calendar"
+        },
+        {
+          "youtube_id": "qnmA4Fq4Pz4",
+          "youtube_url": "https://www.youtube.com/watch?v=qnmA4Fq4Pz4",
+          "embed_url": "https://www.youtube.com/embed/qnmA4Fq4Pz4",
+          "thumbnail": "https://img.youtube.com/vi/qnmA4Fq4Pz4/mqdefault.jpg",
+          "title": "Dashboard Templates",
+          "description": "With the near term GA of containers (the new dashboard experience), we wanted to make it easy to build beautiful dashboards even with the additional belles and whistles. Templates make common dashboard patterns easier to build and control.",
+          "author": "Luke Bowerman",
+          "tag": "Dashboards"
+        },
+        {
+          "youtube_id": "xQ5j24mHpxU",
+          "youtube_url": "https://www.youtube.com/watch?v=xQ5j24mHpxU",
+          "embed_url": "https://www.youtube.com/embed/xQ5j24mHpxU",
+          "thumbnail": "https://img.youtube.com/vi/xQ5j24mHpxU/mqdefault.jpg",
+          "title": "Color Palette Selector Improvements",
+          "description": "More refinement to the color picker experience.",
+          "author": "Luke Bowerman",
+          "tag": "Workbook, Visualization"
+        },
+        {
+          "youtube_id": "77IDbdPZR5Y",
+          "youtube_url": "https://www.youtube.com/watch?v=77IDbdPZR5Y",
+          "embed_url": "https://www.youtube.com/embed/77IDbdPZR5Y",
+          "thumbnail": "https://img.youtube.com/vi/77IDbdPZR5Y/mqdefault.jpg",
+          "title": "Funnel Vis Launch",
+          "description": "The new funnel vis is moving to GA.",
+          "author": "Rob Miller",
+          "tag": "Visualization"
+        },
+        {
+          "youtube_id": "jBqZxpfYJ-A",
+          "youtube_url": "https://www.youtube.com/watch?v=jBqZxpfYJ-A",
+          "embed_url": "https://www.youtube.com/embed/jBqZxpfYJ-A",
+          "thumbnail": "https://img.youtube.com/vi/jBqZxpfYJ-A/mqdefault.jpg",
+          "title": "Pie Chart Label Config",
+          "description": "We love to see a first-week demo. Here picking up a much-requested feature for configuring pie chart labels more flexibly (like percentages alongside values).",
+          "author": "Dan Mosora",
+          "tag": ""
+        },
+        {
+          "youtube_id": "DiBDwvd-23I",
+          "youtube_url": "https://www.youtube.com/watch?v=DiBDwvd-23I",
+          "embed_url": "https://www.youtube.com/embed/DiBDwvd-23I",
+          "thumbnail": "https://img.youtube.com/vi/DiBDwvd-23I/mqdefault.jpg",
+          "title": "Per User Week Start and Fiscal Offset",
+          "description": "More complex embed setups often have customers with different fiscal calendars and business weeks. Now you can serve that complexity dynamically using user attributes.",
+          "author": "Conrad Slimmer",
+          "tag": "Embed, Modeling"
+        },
+        {
+          "youtube_id": "R2llN68wjnY",
+          "youtube_url": "https://www.youtube.com/watch?v=R2llN68wjnY",
+          "embed_url": "https://www.youtube.com/embed/R2llN68wjnY",
+          "thumbnail": "https://img.youtube.com/vi/R2llN68wjnY/mqdefault.jpg",
+          "title": "IDE UX Improvements Search and Sidebar",
+          "description": "Bunch of tune up for the IDE experience - improved file search UX and some tune up to the sidebar search as well.",
+          "author": "Mike Torosian",
+          "tag": "Modeling, Ux"
+        },
+        {
+          "youtube_id": "V4bS8vB-nSc",
+          "youtube_url": "https://www.youtube.com/watch?v=V4bS8vB-nSc",
+          "embed_url": "https://www.youtube.com/embed/V4bS8vB-nSc",
+          "thumbnail": "https://img.youtube.com/vi/V4bS8vB-nSc/mqdefault.jpg",
+          "title": "Using Omni's CLI to Add AI Context from External Sources",
+          "description": "An end-to-end demo of building data model + AI context via Cursor and Omni CLI. This means folks can bring help docs from external sources like Notion to instant build context into Omni.",
+          "author": "Kylee Schroth",
+          "tag": "Modeling, Workflows, Cli, Ai"
+        },
+        {
+          "youtube_id": "eTWPVHqgdkw",
+          "youtube_url": "https://www.youtube.com/watch?v=eTWPVHqgdkw",
+          "embed_url": "https://www.youtube.com/embed/eTWPVHqgdkw",
+          "thumbnail": "https://img.youtube.com/vi/eTWPVHqgdkw/mqdefault.jpg",
+          "title": "Automated Github Tickets From Slack Threads",
+          "description": "Another internal productivity workflow we wanted to share. This allows us to take Slack threads with feedback or bug reports and instantly file rich Github tickets (ideally to mostly-automate resolution via Claude Code).",
+          "author": "Jade Khiev",
+          "tag": "Internal, Use Cases, Ai"
         }
       ]
     }
