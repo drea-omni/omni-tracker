@@ -77,21 +77,14 @@ jobs:
       - name: Commit and push
         if: steps.changes.outputs.changed == 'true' && github.event.inputs.dry_run != 'true'
         run: |
-          # Configure git for this action
           git config user.name "omni-scraper-bot[bot]"
           git config user.email "omni-scraper-bot@users.noreply.github.com"
-          
-          # Add files to staging
-          git add data/
-          
-          # Create the commit
-          git commit -m "chore: scrape $(date -u +%Y-%m-%d) [skip ci]"
-          
-          # CRITICAL: Pull first to sync with remote before pushing
-          # This prevents merge conflicts when multiple workflows might push simultaneously
+
+          # Pull latest BEFORE staging — no conflicts possible
           git pull --rebase origin main
-          
-          # Now push with confidence
+
+          git add data/
+          git commit -m "chore: scrape $(date -u +%Y-%m-%d) [skip ci]"
           git push
 
       - name: Write step summary
@@ -136,21 +129,14 @@ jobs:
       - name: Commit and push
         if: steps.changes.outputs.changed == 'true'
         run: |
-          # Configure git for this action
           git config user.name "omni-scraper-bot[bot]"
           git config user.email "omni-scraper-bot@users.noreply.github.com"
-          
-          # Add files to staging
-          git add data/
-          
-          # Create the commit
-          git commit -m "chore: scrape $(date -u +%Y-%m-%d) [skip ci]"
-          
-          # CRITICAL: Pull first to sync with remote before pushing
-          # This prevents merge conflicts when multiple workflows might push simultaneously
+
+          # Pull latest BEFORE staging — no conflicts possible
           git pull --rebase origin main
-          
-          # Now push with confidence
+
+          git add data/
+          git commit -m "chore: scrape $(date -u +%Y-%m-%d) [skip ci]"
           git push
 
       - name: Write step summary
