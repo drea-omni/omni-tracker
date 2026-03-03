@@ -2,8 +2,8 @@ name: Scrape Omni Changelog & Demos
 
 on:
   schedule:
-    - cron: "0 19 * * 1"   # Monday 11am PST — Playwright (YouTube)
-    - cron: "0 2 * * 2"    # Monday 6pm PST (2am UTC Tue) — Playwright (YouTube)
+    - cron: "0 19 * * 1"           # Monday 11am PST — Playwright (YouTube)
+    - cron: "0 2 * * 2"             # Monday 6pm PST (2am UTC Tue) — Playwright (YouTube)
     - cron: "0 19 * * 2,3,4,5,6,0" # Tue–Sun 11am PST — no Playwright (fast)
     - cron: "0 2 * * 3,4,5,6,0,1"  # Tue–Sun 6pm PST (2am UTC next day) — no Playwright (fast)
   workflow_dispatch:
@@ -31,15 +31,15 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-
-  # ── Mondays: full scrape with Playwright for YouTube URLs ──────────────────
+  # ── Mondays: full scrape with Playwright for YouTube URLs ────────────────
   scrape-with-playwright:
     if: |
-      github.event_name == 'workflow_dispatch' ||
-      (github.event_name == 'schedule' && (
-        github.event.schedule == '0 19 * * 1' ||
-        github.event.schedule == '0 2 * * 2'
-      ))
+      github.event_name == 'workflow_dispatch' || (
+        github.event_name == 'schedule' && (
+          github.event.schedule == '0 19 * * 1' ||
+          github.event.schedule == '0 2 * * 2'
+        )
+      )
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -62,11 +62,11 @@ jobs:
       - name: Run scraper
         run: |
           ARGS=""
-          [ "${{ github.event.inputs.force }}"         = "true" ] && ARGS="$ARGS --force"
-          [ "${{ github.event.inputs.dry_run }}"       = "true" ] && ARGS="$ARGS --dry-run"
+          [ "${{ github.event.inputs.force }}" = "true" ] && ARGS="$ARGS --force"
+          [ "${{ github.event.inputs.dry_run }}" = "true" ] && ARGS="$ARGS --dry-run"
           [ "${{ github.event.inputs.no_playwright }}" = "true" ] && ARGS="$ARGS --no-playwright"
-          [ "${{ github.event.inputs.target }}"        = "changelog-only" ] && ARGS="$ARGS --changelog-only"
-          [ "${{ github.event.inputs.target }}"        = "demos-only"     ] && ARGS="$ARGS --demos-only"
+          [ "${{ github.event.inputs.target }}" = "changelog-only" ] && ARGS="$ARGS --changelog-only"
+          [ "${{ github.event.inputs.target }}" = "demos-only" ] && ARGS="$ARGS --demos-only"
           python scraper/scrape_omni.py $ARGS
 
       - name: Check for changes
@@ -75,14 +75,23 @@ jobs:
           git diff --quiet data/ && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
 
       - name: Commit and push
-        if: steps.changes.outputs.changed == 'true'
+        if: steps.changes.outputs.changed == 'true' && github.event.inputs.dry_run != 'true'
         run: |
-          git config user.name  "omni-scraper-bot[bot]"
+          # Configure git for this action
+          git config user.name "omni-scraper-bot[bot]"
           git config user.email "omni-scraper-bot@users.noreply.github.com"
+          
+          # Add files to staging
           git add data/
+          
+          # Create the commit
           git commit -m "chore: scrape $(date -u +%Y-%m-%d) [skip ci]"
-          # The magic sauce: pull any remote changes before pushing
+          
+          # CRITICAL: Pull first to sync with remote before pushing
+          # This prevents merge conflicts when multiple workflows might push simultaneously
           git pull --rebase origin main
+          
+          # Now push with confidence
           git push
 
       - name: Write step summary
@@ -94,7 +103,7 @@ jobs:
             echo "No report generated." >> $GITHUB_STEP_SUMMARY
           fi
 
-  # ── Tue–Sun: fast changelog scrape, no Playwright ─────────────────────────
+  # ── Tue–Sun: fast changelog scrape, no Playwright ──────────────────────
   scrape-fast:
     if: |
       github.event_name == 'schedule' && (
@@ -127,10 +136,21 @@ jobs:
       - name: Commit and push
         if: steps.changes.outputs.changed == 'true'
         run: |
-          git config user.name  "omni-scraper-bot[bot]"
+          # Configure git for this action
+          git config user.name "omni-scraper-bot[bot]"
           git config user.email "omni-scraper-bot@users.noreply.github.com"
+          
+          # Add files to staging
           git add data/
+          
+          # Create the commit
           git commit -m "chore: scrape $(date -u +%Y-%m-%d) [skip ci]"
+          
+          # CRITICAL: Pull first to sync with remote before pushing
+          # This prevents merge conflicts when multiple workflows might push simultaneously
+          git pull --rebase origin main
+          
+          # Now push with confidence
           git push
 
       - name: Write step summary
