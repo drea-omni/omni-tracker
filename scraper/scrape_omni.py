@@ -256,8 +256,19 @@ async def scrape_demos_with_playwright(existing, force=False):
 
     # ── Which weeks need scraping? ──
     existing_details = {w["url"]: w for w in existing.get("weeks_detail", [])}
-    already_scraped  = set(existing_details.keys()) if not force else set()
-    to_scrape        = [w for w in all_weeks if w["url"] not in already_scraped]
+    
+    # CRITICAL FIX: Always rescrape the current week (demos change constantly)
+    # and rescrape any weeks with 0 videos (error recovery)
+    already_scraped = set()
+    if not force:
+        for url, detail in existing_details.items():
+            # Skip rescraperaping this week ONLY if:
+            # 1. It's NOT the current week, AND
+            # 2. It has at least 1 video
+            if url != BASE_DEMOS and detail.get("video_count", 0) > 0:
+                already_scraped.add(url)
+    
+    to_scrape = [w for w in all_weeks if w["url"] not in already_scraped]
 
     print(f"  {len(to_scrape)} weeks to scrape")
     updated_details = dict(existing_details)
