@@ -307,13 +307,36 @@ async def scrape_demos_with_playwright(existing, force=False):
             # Page-level title from requests (more reliable than Playwright h1)
             week_soup = fetch_html(url)
             page_title = ""
+            page_date = week["date"]  # fallback
             if week_soup:
                 title_el = week_soup.find("h1") or week_soup.find("h2")
                 page_title = clean_text(title_el) if title_el else ""
+                # FIX: for current week, parse the real date from the page
+                # (the page shows e.g. "February 27, 2026" even though URL has no date slug)
+                if url == BASE_DEMOS:
+                    _date_pat = re.compile(
+                        r"(January|February|March|April|May|June|July|August|"
+                        r"September|October|November|December)\s+\d{1,2},?\s+\d{4}",
+                        re.I,
+                    )
+                    for el in week_soup.find_all(["h1","h2","h3","time","p"]):
+                        dm = _date_pat.search(clean_text(el))
+                        if dm:
+                            try:
+                                parsed = datetime.strptime(dm.group(0).replace(",",""), "%B %d %Y")
+                                page_date = parsed.strftime("%Y-%m-%d")
+                                break
+                            except ValueError:
+                                pass
 
-            # FIX: use week["date"] (today for current week) not now_iso()
+            # Update index entry with real parsed date
+            for entry in updated_index:
+                if entry["url"] == url:
+                    entry["date"] = page_date
+                    break
+
             updated_details[url] = {
-                "date":            week["date"],
+                "date":            page_date,
                 "url":             url,
                 "fully_scraped":   True,
                 "scraped_at":      now_iso(),
@@ -332,6 +355,7 @@ async def scrape_demos_with_playwright(existing, force=False):
                         entry["title"] = page_title
                     entry["authors"] = all_authors
                     entry["tags"]    = all_tags
+                    # date already updated above
                     break
 
     # ── Rebuild index author/tag lists for previously scraped weeks ──
