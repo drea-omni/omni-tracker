@@ -54,6 +54,9 @@ PLAYWRIGHT_WAIT = 3500   # ms — enough for iframes + lazy content
 def now_iso():
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
+def today_date():
+    return datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
 def url_to_date(url):
     m = re.search(r"/(\d{8})$", url.rstrip("/"))
     if m:
@@ -219,8 +222,9 @@ async def scrape_demos_with_playwright(existing, force=False):
         return existing
 
     # ── Build week list from index ──
+    # FIX: current week always gets today's date (not scrape timestamp)
     all_weeks = [{
-        "date": now_iso()[:10],
+        "date": today_date(),
         "week_label": "Current week",
         "url": BASE_DEMOS,
     }]
@@ -240,7 +244,7 @@ async def scrape_demos_with_playwright(existing, force=False):
 
     print(f"  Found {len(all_weeks)} weeks in index")
 
-    # ── Merge index ──
+    # ── Merge index — always refresh current week's date ──
     updated_index = list(existing.get("index", []))
     indexed_urls  = {e["url"] for e in updated_index}
 
@@ -253,18 +257,22 @@ async def scrape_demos_with_playwright(existing, force=False):
                 "title":      "",
             })
             indexed_urls.add(week["url"])
+        else:
+            # FIX: always update current week's date to today
+            if week["url"] == BASE_DEMOS:
+                for entry in updated_index:
+                    if entry["url"] == BASE_DEMOS:
+                        entry["date"] = today_date()
+                        break
 
     # ── Which weeks need scraping? ──
     existing_details = {w["url"]: w for w in existing.get("weeks_detail", [])}
     
-    # CRITICAL FIX: Always rescrape the current week (demos change constantly)
+    # Always rescrape the current week (demos change constantly)
     # and rescrape any weeks with 0 videos (error recovery)
     already_scraped = set()
     if not force:
         for url, detail in existing_details.items():
-            # Skip rescraperaping this week ONLY if:
-            # 1. It's NOT the current week, AND
-            # 2. It has at least 1 video
             if url != BASE_DEMOS and detail.get("video_count", 0) > 0:
                 already_scraped.add(url)
     
@@ -303,15 +311,16 @@ async def scrape_demos_with_playwright(existing, force=False):
                 title_el = week_soup.find("h1") or week_soup.find("h2")
                 page_title = clean_text(title_el) if title_el else ""
 
+            # FIX: use week["date"] (today for current week) not now_iso()
             updated_details[url] = {
-                "date":          week["date"],
-                "url":           url,
-                "fully_scraped": True,
-                "scraped_at":    now_iso(),
-                "title":         page_title,
+                "date":            week["date"],
+                "url":             url,
+                "fully_scraped":   True,
+                "scraped_at":      now_iso(),
+                "title":           page_title,
                 "summary_bullets": summary_bullets,
-                "video_count":   len(videos),
-                "videos":        videos,
+                "video_count":     len(videos),
+                "videos":          videos,
             }
 
             # Backfill title + author list into index entry
@@ -545,7 +554,6 @@ def report_diff(old_cl, new_cl, old_dm, new_dm):
         lines.append("### 🎬 Demos — No new weeks")
     lines.append("")
 
-    # Author diversity stats
     all_authors = sorted(set(
         v["author"]
         for w in new_dm.get("weeks_detail", [])
