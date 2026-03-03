@@ -1,7 +1,7 @@
 {
   "meta": {
     "source": "https://omni.co/demos",
-    "last_scraped": "2026-03-03T19:33:43Z",
+    "last_scraped": "2026-03-03T21:52:40Z",
     "scrape_method": "playwright+requests",
     "scrape_notes": "Playwright extracts YouTube URLs, titles, descriptions, authors, and tags per demo entry.",
     "total_weeks_indexed": 109,
@@ -2913,7 +2913,7 @@
       "date": "2026-02-13",
       "url": "https://omni.co/demos/20260213",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:20:16Z",
+      "scraped_at": "2026-03-03T21:39:26Z",
       "title": "Demos",
       "summary_bullets": [
         "Our more advanced modelers have been using Claude Code to unlock huge productivity in the CLI for modeling workflows. We wanted to make sure everyone has access to AI tools when building data models. Now Blobby will follow you around the IDE and can intervene to build model (in branches of course). Goal is extreme productivity and way less busywork (think formats on 100s of fields, automating descriptions, or even heavier SQL building - anything you can imagine). As always, this isn't a black box, and developers can review before accepting to make sure everything works as expected.",
@@ -3050,7 +3050,7 @@
       "date": "2025-12-19",
       "url": "https://omni.co/demos/20251219",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:21:22Z",
+      "scraped_at": "2026-03-03T21:40:28Z",
       "title": "Demos",
       "summary_bullets": [
         "Blobby didn't want Claude to have all the fun. Soon we'll open up different LLM providers ChatGPT, Gemini, BYO. Will make sure there are admin controls here of course for folks that want it.",
@@ -3308,7 +3308,7 @@
       "date": "2025-12-12",
       "url": "https://omni.co/demos/20251212",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:21:32Z",
+      "scraped_at": "2026-03-03T21:40:37Z",
       "title": "Demos",
       "summary_bullets": [
         "Getting close to launching the new pie - now with percentage calculations, optional totals, and much better labeling.",
@@ -3566,7 +3566,7 @@
       "date": "2025-11-07",
       "url": "https://omni.co/demos/20251107",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:22:14Z",
+      "scraped_at": "2026-03-03T21:41:18Z",
       "title": "Demos",
       "summary_bullets": [
         "Our second most requested feature is done. Now that we've landed a bunch of the vis rework for stacked and grouped bars, we've opened up dynamic stack ordering for stacked charts.",
@@ -3692,7 +3692,7 @@
       "date": "2025-10-31",
       "url": "https://omni.co/demos/20251031",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:22:22Z",
+      "scraped_at": "2026-03-03T21:41:26Z",
       "title": "Demos",
       "summary_bullets": [
         "We're building another AI layer in Omni for summarizing and analyzing the results of many queries on a dashboard. Just another way to make the query results more consumable for your end users. Continuing the work to give you every control for creating amazing experiences on polished dashboards - now you can insert custom empty messages or error messages.",
@@ -3828,7 +3828,7 @@
       "date": "2025-05-23",
       "url": "https://omni.co/demos/20250523",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:25:32Z",
+      "scraped_at": "2026-03-03T21:44:31Z",
       "title": "Demos",
       "summary_bullets": [
         "Blobby is getting smarter again. Now you can build fields directly from the AI query (of course inside the permission envelope of the core app). This means on-the-fly aggregates, derivative dimensions, etc are as easy as telling the AI what you want.",
@@ -3965,7 +3965,7 @@
       "date": "2025-05-02",
       "url": "https://omni.co/demos/20250502",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:25:56Z",
+      "scraped_at": "2026-03-03T21:44:55Z",
       "title": "Demos",
       "summary_bullets": [
         "Now that AI can do some incredible things, it makes sense to put Blobby in more places. Here's an early cut of the Slack experience.",
@@ -4103,7 +4103,7 @@
       "date": "2026-03-03",
       "url": "https://omni.co/demos",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:20:00Z",
+      "scraped_at": "2026-03-03T21:39:10Z",
       "title": "Demos",
       "summary_bullets": [
         "AI has come to the data model. With new multi-file search you can coordinate actions across the full data model. Bunch of great use cases here and we'll start documenting all the best workflows. Let the robots do the maintence.",
@@ -4371,7 +4371,7 @@
       "date": "2026-02-06",
       "url": "https://omni.co/demos/20260206",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:20:25Z",
+      "scraped_at": "2026-03-03T21:39:35Z",
       "title": "Demos",
       "summary_bullets": [
         "Product\nAI\nBusiness Intelligence\nEmbedded Analytics\nIntegrations\nCapabilities",
@@ -4727,7 +4727,7 @@
       "date": "2026-01-30",
       "url": "https://omni.co/demos/20260130",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:20:35Z",
+      "scraped_at": "2026-03-03T21:39:44Z",
       "title": "Demos",
       "summary_bullets": [
         "Blobby isn't only for querying. Now you can get some help building out your dashboards courtesy of a Blobby helper for building and arranging dashboards. Early days here, but would love thoughts on where this can help builders get more productive.",
@@ -4941,7 +4941,7 @@
       "date": "2026-01-23",
       "url": "https://omni.co/demos/20260123",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:20:45Z",
+      "scraped_at": "2026-03-03T21:39:52Z",
       "title": "Demos",
       "summary_bullets": [
         "Now you get the full copy experience from our native data tables - highlight and copy cells trivially out of the front-end, including keyboard controls.",
@@ -5167,7 +5167,7 @@
       "date": "2026-01-16",
       "url": "https://omni.co/demos/20260116",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:20:54Z",
+      "scraped_at": "2026-03-03T21:40:01Z",
       "title": "Demos",
       "summary_bullets": [
         "We're making it easier to get to Blobby, plus some admin controls for folks who aren't quite ready.",
@@ -5426,7 +5426,7 @@
       "date": "2026-01-09",
       "url": "https://omni.co/demos/20260109",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:21:03Z",
+      "scraped_at": "2026-03-03T21:40:10Z",
       "title": "Demos",
       "summary_bullets": [
         "Soon you'll be able to officially bring your own LLMs to Omni, starting with ChatGPT and Claude alongside our native Bedrock. More models to come.",
@@ -5695,7 +5695,7 @@
       "date": "2026-01-02",
       "url": "https://omni.co/demos/20260102",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:21:13Z",
+      "scraped_at": "2026-03-03T21:40:20Z",
       "title": "Demos",
       "summary_bullets": [
         "A first look at bringing Blobby to a native Slack app.",
@@ -5985,7 +5985,7 @@
       "date": "2025-12-05",
       "url": "https://omni.co/demos/20251205",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:21:40Z",
+      "scraped_at": "2026-03-03T21:40:45Z",
       "title": "Demos",
       "summary_bullets": [
         "Dashboard tabs and containers are getting close to GA. For the cutting edge folks, we're open to turning this on (there may be bumps). But enormous amount of new dashboard functionality coming soon. Here we demo filters above and below tabs, the tab building experience, and more. Ask us if you want to get in early (it is all or nothing though, so fair warning).",
@@ -6133,7 +6133,7 @@
       "date": "2025-12-01",
       "url": "https://omni.co/demos/20251201",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:21:49Z",
+      "scraped_at": "2026-03-03T21:40:53Z",
       "title": "Demos",
       "summary_bullets": [
         "Blobby has been studying hard. Now you can connect Omni to Google Drive and search files outside Omni directly from Blobby. This lays the groundwork for bringing AI context from completely outside the system into an analysis, or even just asking quick questions from inside the AI window. Excited to see how folks use this one.",
@@ -6303,7 +6303,7 @@
       "date": "2025-11-21",
       "url": "https://omni.co/demos/20251121",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:21:58Z",
+      "scraped_at": "2026-03-03T21:41:01Z",
       "title": "Demos",
       "summary_bullets": [
         "We're teaching Blobby to model. Now you can build topics on the fly in AI, add relationships, or just generally do whatever you need from a modeling standpoint. Amazing for getting started or just supplementing the current model.",
@@ -6451,7 +6451,7 @@
       "date": "2025-11-14",
       "url": "https://omni.co/demos/20251114",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:22:06Z",
+      "scraped_at": "2026-03-03T21:41:10Z",
       "title": "Demos",
       "summary_bullets": [
         "Now in a couple clicks you can view a dashboard as any user in the system. Fast debugging and embed configuration. Also our first demo from the Explo team!!",
@@ -6599,7 +6599,7 @@
       "date": "2025-10-24",
       "url": "https://omni.co/demos/20251024",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:22:31Z",
+      "scraped_at": "2026-03-03T21:41:34Z",
       "title": "Demos",
       "summary_bullets": [
         "Another preview of all the work on dashboard building with our new containers system (ie floating filters and sections).",
@@ -6771,7 +6771,7 @@
       "date": "2025-10-17",
       "url": "https://omni.co/demos/20251017",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:22:39Z",
+      "scraped_at": "2026-03-03T21:41:42Z",
       "title": "Demos",
       "summary_bullets": [
         "As always a pile of new AI\n\nA new skills system for Blobby. Now developers can build structured workflows (think input requirements, multi-step analysis) directly into Blobby. This means your most common workflows - lookups, cohort analysis, really anything can be tightly controlled and organized for end users. Excited to see what folks build here.\n\nA sort of demo of the new Haiku 4.5 experience - smarter, faster, cheaper - coming soon.",
@@ -6910,7 +6910,7 @@
       "date": "2025-10-10",
       "url": "https://omni.co/demos/20251010",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:22:47Z",
+      "scraped_at": "2026-03-03T21:41:50Z",
       "title": "Demos",
       "summary_bullets": [
         "A first look at in-line documentation in the IDE. No more digging for docs as you build, now you have the full model reference code base at your fingertips.",
@@ -7080,7 +7080,7 @@
       "date": "2025-10-03",
       "url": "https://omni.co/demos/20251003",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:22:56Z",
+      "scraped_at": "2026-03-03T21:41:59Z",
       "title": "Demos",
       "summary_bullets": [
         "Product\nAI\nBusiness Intelligence\nEmbedded Analytics\nIntegrations\nCapabilities",
@@ -7276,7 +7276,7 @@
       "date": "2025-09-26",
       "url": "https://omni.co/demos/20250926",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:23:04Z",
+      "scraped_at": "2026-03-03T21:42:07Z",
       "title": "Demos",
       "summary_bullets": [
         "Lots of hidden work to make rendering the largest data sets performant in Omni. Here we demo some early work to offload much of that work out of the browser. More work to do, but exciting progress.=",
@@ -7358,7 +7358,7 @@
       "date": "2025-09-19",
       "url": "https://omni.co/demos/20250919",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:23:12Z",
+      "scraped_at": "2026-03-03T21:42:16Z",
       "title": "Demos",
       "summary_bullets": [
         "Product\nAI\nBusiness Intelligence\nEmbedded Analytics\nIntegrations\nCapabilities",
@@ -7524,7 +7524,7 @@
       "date": "2025-09-12",
       "url": "https://omni.co/demos/20250912",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:23:20Z",
+      "scraped_at": "2026-03-03T21:42:23Z",
       "title": "Demos",
       "summary_bullets": [
         "Validating a complex system of per-user variables can be challenging, so we're building a front end experience to control user attributes for quick debugging and faster modeling even in the most complex deployments.",
@@ -7661,7 +7661,7 @@
       "date": "2025-09-05",
       "url": "https://omni.co/demos/20250905",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:23:29Z",
+      "scraped_at": "2026-03-03T21:42:32Z",
       "title": "Demos",
       "summary_bullets": [
         "A first look at the complete flexibility of fine grain permission controls. Soon you'll be able to define nearly every application experience into custom permission sets.",
@@ -7798,7 +7798,7 @@
       "date": "2025-08-29",
       "url": "https://omni.co/demos/20250829",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:23:37Z",
+      "scraped_at": "2026-03-03T21:42:39Z",
       "title": "Demos",
       "summary_bullets": [
         "We're doing the legwork to make all of your AI sessions stateful - quickly share an AI session with a coworker, or return to a previous analysis with all of the context.",
@@ -7969,7 +7969,7 @@
       "date": "2025-08-22",
       "url": "https://omni.co/demos/20250822",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:23:45Z",
+      "scraped_at": "2026-03-03T21:42:47Z",
       "title": "Demos",
       "summary_bullets": [
         "A pair of huge new spreadsheet features:\n\nSpreadsheets in Omni just got a new super power. Now you can unlock specific cells at the dashboard level for completely dynamic spreadsheet workflows - simulation, editing, override. We do a quick simulation demo for growth rates and financial assumptions, but huge possibilities now for all your dashboard users.\n\nMore super powers for your spreadsheets. Now cells with pre-existing Omni drills can bring that depth into the spreadsheet UI.",
@@ -8097,7 +8097,7 @@
       "date": "2025-08-15",
       "url": "https://omni.co/demos/20250815",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:23:54Z",
+      "scraped_at": "2026-03-03T21:42:55Z",
       "title": "Demos",
       "summary_bullets": [
         "Blobby keeps getting smarter and will now build filtered measures for quick comparisons between user grouplets",
@@ -8289,7 +8289,7 @@
       "date": "2025-08-08",
       "url": "https://omni.co/demos/20250808",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:24:01Z",
+      "scraped_at": "2026-03-03T21:43:03Z",
       "title": "Demos",
       "summary_bullets": [
         "This week Blobby got unleashed. Continuing on the build out of Agent Blobby, we have a demo of AI doing a little bit of everything - building a plan, multi-query execution, some data modeling, and even building a dashboard. This is all locked up behind the agent launch (TBD), but huge progress in the scope of automated analysis.",
@@ -8427,7 +8427,7 @@
       "date": "2025-08-01",
       "url": "https://omni.co/demos/20250801",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:24:10Z",
+      "scraped_at": "2026-03-03T21:43:11Z",
       "title": "Demos",
       "summary_bullets": [
         "We're bring more Omni metadata back to dbt with exposures. Soon you will be able to understand all of the downstream impacts of your dbt changing in Omni.",
@@ -8586,7 +8586,7 @@
       "date": "2025-07-25",
       "url": "https://omni.co/demos/20250725",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:24:18Z",
+      "scraped_at": "2026-03-03T21:43:19Z",
       "title": "Demos",
       "summary_bullets": [
         "Your most requested feature is near. We're building native connection to Google Sheets, including per user auth and fine grain controls for overwrite vs addition. Week or two out!",
@@ -8779,7 +8779,7 @@
       "date": "2025-07-18",
       "url": "https://omni.co/demos/20250718",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:24:27Z",
+      "scraped_at": "2026-03-03T21:43:27Z",
       "title": "Demos",
       "summary_bullets": [
         "Agent Blobby is coming. We're taking the training wheels off AI and allowing multi-query sessions when appropriate. This opens up chain of thought and requery analysis. Plenty more to do here, but more open experiences are coming.",
@@ -8931,7 +8931,7 @@
       "date": "2025-07-11",
       "url": "https://omni.co/demos/20250711",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:24:35Z",
+      "scraped_at": "2026-03-03T21:43:36Z",
       "title": "Demos",
       "summary_bullets": [
         "Getting close to the launch of OAuth passthrough from the database in Omni. This would allow Omni to absorb any per-user permissioning from the database.",
@@ -9114,7 +9114,7 @@
       "date": "2025-07-03",
       "url": "https://omni.co/demos/20250703",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:24:43Z",
+      "scraped_at": "2026-03-03T21:43:44Z",
       "title": "Demos",
       "summary_bullets": [
         "Now any time-series can dynamically fill missing dates between the min and max in the data set.",
@@ -9251,7 +9251,7 @@
       "date": "2025-06-27",
       "url": "https://omni.co/demos/20250627",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:24:51Z",
+      "scraped_at": "2026-03-03T21:43:52Z",
       "title": "Demos",
       "summary_bullets": [
         "A first look at adding new model context based on an AI session. This means when you need to introduce new fields or context in a given AI session, Omni can suggest changes to make Blobby smarter for future users and use cases.",
@@ -9476,7 +9476,7 @@
       "date": "2025-06-20",
       "url": "https://omni.co/demos/20250620",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:25:00Z",
+      "scraped_at": "2026-03-03T21:44:00Z",
       "title": "Demos",
       "summary_bullets": [
         "A deep dive into all the special work we put into EAV modeling. Between some API workflows for dynamic field creation and per-customer model extensions, Omni now has a best-in-class approach to one of the most complex database structures. And of course this now unlocks all of the AI workflows on-top of these complex structures too.",
@@ -9613,7 +9613,7 @@
       "date": "2025-06-13",
       "url": "https://omni.co/demos/20250613",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:25:07Z",
+      "scraped_at": "2026-03-03T21:44:08Z",
       "title": "Demos",
       "summary_bullets": [
         "Another demo of Omni living in Claude desktop, including dashboard building, bringing web data, and other post processing on top of Omni data.",
@@ -9717,7 +9717,7 @@
       "date": "2025-06-06",
       "url": "https://omni.co/demos/20250606",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:25:15Z",
+      "scraped_at": "2026-03-03T21:44:15Z",
       "title": "Demos",
       "summary_bullets": [
         "Our first version of Omni's MCP service in the wild via Claude desktop. Now you can bring governed data AI anywhere you want. Apologies for some hiccups with screen share early in the video, but some visuals at the end.",
@@ -9821,7 +9821,7 @@
       "date": "2025-05-30",
       "url": "https://omni.co/demos/20250530",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:25:23Z",
+      "scraped_at": "2026-03-03T21:44:23Z",
       "title": "Demos",
       "summary_bullets": [
         "Plenty of AI work\n\ndbt tests can now populate AI field context (all_fields), improving NLQ performance without touching Omni. This will stay in sync as your tests evolve as well.\n\nA quick chrome extension to launch new tabs into the chat experience. Making your whole database available in a click.\n\nWe brought the /chat visualization experience to the workbook. Now blobby can build (and soon tune) vis.\n\nLast week we launched customization so you can make Blobby yours. Now you can see what that looks like inline.",
@@ -9948,7 +9948,7 @@
       "date": "2025-05-16",
       "url": "https://omni.co/demos/20250516",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:25:40Z",
+      "scraped_at": "2026-03-03T21:44:39Z",
       "title": "Demos",
       "summary_bullets": [
         "The full AI experience is now embeddable, including complete whitelabel options to style and name your AI. Everything Omni + AI + your app.",
@@ -10074,7 +10074,7 @@
       "date": "2025-05-09",
       "url": "https://omni.co/demos/20250509",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:25:48Z",
+      "scraped_at": "2026-03-03T21:44:47Z",
       "title": "Demos",
       "summary_bullets": [
         "We're bringing a first class AI experience to mobile. So many of the amazing AI use cases are tactical lookups or quick one-off questions. Now they have a first class experience for your phone.",
@@ -10255,7 +10255,7 @@
       "date": "2025-04-25",
       "url": "https://omni.co/demos/20250425",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:26:04Z",
+      "scraped_at": "2026-03-03T21:45:02Z",
       "title": "Demos",
       "summary_bullets": [
         "We've been working on a new UI to simplify the natural language experience. Query history, charting, and fast linking to the workbook.",
@@ -10381,7 +10381,7 @@
       "date": "2025-04-18",
       "url": "https://omni.co/demos/20250418",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:26:12Z",
+      "scraped_at": "2026-03-03T21:45:11Z",
       "title": "Demos",
       "summary_bullets": [
         "Now spreadsheets can call data from many tabs at once. This offers the flexibility to run a bunch of queries and then manipulate the results into any spreadsheet layout that makes sense. Little more polish, but will be in beta soon.",
@@ -10518,7 +10518,7 @@
       "date": "2025-04-11",
       "url": "https://omni.co/demos/20250411",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:26:19Z",
+      "scraped_at": "2026-03-03T21:45:18Z",
       "title": "Demos",
       "summary_bullets": [
         "We're adding more layers to the data model for the most complex use cases. Soon user-specific or group-specific models will be layered into the data model. This opens up utilities like localization, departmental models, per-user models, and all sorts of interesting extension points to the app. These will be able to be tied to user attributes for dynamic model layers as well.",
@@ -10600,7 +10600,7 @@
       "date": "2025-04-04",
       "url": "https://omni.co/demos/20250404",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:26:27Z",
+      "scraped_at": "2026-03-03T21:45:26Z",
       "title": "Demos",
       "summary_bullets": [
         "You can now filter with calculations post-query! This opens up a huge number of new use cases, filtering rows for visualization (ie trimming off partial moving averages), removing some rows (say hiding rows based on an IF calc), or even just simpler tables with calcs over a larger data set.",
@@ -10779,7 +10779,7 @@
       "date": "2025-03-28",
       "url": "https://omni.co/demos/20250328",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:26:36Z",
+      "scraped_at": "2026-03-03T21:45:35Z",
       "title": "Demos",
       "summary_bullets": [
         "A huge step forward in enriching Omni models for AI. We now have field specific AI context, and helpers for value generation. The net is huge step forwards in AI quality across any use case. Additionally, we added workflow to add query examples to the model AI context for ground truth examples.",
@@ -10949,7 +10949,7 @@
       "date": "2025-03-21",
       "url": "https://omni.co/demos/20250321",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:26:43Z",
+      "scraped_at": "2026-03-03T21:45:43Z",
       "title": "Demos",
       "summary_bullets": [
         "We added some new controls. Now series can be toggled on and off vs requiring a field swap. Additionally now tables can be built dynamically by selecting one or many columns.",
@@ -11121,7 +11121,7 @@
       "date": "2025-03-14",
       "url": "https://omni.co/demos/20250314",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:26:51Z",
+      "scraped_at": "2026-03-03T21:45:50Z",
       "title": "Demos",
       "summary_bullets": [
         "A guest demo from our friends at Ramp Networks demo three new custom visualizations, and have also shared out code for others.",
@@ -11236,7 +11236,7 @@
       "date": "2025-03-07",
       "url": "https://omni.co/demos/20250307",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:26:59Z",
+      "scraped_at": "2026-03-03T21:45:59Z",
       "title": "Demos",
       "summary_bullets": [
         "The launch of docs helpers in our AI experience. Now you can ask blobby about not just data questions or how to interpret the data, but also how to model, visualize, or configure Omni (with deeplinks too).",
@@ -11373,7 +11373,7 @@
       "date": "2025-02-28",
       "url": "https://omni.co/demos/20250228",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:27:07Z",
+      "scraped_at": "2026-03-03T21:46:07Z",
       "title": "Demos",
       "summary_bullets": [
         "We demos three use cases for the open spreadsheet UI. We're excited to see more of these use cases where folks had no other choice but to disconnect from the database. Now everything can wire up to live data and filters!",
@@ -11543,7 +11543,7 @@
       "date": "2025-02-21",
       "url": "https://omni.co/demos/20250221",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:27:15Z",
+      "scraped_at": "2026-03-03T21:46:16Z",
       "title": "Demos",
       "summary_bullets": [
         "We brought CSV uploads from workbooks into the database. Now your workbook CSVs can live in the database alongside the rest of your data, in any dialect you are using (yes, all of them).",
@@ -11735,7 +11735,7 @@
       "date": "2025-02-14",
       "url": "https://omni.co/demos/20250214",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:27:24Z",
+      "scraped_at": "2026-03-03T21:46:24Z",
       "title": "Demos",
       "summary_bullets": [
         "The soft launch (feature flag) of CSV upload, plus lots of conversation around lifecycle management. Note this will work in any supported dialects in Omni.",
@@ -11872,7 +11872,7 @@
       "date": "2025-02-06",
       "url": "https://omni.co/demos/20250206",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:27:33Z",
+      "scraped_at": "2026-03-03T21:46:32Z",
       "title": "Demos",
       "summary_bullets": [
         "Filtering can be hard - not knowing which field to pick or how to express a complex time grain. Filter AI means filter is as easy as a text box. Work to do here still, but the potential is enormous for changing the way end users build and refine queries.",
@@ -12053,7 +12053,7 @@
       "date": "2025-01-31",
       "url": "https://omni.co/demos/20250131",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:27:41Z",
+      "scraped_at": "2026-03-03T21:46:40Z",
       "title": "Demos",
       "summary_bullets": [
         "A new labeling algorithm that means no overlapping labels. Beautiful scatterplots, lines, bar charts right out of the box. Rolling out shortly.",
@@ -12201,7 +12201,7 @@
       "date": "2025-01-24",
       "url": "https://omni.co/demos/20250124",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:27:50Z",
+      "scraped_at": "2026-03-03T21:46:48Z",
       "title": "Demos",
       "summary_bullets": [
         "Bring any date you want into the workbook - Now users can mash-up ad hoc data sets with the database - targets, custom enrichment, or even one-off data sets for dashboards. These new data sets operate like first class workbook queries - SQL access, Excel formulas, visualization, anything. Rolling out over next few weeks.",
@@ -12327,7 +12327,7 @@
       "date": "2025-01-17",
       "url": "https://omni.co/demos/20250117",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:27:57Z",
+      "scraped_at": "2026-03-03T21:46:58Z",
       "title": "Demos",
       "summary_bullets": [
         "Bunch of new APIs we're launching for content, plus some conversation about our prioritization for new APIs (TLDR; ask us if you need APIs).",
@@ -12464,7 +12464,7 @@
       "date": "2025-01-10",
       "url": "https://omni.co/demos/20250110",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:28:06Z",
+      "scraped_at": "2026-03-03T21:47:06Z",
       "title": "Demos",
       "summary_bullets": [
         "We show how to take advantage of Snowflake Cortex to enrich data in Omni using modern LLMs. We show several examples of enriching marketing data, even layering interactive UI for selecting models or tuning prompts.",
@@ -12624,7 +12624,7 @@
       "date": "2025-01-03",
       "url": "https://omni.co/demos/20250103",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:28:13Z",
+      "scraped_at": "2026-03-03T21:47:15Z",
       "title": "Demos",
       "summary_bullets": [
         "Bunch new AI features\n\nInviting new questions in a topic to get oriented on the data available\n\nSummarize query results and point at follow-up analysis (we have some data processing pieces to solve there prior to release)\n\nSome new tuning to AI query to improve filter construction using more structured LLM endpoints. Plus some improvements to make sure global AI query (outside of topics) is more scalable on larger models.",
@@ -12754,7 +12754,7 @@
       "date": "2024-12-20",
       "url": "https://omni.co/demos/20241220",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:28:21Z",
+      "scraped_at": "2026-03-03T21:47:23Z",
       "title": "Demos",
       "summary_bullets": [
         "A pair of huge new features for streamlining the dashboard experience:\n\nMulti-select controls that allow for building a table from an array of columns that can be dynamically chosen (think pick N of the selected columns through a filter)\n\nTile-specific controls that lift the column picking interaction from the top of the dashboard on to one specific tile in-line (still needs design, but huge interactivity win).\"",
@@ -12896,7 +12896,7 @@
       "date": "2024-12-13",
       "url": "https://omni.co/demos/20241213",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:28:29Z",
+      "scraped_at": "2026-03-03T21:47:31Z",
       "title": "Demos",
       "summary_bullets": [
         "The launch of stable colors in the data model. Now your dimensions can maintain consistent coloring throughout the app, or even just for a particular workbook. We're excited to also open up push down from the UI to close the loop and make modeling color point and click.",
@@ -12978,7 +12978,7 @@
       "date": "2024-12-06",
       "url": "https://omni.co/demos/20241206",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:28:36Z",
+      "scraped_at": "2026-03-03T21:47:39Z",
       "title": "Demos",
       "summary_bullets": [
         "The full dbt repo is now visible inside Omni. No more jumping back and forth, just easy lookup of your entire dbt model from inside Omni, including opening reconciled dbt SQL to test live.",
@@ -13093,7 +13093,7 @@
       "date": "2024-12-02",
       "url": "https://omni.co/demos/20241202",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:28:44Z",
+      "scraped_at": "2026-03-03T21:47:48Z",
       "title": "Demos",
       "summary_bullets": [
         "A first look at our new dashboard URLs - now folks can easily work around URL encoding for simpler parameterization and control",
@@ -13241,7 +13241,7 @@
       "date": "2024-11-22",
       "url": "https://omni.co/demos/20241122",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:28:52Z",
+      "scraped_at": "2026-03-03T21:47:56Z",
       "title": "Demos",
       "summary_bullets": [
         "A first look at a new science project in Omni to add the *full* power of spreadsheets to the app. 100% of the freedom of the spreadsheet for presenting and manipulating governed data out of the warehouse. Lots to explore here, but some beautiful reports are opened up. Ping us if you'd like an early look.",
@@ -13369,7 +13369,7 @@
       "date": "2024-11-15",
       "url": "https://omni.co/demos/20241115",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:29:00Z",
+      "scraped_at": "2026-03-03T21:48:04Z",
       "title": "Demos",
       "summary_bullets": [
         "Totals for everything! Now users can toggle between native totals (ungrouped aggregates), simple totals, min, max, and count on any field. This includes bring flexible totals to dimensions (!) and calculations (!).",
@@ -13485,7 +13485,7 @@
       "date": "2024-11-08",
       "url": "https://omni.co/demos/20241108",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:29:08Z",
+      "scraped_at": "2026-03-03T21:48:12Z",
       "title": "Demos",
       "summary_bullets": [
         "Our AI is getting smarter. Now Blobby can answer data questions like suggesting queries or offering follow-up questions. Additionally we've added some metadata hooks in the model to improve how fields are selected, add example values, and more.",
@@ -13635,7 +13635,7 @@
       "date": "2024-11-01",
       "url": "https://omni.co/demos/20241101",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:29:16Z",
+      "scraped_at": "2026-03-03T21:48:20Z",
       "title": "Demos",
       "summary_bullets": [
         "Users can now explicitly set their own timezones for dates in Omni. This also includes controls for setting user-specific timezones on the fly in embedded contexts.",
@@ -13773,7 +13773,7 @@
       "date": "2024-10-25",
       "url": "https://omni.co/demos/20241025",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:29:24Z",
+      "scraped_at": "2026-03-03T21:48:28Z",
       "title": "Demos",
       "summary_bullets": [
         "The beta launch of locking the vis config. While evolving the vis config dynamically as you query can be helpful in normal circumstances, when configs have been highly adjusted, locking the configuration to prevent updates on query structure changes offers a new alternative.",
@@ -13844,7 +13844,7 @@
       "date": "2024-10-18",
       "url": "https://omni.co/demos/20241018",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:29:32Z",
+      "scraped_at": "2026-03-03T21:48:36Z",
       "title": "Demos",
       "summary_bullets": [
         "A first look at some experimental work to bring intelligent auto-complete to the Omni IDE. Powered by LLMs and model metadata, this would open up the opportunity to auto-model fields with simple auto-complete. Very early work-in-progress",
@@ -13926,7 +13926,7 @@
       "date": "2024-10-11",
       "url": "https://omni.co/demos/20241011",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:29:40Z",
+      "scraped_at": "2026-03-03T21:48:44Z",
       "title": "Demos",
       "summary_bullets": [
         "A brand new set of controls to label filter values, and pass said labels through as dynamic text. Now filter text can be explicitly set and these values can pass through to fields for things like period-over-period or other filter-only field use case.",
@@ -14051,7 +14051,7 @@
       "date": "2024-10-04",
       "url": "https://omni.co/demos/20241004",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:29:48Z",
+      "scraped_at": "2026-03-03T21:48:52Z",
       "title": "Demos",
       "summary_bullets": [
         "A new UI mode for writing dbt SQL (ie. Jinja + refs). Now for handwritten SQL folks can toggle into dbt SQL mode for confirming well composed SQL and results before pushing to dbt.",
@@ -14133,7 +14133,7 @@
       "date": "2024-09-27",
       "url": "https://omni.co/demos/20240927",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:29:56Z",
+      "scraped_at": "2026-03-03T21:49:00Z",
       "title": "Demos",
       "summary_bullets": [
         "The launch of embedded content management controls. Now users in the embed context can build and share content with teammates seamlessly.",
@@ -14270,7 +14270,7 @@
       "date": "2024-09-20",
       "url": "https://omni.co/demos/20240920",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:30:04Z",
+      "scraped_at": "2026-03-03T21:49:08Z",
       "title": "Demos",
       "summary_bullets": [
         "A huge step forward in the flexibility of working with pivoted data. Now pivots can be instantly turned into filtered measures. This opens up a variety of new functionality:\n\nFlexible layout of calculations - work with pivots just like simpler data\n\nColor controls over pivoted series\n\nRearranging pivot order ad hoc\n\nKeeping the top N pivots and allocating other series to \"other\"",
@@ -14390,7 +14390,7 @@
       "date": "2024-09-13",
       "url": "https://omni.co/demos/20240913",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:30:12Z",
+      "scraped_at": "2026-03-03T21:49:16Z",
       "title": "Demos",
       "summary_bullets": [
         "A first look at global color palette controls - now manage palettes for the Omni environment including diverging and gradient palettes with a full admin UI",
@@ -14560,7 +14560,7 @@
       "date": "2024-09-06",
       "url": "https://omni.co/demos/20240906",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:30:20Z",
+      "scraped_at": "2026-03-03T21:49:25Z",
       "title": "Demos",
       "summary_bullets": [
         "A first look at the new saving and editing workflow for workbooks. This is a full rebuild of the editing workflow that underpins content as code as well as simpler deployment of complex changes, including alongside model changes. Plenty of discussion as well on how to tune the experience as we approach launch.",
@@ -14642,7 +14642,7 @@
       "date": "2024-08-30",
       "url": "https://omni.co/demos/20240830",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:30:28Z",
+      "scraped_at": "2026-03-03T21:49:34Z",
       "title": "Demos",
       "summary_bullets": [
         "An early look at drill-by-query - more flexibility to build full queries for drill down. This also lays the groundwork for drilling into visualizations",
@@ -14783,7 +14783,7 @@
       "date": "2024-08-23",
       "url": "https://omni.co/demos/20240823",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:30:36Z",
+      "scraped_at": "2026-03-03T21:49:43Z",
       "title": "Demos",
       "summary_bullets": [
         "New functionality to create links between embedded dashboards *inside* the iframe. No more tearing down and rebuilding iframes, just super fast linking to make navigation feel 100% native.",
@@ -14956,7 +14956,7 @@
       "date": "2024-08-16",
       "url": "https://omni.co/demos/20240816",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:30:44Z",
+      "scraped_at": "2026-03-03T21:49:51Z",
       "title": "Demos",
       "summary_bullets": [
         "The launch of unlimited downloads, including formatted or unformatted toggle, and custom row limits. Also new affordances for hidden columns in result sets and how the are handled during export.",
@@ -15048,7 +15048,7 @@
       "date": "2024-08-09",
       "url": "https://omni.co/demos/20240809",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:30:52Z",
+      "scraped_at": "2026-03-03T21:49:59Z",
       "title": "Demos",
       "summary_bullets": [
         "Enormous improvements to stickiness in visualization settings and auto-vis. Now chart facets will retain even after query changes; toggling visualization types will retain settings; and auto visualization will retain tuned settings. The changes feel amazing after some internal testing, should see these shortly in the app.",
@@ -15151,7 +15151,7 @@
       "date": "2024-08-02",
       "url": "https://omni.co/demos/20240802",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:31:00Z",
+      "scraped_at": "2026-03-03T21:50:07Z",
       "title": "Demos",
       "summary_bullets": [
         "Views in topics - now one-off view tweaks can be customize at the single-topic level for powerful, elegant tuning of the data model",
@@ -15287,7 +15287,7 @@
       "date": "2024-07-26",
       "url": "https://omni.co/demos/20240726",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:31:08Z",
+      "scraped_at": "2026-03-03T21:50:16Z",
       "title": "Demos",
       "summary_bullets": [
         "Product\nAI\nBusiness Intelligence\nEmbedded Analytics\nIntegrations\nCapabilities",
@@ -15403,7 +15403,7 @@
       "date": "2024-07-19",
       "url": "https://omni.co/demos/20240719",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:31:16Z",
+      "scraped_at": "2026-03-03T21:50:24Z",
       "title": "Demos",
       "summary_bullets": [
         "Product\nAI\nBusiness Intelligence\nEmbedded Analytics\nIntegrations\nCapabilities",
@@ -15509,7 +15509,7 @@
       "date": "2024-07-12",
       "url": "https://omni.co/demos/20240712",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:31:34Z",
+      "scraped_at": "2026-03-03T21:50:32Z",
       "title": "Demos",
       "summary_bullets": [
         "Product\nAI\nBusiness Intelligence\nEmbedded Analytics\nIntegrations\nCapabilities",
@@ -15605,7 +15605,7 @@
       "date": "2024-07-08",
       "url": "https://omni.co/demos/20240708",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:31:43Z",
+      "scraped_at": "2026-03-03T21:50:40Z",
       "title": "Demos",
       "summary_bullets": [
         "Product\nAI\nBusiness Intelligence\nEmbedded Analytics\nIntegrations\nCapabilities",
@@ -15651,7 +15651,7 @@
       "date": "2024-06-28",
       "url": "https://omni.co/demos/20240628",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:31:51Z",
+      "scraped_at": "2026-03-03T21:50:48Z",
       "title": "Demos",
       "summary_bullets": [
         "Product\nAI\nBusiness Intelligence\nEmbedded Analytics\nIntegrations\nCapabilities",
@@ -15757,7 +15757,7 @@
       "date": "2024-06-21",
       "url": "https://omni.co/demos/20240621",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:31:58Z",
+      "scraped_at": "2026-03-03T21:50:56Z",
       "title": "Demos",
       "summary_bullets": [
         "Product\nAI\nBusiness Intelligence\nEmbedded Analytics\nIntegrations\nCapabilities",
@@ -15843,7 +15843,7 @@
       "date": "2024-06-14",
       "url": "https://omni.co/demos/20240614",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:32:06Z",
+      "scraped_at": "2026-03-03T21:51:04Z",
       "title": "Demos",
       "summary_bullets": [
         "Product\nAI\nBusiness Intelligence\nEmbedded Analytics\nIntegrations\nCapabilities",
@@ -15919,7 +15919,7 @@
       "date": "2024-06-07",
       "url": "https://omni.co/demos/20240607",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:32:15Z",
+      "scraped_at": "2026-03-03T21:51:12Z",
       "title": "Demos",
       "summary_bullets": [
         "Product\nAI\nBusiness Intelligence\nEmbedded Analytics\nIntegrations\nCapabilities",
@@ -16015,7 +16015,7 @@
       "date": "2024-05-31",
       "url": "https://omni.co/demos/20240531",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:32:23Z",
+      "scraped_at": "2026-03-03T21:51:20Z",
       "title": "Demos",
       "summary_bullets": [
         "Product\nAI\nBusiness Intelligence\nEmbedded Analytics\nIntegrations\nCapabilities",
@@ -16111,7 +16111,7 @@
       "date": "2024-05-24",
       "url": "https://omni.co/demos/20240524",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:32:31Z",
+      "scraped_at": "2026-03-03T21:51:28Z",
       "title": "Demos",
       "summary_bullets": [
         "Product\nAI\nBusiness Intelligence\nEmbedded Analytics\nIntegrations\nCapabilities",
@@ -16237,7 +16237,7 @@
       "date": "2024-05-17",
       "url": "https://omni.co/demos/20240517",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:32:39Z",
+      "scraped_at": "2026-03-03T21:51:36Z",
       "title": "Demos",
       "summary_bullets": [
         "Product\nAI\nBusiness Intelligence\nEmbedded Analytics\nIntegrations\nCapabilities",
@@ -16283,7 +16283,7 @@
       "date": "2024-05-10",
       "url": "https://omni.co/demos/20240510",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:32:47Z",
+      "scraped_at": "2026-03-03T21:51:45Z",
       "title": "Demos",
       "summary_bullets": [
         "Product\nAI\nBusiness Intelligence\nEmbedded Analytics\nIntegrations\nCapabilities",
@@ -16349,7 +16349,7 @@
       "date": "2024-05-03",
       "url": "https://omni.co/demos/20240503",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:32:55Z",
+      "scraped_at": "2026-03-03T21:51:52Z",
       "title": "Demos",
       "summary_bullets": [
         "Product\nAI\nBusiness Intelligence\nEmbedded Analytics\nIntegrations\nCapabilities",
@@ -16445,7 +16445,7 @@
       "date": "2024-04-26",
       "url": "https://omni.co/demos/20240426",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:33:03Z",
+      "scraped_at": "2026-03-03T21:52:00Z",
       "title": "Demos",
       "summary_bullets": [
         "Product\nAI\nBusiness Intelligence\nEmbedded Analytics\nIntegrations\nCapabilities",
@@ -16551,7 +16551,7 @@
       "date": "2024-04-19",
       "url": "https://omni.co/demos/20240419",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:33:11Z",
+      "scraped_at": "2026-03-03T21:52:08Z",
       "title": "Demos",
       "summary_bullets": [
         "Product\nAI\nBusiness Intelligence\nEmbedded Analytics\nIntegrations\nCapabilities",
@@ -16627,7 +16627,7 @@
       "date": "2024-04-12",
       "url": "https://omni.co/demos/20240412",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:33:19Z",
+      "scraped_at": "2026-03-03T21:52:16Z",
       "title": "Demos",
       "summary_bullets": [
         "Product\nAI\nBusiness Intelligence\nEmbedded Analytics\nIntegrations\nCapabilities",
@@ -16723,7 +16723,7 @@
       "date": "2024-04-05",
       "url": "https://omni.co/demos/20240405",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:33:27Z",
+      "scraped_at": "2026-03-03T21:52:24Z",
       "title": "Demos",
       "summary_bullets": [
         "Product\nAI\nBusiness Intelligence\nEmbedded Analytics\nIntegrations\nCapabilities",
@@ -16839,7 +16839,7 @@
       "date": "2024-03-29",
       "url": "https://omni.co/demos/20240329",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:33:35Z",
+      "scraped_at": "2026-03-03T21:52:32Z",
       "title": "Demos",
       "summary_bullets": [
         "Product\nAI\nBusiness Intelligence\nEmbedded Analytics\nIntegrations\nCapabilities",
@@ -16915,7 +16915,7 @@
       "date": "2024-03-22",
       "url": "https://omni.co/demos/20240322",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:33:43Z",
+      "scraped_at": "2026-03-03T21:52:40Z",
       "title": "Demos",
       "summary_bullets": [
         "Product\nAI\nBusiness Intelligence\nEmbedded Analytics\nIntegrations\nCapabilities",
@@ -17077,7 +17077,7 @@
       "date": "2026-02-20",
       "url": "https://omni.co/demos/20260220",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T19:20:08Z",
+      "scraped_at": "2026-03-03T21:39:18Z",
       "title": "Demos",
       "summary_bullets": [
         "A first look at the new UX for creating data from the workbook or dashboard. Now you can build columns that allow collecting data from end users. Opens up tons of read/write use cases for specific workflows.",
