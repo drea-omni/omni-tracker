@@ -1,9 +1,9 @@
 {
   "meta": {
     "source": "https://omni.co/changelog",
-    "last_scraped": "2026-03-06T04:13:24Z",
-    "total_weeks_indexed": 71,
-    "total_weeks_fully_scraped": 71,
+    "last_scraped": "2026-03-06T19:27:13Z",
+    "total_weeks_indexed": 72,
+    "total_weeks_fully_scraped": 72,
     "date_range": {
       "earliest_indexed": "2023-07-26",
       "latest_scraped": "2026-02-20"
@@ -320,6 +320,10 @@
       "week_label": "Week of July 26, 2023",
       "url": "https://omni.co/changelog/20230726",
       "title": "Scheduled dashboards, text tiles, Markdown, and more"
+    },
+    {
+      "week_label": "February 15, 2026 Week of February 15, 2026",
+      "url": "https://omni.co/changelog/20260215"
     }
   ],
   "weeks": [
@@ -2350,6 +2354,48 @@
             "Wide visualization legends : expand the width of legends for easier readability",
             "Log scale for visualizations : change the axis scale between linear or log",
             "Expand cells on table : can right-click on a table cell to expand the text and copy/paste (useful to see the full contents when a cell is super long!)",
+            "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
+            "Customers Case Studies Customer Support",
+            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
+            "Company About Blog Careers Subscribe Explo Transition Status"
+          ]
+        }
+      ]
+    },
+    {
+      "week_start": "2026-02-17",
+      "week_label": "February 15, 2026 Week of February 15, 2026",
+      "source_url": "https://omni.co/changelog/20260215",
+      "fully_scraped": true,
+      "scraped_at": "2026-03-06T19:27:13Z",
+      "days": [
+        {
+          "date": "2026-02-20",
+          "items": [
+            "Added Databricks Private Link support for both Azure and AWS infrastructure. You can now create private connections to Databricks workspaces using native Private Endpoints on Azure and VPC Interface Endpoints on AWS. See the PrivateLink documentation for setup details.",
+            "Added an organization-wide MCP server setting to Settings > AI settings that controls whether users can authorize external AI tools to connect via OAuth. When disabled, new OAuth approval requests are rejected and existing MCP grants are blocked from making tool calls. This setting defaults to enabled."
+          ]
+        },
+        {
+          "date": "2026-02-19",
+          "items": [
+            "Added YAML views and copy buttons to the workbook inspector , making it easy to view and copy query and visualization configuration in the sample query YAML format. You can now toggle between JSON and YAML views in the Query structure and Visualization config sections, and use the Copy query and visualization YAML button in the inspector header to copy both configurations at once in the format needed for topic files in the model IDE.",
+            "Added a Funnel visualization type, which you can now use to visualize data flowing through sequential steps. See the visualization documentation for details on configuration and use cases.",
+            "Added the ability to select built-in color palettes (such as \"Omni Blues\", \"Omni Threes\", and \"Omni\") as default palettes in the dashboard theme editor, in addition to custom palettes. Learn more about theming in the documentation ."
+          ]
+        },
+        {
+          "date": "2026-02-18",
+          "items": [
+            "Added a new GET /api/v1/uploads endpoint that allows you to list uploaded CSVs (data input tables). You can filter by upload type, connection, model, or file name, and the endpoint supports cursor-based pagination. See the API documentation for details.",
+            "Added the ability for Blobby to search the official Omni docs. This new tool is available in the Query Helper, AI Assistant , and Dashboard Assistant."
+          ]
+        },
+        {
+          "date": "2026-02-17",
+          "items": [
+            "Added Australian Dollar (AUD) currency formatting options to the dimension and measure format parameter, allowing you to display numbers with the A$ symbol in standard, accounting, and financial formats.",
+            "Added url fields to document, query, and folder API responses, giving you direct links to any piece of content in the Omni UI.",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
             "Customers Case Studies Customer Support",
             "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
