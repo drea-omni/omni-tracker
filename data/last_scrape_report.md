@@ -1,10 +1,9 @@
 ## 🔄 Omni Scraper Update Report
-*2026-03-08T04:16:33Z*
+*2026-03-08T19:16:14Z*
 
 ### 📋 Changelog — No new entries
 
-### 🎬 New Demo Weeks (1)
-- `2026-02-27` [February 27, 2026 AI Modeling, Cell-by-Cell Conditional Formatting, Dynamic Dashboard Table Height, Better AI Feedback, and More](https://omni.co/demos/20260227)
+### 🎬 Demos — No new weeks
 
 ### 📊 Totals
 - Changelog entries: 689
