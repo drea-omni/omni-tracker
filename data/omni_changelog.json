@@ -1,12 +1,12 @@
 {
   "meta": {
     "source": "https://omni.co/changelog",
-    "last_scraped": "2026-03-09T19:42:24Z",
+    "last_scraped": "2026-03-09T20:07:02Z",
     "total_weeks_indexed": 72,
     "total_weeks_fully_scraped": 72,
     "date_range": {
       "earliest_indexed": "2023-07-26",
-      "latest_scraped": "2026-02-20"
+      "latest_scraped": "2026-02-27"
     }
   },
   "index": [
@@ -328,43 +328,40 @@
   ],
   "weeks": [
     {
-      "week_start": "2026-02-17",
+      "week_start": "2026-02-23",
       "week_label": "Current week",
       "source_url": "https://omni.co/changelog",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:36:40Z",
+      "scraped_at": "2026-03-09T20:04:49Z",
       "days": [
         {
-          "date": "2026-02-20",
+          "date": "2026-02-27",
           "items": [
-            "Added Databricks Private Link support for both Azure and AWS infrastructure. You can now create private connections to Databricks workspaces using native Private Endpoints on Azure and VPC Interface Endpoints on AWS. See the PrivateLink documentation for setup details.",
-            "Added an organization-wide MCP server setting to Settings > AI settings that controls whether users can authorize external AI tools to connect via OAuth. When disabled, new OAuth approval requests are rejected and existing MCP grants are blocked from making tool calls. This setting defaults to enabled."
+            "Added support for Markdown columns in table visualizations, which allow you to format and style cell content using Markdown syntax. Note : This feature is still in development and is not yet available in-app."
           ]
         },
         {
-          "date": "2026-02-19",
+          "date": "2026-02-26",
           "items": [
-            "Added YAML views and copy buttons to the workbook inspector , making it easy to view and copy query and visualization configuration in the sample query YAML format. You can now toggle between JSON and YAML views in the Query structure and Visualization config sections, and use the Copy query and visualization YAML button in the inspector header to copy both configurations at once in the format needed for topic files in the model IDE.",
-            "Added a Funnel visualization type, which you can now use to visualize data flowing through sequential steps. See the visualization documentation for details on configuration and use cases.",
-            "Added the ability to select built-in color palettes (such as \"Omni Blues\", \"Omni Threes\", and \"Omni\") as default palettes in the dashboard theme editor, in addition to custom palettes. Learn more about theming in the documentation ."
+            "Added a force query parameter to the DELETE /api/unstable/folders/{folderId} endpoint that enables you to recursively delete folders containing documents and sub-folders. When force=true , all documents in the folder tree are archived to trash and all sub-folders are deleted in a single transaction. For safety, force delete returns a 400 error if the folder tree contains more than 100 total items. Learn more in the API documentation .",
+            "Added a new POST /api/v1/uploads endpoint that allows you to upload a CSV file to create a new data source.",
+            "Added percentage tooltips to Sankey charts . You can now enable the Show percentages toggle in the Sankey editor's tooltip settings to display percentage breakdowns in your chart tooltips. Additionally, the node tooltip label has been renamed from Total to Value for clarity."
           ]
         },
         {
-          "date": "2026-02-18",
+          "date": "2026-02-24",
           "items": [
-            "Added a new GET /api/v1/uploads endpoint that allows you to list uploaded CSVs (data input tables). You can filter by upload type, connection, model, or file name, and the endpoint supports cursor-based pagination. See the API documentation for details.",
-            "Added the ability for Blobby to search the official Omni docs. This new tool is available in the Query Helper, AI Assistant , and Dashboard Assistant."
+            "Added search and filter functionality for branches. You can now search branches by name in the Branches table, and when you have 10 or more branches in the IDE, a Search branches... option appears in the branch selector dropdown to help you quickly find the branch you need.",
+            "Markdown tiles and visualizations now include a prefers-dark class name when you're viewing in dark mode, allowing you to write custom CSS that targets light and dark mode separately."
           ]
         },
         {
-          "date": "2026-02-17",
+          "date": "2026-02-23",
           "items": [
-            "Added Australian Dollar (AUD) currency formatting options to the dimension and measure format parameter, allowing you to display numbers with the A$ symbol in standard, accounting, and financial formats.",
-            "Added url fields to document, query, and folder API responses, giving you direct links to any piece of content in the Omni UI.",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -374,7 +371,7 @@
       "week_label": "November 30, 2025 Week of November 30, 2025",
       "source_url": "https://omni.co/changelog/20251130",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:36:58Z",
+      "scraped_at": "2026-03-09T20:05:08Z",
       "days": [
         {
           "date": "2025-12-04",
@@ -405,9 +402,9 @@
             "AI_CLASSIFY(text, categories) - Classify text into categories",
             "AI_SENTIMENT(text) - Analyze sentiment of text",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -417,7 +414,7 @@
       "week_label": "November 16, 2025 Week of November 16, 2025",
       "source_url": "https://omni.co/changelog/20251116",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:37:02Z",
+      "scraped_at": "2026-03-09T20:05:11Z",
       "days": [
         {
           "date": "2025-11-21",
@@ -446,9 +443,9 @@
             "Added scope prefix labels (e.g., \"My Documents\", \"Shared with me\") to document titles in folder breadcrumbs, improving navigation clarity by showing users the ownership context of documents. The changes support both personal and shared scope documents.",
             "Added support for passing user attributes to the AI Assistant via the ai_context parameter. Additionally, Blobby can now utilize user-specific information about the user in the chat. For example, if you say \"How are my accounts?\" Blobby will know to query data only for accounts assigned to you.",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -458,15 +455,15 @@
       "week_label": "October 19, 2025 Week of October 19, 2025",
       "source_url": "https://omni.co/changelog/20251019",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:37:10Z",
+      "scraped_at": "2026-03-09T20:05:19Z",
       "days": [
         {
           "date": "2025-10-19",
           "items": [
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -476,7 +473,7 @@
       "week_label": "August 31, 2025 Week of August 31, 2025",
       "source_url": "https://omni.co/changelog/20250831",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:37:24Z",
+      "scraped_at": "2026-03-09T20:05:32Z",
       "days": [
         {
           "date": "2025-09-04",
@@ -493,9 +490,9 @@
             "Added support for inferring relationships from foreign key constraints in Postgres and Snowflake database connections. This feature allows Omni to automatically detect and create model relationships based on the foreign key definitions in the underlying database schema.",
             "Fixed an issue in the Content Validator that made content metadata visible to Queriers who didn't have access to that content. Now, Queriers will only see metadata for content they can access.",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -505,7 +502,7 @@
       "week_label": "July 13, 2025 Week of July 13, 2025",
       "source_url": "https://omni.co/changelog/20250713",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:37:38Z",
+      "scraped_at": "2026-03-09T20:05:45Z",
       "days": [
         {
           "date": "2025-07-17",
@@ -526,9 +523,9 @@
           "date": "2025-07-14",
           "items": [
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -538,7 +535,7 @@
       "week_label": "July 6, 2025 Week of July 6, 2025",
       "source_url": "https://omni.co/changelog/20250706",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:37:40Z",
+      "scraped_at": "2026-03-09T20:05:48Z",
       "days": [
         {
           "date": "2025-07-10",
@@ -562,9 +559,9 @@
             "Added a new owners parameter to topics, which accepts a list of email addresses indicating who the owners of a given topic are. This information can be used by the Omni AI to determine who is the best person to answer questions about a query or its results.",
             "Updated the document and folder permission APIs to accept the mini UUID of a user group instead of the full UUID. This resolves the mismatch between the User group APIs which returns mini IDs and the permission APIs that expected the full UUIDs.",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -574,7 +571,7 @@
       "week_label": "May 25, 2025 Week of May 25, 2025",
       "source_url": "https://omni.co/changelog/20250525",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:37:51Z",
+      "scraped_at": "2026-03-09T20:05:59Z",
       "days": [
         {
           "date": "2025-05-27",
@@ -582,9 +579,9 @@
             "Added a new Collapsible filters dashboard setting - in a draft dashboard: Edit > Dashboard settings - that controls the collapsing behavior of dashboard filters.",
             "Updated the AWS Bedrock model used for query generation to Claude 4 Sonnet. Applicable only to US-based instances.",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -594,7 +591,7 @@
       "week_label": "May 11, 2025 Week of May 11, 2025",
       "source_url": "https://omni.co/changelog/20250511",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:37:55Z",
+      "scraped_at": "2026-03-09T20:06:02Z",
       "days": [
         {
           "date": "2025-05-15",
@@ -623,9 +620,9 @@
           "date": "2025-05-12",
           "items": [
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -635,7 +632,7 @@
       "week_label": "April 6, 2025 Week of April 6, 2025",
       "source_url": "https://omni.co/changelog/20250406",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:38:05Z",
+      "scraped_at": "2026-03-09T20:06:11Z",
       "days": [
         {
           "date": "2025-04-11",
@@ -660,9 +657,9 @@
             "Renamed the Jobs page to Running queries to make it clearer what the page contains.",
             "Updated the code for some Markdown examples to correctly render when exported to PDF or PNG.",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -672,7 +669,7 @@
       "week_label": "January 16, 2025 dbt IDE updates, AI enhancements, UI-based SQL joins, measure color modeling, model development settings, new usage topic and organization settings",
       "source_url": "https://omni.co/changelog/20250116",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:38:11Z",
+      "scraped_at": "2026-03-09T20:06:17Z",
       "days": [
         {
           "date": "2025-01-16",
@@ -683,9 +680,9 @@
             "The new Microsoft SQL Server Trust Server Certificate connection setting allows Omni to bypass validating the database serverâs SSL/TLS certificate",
             "Non-US dates have new formatting options in charts",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -695,15 +692,15 @@
       "week_label": "October 29, 2024 Deliveries available in embed, new document settings, and more modeling enhancements",
       "source_url": "https://omni.co/changelog/20241029",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:38:18Z",
+      "scraped_at": "2026-03-09T20:06:25Z",
       "days": [
         {
           "date": "2024-10-29",
           "items": [
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -713,7 +710,7 @@
       "week_label": "February 8, 2026 Week of February 8, 2026",
       "source_url": "https://omni.co/changelog/20260208",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:36:42Z",
+      "scraped_at": "2026-03-09T20:04:53Z",
       "days": [
         {
           "date": "2026-02-11",
@@ -730,9 +727,9 @@
             "Added a quick connect feature that lets you paste a connection string URI (for example, postgresql://user:pass@host:5432/db ) to automatically create a database connection. The feature supports 12 dialects including PostgreSQL, MySQL, Snowflake, Databricks, and others, and parses credentials, host, port, database, and dialect-specific fields. Parse errors display inline without exposing passwords.",
             "Added new dashboard metadata variables to Markdown tiles: {{metadata.createdAt}} , {{metadata.createdBy}} , and {{metadata.lastUpdatedAt}}. You can now reference these variables in your text tile templates to display when the dashboard was created, who created it, and when it was last updated.",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -742,7 +739,7 @@
       "week_label": "January 25, 2026 Week of January 25, 2026",
       "source_url": "https://omni.co/changelog/20260125",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:36:44Z",
+      "scraped_at": "2026-03-09T20:04:55Z",
       "days": [
         {
           "date": "2026-01-29",
@@ -772,9 +769,9 @@
           "date": "2026-01-25",
           "items": [
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -784,7 +781,7 @@
       "week_label": "January 18, 2026 Week of January 18, 2026",
       "source_url": "https://omni.co/changelog/20260118",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:36:46Z",
+      "scraped_at": "2026-03-09T20:04:57Z",
       "days": [
         {
           "date": "2026-01-21",
@@ -802,9 +799,9 @@
             "Added the ability to choose a starting point for new Omni branches : from the shared model, another branch, or a specific model version.",
             "Multiple models can now share a single git repository with one webhook handling all associated models. When a pull request event occurs, all linked models are processed sequentially.",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -814,7 +811,7 @@
       "week_label": "January 5, 2026 Week of January 4, 2026",
       "source_url": "https://omni.co/changelog/20260104",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:36:48Z",
+      "scraped_at": "2026-03-09T20:04:58Z",
       "days": [
         {
           "date": "2026-01-09",
@@ -859,9 +856,9 @@
             "Added a POST /api/v1/documents/:identifier/duplicate endpoint to programmatically duplicate published documents.",
             "Added support for the ** (recursive wildcard) pattern in the List folders API endpoint. Use GET /api/unstable/folders?path=folder/** to retrieve all nested child folders under a given path.",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -871,16 +868,16 @@
       "week_label": "December 28, 2025 Week of December 28, 2025",
       "source_url": "https://omni.co/changelog/20251228",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:36:50Z",
+      "scraped_at": "2026-03-09T20:05:00Z",
       "days": [
         {
           "date": "2025-12-29",
           "items": [
             "Added automatic visualization generation in workbook AI. The AI now suggests and creates appropriate visualizations based on query results. Click the magic wand icon in the Chart selector to try it out.",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -890,15 +887,15 @@
       "week_label": "December 21, 2025 Week of December 21, 2025",
       "source_url": "https://omni.co/changelog/20251221",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:36:52Z",
+      "scraped_at": "2026-03-09T20:05:02Z",
       "days": [
         {
           "date": "2025-12-23",
           "items": [
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -908,7 +905,7 @@
       "week_label": "December 14, 2025 Week of December 14, 2025",
       "source_url": "https://omni.co/changelog/20251214",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:36:54Z",
+      "scraped_at": "2026-03-09T20:05:04Z",
       "days": [
         {
           "date": "2025-12-18",
@@ -937,9 +934,9 @@
           "date": "2025-12-14",
           "items": [
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -949,7 +946,7 @@
       "week_label": "December 7, 2025 Week of December 7, 2025",
       "source_url": "https://omni.co/changelog/20251207",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:36:56Z",
+      "scraped_at": "2026-03-09T20:05:06Z",
       "days": [
         {
           "date": "2025-12-11",
@@ -982,9 +979,9 @@
             "Added support for using filters with Level of Detail (LoD) and Top N fields. To specify filters in the model IDE, use the filters parameter with level_of_detail and dynamic_top_n . Filters are added to filters already on the query. Additionally, LoD filters work with cancel_query_filters , in which case Omni will cancel the query filters and apply the field specific filters when aggregating.",
             "Renamed the Size tab to Style for pie/donut charts. This tab now contains radii controls for this visualization type.",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -994,15 +991,15 @@
       "week_label": "November 23, 2025 Week of November 23, 2025",
       "source_url": "https://omni.co/changelog/20251123",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:37:00Z",
+      "scraped_at": "2026-03-09T20:05:10Z",
       "days": [
         {
           "date": "2025-11-25",
           "items": [
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -1012,7 +1009,7 @@
       "week_label": "November 9, 2025 Week of November 9, 2025",
       "source_url": "https://omni.co/changelog/20251109",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:37:04Z",
+      "scraped_at": "2026-03-09T20:05:13Z",
       "days": [
         {
           "date": "2025-11-12",
@@ -1028,9 +1025,9 @@
             "Added pagination support to the My Documents page.",
             "Fully released AI file uploads! Note : The File uploads setting in Settings > AI must be enabled to use this feature.",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -1040,7 +1037,7 @@
       "week_label": "November 2, 2025 Week of November 2, 2025",
       "source_url": "https://omni.co/changelog/20251102",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:37:06Z",
+      "scraped_at": "2026-03-09T20:05:15Z",
       "days": [
         {
           "date": "2025-11-05",
@@ -1055,9 +1052,9 @@
           "date": "2025-11-03",
           "items": [
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -1067,7 +1064,7 @@
       "week_label": "October 26, 2025 Week of October 26, 2025",
       "source_url": "https://omni.co/changelog/20251026",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:37:08Z",
+      "scraped_at": "2026-03-09T20:05:17Z",
       "days": [
         {
           "date": "2025-10-30",
@@ -1090,9 +1087,9 @@
             "Added a Queries menu to Markdown tiles, allowing you to access the values of queries on the dashboard in Markdown tiles.",
             "Changed spreadsheet downloads to be a ZIP file containing an XLSX file for each tab in the spreadsheet.",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -1102,7 +1099,7 @@
       "week_label": "October 12, 2025 Week of October 12, 2025",
       "source_url": "https://omni.co/changelog/20251012",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:37:12Z",
+      "scraped_at": "2026-03-09T20:05:21Z",
       "days": [
         {
           "date": "2025-10-17",
@@ -1145,9 +1142,9 @@
             "Added support for self-hosted git instances to the git integration. Use the new Git provider setting to select your git provider if Omni fails to detect the correct provider from your instance URL.",
             "Implemented a new organization setting that allows completely disabling email magic link authentication, including for administrators. This addresses the security requirement from organizations that want SSO to be the only authentication method.",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -1157,7 +1154,7 @@
       "week_label": "October 5, 2025 Week of October 5, 2025",
       "source_url": "https://omni.co/changelog/20251005",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:37:14Z",
+      "scraped_at": "2026-03-09T20:05:23Z",
       "days": [
         {
           "date": "2025-10-09",
@@ -1170,9 +1167,9 @@
           "date": "2025-10-08",
           "items": [
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -1182,7 +1179,7 @@
       "week_label": "September 28, 2025 Week of September 28, 2025",
       "source_url": "https://omni.co/changelog/20250928",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:37:16Z",
+      "scraped_at": "2026-03-09T20:05:25Z",
       "days": [
         {
           "date": "2025-10-01",
@@ -1198,9 +1195,9 @@
           "date": "2025-09-29",
           "items": [
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -1210,7 +1207,7 @@
       "week_label": "September 21, 2025 Week of September 21, 2025",
       "source_url": "https://omni.co/changelog/20250921",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:37:18Z",
+      "scraped_at": "2026-03-09T20:05:27Z",
       "days": [
         {
           "date": "2025-09-22",
@@ -1218,9 +1215,9 @@
             "Added an optional formatResults parameter to the Run query endpoint that controls whether spreadsheet exports (CSV, XLSX, JSON) include formatting. When set to false , unformatted values will be returned.",
             "Updated the git settings page to display provider-specific instructions. For example, if Omni determines that a repository is hosted on GitHub, the page will display the set up instructions specific to GitHub.",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -1230,7 +1227,7 @@
       "week_label": "September 14, 2025 Week of September 14, 2025",
       "source_url": "https://omni.co/changelog/20250914",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:37:20Z",
+      "scraped_at": "2026-03-09T20:05:29Z",
       "days": [
         {
           "date": "2025-09-19",
@@ -1259,9 +1256,9 @@
           "date": "2025-09-15",
           "items": [
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -1271,7 +1268,7 @@
       "week_label": "September 7, 2025 Week of September 7, 2025",
       "source_url": "https://omni.co/changelog/20250907",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:37:22Z",
+      "scraped_at": "2026-03-09T20:05:30Z",
       "days": [
         {
           "date": "2025-09-11",
@@ -1300,9 +1297,9 @@
           "date": "2025-09-08",
           "items": [
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -1312,7 +1309,7 @@
       "week_label": "August 24, 2025 Week of August 24, 2025",
       "source_url": "https://omni.co/changelog/20250824",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:37:26Z",
+      "scraped_at": "2026-03-09T20:05:34Z",
       "days": [
         {
           "date": "2025-08-29",
@@ -1325,9 +1322,9 @@
           "date": "2025-08-25",
           "items": [
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -1337,7 +1334,7 @@
       "week_label": "August 17, 2025 Week of August 17, 2025",
       "source_url": "https://omni.co/changelog/20250817",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:37:28Z",
+      "scraped_at": "2026-03-09T20:05:36Z",
       "days": [
         {
           "date": "2025-08-21",
@@ -1373,9 +1370,9 @@
             "Added a new Offloaded Schemas connection setting which allows you to make schemas available in workbooks and SQL without fully loading them into your schema model. This setting can be used for dbt dev schemas or large info schemas you want to browse without slowing down your model.",
             "Added support for syncing Databricks metric views into Omni. After a successful schema refresh, the views will be visible in the model IDE. To enable, check the Enable DB semantic layer integration box in a Databricks connection's Settings tab and then trigger a schema refresh.",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -1385,7 +1382,7 @@
       "week_label": "August 10, 2025 Week of August 10, 2025",
       "source_url": "https://omni.co/changelog/20250810",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:37:30Z",
+      "scraped_at": "2026-03-09T20:05:38Z",
       "days": [
         {
           "date": "2025-08-13",
@@ -1394,9 +1391,9 @@
             "Added support for OpenID Connect (OIDC) authentication. Reach out to Omni support to have this featured enabled, or check out the demo for more details.",
             "Added support for dbt exposures to the dbt integration. Connection Admins can now create a metadata file that, when pushed to dbt, will surface where a model is used in Omni in dbt.",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -1406,7 +1403,7 @@
       "week_label": "August 3, 2025 Week of August 3, 2025",
       "source_url": "https://omni.co/changelog/20250803",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:37:32Z",
+      "scraped_at": "2026-03-09T20:05:40Z",
       "days": [
         {
           "date": "2025-08-07",
@@ -1431,9 +1428,9 @@
             "Added a new Type field to the configuration for X and Y axes in Cartesian charts. This allows you to override the default axis type Omni selects.",
             "Added support for the NETWORKDAYS calculation. This calculation will return the number of whole working days between the provided start_date and end_date . Note : Unlike the Excel implementation, Omni does not support the holidays argument.",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -1443,7 +1440,7 @@
       "week_label": "July 27, 2025 Week of July 27, 2025",
       "source_url": "https://omni.co/changelog/20250727",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:37:34Z",
+      "scraped_at": "2026-03-09T20:05:42Z",
       "days": [
         {
           "date": "2025-07-29",
@@ -1459,9 +1456,9 @@
             "Added a new sets model parameter that allows you to define reusable lists of fields. These sets can be used in other parameters that accept fields, like drill_fields .",
             "Added support for searching for a user's name and email to the Settings > Deliveries page and the Standard , Embed , and Support tabs in Settings > Users .",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -1471,7 +1468,7 @@
       "week_label": "July 20, 2025 Week of July 20, 2025",
       "source_url": "https://omni.co/changelog/20250720",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:37:36Z",
+      "scraped_at": "2026-03-09T20:05:43Z",
       "days": [
         {
           "date": "2025-07-25",
@@ -1491,9 +1488,9 @@
           "date": "2025-07-21",
           "items": [
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -1503,15 +1500,15 @@
       "week_label": "June 29, 2025 Week of June 29, 2025",
       "source_url": "https://omni.co/changelog/20250629",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:37:42Z",
+      "scraped_at": "2026-03-09T20:05:50Z",
       "days": [
         {
           "date": "2025-06-30",
           "items": [
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -1521,7 +1518,7 @@
       "week_label": "June 22, 2025 Week of June 22, 2025",
       "source_url": "https://omni.co/changelog/20250622",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:37:44Z",
+      "scraped_at": "2026-03-09T20:05:51Z",
       "days": [
         {
           "date": "2025-06-27",
@@ -1555,9 +1552,9 @@
           "date": "2025-06-23",
           "items": [
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -1567,7 +1564,7 @@
       "week_label": "June 15, 2025 Week of June 15, 2025",
       "source_url": "https://omni.co/changelog/20250615",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:37:46Z",
+      "scraped_at": "2026-03-09T20:05:53Z",
       "days": [
         {
           "date": "2025-06-18",
@@ -1575,9 +1572,9 @@
             "Added a new Source model name setting to git settings which, if used, will specify the path to model files in the git repository. This can be used to assign a different name to a follower model when using follower mode.",
             "Added support for specifying page sizes and orientation for PDF downloads and scheduled deliveries .",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -1587,7 +1584,7 @@
       "week_label": "June 8, 2025 Week of June 8, 2025",
       "source_url": "https://omni.co/changelog/20250608",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:37:47Z",
+      "scraped_at": "2026-03-09T20:05:55Z",
       "days": [
         {
           "date": "2025-06-11",
@@ -1603,9 +1600,9 @@
             "Added an option to chart palette settings that allows you to hide palettes from palette selectors. Note : Hiding a palette only removes it as an option - it doesn't disable its use. Charts where the palette is applied will continue to use it.",
             "Updated several dbt-related fields in the UI to use default instead of target to align more closely with dbt's terminology and reduce confusion.",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -1615,7 +1612,7 @@
       "week_label": "June 1, 2025 Week of June 1, 2025",
       "source_url": "https://omni.co/changelog/20250601",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:37:49Z",
+      "scraped_at": "2026-03-09T20:05:57Z",
       "days": [
         {
           "date": "2025-06-03",
@@ -1628,9 +1625,9 @@
           "date": "2025-06-02",
           "items": [
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -1640,7 +1637,7 @@
       "week_label": "May 18, 2025 Week of May 18, 2025",
       "source_url": "https://omni.co/changelog/20250518",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:37:53Z",
+      "scraped_at": "2026-03-09T20:06:01Z",
       "days": [
         {
           "date": "2025-05-19",
@@ -1649,9 +1646,9 @@
             "Added an API for deleting a schedule .",
             "Added an API for retrieving a topic in a model .",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -1661,7 +1658,7 @@
       "week_label": "May 4, 2025 Week of May 4, 2025",
       "source_url": "https://omni.co/changelog/20250504",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:37:57Z",
+      "scraped_at": "2026-03-09T20:06:04Z",
       "days": [
         {
           "date": "2025-05-05",
@@ -1669,9 +1666,9 @@
             "Added support for pushing descriptions to dbt from Omni, accessible in the Model IDE in Model > Push descriptions to dbt.",
             "Updated the Snowflake connector to support customer-provided private keys, if you don't want Omni to generate a keypair for you.",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -1681,7 +1678,7 @@
       "week_label": "April 27, 2025 Week of April 27, 2025",
       "source_url": "https://omni.co/changelog/20250427",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:37:59Z",
+      "scraped_at": "2026-03-09T20:06:06Z",
       "days": [
         {
           "date": "2025-05-02",
@@ -1713,9 +1710,9 @@
             "Updated the AI workbook calculation button to use AWS Bedrock for processing. Refer to the documentation for more information.",
             "Updated the Create a delivery guide to include info about the current maximum frequency for cron schedules. Spoiler: It's an hour.",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -1725,7 +1722,7 @@
       "week_label": "April 21, 2025 Week of April 20, 2025",
       "source_url": "https://omni.co/changelog/20250420",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:38:01Z",
+      "scraped_at": "2026-03-09T20:06:08Z",
       "days": [
         {
           "date": "2025-04-25",
@@ -1747,9 +1744,9 @@
           "date": "2025-04-22",
           "items": [
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -1759,7 +1756,7 @@
       "week_label": "April 13, 2025 Week of April 13, 2025",
       "source_url": "https://omni.co/changelog/20250413",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:38:03Z",
+      "scraped_at": "2026-03-09T20:06:10Z",
       "days": [
         {
           "date": "2025-04-18",
@@ -1805,9 +1802,9 @@
           "date": "2025-04-13",
           "items": [
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -1817,7 +1814,7 @@
       "week_label": "March 31, 2025 Data inputs now available! New workbook and dbt enhancements, color modeling updates, StarRocks, M2M auth for Databricks, and tons of new APIs,",
       "source_url": "https://omni.co/changelog/20250331",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:38:07Z",
+      "scraped_at": "2026-03-09T20:06:13Z",
       "days": [
         {
           "date": "2025-03-31",
@@ -1840,9 +1837,9 @@
             "New NOT() formula",
             "Expanded options for copying values in a workbook:",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -1852,7 +1849,7 @@
       "week_label": "February 19, 2025 CSV uploads, nested folders, AI summaries and filters, model performance improvements, smarter data labels, and as always, so much more",
       "source_url": "https://omni.co/changelog/20250219",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:38:09Z",
+      "scraped_at": "2026-03-09T20:06:15Z",
       "days": [
         {
           "date": "2025-02-19",
@@ -1876,9 +1873,9 @@
             "Document identifiers can now be up to 48 characters",
             "You can now set the opacity for a color in the chart color picker:",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -1888,7 +1885,7 @@
       "week_label": "December 19, 2024 dbt IDE in beta, dedicated topic files, colors for dimensions, custom Analytics reports, and lots more new features",
       "source_url": "https://omni.co/changelog/20241219",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:38:12Z",
+      "scraped_at": "2026-03-09T20:06:19Z",
       "days": [
         {
           "date": "2024-12-19",
@@ -1901,9 +1898,9 @@
             "Fold - Command + K , Command + 0",
             "Unfold - Command + K , Command + J",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -1913,7 +1910,7 @@
       "week_label": "December 5, 2024 Custom column totals, dynamic database connections, SQL result interactivity, and other enhancements",
       "source_url": "https://omni.co/changelog/20241205",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:38:14Z",
+      "scraped_at": "2026-03-09T20:06:21Z",
       "days": [
         {
           "date": "2024-12-05",
@@ -1924,9 +1921,9 @@
             "Drilling into dimension fields may not be brand new, but being able to drill right from a chart is!",
             "Calculated fields can now have descriptions, which will display as a tooltip in the column header in the Results table:",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -1936,15 +1933,15 @@
       "week_label": "November 14, 2024 Smarter AI, New Editing Workflow, SQL Enhancements and More",
       "source_url": "https://omni.co/changelog/20241411",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:38:16Z",
+      "scraped_at": "2026-03-09T20:06:23Z",
       "days": [
         {
           "date": "2024-11-14",
           "items": [
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -1954,15 +1951,15 @@
       "week_label": "October 3, 2024 Embed Application Mode, Global Color Palettes, Cross-tab Cell References, New delivery options, and more!",
       "source_url": "https://omni.co/changelog/20241003",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:38:20Z",
+      "scraped_at": "2026-03-09T20:06:26Z",
       "days": [
         {
           "date": "2024-10-03",
           "items": [
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -1972,7 +1969,7 @@
       "week_label": "September 12, 2024 September 12, 2024 - Dashboard Themes, more download improvements, and making models more dynamic",
       "source_url": "https://omni.co/changelog/20240912",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:38:22Z",
+      "scraped_at": "2026-03-09T20:06:28Z",
       "days": [
         {
           "date": "2024-09-12",
@@ -1981,9 +1978,9 @@
             "Under the Advanced panel, users can now choose if they want the data to be formatted or unformatted as well as how many rows they want to download.",
             "One other change to the download behavior, if you have hidden columns, they will no longer show up in the downloaded data.",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -1993,15 +1990,15 @@
       "week_label": "August 14, 2024 August 14, 2024 - Improved workbook ergonomics, more dashboard configurations, and a whole lot of magical modeling",
       "source_url": "https://omni.co/changelog/20240814",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:38:24Z",
+      "scraped_at": "2026-03-09T20:06:30Z",
       "days": [
         {
           "date": "2024-08-14",
           "items": [
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -2011,7 +2008,7 @@
       "week_label": "July 2, 2024 AI Query Experience, Alerts, Bursting, Controls, Content Search, and Embeddable Workbooks",
       "source_url": "https://omni.co/changelog/20240702",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:38:26Z",
+      "scraped_at": "2026-03-09T20:06:32Z",
       "days": [
         {
           "date": "2024-07-02",
@@ -2019,9 +2016,9 @@
             "Inline links and images in tables",
             "dbt environment variables",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -2031,7 +2028,7 @@
       "week_label": "June 12, 2024 Embed Events, Dynamic Columns & Tables, Branch Mode & Git Integration (GA), Single-tile Scheduling and more!",
       "source_url": "https://omni.co/changelog/20240612",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:38:28Z",
+      "scraped_at": "2026-03-09T20:06:34Z",
       "days": [
         {
           "date": "2024-06-12",
@@ -2043,9 +2040,9 @@
             "default_topic_access_filters and default_topic_access_grants apply access filters or access grants to all topics, even if not explicitly specified.",
             "Support for IDENTIFIER function (in databases dialects that support it, including Snowflake) paired with filter from parameter. Used in an example:",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -2055,7 +2052,7 @@
       "week_label": "May 14, 2024 XLOOKUP (beta), Filter Updates, Dimensional Drilling, Excel Downloads, and more!",
       "source_url": "https://omni.co/changelog/20240514",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:38:30Z",
+      "scraped_at": "2026-03-09T20:06:36Z",
       "days": [
         {
           "date": "2024-05-14",
@@ -2066,9 +2063,9 @@
             "In-table bars now have conditional formatting for more visual styling options.",
             "Workbook URL schema changes now provider finer grain control to reorder workbook tabs via the URL. Those changes are kept in sync with the associated dashboard for seamless operation.",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -2078,7 +2075,7 @@
       "week_label": "April 19, 2024 New Table Features, Omni-98 Theme, Incremental Promotions, Impersonate User Mode, New Custom Visualizations and more!",
       "source_url": "https://omni.co/changelog/20240419",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:38:32Z",
+      "scraped_at": "2026-03-09T20:06:38Z",
       "days": [
         {
           "date": "2024-04-19",
@@ -2088,9 +2085,9 @@
             "Button styling control for embedded content - now your embedded dashboard's buttons can be any desired color - learn more about custom embed options in this doc",
             "We now have case insensitive filtering (for when the database isn't as clean as you wished! ð§¹).",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -2100,15 +2097,15 @@
       "week_label": "March 28, 2024 Modeling Branch Mode, Embed Updates, dbt Schema Switching, Download Dashboards, and Workbook Updates",
       "source_url": "https://omni.co/changelog/20240328",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:38:34Z",
+      "scraped_at": "2026-03-09T20:06:39Z",
       "days": [
         {
           "date": "2024-03-28",
           "items": [
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -2118,7 +2115,7 @@
       "week_label": "March 13, 2024 Promote Calcs to Model, Content Validator, SCIM User Management, and Other Improvements",
       "source_url": "https://omni.co/changelog/20240313",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:38:36Z",
+      "scraped_at": "2026-03-09T20:06:41Z",
       "days": [
         {
           "date": "2024-03-13",
@@ -2133,9 +2130,9 @@
             "New toggle to display or hide row numbers",
             "Dashboard Filters: Filters can now be re-ordered on a dashboard by dragging them around in edit mode.",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -2145,15 +2142,15 @@
       "week_label": "February 20, 2024 Data Delivery Workflows, Dashboard Auto-refresh, and Analytics for Admins",
       "source_url": "https://omni.co/changelog/20240220",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:38:38Z",
+      "scraped_at": "2026-03-09T20:06:43Z",
       "days": [
         {
           "date": "2024-02-20",
           "items": [
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -2163,15 +2160,15 @@
       "week_label": "January 26, 2024 Calculations, Cache Controls, and more Administration",
       "source_url": "https://omni.co/changelog/20240126",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:38:40Z",
+      "scraped_at": "2026-03-09T20:06:45Z",
       "days": [
         {
           "date": "2024-01-26",
           "items": [
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -2181,15 +2178,15 @@
       "week_label": "January 8, 2024 Excel-style calculations, Topic Permissions, Dashboard Goodies, Databricks connector and more!",
       "source_url": "https://omni.co/changelog/20240108",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:38:42Z",
+      "scraped_at": "2026-03-09T20:06:47Z",
       "days": [
         {
           "date": "2024-01-08",
           "items": [
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -2199,15 +2196,15 @@
       "week_label": "December 1, 2023 dbt Integration, Transposed Tables, and Dynamic Schemas",
       "source_url": "https://omni.co/changelog/20231201",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:38:44Z",
+      "scraped_at": "2026-03-09T20:06:48Z",
       "days": [
         {
           "date": "2023-12-01",
           "items": [
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -2217,15 +2214,15 @@
       "week_label": "November 3, 2023 SSO Embedding, Timezones, and more!",
       "source_url": "https://omni.co/changelog/20231103",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:38:46Z",
+      "scraped_at": "2026-03-09T20:06:50Z",
       "days": [
         {
           "date": "2023-11-03",
           "items": [
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -2235,7 +2232,7 @@
       "week_label": "October 13, 2023 Maps, Topic Organization, Schedule Options, and lots o' vis and model improvements",
       "source_url": "https://omni.co/changelog/20231013",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:38:48Z",
+      "scraped_at": "2026-03-09T20:06:52Z",
       "days": [
         {
           "date": "2023-10-13",
@@ -2245,9 +2242,9 @@
             "where_sql for relationships - insert a condition into the where clause when that specific join is used",
             "query views nest into schema folders in the IDE - instead of query views hanging out solo in the IDE, they'll now be nested into the appropriate schema folder for enhanced file organization",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -2257,16 +2254,16 @@
       "week_label": "September 22, 2023 SQL Super Powers, Embeddable Dashboards, Move-able Queries, and More",
       "source_url": "https://omni.co/changelog/20230922",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:38:50Z",
+      "scraped_at": "2026-03-09T20:06:54Z",
       "days": [
         {
           "date": "2023-09-22",
           "items": [
             "Line and area chart styles - points, line thickness, transparency, and more",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -2276,15 +2273,15 @@
       "week_label": "August 31, 2023 KPI visualizations, row-level permissions, and SQL Server support",
       "source_url": "https://omni.co/changelog/20230831",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:38:51Z",
+      "scraped_at": "2026-03-09T20:06:56Z",
       "days": [
         {
           "date": "2023-08-31",
           "items": [
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -2294,7 +2291,7 @@
       "week_label": "August 24, 2023 Drag and drop vis editor, left click actions, and field aliases",
       "source_url": "https://omni.co/changelog/20230824",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:38:53Z",
+      "scraped_at": "2026-03-09T20:06:58Z",
       "days": [
         {
           "date": "2023-08-24",
@@ -2305,9 +2302,9 @@
             "Add existing join to topic : from the workbook join modal, new option to add the join to the current Topic (without having to go to the IDE)",
             "Filters can be referenced in dashboard text tiles: call out filter values on a dashboard using mustache syntax",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -2317,7 +2314,7 @@
       "week_label": "August 4, 2023 Viewer role, filter mapping, iframe in markdown, and visualization improvements",
       "source_url": "https://omni.co/changelog/20240804",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:38:55Z",
+      "scraped_at": "2026-03-09T20:07:00Z",
       "days": [
         {
           "date": "2023-08-04",
@@ -2330,9 +2327,9 @@
             "Relabel columns : from the table config, columns can be relabeled",
             "Invitation request management page : new admin page to see all pending user invite requests",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -2342,7 +2339,7 @@
       "week_label": "July 26, 2023 Scheduled dashboards, text tiles, Markdown, and more",
       "source_url": "https://omni.co/changelog/20230726",
       "fully_scraped": true,
-      "scraped_at": "2026-03-03T21:38:57Z",
+      "scraped_at": "2026-03-09T20:07:02Z",
       "days": [
         {
           "date": "2023-07-26",
@@ -2355,9 +2352,9 @@
             "Log scale for visualizations : change the axis scale between linear or log",
             "Expand cells on table : can right-click on a table cell to expand the text and copy/paste (useful to see the full contents when a cell is super long!)",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
@@ -2367,7 +2364,7 @@
       "week_label": "February 15, 2026 Week of February 15, 2026",
       "source_url": "https://omni.co/changelog/20260215",
       "fully_scraped": true,
-      "scraped_at": "2026-03-06T19:27:13Z",
+      "scraped_at": "2026-03-09T20:04:51Z",
       "days": [
         {
           "date": "2026-02-20",
@@ -2397,9 +2394,9 @@
             "Added Australian Dollar (AUD) currency formatting options to the dimension and measure format parameter, allowing you to display numbers with the A$ symbol in standard, accounting, and financial formats.",
             "Added url fields to document, query, and folder API responses, giving you direct links to any piece of content in the Omni UI.",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
-            "Customers Case Studies Customer Support",
-            "Resources Learn Documentation Community Learn Documentation Community Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Demos Changelog Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Security",
-            "Company About Blog Careers Subscribe Explo Transition Status"
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
       ]
