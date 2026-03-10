@@ -1,9 +1,9 @@
 {
   "meta": {
     "source": "https://omni.co/changelog",
-    "last_scraped": "2026-03-10T04:11:06Z",
-    "total_weeks_indexed": 72,
-    "total_weeks_fully_scraped": 72,
+    "last_scraped": "2026-03-10T19:31:24Z",
+    "total_weeks_indexed": 73,
+    "total_weeks_fully_scraped": 73,
     "date_range": {
       "earliest_indexed": "2023-07-26",
       "latest_scraped": "2026-02-27"
@@ -324,6 +324,10 @@
     {
       "week_label": "February 15, 2026 Week of February 15, 2026",
       "url": "https://omni.co/changelog/20260215"
+    },
+    {
+      "week_label": "February 22, 2026 Week of February 22, 2026",
+      "url": "https://omni.co/changelog/20260222"
     }
   ],
   "weeks": [
@@ -2393,6 +2397,45 @@
           "items": [
             "Added Australian Dollar (AUD) currency formatting options to the dimension and measure format parameter, allowing you to display numbers with the A$ symbol in standard, accounting, and financial formats.",
             "Added url fields to document, query, and folder API responses, giving you direct links to any piece of content in the Omni UI.",
+            "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
+          ]
+        }
+      ]
+    },
+    {
+      "week_start": "2026-02-23",
+      "week_label": "February 22, 2026 Week of February 22, 2026",
+      "source_url": "https://omni.co/changelog/20260222",
+      "fully_scraped": true,
+      "scraped_at": "2026-03-10T19:31:24Z",
+      "days": [
+        {
+          "date": "2026-02-27",
+          "items": [
+            "Added support for Markdown columns in table visualizations, which allow you to format and style cell content using Markdown syntax. Note : This feature is still in development and is not yet available in-app."
+          ]
+        },
+        {
+          "date": "2026-02-26",
+          "items": [
+            "Added a force query parameter to the DELETE /api/unstable/folders/{folderId} endpoint that enables you to recursively delete folders containing documents and sub-folders. When force=true , all documents in the folder tree are archived to trash and all sub-folders are deleted in a single transaction. For safety, force delete returns a 400 error if the folder tree contains more than 100 total items. Learn more in the API documentation .",
+            "Added a new POST /api/v1/uploads endpoint that allows you to upload a CSV file to create a new data source.",
+            "Added percentage tooltips to Sankey charts . You can now enable the Show percentages toggle in the Sankey editor's tooltip settings to display percentage breakdowns in your chart tooltips. Additionally, the node tooltip label has been renamed from Total to Value for clarity."
+          ]
+        },
+        {
+          "date": "2026-02-24",
+          "items": [
+            "Added search and filter functionality for branches. You can now search branches by name in the Branches table, and when you have 10 or more branches in the IDE, a Search branches... option appears in the branch selector dropdown to help you quickly find the branch you need.",
+            "Markdown tiles and visualizations now include a prefers-dark class name when you're viewing in dark mode, allowing you to write custom CSS that targets light and dark mode separately."
+          ]
+        },
+        {
+          "date": "2026-02-23",
+          "items": [
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
             "Solutions Media & Advertising SaaS Financial Services Retail",
             "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
