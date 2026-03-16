@@ -1,7 +1,7 @@
 {
   "meta": {
     "source": "https://omni.co/demos",
-    "last_scraped": "2026-03-16T04:44:58Z",
+    "last_scraped": "2026-03-16T19:59:43Z",
     "scrape_method": "playwright+requests",
     "scrape_notes": "Playwright extracts YouTube URLs, titles, descriptions, authors, and tags per demo entry.",
     "total_weeks_indexed": 110,
@@ -4142,7 +4142,7 @@
       "date": "2026-03-06",
       "url": "https://omni.co/demos",
       "fully_scraped": true,
-      "scraped_at": "2026-03-10T04:11:17Z",
+      "scraped_at": "2026-03-16T19:59:43Z",
       "title": "Demos",
       "summary_bullets": [
         "Agent Blobby is getting smarter. Now you can create a dashboard from scratch with just a prompt. We'll be layering in style files and other controls here, but a new dashboard is not a prompt away.",
@@ -4165,7 +4165,11 @@
         "Product\nAI\nBusiness Intelligence\nEmbedded Analytics\nIntegrations\nCapabilities",
         "Solutions\nMedia & Advertising\nSaaS\nFinancial Services\nRetail",
         "Resources\nLearn\nCustomers\nPartners\nCompare",
-        "Company\nAbout\nCareers\nSubscribe\nOmnivision\nExplo Transition"
+        "Company\nAbout\nCareers\nSubscribe\nOmnivision\nExplo Transition",
+        "ProductAIBusiness IntelligenceEmbedded AnalyticsIntegrationsCapabilitiesCalculationsSpreadsheetsData ModelingData Input",
+        "SolutionsMedia & AdvertisingSaaSFinancial ServicesRetail",
+        "ResourcesLearnBlogDocumentationUser GuidesCommunityChangelogEngineering DemosSecurityCustomersCase StudiesCustomer SupportPartnersPartner ProgramOmni + SnowflakeOmni + DatabricksCompareOmni vs TableauOmni vs LookerOmni vs SigmaOmni vs Power BIOmni vs ThoughtSpotOmni vs Metabase",
+        "CompanyAboutCareersSubscribeOmnivisionExplo Transition"
       ],
       "video_count": 17,
       "videos": [
