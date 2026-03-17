@@ -1,12 +1,12 @@
 {
   "meta": {
     "source": "https://omni.co/changelog",
-    "last_scraped": "2026-03-17T04:20:46Z",
-    "total_weeks_indexed": 73,
-    "total_weeks_fully_scraped": 73,
+    "last_scraped": "2026-03-17T19:48:06Z",
+    "total_weeks_indexed": 74,
+    "total_weeks_fully_scraped": 74,
     "date_range": {
       "earliest_indexed": "2023-07-26",
-      "latest_scraped": "2026-02-27"
+      "latest_scraped": "2026-03-06"
     }
   },
   "index": [
@@ -328,6 +328,10 @@
     {
       "week_label": "February 22, 2026 Week of February 22, 2026",
       "url": "https://omni.co/changelog/20260222"
+    },
+    {
+      "week_label": "March 1, 2026 Week of March 1, 2026",
+      "url": "https://omni.co/changelog/20260301"
     }
   ],
   "weeks": [
@@ -2439,6 +2443,43 @@
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input Capabilities Calculations Spreadsheets Data Modeling Data Input Request Demo",
             "Solutions Media & Advertising SaaS Financial Services Retail",
             "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
+          ]
+        }
+      ]
+    },
+    {
+      "week_start": "2026-03-02",
+      "week_label": "March 1, 2026 Week of March 1, 2026",
+      "source_url": "https://omni.co/changelog/20260301",
+      "fully_scraped": true,
+      "scraped_at": "2026-03-17T19:48:06Z",
+      "days": [
+        {
+          "date": "2026-03-06",
+          "items": [
+            "Added a new opus model tier so you can set model: opus in your model's ai_settings to use Claude Opus 4.6. This tier is available through Bedrock and external providers including Anthropic and Snowflake Cortex.",
+            "Added support for creating PrivateLink connections to Redshift provisioned clusters. See the Redshift PrivateLink documentation for more information.",
+            "Updated the ai_settings.query_all_views_and_fields parameter to accept enabled | disabled | default values instead of true | false . This allows you to control whether the AI queries all views and fields when generating SQL."
+          ]
+        },
+        {
+          "date": "2026-03-05",
+          "items": [
+            "Added a new combined view to the My activity page that deduplicates activity by workbook or model and groups entries into time-period sections. You can toggle between the new combined view (default) and the classic view that lists each action in chronological order.",
+            "Added the ability to assign a dbt environment to a specific user when creating or editing environments in Omni. If you have permission to manage users, you can assign the environment to any user; otherwise, you can only assign it to yourself or leave it unowned."
+          ]
+        },
+        {
+          "date": "2026-03-02",
+          "items": [
+            "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input",
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition",
+            "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input",
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
             "Company About Careers Subscribe Omnivision Explo Transition"
           ]
         }
