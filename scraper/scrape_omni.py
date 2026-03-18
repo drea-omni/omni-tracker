@@ -2,7 +2,7 @@
 """
 Omni Changelog & Demos Scraper — with Playwright for full demo detail
 ======================================================================
-Scrapes https://omni.co/changelog and https://omni.co/demos
+Scrapes https://omni.co/changelog and https://docs.omni.co/demos
 Uses requests+BeautifulSoup for changelog (fast, no JS needed)
 Uses Playwright for demos (needed to extract YouTube embed URLs + demo detail)
 
@@ -37,7 +37,7 @@ CHANGELOG_FILE = DATA_DIR / "omni_changelog.json"
 DEMOS_FILE     = DATA_DIR / "omni_demos.json"
 
 BASE_CHANGELOG = "https://omni.co/changelog"
-BASE_DEMOS     = "https://omni.co/demos"
+BASE_DEMOS     = "https://docs.omni.co/demos"
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (compatible; OmniChangelogBot/1.0)",
@@ -58,6 +58,12 @@ def today_date():
     return datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
 def url_to_date(url):
+    # New URL format: /demos/YYYY/YYYYMMDD
+    m = re.search(r"/\d{4}/(\d{8})$", url.rstrip("/"))
+    if m:
+        raw = m.group(1)
+        return f"{raw[:4]}-{raw[4:6]}-{raw[6:8]}"
+    # Fallback: old format /demos/YYYYMMDD
     m = re.search(r"/(\d{8})$", url.rstrip("/"))
     if m:
         raw = m.group(1)
@@ -103,7 +109,7 @@ async def extract_demo_details(url, pw):
     Load a demos page with Playwright and extract full per-demo detail:
       title, description, author, tag, youtube_id + derived URLs.
 
-    DOM structure on omni.co/demos/* :
+    DOM structure on docs.omni.co/demos/* :
       div.stack.demo
         figure.video  →  iframe[src*=youtube]   (youtube_id, iframe title)
         hgroup.stack  →  h3                      (display title)
@@ -233,8 +239,9 @@ async def scrape_demos_with_playwright(existing, force=False):
     for a in soup.find_all("a", href=True):
         href = a["href"]
         if href.startswith("/"):
-            href = "https://omni.co" + href
-        if re.search(r"/demos/\d{8}", href) and href not in seen_urls:
+            href = "https://docs.omni.co" + href
+        # Match new URL pattern: /demos/YYYY/YYYYMMDD
+        if re.search(r"/demos/\d{4}/\d{8}", href) and href not in seen_urls:
             all_weeks.append({
                 "date": url_to_date(href) or "",
                 "week_label": clean_text(a),
@@ -407,8 +414,9 @@ def scrape_demos_requests_only(existing, force=False):
     for a in soup.find_all("a", href=True):
         href = a["href"]
         if href.startswith("/"):
-            href = "https://omni.co" + href
-        if re.search(r"/demos/\d{8}", href) and href not in indexed_urls:
+            href = "https://docs.omni.co" + href
+        # Match new URL pattern: /demos/YYYY/YYYYMMDD
+        if re.search(r"/demos/\d{4}/\d{8}", href) and href not in indexed_urls:
             label = clean_text(a)
             updated_index.append({
                 "date":       url_to_date(href) or "",
