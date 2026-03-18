@@ -2,8 +2,8 @@ name: Scrape Omni Changelog & Demos
 
 on:
   schedule:
-    - cron: "0 19 * * *"  # 11am PST daily - Playwright run (YouTube)
-    - cron: "0 2 * * *"   # 6pm PST daily (2am UTC next day) - Playwright run (YouTube)
+    - cron: "0 19 * * *"  # 11am PST daily
+    - cron: "0 2 * * *"   # 6pm PST daily (2am UTC next day)
   workflow_dispatch:
     inputs:
       force:
@@ -17,10 +17,6 @@ on:
         options: [both, changelog-only, demos-only]
       dry_run:
         description: "Dry run (no commits)"
-        type: boolean
-        default: false
-      no_playwright:
-        description: "Skip Playwright (faster, no YouTube URLs)"
         type: boolean
         default: false
 
@@ -43,18 +39,14 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install requests beautifulsoup4 lxml playwright
-
-      - name: Install Playwright browsers
-        if: github.event.inputs.no_playwright != 'true'
-        run: python -m playwright install chromium --with-deps
+        run: pip install requests beautifulsoup4 lxml
 
       - name: Run scraper
         run: |
           ARGS=""
+          # workflow_dispatch overrides
           [ "${{ github.event.inputs.force }}" = "true" ] && ARGS="$ARGS --force"
           [ "${{ github.event.inputs.dry_run }}" = "true" ] && ARGS="$ARGS --dry-run"
-          [ "${{ github.event.inputs.no_playwright }}" = "true" ] && ARGS="$ARGS --no-playwright"
           [ "${{ github.event.inputs.target }}" = "changelog-only" ] && ARGS="$ARGS --changelog-only"
           [ "${{ github.event.inputs.target }}" = "demos-only" ] && ARGS="$ARGS --demos-only"
           python scraper/scrape_omni.py $ARGS
