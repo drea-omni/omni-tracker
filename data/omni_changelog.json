@@ -1,12 +1,12 @@
 {
   "meta": {
     "source": "https://omni.co/changelog",
-    "last_scraped": "2026-03-24T04:22:05Z",
-    "total_weeks_indexed": 74,
-    "total_weeks_fully_scraped": 74,
+    "last_scraped": "2026-03-24T19:54:57Z",
+    "total_weeks_indexed": 75,
+    "total_weeks_fully_scraped": 75,
     "date_range": {
       "earliest_indexed": "2023-07-26",
-      "latest_scraped": "2026-03-06"
+      "latest_scraped": "2026-03-12"
     }
   },
   "index": [
@@ -332,6 +332,10 @@
     {
       "week_label": "March 1, 2026 Week of March 1, 2026",
       "url": "https://omni.co/changelog/20260301"
+    },
+    {
+      "week_label": "March 8, 2026 Week of March 8, 2026",
+      "url": "https://omni.co/changelog/20260308"
     }
   ],
   "weeks": [
@@ -2473,6 +2477,53 @@
         {
           "date": "2026-03-02",
           "items": [
+            "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input",
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition",
+            "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input",
+            "Solutions Media & Advertising SaaS Financial Services Retail",
+            "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
+            "Company About Careers Subscribe Omnivision Explo Transition"
+          ]
+        }
+      ]
+    },
+    {
+      "week_start": "2026-03-09",
+      "week_label": "March 8, 2026 Week of March 8, 2026",
+      "source_url": "https://omni.co/changelog/20260308",
+      "fully_scraped": true,
+      "scraped_at": "2026-03-24T19:54:57Z",
+      "days": [
+        {
+          "date": "2026-03-12",
+          "items": [
+            "Added support for custom model identifiers in OpenAI-compatible endpoints, allowing you to bring your own models (BYOM) for providers like Ollama and Azure OpenAI. See the AI settings documentation for more information.",
+            "Cross-filtering is now generally available. You can use cross-filtering to filter data across multiple dashboard tiles by clicking on values in your visualizations. See the cross-filtering documentation for more information.",
+            "You can now ask the AI chat assistant to generate map visualizations for geographic questions. When you ask questions like \"show me orders by state on a map,\" the AI will create region maps (choropleths) or point maps as appropriate for your data."
+          ]
+        },
+        {
+          "date": "2026-03-11",
+          "items": [
+            "Added onlySharedWithMe as a new filter option to the List folders API to retrieve only folders that have been explicitly shared with you via folder permits, excluding folders you own.",
+            "Added support for generic embed integrations like FullStory and LogRocket. You can now configure integration credentials in Settings > Embed > Integrations .",
+            "Renamed AI workflows to \"skills\" throughout Omni. Existing model files using workflows: will continue to work without changes."
+          ]
+        },
+        {
+          "date": "2026-03-10",
+          "items": [
+            "Added onlySharedWithMe as a new filter option to the List documents API to retrieve only documents that have been explicitly shared with you via documents permits, excluding documents you own.",
+            "Added a button toggle control type for single selection string filters, allowing you to display filter options as clickable buttons instead of a dropdown. Available for Advanced Dashboard layouts only."
+          ]
+        },
+        {
+          "date": "2026-03-09",
+          "items": [
+            "Added a confirmation dialog when disabling personal access tokens . You must now confirm the action before a token is disabled, helping prevent accidental disablement.",
+            "Added support for creating multiple embed secrets in an Omni instance.",
             "Product AI Business Intelligence Embedded Analytics Integrations Capabilities Calculations Spreadsheets Data Modeling Data Input",
             "Solutions Media & Advertising SaaS Financial Services Retail",
             "Resources Learn Blog Documentation User Guides Community Changelog Engineering Demos Security Customers Case Studies Customer Support Partners Partner Program Omni + Snowflake Omni + Databricks Compare Omni vs Tableau Omni vs Looker Omni vs Sigma Omni vs Power BI Omni vs ThoughtSpot Omni vs Metabase",
