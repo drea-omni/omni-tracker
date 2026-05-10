@@ -1,10 +1,9 @@
 ## 🔄 Omni Scraper Update Report
-*2026-05-10T05:42:17Z*
+*2026-05-10T20:04:16Z*
 
 ### 📋 Changelog — No new entries
 
-### 🎬 New Demo Weeks (1)
-- `2026-05-08` [May 8, 2026](https://docs.omni.co/demos/2026/20260508)
+### 🎬 Demos — No new weeks
 
 ### 📊 Totals
 - Changelog entries: 727
