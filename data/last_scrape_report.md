@@ -1,13 +1,14 @@
 ## 🔄 Omni Scraper Update Report
-*2026-06-06T05:59:02Z*
+*2026-06-06T20:18:22Z*
 
 ### 📋 Changelog — No new entries
 
-### 🎬 Demos — No new weeks
+### 🎬 New Demo Weeks (1)
+- `2026-06-05` [June 5, 2026](https://docs.omni.co/demos/2026/20260605)
 
 ### 📊 Totals
 - Changelog entries: 727
-- Demo weeks indexed: 243
-- YouTube videos indexed: 1393
+- Demo weeks indexed: 244
+- YouTube videos indexed: 1409
 - Unique demo authors: 69
 - Authors: Alisa Tatarinova, Alisa Tatarinova, Luke Bowerman, Anakarina McFadden, Arielle Strong, Austin Aranda, Becca Bruggman, Bernard Sanders, Brian Frantz, Buck Ryan, Cade Austin, Cathy Lennon, Chris Merrick, Chris Swenson, Christopher Merrick, Colin Zima, Conner Ching, Conrad Slimmer, Corey Ruderman, Corey Ruderman, Eli Cohen, Dan Mosora...
